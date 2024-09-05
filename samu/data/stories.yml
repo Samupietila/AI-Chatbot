@@ -32,3 +32,15 @@ stories:
     steps:
       - intent: ask_rules
       - action: utter_rules
+
+- story: interactive_story_1
+  steps:
+  - intent: ask_rules
+  - action: utter_rules
+  - intent: ask_rules
+  - action: utter_rules
+  - intent: deny
+  - intent: ask_rules
+    entities:
+    - problem: poker
+  - action: utter_rules
