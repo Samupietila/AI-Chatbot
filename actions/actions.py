@@ -12,6 +12,7 @@
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
 from rasa_sdk.events import SessionStarted, ActionExecuted
+from rasa_sdk.events import SlotSet
 #
 #
 # class ActionHelloWorld(Action):
@@ -27,10 +28,17 @@ from rasa_sdk.events import SessionStarted, ActionExecuted
 #
 #         return []
 
-class ActionSessionStart(Action):
-    def name(self):
-        return "action_session_start"
+# class ActionButtonTest(Action):
+#     def name(self):
+#         return "utter_button_test"
 
-    def run(self, dispatcher, tracker, domain):
-        dispatcher.utter_message(template="utter_button_test")
-        return [SessionStarted(), ActionExecuted("action_listen")]
+#     def run(self, dispatcher, tracker, domain):
+#         dispatcher.utter_message(template="utter_button_test")
+#         return []
+
+class ActionBeforeListen(Action):
+    def name(self):
+        return "action_before_listen"
+    async def run(self, dispatcher, tracker, domain):
+        last_action_name = tracker.latest_action_name
+        return [SlotSet("before_listen", last_action_name)]
