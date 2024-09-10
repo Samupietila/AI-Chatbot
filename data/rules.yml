@@ -1,11 +1,15 @@
 version: "3.1"
 
 rules:
-  - rule: Start with a greeting and the button test
+  - rule: Start with a button test
     steps:
-      - intent: greet
-      - action: utter_greet
-      - action: utter_button_test
+      - action: action_session_start
+
+  # - rule: Start with a greeting and the button test
+  #   steps:
+  #     - intent: greet
+  #     - action: utter_greet
+  #     - action: utter_button_test
 
   - rule: Say goodbye anytime the user says goodbye
     steps:

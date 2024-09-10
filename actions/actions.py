@@ -11,7 +11,7 @@
 #
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
-from rasa_sdk.events import UserUtteranceReverted
+from rasa_sdk.events import SessionStarted, ActionExecuted
 #
 #
 # class ActionHelloWorld(Action):
@@ -32,5 +32,5 @@ class ActionSessionStart(Action):
         return "action_session_start"
 
     def run(self, dispatcher, tracker, domain):
-        dispatcher.utter_message(template="utter_greet")
-        return []
+        dispatcher.utter_message(template="utter_button_test")
+        return [SessionStarted(), ActionExecuted("action_listen")]

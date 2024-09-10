@@ -17,6 +17,7 @@ actions:
   - utter_goodbye
   - utter_iamabot
   - utter_button_test
+  - action_session_start
 
 responses:
   utter_greet:
@@ -38,13 +39,14 @@ responses:
   utter_iamabot:
     - text: "I am a bot, powered by Rasa."
 
-  utter_button_test:
-    - text: "This is a test of buttons."
-      buttons:
-        - title: "This button is a link to google"
-          payload: "https://www.google.com"
-        - title: "This button is a link to goodbye"
-          payload: "/goodbye"
+utter_button_test:
+  - text: "This is a test of buttons."
+    buttons:
+      - title: "This button is a link to Google"
+        type: "web_url"
+        url: "https://www.google.com"
+      - title: "This button is a link to goodbye"
+        payload: "/goodbye"
 
 session_config:
   session_expiration_time: 60
