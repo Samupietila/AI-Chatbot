@@ -8,26 +8,72 @@ intents:
   - mood_great
   - mood_unhappy
   - bot_challenge
+  - service_technical
+  - service_bonuses
+  - service_deposit_withdrawal
+  - service_account_registration
+  - service_game_rules
+  - service_security_fairplay
+  - service_responsible_gaming
+  - service_technical_1
+  - approval_yes
+  - approval_no
 
 responses:
   utter_greet:
-  - text: "Hey! How are you?"
+    - text: "Hello! Welcome to the customer service, what would you like to have help with?"
+      buttons:
+        - title: "Technical issues"
+          payload: "/service_technical"
+        - title: "Bonuses & Promotion"
+          payload: "/service_bonuses"
+        - title: "Deposit & Withdrawal"
+          payload: "/service_deposit_withdrawal"
+        - title: "Account and Registration"
+          payload: "/service_account_registration"
+        - title: "Game Rules"
+          payload: "/service_game_rules"
+        - title: "Security and Fair play"
+          payload: "/service_security_fairplay"
+        - title: "Responsible Gaming"
+          payload: "/service_responsible_gaming"
+
+  utter_service_technical:
+    - text: "Allright! Let what kind of Technical issues you are facing with"
+      buttons:
+        - title: "The game froze, what should i do?"
+          payload: "/service_technical_1"
+        - title: "How do i update my browser to play the game"
+          payload: "/service_technical_2"
+        - title: "why can't i deposit money?"
+          payload: "/service_technical_3"
+
+  utter_customer_approval:
+    - text: "Was this help useful?"
+      buttons:
+        - title: "Yes, this information helped me."
+          payload: "/approval_yes"
+        - title: "No, this information did not help me"
+          payload: "/approval_no"
+
+  utter_service_technical_1:
+    - text: "If your game has frozen, refresh the website. \nIf that doesn't work, then restart your browser and try again. Did that help?\n"
 
   utter_cheer_up:
-  - text: "Here is something to cheer you up:"
-    image: "https://i.imgur.com/nGF1K8f.jpg"
+    - text: "Here is something to cheer you up:"
+      image: "https://i.imgur.com/nGF1K8f.jpg"
 
   utter_did_that_help:
-  - text: "Did that help you?"
+    - text: "Did that help you?"
 
   utter_happy:
-  - text: "Great, carry on!"
+    - text: "Great, carry on!"
 
   utter_goodbye:
-  - text: "Bye"
+    - text: "Bye"
 
   utter_iamabot:
-  - text: "I am a bot, powered by Rasa."
+    - text: "I am a bot, powered by Rasa."
 
 session_config:
   session_expiration_time: 60
