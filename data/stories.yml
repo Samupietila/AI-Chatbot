@@ -1,7 +1,8 @@
 version: "3.1"
 
 stories:
-  - story: hapy customer service technical support 1
+  #TODO Viimeistele Story
+  - story: customer service technical support 1
     steps:
       - intent: greet
       - action: utter_greet
@@ -10,6 +11,37 @@ stories:
       - intent: service_technical_1
       - action: utter_service_technical_1
       - action: utter_customer_approval
+
+    #TODO Viimeistele Technical Story
+  - story: customer service technical support 2
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: service_technical
+      - action: utter_service_technical
+      - intent: service_technical_2
+      - action: utter_service_technical_2
+
+    #TODO Viimeistele Technical Story
+  - story: customer service technical support 3
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: service_technical
+      - action: utter_service_technical
+      - intent: service_technical_3
+      - action: utter_service_technical_3
+
+  - story: customer service technical support that asks for the real person
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: service_technical
+      - action: utter_service_technical
+      - intent: service_technical_2
+      - action: utter_service_technical_2
+      - intent: ask_for_real_person
+      - action: utter_ask_for_real_person
 
   - story: happy path
     steps:
