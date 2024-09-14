@@ -138,3 +138,38 @@ nlu:
       - who are you?
       - is this a bot?
       - is this a human?
+
+  - intent: ask_blackjack_rules
+    examples: |
+      - What are the rules for blackjack?
+      - Can you explain the blackjack rules?
+      - How do I play blackjack?
+
+  - intent: ask_poker_rules
+    examples: |
+      - What are the rules for poker?
+      - Can you explain the poker rules?
+      - How do I play poker?
+
+  - intent: ask_roulette_odds
+    examples: |
+      - What are the odds in roulette?
+      - Can you tell me the roulette odds?
+      - How likely am I to win in roulette?
+
+  - intent: ask_rules
+    examples: |
+      - Can you explain the rules?
+      - How do I play this game?
+      - I need the rules.
+
+  - intent: button_test
+    examples: |
+      - Show me buttons
+      - I'd like to see button options.
+
+  - intent: select_option
+    examples: |
+      - I choose option 1
+      - I will go with option 2
+      - Option 1 is my choice.

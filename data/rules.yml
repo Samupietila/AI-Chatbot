@@ -1,4 +1,6 @@
 version: "3.1"
+
+
 rules:
   - rule: Start with a greeting and the button test
     steps:
@@ -44,3 +46,33 @@ rules:
     steps:
       - intent: affirm
       - action: utter_happy
+
+  - rule: Respond to blackjack rules
+    steps:
+      - intent: ask_blackjack_rules
+      - action: utter_blackjack_rules
+
+  - rule: Respond to poker rules
+    steps:
+      - intent: ask_poker_rules
+      - action: utter_poker_rules
+
+  - rule: Respond to roulette odds
+    steps:
+      - intent: ask_roulette_odds
+      - action: utter_roulette_odds
+
+  - rule: Respond to general rules inquiry
+    steps:
+      - intent: ask_rules
+      - action: utter_ask_rules
+
+  - rule: Button test
+    steps:
+      - intent: button_test
+      - action: utter_button_test
+
+  - rule: Respond to select option
+    steps:
+      - intent: select_option
+      - action: utter_more_info

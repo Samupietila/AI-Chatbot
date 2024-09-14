@@ -21,3 +21,33 @@ stories:
       - action: utter_did_that_help
       - intent: deny
       - action: utter_goodbye
+
+  - story: Blackjack rules inquiry
+    steps:
+      - intent: ask_blackjack_rules
+      - action: utter_blackjack_rules
+
+  - story: Poker rules inquiry
+    steps:
+      - intent: ask_poker_rules
+      - action: utter_poker_rules
+
+  - story: Roulette odds inquiry
+    steps:
+      - intent: ask_roulette_odds
+      - action: utter_roulette_odds
+
+  - story: General rules inquiry
+    steps:
+      - intent: ask_rules
+      - action: utter_ask_rules
+
+  - story: Button test
+    steps:
+      - intent: button_test
+      - action: utter_button_test
+
+  - story: Select option
+    steps:
+      - intent: select_option
+      - action: utter_more_info
