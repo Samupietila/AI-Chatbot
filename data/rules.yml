@@ -1,46 +1,51 @@
 version: "3.1"
 rules:
-  - rule: Start with a greeting and the button test
+  - rule: when customer asks for real person
     steps:
-      - intent: greet
-      - action: utter_greet
-      - action: utter_button_test
+      - intent: ask_for_real_person
+      - action: utter_ask_for_real_person
 
-  - rule: Say goodbye anytime the user says goodbye
-    steps:
-      - intent: goodbye
-      - action: utter_goodbye
+  # - rule: Start with a greeting and the button test
+  #   steps:
+  #     - intent: greet
+  #     - action: utter_greet
+  #     - action: utter_button_test
 
-  - rule: Say 'I am a bot' anytime the user challenges
-    steps:
-      - intent: bot_challenge
-      - action: utter_iamabot
+  # - rule: Say goodbye anytime the user says goodbye
+  #   steps:
+  #     - intent: goodbye
+  #     - action: utter_goodbye
 
-  - rule: respond to the mood_great intent with the utter_happy action
-    steps:
-      - intent: mood_great
-      - action: utter_happy
+  # - rule: Say 'I am a bot' anytime the user challenges
+  #   steps:
+  #     - intent: bot_challenge
+  #     - action: utter_iamabot
 
-  - rule: respond to the mood_unhappy intent with the utter_cheer_up action
-    steps:
-      - intent: mood_unhappy
-      - action: utter_cheer_up
-      - action: utter_did_that_help
+  # - rule: respond to the mood_great intent with the utter_happy action
+  #   steps:
+  #     - intent: mood_great
+  #     - action: utter_happy
 
-  - rule: if the user denies that the bot helped, say goodbye
-    condition:
-      - active_loop: null
-      - slot_was_set:
-          - action_before_listen: utter_did_that_help
-    steps:
-      - intent: deny
-      - action: utter_goodbye
+  # - rule: respond to the mood_unhappy intent with the utter_cheer_up action
+  #   steps:
+  #     - intent: mood_unhappy
+  #     - action: utter_cheer_up
+  #     - action: utter_did_that_help
 
-  - rule: if the user affirms that the bot helped, say happy
-    condition:
-      - active_loop: null
-      - slot_was_set:
-          - action_before_listen: utter_did_that_help
-    steps:
-      - intent: affirm
-      - action: utter_happy
+  # - rule: if the user denies that the bot helped, say goodbye
+  #   condition:
+  #     - active_loop: null
+  #     - slot_was_set:
+  #         - action_before_listen: utter_did_that_help
+  #   steps:
+  #     - intent: deny
+  #     - action: utter_goodbye
+
+  # - rule: if the user affirms that the bot helped, say happy
+  #   condition:
+  #     - active_loop: null
+  #     - slot_was_set:
+  #         - action_before_listen: utter_did_that_help
+  #   steps:
+  #     - intent: affirm
+  #     - action: utter_happy

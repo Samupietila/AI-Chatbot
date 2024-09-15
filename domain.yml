@@ -1,0 +1,234 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - service_technical
+  - service_bonuses
+  - service_deposit_withdrawal
+  - service_account_registration
+  - service_game_rules
+  - service_security_fairplay
+  - service_responsible_gaming
+  - service_technical_1
+  - service_technical_2
+  - service_technical_3
+  - ask_for_real_person
+  - approval_yes
+  - approval_no
+  - service_deposit_methods
+  - deposit_credit_card
+  - deposit_bank_transfer
+  - deposit_e_wallet
+  - service_withdrawal_time
+  - withdrawal_credit_card
+  - withdrawal_bank_transfer
+  - withdrawal_e_wallet
+  - service_fees
+
+responses:
+  utter_greet:
+    - text: "Hello! Welcome to the customer service, what would you like to have help with?"
+      buttons:
+        - title: "Technical issues"
+          payload: "/service_technical"
+        - title: "Bonuses & Promotion"
+          payload: "/service_bonuses"
+        - title: "Deposit & Withdrawal"
+          payload: "/service_deposit_withdrawal"
+        - title: "Account and Registration"
+          payload: "/service_account_registration"
+        - title: "Game Rules"
+          payload: "/service_game_rules"
+        - title: "Security and Fair play"
+          payload: "/service_security_fairplay"
+        - title: "Responsible Gaming"
+          payload: "/service_responsible_gaming"
+        - title: "Click here, to ask for a real person"
+          payload: "/ask_for_real_person"
+
+  ################################################################################################
+  ############################## DEPOSIT AND WITHDRAWAL ##########################################
+  ################################################################################################
+  utter_service_deposit_withdrawal:
+    - text: "Regarding deposit / withdrawal of money, here are some information to check:"
+      buttons:
+        - title: "What are the deposit methods?"
+          payload: "/service_deposit_methods"
+        - title: "How long does it take to withdraw money?"
+          payload: "/service_withdrawal_time"
+        - title: "Are there any fees for depositing or withdrawing money?"
+          payload: "/service_fees"
+        - title: "Click here, to ask for a real person"
+          payload: "/ask_for_real_person"
+  ############################################ Button1 ####################################################
+  ################################### What are the deposit methods? #######################################
+  utter_service_deposit_methods:
+    - text: "Here are the deposit methods available:"
+      buttons:
+        - title: "Credit Card"
+          payload: "/deposit_credit_card"
+        - title: "Bank Transfer"
+          payload: "/deposit_bank_transfer"
+        - title: "E-Wallet"
+          payload: "/deposit_e_wallet"
+        - title: "Click here, to ask for a real person"
+          payload: "/ask_for_real_person"
+
+  utter_deposit_credit_card:
+    - text: "You can deposit money using a credit card, here are the supported credit cards:\n\n- Visa\n- Mastercard\n- American Express"
+      buttons:
+        - title: "Press here to deposit to casino"
+          link: "https://www.casino.com/deposit"
+        # - title: "Visa"
+        #   payload: "/deposit_visa"
+        # - title: "Mastercard"
+        #   payload: "/deposit_mastercard"
+        # - title: "American Express"
+        #   payload: "/deposit_american_express"
+        - title: "Click here, to ask for a real person"
+          payload: "/ask_for_real_person"
+  utter_deposit_bank_transfer:
+    - text: "You can deposit money using a bank transfer, here are the supported banks:\nHere is a list of supported banks:\n\n- Bank of America\n- Chase\n- Wells Fargo"
+      buttons:
+        - title: "Press here to deposit to casino"
+          link: "https://www.casino.com/deposit"
+        - title: "Click here, to ask for a real person"
+          payload: "/ask_for_real_person"
+  utter_deposit_e_wallet:
+    - text: "You can deposit money using an e-wallet, here are the supported e-wallets:\nHere is a list of supported e-wallets:\n\n- Paypal\n- Skrill\n- Neteller"
+      buttons:
+        - title: "Press here to deposit to casino"
+          link: "https://www.casino.com/deposit"
+        - title: "Click here, to ask for a real person"
+          payload: "/ask_for_real_person"
+  ############################################ Button2 ###############################################################
+  ################################### How long does it take to withdraw money? #######################################
+  utter_service_withdrawal_time:
+    - text: "Tell us which method you used to deposit money, and we will tell you how long it takes to withdraw money:"
+      buttons:
+        - title: "Credit Card"
+          payload: "/withdrawal_credit_card"
+        - title: "Bank Transfer"
+          payload: "/withdrawal_bank_transfer"
+        - title: "E-Wallet"
+          payload: "/withdrawal_e_wallet"
+        - title: "Click here, to ask for a real person"
+          payload: "/ask_for_real_person"
+  utter_withdrawal_credit_card:
+    - text: "If you deposited money using a credit card, it will take 3-5 business days to withdraw money."
+      buttons:
+        - title: "Press here to withdraw from casino"
+          link: "https://www.casino.com/withdraw"
+        - title: "Click here, to ask for a real person"
+          payload: "/ask_for_real_person"
+  utter_withdrawal_bank_transfer:
+    - text: "If you deposited money using a bank transfer, it will take 5-7 business days to withdraw money."
+      buttons:
+        - title: "Press here to withdraw from casino"
+          link: "https://www.casino.com/withdraw"
+        - title: "Click here, to ask for a real person"
+          payload: "/ask_for_real_person"
+  utter_withdrawal_e_wallet:
+    - text: "If you deposited money using an e-wallet, it will take 1-3 business days to withdraw money."
+      buttons:
+        - title: "Press here to withdraw from casino"
+          link: "https://www.casino.com/withdraw"
+        - title: "Click here, to ask for a real person"
+          payload: "/ask_for_real_person"
+  ############################################ Button3 ##############################################################################
+  ################################### Are there any fees for depositing or withdrawing money? #######################################
+  utter_service_fees:
+    - text: "Here is a link to the fees for depositing or withdrawing money:"
+      buttons:
+        - title: "Fees for depositing or withdrawing money"
+          link: "https://www.casino.com/fees"
+        - title: "Click here, to ask for a real person"
+          payload: "/ask_for_real_person"
+
+  ################################################################################################
+  ############################## TECHNICAL SUPPORT ###############################################
+  ################################################################################################
+  utter_ask_for_real_person:
+    - text: "Allright! We're going to queue you for customer service..."
+
+  utter_customer_approval:
+    - text: "Was this help useful?"
+      buttons:
+        - title: "Yes, this information helped me."
+          payload: "/approval_yes"
+        - title: "No, this information did not help me"
+          payload: "/approval_no"
+
+  utter_service_technical:
+    - text: "Allright! Let what kind of Technical issues you are facing with"
+      buttons:
+        - title: "The game froze, what should i do?"
+          payload: "/service_technical_1"
+        - title: "Game has given a status error"
+          payload: "/service_technical_2"
+        - title: "why can't i deposit money?"
+          payload: "/service_technical_3"
+        - title: "Click here, to ask for a real person"
+          payload: "/ask_for_real_person"
+
+  utter_service_technical_1:
+    - text: "Here are common ways to solve the issue, did any of these help?"
+      buttons:
+        - title: "Refresh the page"
+          payload: "/technical_1_1"
+        - title: "Clean up the cache and cookies"
+          payload: "/technical_1_2"
+        - title: "Update your browser to the newest version"
+          payload: "/technical_1_3"
+        - title: "No, none of these helped to fix the problem."
+          payload: "/ask_for_real_person"
+
+  utter_service_technical_2:
+    - text: "In the case of the game given a error code, which one was it"
+      buttons:
+        - title: "Status Code: Server Error"
+          payload: "/status_server_error"
+        - title: "Error Code: Connection Issue"
+          payload: "/status_connection_issue"
+        - title: "Error Code: Connection timed out"
+          payload: "/status_connection_timed_out"
+        - title: "Click here, to ask for a real person"
+          payload: "/ask_for_real_person"
+
+  utter_service_technical_3:
+    - text: "Regarding deposit / withdrawal of money, here are some information to check:"
+      buttons:
+        - title: "Availability"
+          paylaod: "/technical_availability_info"
+        - title: "Banks supported"
+          payload: "/technical_banks_supported"
+        - title: "User state"
+          payload: "/technical_user_state"
+        - title: "Click here, to ask for a real person"
+          payload: "/ask_for_real_person"
+
+  utter_cheer_up:
+    - text: "Here is something to cheer you up:"
+      image: "https://i.imgur.com/nGF1K8f.jpg"
+
+  utter_did_that_help:
+    - text: "Did that help you?"
+
+  utter_happy:
+    - text: "Great, carry on!"
+
+  utter_goodbye:
+    - text: "Bye"
+
+  utter_iamabot:
+    - text: "I am a bot, powered by Rasa."
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
