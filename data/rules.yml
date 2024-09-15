@@ -5,6 +5,66 @@ rules:
       - intent: ask_for_real_person
       - action: utter_ask_for_real_person
 
+  ## Technical Support
+  - rule: when customer asks for technical support
+    steps:
+      - intent: service_technical
+      - action: utter_service_technical
+
+  ##########################################################################
+  ###################### DEPOSIT AND WITHDRAWAL ############################
+  ##########################################################################
+
+  - rule: when customer asks for deposit and withdrawal
+    steps:
+      - intent: service_deposit_withdrawal
+      - action: utter_service_deposit_withdrawal
+
+  - rule: when customer asks for deposit methods
+    steps:
+      - intent: service_deposit_methods
+      - action: utter_service_deposit_methods
+
+  - rule: when customer asks for deposit methods (credit card)
+    steps:
+      - intent: deposit_credit_card
+      - action: utter_deposit_credit_card
+
+  - rule: when customer asks for deposit methods (bank transfer)
+    steps:
+      - intent: deposit_bank_transfer
+      - action: utter_deposit_bank_transfer
+
+  - rule: when customer asks for deposit methods (e-wallet)
+    steps:
+      - intent: deposit_e_wallet
+      - action: utter_deposit_e_wallet
+
+  - rule: when customer asks for withdrawal time
+    steps:
+      - intent: service_withdrawal_time
+      - action: utter_service_withdrawal_time
+
+  - rule: when customer asks for withdrawal methods (credit card)
+    steps:
+      - intent: withdrawal_credit_card
+      - action: utter_withdrawal_credit_card
+
+  - rule: when customer asks for withdrawal methods (bank transfer)
+    steps:
+      - intent: withdrawal_bank_transfer
+      - action: utter_withdrawal_bank_transfer
+
+  - rule: when customer asks for withdrawal methods (e-wallet)
+    steps:
+      - intent: withdrawal_e_wallet
+      - action: utter_withdrawal_e_wallet
+
+  - rule: when customer asks for withdrawal fees
+    steps:
+      - intent: service_fees
+      - action: utter_service_fees
+
   # - rule: Start with a greeting and the button test
   #   steps:
   #     - intent: greet
