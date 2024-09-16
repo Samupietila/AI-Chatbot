@@ -31,7 +31,6 @@ intents:
   - withdrawal_e_wallet
   - service_fees
 
-
 responses:
   utter_greet:
     - text: "Hello! Welcome to the customer service, what would you like to have help with?"
@@ -200,7 +199,7 @@ responses:
     - text: "Regarding deposit / withdrawal of money, here are some information to check:"
       buttons:
         - title: "Availability"
-          paylaod: "/technical_availability_info"
+          payload: "/technical_availability_info"
         - title: "Banks supported"
           payload: "/technical_banks_supported"
         - title: "User state"
