@@ -1,7 +1,28 @@
 version: "3.1"
 
 stories:
-  #TODO Viimeistele Story
+
+  - story: happy path
+    steps:
+      - intent: mood_great
+      - action: utter_happy
+
+  - story: sad path 1
+    steps:
+      - intent: mood_unhappy
+      - action: utter_cheer_up
+      - action: utter_did_that_help
+      - intent: affirm
+      - action: utter_happy
+
+  - story: sad path 2
+    steps:
+      - intent: mood_unhappy
+      - action: utter_cheer_up
+      - action: utter_did_that_help
+      - intent: deny
+      - action: utter_goodbye
+      
   - story: customer service technical support 1
     steps:
       - intent: greet
@@ -12,7 +33,6 @@ stories:
       - action: utter_service_technical_1
       - action: utter_customer_approval
 
-    #TODO Viimeistele Technical Story
   - story: customer service technical support 2
     steps:
       - intent: greet
@@ -22,7 +42,6 @@ stories:
       - intent: service_technical_2
       - action: utter_service_technical_2
 
-    #TODO Viimeistele Technical Story
   - story: customer service technical support 3
     steps:
       - intent: greet
@@ -69,3 +88,95 @@ stories:
       - action: utter_did_that_help
       - intent: deny
       - action: utter_goodbye
+
+#### DEPOSIT AND WITHDRAWAL STORIES
+      
+  - story: customer service support to check the deposit methods (credit card)
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: service_deposit_withdrawal
+      - action: utter_service_deposit_withdrawal
+      - intent: service_deposit_methods
+      - action: utter_service_deposit_methods
+      - intent: deposit_credit_card
+      - action: utter_deposit_credit_card
+      - intent: ask_for_real_person
+      - action: utter_ask_for_real_person
+
+  - story: customer service support to check the deposit methods (bank transfer)
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: service_deposit_withdrawal
+      - action: utter_service_deposit_withdrawal
+      - intent: service_deposit_methods
+      - action: utter_service_deposit_methods
+      - intent: deposit_bank_transfer
+      - action: utter_deposit_bank_transfer
+      - intent: ask_for_real_person
+      - action: utter_ask_for_real_person
+
+  - story: customer service support to check the deposit methods (e-wallet)
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: service_deposit_withdrawal
+      - action: utter_service_deposit_withdrawal
+      - intent: service_deposit_methods
+      - action: utter_service_deposit_methods
+      - intent: deposit_e_wallet
+      - action: utter_deposit_e_wallet
+      - intent: ask_for_real_person
+      - action: utter_ask_for_real_person
+
+  - story: customer service support to see how long it takes to withdraw money (creditCard)
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: service_deposit_withdrawal
+      - action: utter_service_deposit_withdrawal
+      - intent: service_withdrawal_time
+      - action: utter_service_withdrawal_time
+      - intent: withdrawal_credit_card
+      - action: utter_withdrawal_credit_card
+      - intent: ask_for_real_person
+      - action: utter_ask_for_real_person
+
+  - story: customer service support to see how long it takes to withdraw money (bankTransfer)
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: service_deposit_withdrawal
+      - action: utter_service_deposit_withdrawal
+      - intent: service_withdrawal_time
+      - action: utter_service_withdrawal_time
+      - intent: withdrawal_bank_transfer
+      - action: utter_withdrawal_bank_transfer
+      - intent: ask_for_real_person
+      - action: utter_ask_for_real_person
+
+  - story: customer service support to see how long it takes to withdraw money (eWallet)
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: service_deposit_withdrawal
+      - action: utter_service_deposit_withdrawal
+      - intent: service_withdrawal_time
+      - action: utter_service_withdrawal_time
+      - intent: withdrawal_e_wallet
+      - action: utter_withdrawal_e_wallet
+      - intent: ask_for_real_person
+      - action: utter_ask_for_real_person
+
+  - story: customer service support to see the depositing or withdrawal fees
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: service_deposit_withdrawal
+      - action: utter_service_deposit_withdrawal
+      - intent: service_fees
+      - action: utter_service_fees
+      - intent: ask_for_real_person
+      - action: utter_ask_for_real_person
+
