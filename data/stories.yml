@@ -1,6 +1,7 @@
 version: "3.1"
 
 stories:
+
   - story: happy path
     steps:
       - intent: mood_great
@@ -21,7 +22,7 @@ stories:
       - action: utter_did_that_help
       - intent: deny
       - action: utter_goodbye
-
+      
   - story: customer service technical support 1
     steps:
       - intent: greet
@@ -61,6 +62,35 @@ stories:
       - intent: ask_for_real_person
       - action: utter_ask_for_real_person
 
+  - story: happy path
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: mood_great
+      - action: utter_happy
+
+  - story: sad path 1
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: mood_unhappy
+      - action: utter_cheer_up
+      - action: utter_did_that_help
+      - intent: affirm
+      - action: utter_happy
+
+  - story: sad path 2
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: mood_unhappy
+      - action: utter_cheer_up
+      - action: utter_did_that_help
+      - intent: deny
+      - action: utter_goodbye
+
+#### DEPOSIT AND WITHDRAWAL STORIES
+      
   - story: customer service support to check the deposit methods (credit card)
     steps:
       - intent: greet
@@ -149,3 +179,4 @@ stories:
       - action: utter_service_fees
       - intent: ask_for_real_person
       - action: utter_ask_for_real_person
+

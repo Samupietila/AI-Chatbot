@@ -31,6 +31,7 @@ intents:
   - withdrawal_e_wallet
   - service_fees
 
+
 responses:
   utter_greet:
     - text: "Hello! Welcome to the customer service, what would you like to have help with?"
@@ -85,12 +86,6 @@ responses:
       buttons:
         - title: "Press here to deposit to casino"
           link: "https://www.casino.com/deposit"
-        # - title: "Visa"
-        #   payload: "/deposit_visa"
-        # - title: "Mastercard"
-        #   payload: "/deposit_mastercard"
-        # - title: "American Express"
-        #   payload: "/deposit_american_express"
         - title: "Click here, to ask for a real person"
           payload: "/ask_for_real_person"
   utter_deposit_bank_transfer:

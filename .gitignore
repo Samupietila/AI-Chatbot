@@ -1,3 +1,5 @@
-venv
-.rasa
+venv/
+.rasa/
+models/
 __pycache__
+
