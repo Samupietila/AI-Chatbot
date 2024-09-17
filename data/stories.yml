@@ -1,7 +1,6 @@
 version: "3.1"
 
 stories:
-
   - story: happy path
     steps:
       - intent: mood_great
@@ -22,7 +21,7 @@ stories:
       - action: utter_did_that_help
       - intent: deny
       - action: utter_goodbye
-      
+
   - story: customer service technical support 1
     steps:
       - intent: greet
@@ -89,8 +88,8 @@ stories:
       - intent: deny
       - action: utter_goodbye
 
-#### DEPOSIT AND WITHDRAWAL STORIES
-      
+  #### DEPOSIT AND WITHDRAWAL STORIES
+
   - story: customer service support to check the deposit methods (credit card)
     steps:
       - intent: greet
@@ -180,3 +179,36 @@ stories:
       - intent: ask_for_real_person
       - action: utter_ask_for_real_person
 
+  ### SECURITY & FAIR PLAY STORIES
+  - story: customer service support to give info about the security of the casino
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: service_security_fairplay
+      - action: utter_service_security_fairplay
+      - intent: security_casino
+      - action: utter_security_casino
+      - intent: ask_for_real_person
+      - action: utter_ask_for_real_person
+
+  - story: customer service support to give info about the fairness of the casino
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: service_security_fairplay
+      - action: utter_service_security_fairplay
+      - intent: security_fairness
+      - action: utter_security_fairness
+      - intent: ask_for_real_person
+      - action: utter_ask_for_real_person
+
+  - story: customer service support to give info about the personal data security
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: service_security_fairplay
+      - action: utter_service_security_fairplay
+      - intent: security_personal_data
+      - action: utter_security_personal_data
+      - intent: ask_for_real_person
+      - action: utter_ask_for_real_person

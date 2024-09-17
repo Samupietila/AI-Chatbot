@@ -30,6 +30,9 @@ intents:
   - withdrawal_bank_transfer
   - withdrawal_e_wallet
   - service_fees
+  - security_casino
+  - security_fairness
+  - security_personal_data
 
 responses:
   utter_greet:
@@ -49,6 +52,45 @@ responses:
           payload: "/service_security_fairplay"
         - title: "Responsible Gaming"
           payload: "/service_responsible_gaming"
+        - title: "Click here, to ask for a real person"
+          payload: "/ask_for_real_person"
+
+  ################################################################################################
+  ############################## SECURITY & FAIR PLAY ############################################
+  ################################################################################################
+  utter_service_security_fairplay:
+    - text: "Regarding security and fair play, here are some information to check:"
+      buttons:
+        - title: "How secure is the casino?"
+          payload: "/security_casino"
+        - title: "How  are the games verified for fairness?"
+          payload: "/security_fairness"
+        - title: "What personal data is collected and how is it used?"
+          payload: "/security_personal_data"
+        - title: "Click here, to ask for a real person"
+          payload: "/ask_for_real_person"
+
+  utter_security_casino:
+    - text: "The casino is secured with the latest encryption technology, ensuring that your personal data is safe and secure."
+      buttons:
+        - title: "See more about the security"
+          link: "https://www.casino.com/security"
+        - title: "Click here, to ask for a real person"
+          payload: "/ask_for_real_person"
+
+  utter_security_fairness:
+    - text: "The games are verified for fairness by an independent third party, ensuring that the games are fair and random."
+      buttons:
+        - title: "See more about the fairness"
+          link: "https://www.casino.com/fairness"
+        - title: "Click here, to ask for a real person"
+          payload: "/ask_for_real_person"
+
+  utter_security_personal_data:
+    - text: "The personal data collected is used to provide you with the best gaming experience, and is never shared with third parties."
+      buttons:
+        - title: "See more about the personal data"
+          link: "https://www.casino.com/personal_data"
         - title: "Click here, to ask for a real person"
           payload: "/ask_for_real_person"
 
