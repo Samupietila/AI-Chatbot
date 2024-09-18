@@ -43,6 +43,56 @@ stories:
       - intent: ask_for_real_person
       - action: utter_ask_for_real_person
 
+  - story: Account and registration that asks how to create an account
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: service_account_registration
+      - action: utter_service_account_registration
+      - intent: service_account_creation
+      - action: utter_service_account_creation
+      - intent: ask_for_real_person
+      - action: utter_ask_for_real_person
+
+  - story: Account and registration that asks how to reset password with email
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: service_account_registration
+      - action: utter_service_account_registration
+      - intent: service_account_password
+      - action: utter_service_account_password
+      - intent: service_account_reset_email
+      - action: utter_service_account_reset_email
+      - intent: ask_for_real_person
+      - action: utter_ask_for_real_person
+
+  - story: Account and registration that asks how to reset password with phone
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: service_account_registration
+      - action: utter_service_account_registration
+      - intent: service_account_password
+      - action: utter_service_account_password
+      - intent: service_account_reset_phone
+      - action: utter_service_account_reset_phone
+      - intent: ask_for_real_person
+      - action: utter_ask_for_real_person
+
+  - story: Account and registration that asks how to update account information
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: service_account_registration
+      - action: utter_service_account_registration
+      - intent: service_account_information
+      - action: utter_service_account_information
+      - intent: ask_for_real_person
+      - action: utter_ask_for_real_person
+
+
+
   - story: happy path
     steps:
       - intent: greet
