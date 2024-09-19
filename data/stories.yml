@@ -1,26 +1,94 @@
 version: "3.1"
 
 stories:
-  - story: happy path
-    steps:
-      - intent: mood_great
-      - action: utter_happy
 
-  - story: sad path 1
-    steps:
-      - intent: mood_unhappy
-      - action: utter_cheer_up
-      - action: utter_did_that_help
-      - intent: affirm
-      - action: utter_happy
 
-  - story: sad path 2
+  # Roulette Stories
+
+  - story: User asks for basic roulette rules
     steps:
-      - intent: mood_unhappy
-      - action: utter_cheer_up
-      - action: utter_did_that_help
-      - intent: deny
-      - action: utter_goodbye
+      - intent: roulette_basic_rules
+      - action: utter_roulette_basic_rules
+
+  - story: User inquires about roulette best strategies
+    steps:
+      - intent: roulette_best_strategies
+      - action: utter_roulette_best_strategies
+
+  - story: User wants to know odds of specific roulette bets
+    steps:
+      - intent: roulette_odds_specific_bets
+      - action: utter_roulette_odds_specific_bets
+
+  - story: User requests a general overview of roulette rules
+    steps:
+      - intent: roulette_game_rules_overview
+      - action: utter_roulette_game_rules_overview
+
+  # Blackjack Stories
+
+  - story: User asks for basic blackjack rules
+    steps:
+      - intent: blackjack_basic_rules
+      - action: utter_blackjack_basic_rules
+
+  - story: User inquires about blackjack card counting
+    steps:
+      - intent: blackjack_card_counting
+      - action: utter_blackjack_card_counting
+
+  - story: User wants to know advanced blackjack strategies
+    steps:
+      - intent: blackjack_advanced_strategies
+      - action: utter_blackjack_advanced_strategies
+
+  - story: User asks about odds of specific blackjack bets
+    steps:
+      - intent: blackjack_odds_specific_bets
+      - action: utter_blackjack_odds_specific_bets
+
+  - story: User requests a general overview of blackjack rules
+    steps:
+      - intent: blackjack_game_rules_overview
+      - action: utter_blackjack_game_rules_overview
+
+  # Poker Stories
+
+  - story: User asks for basic poker rules
+    steps:
+      - intent: poker_basic_rules
+      - action: utter_poker_basic_rules
+
+  - story: User inquires about advanced poker strategies
+    steps:
+      - intent: poker_advanced_strategies
+      - action: utter_poker_advanced_strategies
+
+  - story: User wants to know odds of specific poker bets
+    steps:
+      - intent: poker_odds_specific_bets
+      - action: utter_poker_odds_specific_bets
+
+  - story: User requests a general overview of poker rules
+    steps:
+      - intent: poker_game_rules_overview
+      - action: utter_poker_game_rules_overview
+
+  - story: User asks for poker rules options
+    steps:
+      - intent: ask_poker_rules
+      - action: utter_ask_poker_rules
+
+  - story: User asks for blackjack rules options
+    steps:
+      - intent: ask_blackjack_rules
+      - action: utter_ask_blackjack_rules
+
+  - story: User asks for roulette odds options
+    steps:
+      - intent: ask_roulette_odds
+      - action: utter_ask_roulette_odds
+
 
   - story: customer service technical customers game froze, refreshed
     steps:
@@ -182,6 +250,11 @@ stories:
       - action: utter_service_technical_deposit_error
       - intent: service_technical_account_status
       - action: utter_service_technical_account_status
+
+  - story: User asks for game rules
+    steps:
+      - intent: service_game_rules
+      - action: utter_service_game_rules
 
   - story: happy path
     steps:
