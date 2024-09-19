@@ -16,6 +16,11 @@ intents:
   - bot_challenge
   - service_technical
   - service_bonuses
+  - service_bonus
+  - bonus_claim
+  - bonus_wagering_requirements
+  - bonus_status
+
   - service_deposit_withdrawal
   - service_game_rules
   - service_security_fairplay
@@ -387,24 +392,6 @@ responses:
         - title: "Reset password by phone. Link."
           payload: "/service_account_reset_phone"
 
-  utter_service_account_reset_email:
-    - text: "Reset password by email. Link."
-      buttons:
-        - title: "Click here, to ask for a real person"
-          payload: "/ask_for_real_person"
-
-  utter_service_account_reset_phone:
-    - text: "Reset password by phone. Link."
-      buttons:
-        - title: "Click here, to ask for a real person"
-          payload: "/ask_for_real_person"
-
-  utter_service_account_information:
-    - text: "Sign in and go to: Settings -> Your account. Link"
-      buttons:
-        - title: "Click here, to ask for a real person"
-          payload: "/ask_for_real_person"
-
   utter_service_technical_availability_info:
     - text: "Money trades are closed during 22:00 - 06:00 everyday due to money transfering laws"
   utter_service_technical_banks_supported:
@@ -446,6 +433,63 @@ responses:
       buttons:
         - title: "Click here for more resources regarding Gambling Addiction"
           link: "https://www.casino.com/resources"
+
+  ################################################################################################
+  ############################## BONUSES AND PROMOTIONS #########################################
+  ################################################################################################
+  utter_service_bonuses:
+    - text: "Here you can find information about bonuses and promotions. Please select one of the options below:"
+      buttons:
+        - title: "Claim a bonus"
+          payload: "/bonus_claim"
+        - title: "Wagering requirements"
+          payload: "/bonus_wagering_requirements"
+        - title: "Bonus status"
+          payload: "/bonus_status"
+        - title: "Click here, to ask for a real person"
+          payload: "/ask_for_real_person"
+
+  utter_bonus_claim:
+    - text: "To claim your welcome bonus, follow these steps:"
+      buttons:
+        - title: "Sign up now"
+          link: "https://www.casino.com/signup"
+        - title: "Click here, to ask for a real person"
+          payload: "/ask_for_real_person"
+
+  utter_bonus_wagering_requirements:
+    - text: "The wagering requirements for the bonus are as follows:"
+      buttons:
+        - title: "Check details"
+          link: "https://www.casino.com/bonus-terms"
+        - title: "Click here, to ask for a real person"
+          payload: "/ask_for_real_person"
+
+  utter_bonus_status:
+    - text: "To check your bonus status, please log in to your account and visit the bonuses section."
+      buttons:
+        - title: "Log in"
+          link: "https://www.casino.com/login"
+        - title: "Click here, to ask for a real person"
+          payload: "/ask_for_real_person"
+
+  utter_service_account_reset_email:
+    - text: "Reset password by email. Link."
+      buttons:
+        - title: "Click here, to ask for a real person"
+          payload: "/ask_for_real_person"
+
+  utter_service_account_reset_phone:
+    - text: "Reset password by phone. Link."
+      buttons:
+        - title: "Click here, to ask for a real person"
+          payload: "/ask_for_real_person"
+
+  utter_service_account_information:
+    - text: "Sign in and go to: Settings -> Your account. Link"
+      buttons:
+        - title: "Click here, to ask for a real person"
+          payload: "/ask_for_real_person"
 
   ################################################################################################
   ############################## DEFAULT OPTIONS ##########################################
