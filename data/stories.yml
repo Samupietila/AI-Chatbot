@@ -1,36 +1,59 @@
 version: "3.1"
 
 stories:
-  #TODO Viimeistele Story
-  - story: customer service technical support 1
+  - story: happy path
     steps:
-      - intent: greet
-      - action: utter_greet
-      - intent: service_technical
-      - action: utter_service_technical
-      - intent: service_technical_1
-      - action: utter_service_technical_1
-      - action: utter_customer_approval
+      - intent: mood_great
+      - action: utter_happy
 
-    #TODO Viimeistele Technical Story
-  - story: customer service technical support 2
+  - story: sad path 1
     steps:
-      - intent: greet
-      - action: utter_greet
-      - intent: service_technical
-      - action: utter_service_technical
-      - intent: service_technical_2
-      - action: utter_service_technical_2
+      - intent: mood_unhappy
+      - action: utter_cheer_up
+      - action: utter_did_that_help
+      - intent: affirm
+      - action: utter_happy
 
-    #TODO Viimeistele Technical Story
-  - story: customer service technical support 3
+  - story: sad path 2
+    steps:
+      - intent: mood_unhappy
+      - action: utter_cheer_up
+      - action: utter_did_that_help
+      - intent: deny
+      - action: utter_goodbye
+
+  - story: customer service technical customers game froze, refreshed
     steps:
       - intent: greet
       - action: utter_greet
       - intent: service_technical
       - action: utter_service_technical
-      - intent: service_technical_3
-      - action: utter_service_technical_3
+      - intent: service_technical_game_froze
+      - action: utter_service_technical_game_froze
+      - intent: service_technical_game_froze_refresh
+      - action: utter_service_technical_game_froze_refresh
+
+  - story: customer service technical customers game froze, cleaned cache and cookies
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: service_technical
+      - action: utter_service_technical
+      - intent: service_technical_game_froze
+      - action: utter_service_technical_game_froze
+      - intent: service_technical_game_froze_clean_cache
+      - action: utter_service_technical_game_froze_clean_cache
+
+  - story: customer service technical customers game froze, browser updated
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: service_technical
+      - action: utter_service_technical
+      - intent: service_technical_game_froze
+      - action: utter_service_technical_game_froze
+      - intent: service_technical_game_froze_update_browser
+      - action: utter_service_technical_game_froze_update_browser
 
   - story: customer service technical support that asks for the real person
     steps:
@@ -38,10 +61,11 @@ stories:
       - action: utter_greet
       - intent: service_technical
       - action: utter_service_technical
-      - intent: service_technical_2
-      - action: utter_service_technical_2
+      - intent: service_technical_status_error
+      - action: utter_service_technical_status_error
       - intent: ask_for_real_person
       - action: utter_ask_for_real_person
+
 
   - story: Account and registration that asks how to create an account
     steps:
@@ -93,6 +117,72 @@ stories:
 
 
 
+  - story: customer service technical support, Server error
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: service_technical
+      - action: utter_service_technical
+      - intent: service_technical_status_error
+      - action: utter_service_technical_status_error
+      - intent: service_technical_status_server_error
+      - action: utter_service_technical_status_server_error
+
+  - story: customer service technical support, Connection issue
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: service_technical
+      - action: utter_service_technical
+      - intent: service_technical_status_error
+      - action: utter_service_technical_status_error
+      - intent: service_technical_status_connection_issue
+      - action: utter_service_technical_status_connection_issue
+
+  - story: customer service technical support, Connetion timed out
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: service_technical
+      - action: utter_service_technical
+      - intent: service_technical_status_error
+      - action: utter_service_technical_status_error
+      - intent: service_technical_status_connection_timed_out
+      - action: utter_service_technical_status_connection_timed_out
+
+  - story: customer service technical support, deposit availability info
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: service_technical
+      - action: utter_service_technical
+      - intent: service_technical_deposit_error
+      - action: utter_service_technical_deposit_error
+      - intent: service_technical_availability_info
+      - action: utter_service_technical_availability_info
+
+  - story: customer service technical support, deposit banks supported
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: service_technical
+      - action: utter_service_technical
+      - intent: service_technical_deposit_error
+      - action: utter_service_technical_deposit_error
+      - intent: service_technical_banks_supported
+      - action: utter_service_technical_banks_supported
+
+  - story: customer service technical support, deposit account status
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: service_technical
+      - action: utter_service_technical
+      - intent: service_technical_deposit_error
+      - action: utter_service_technical_deposit_error
+      - intent: service_technical_account_status
+      - action: utter_service_technical_account_status
+
   - story: happy path
     steps:
       - intent: greet
@@ -119,3 +209,144 @@ stories:
       - action: utter_did_that_help
       - intent: deny
       - action: utter_goodbye
+
+  #### DEPOSIT AND WITHDRAWAL STORIES
+
+  - story: customer service support to check the deposit methods (credit card)
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: service_deposit_withdrawal
+      - action: utter_service_deposit_withdrawal
+      - intent: service_deposit_methods
+      - action: utter_service_deposit_methods
+      - intent: deposit_credit_card
+      - action: utter_deposit_credit_card
+      - intent: ask_for_real_person
+      - action: utter_ask_for_real_person
+
+  - story: customer service support to check the deposit methods (bank transfer)
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: service_deposit_withdrawal
+      - action: utter_service_deposit_withdrawal
+      - intent: service_deposit_methods
+      - action: utter_service_deposit_methods
+      - intent: deposit_bank_transfer
+      - action: utter_deposit_bank_transfer
+      - intent: ask_for_real_person
+      - action: utter_ask_for_real_person
+
+  - story: customer service support to check the deposit methods (e-wallet)
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: service_deposit_withdrawal
+      - action: utter_service_deposit_withdrawal
+      - intent: service_deposit_methods
+      - action: utter_service_deposit_methods
+      - intent: deposit_e_wallet
+      - action: utter_deposit_e_wallet
+      - intent: ask_for_real_person
+      - action: utter_ask_for_real_person
+
+  - story: customer service support to see how long it takes to withdraw money (creditCard)
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: service_deposit_withdrawal
+      - action: utter_service_deposit_withdrawal
+      - intent: service_withdrawal_time
+      - action: utter_service_withdrawal_time
+      - intent: withdrawal_credit_card
+      - action: utter_withdrawal_credit_card
+      - intent: ask_for_real_person
+      - action: utter_ask_for_real_person
+
+  - story: customer service support to see how long it takes to withdraw money (bankTransfer)
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: service_deposit_withdrawal
+      - action: utter_service_deposit_withdrawal
+      - intent: service_withdrawal_time
+      - action: utter_service_withdrawal_time
+      - intent: withdrawal_bank_transfer
+      - action: utter_withdrawal_bank_transfer
+      - intent: ask_for_real_person
+      - action: utter_ask_for_real_person
+
+  - story: customer service support to see how long it takes to withdraw money (eWallet)
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: service_deposit_withdrawal
+      - action: utter_service_deposit_withdrawal
+      - intent: service_withdrawal_time
+      - action: utter_service_withdrawal_time
+      - intent: withdrawal_e_wallet
+      - action: utter_withdrawal_e_wallet
+      - intent: ask_for_real_person
+      - action: utter_ask_for_real_person
+
+  - story: customer service support to see the depositing or withdrawal fees
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: service_deposit_withdrawal
+      - action: utter_service_deposit_withdrawal
+      - intent: service_fees
+      - action: utter_service_fees
+      - intent: ask_for_real_person
+      - action: utter_ask_for_real_person
+
+### Account and registration stories
+
+  - story: Account and registration that asks how to create an account
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: service_account_registration
+      - action: utter_service_account_registration
+      - intent: service_account_creation
+      - action: utter_service_account_creation
+      - intent: ask_for_real_person
+      - action: utter_ask_for_real_person
+
+  - story: Account and registration that asks how to reset password with email
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: service_account_registration
+      - action: utter_service_account_registration
+      - intent: service_account_password
+      - action: utter_service_account_password
+      - intent: service_account_reset_email
+      - action: utter_service_account_reset_email
+      - intent: ask_for_real_person
+      - action: utter_ask_for_real_person
+
+  - story: Account and registration that asks how to reset password with phone
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: service_account_registration
+      - action: utter_service_account_registration
+      - intent: service_account_password
+      - action: utter_service_account_password
+      - intent: service_account_reset_phone
+      - action: utter_service_account_reset_phone
+      - intent: ask_for_real_person
+      - action: utter_ask_for_real_person
+
+  - story: Account and registration that asks how to update account information
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: service_account_registration
+      - action: utter_service_account_registration
+      - intent: service_account_information
+      - action: utter_service_account_information
+      - intent: ask_for_real_person
+      - action: utter_ask_for_real_person

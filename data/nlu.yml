@@ -16,6 +16,13 @@ nlu:
       - goodmorning
       - goodevening
       - good afternoon
+      - moro
+      - hyvää huomenta
+      - terve
+      - moikka
+      - moi
+      - moi moi
+
 
   - intent: goodbye
     examples: |
@@ -29,6 +36,11 @@ nlu:
       - see you around
       - bye bye
       - see you later
+      - ciao
+      - see you soon
+      - bye for now
+      - ok bye
+
 
   - intent: affirm
     examples: |
@@ -38,6 +50,19 @@ nlu:
       - of course
       - that sounds good
       - correct
+      - absolutely
+      - sure
+      - definitely
+      - yes, please
+      - yes, I'd like to
+      - yes, I'd like to do that
+      - of course, please
+      - yes, make it so
+      - yes, I want that
+      - ok
+      - yep
+      - yeah
+      - ok, cool
 
   - intent: deny
     examples: |
@@ -48,6 +73,19 @@ nlu:
       - don't like that
       - no way
       - not really
+      - nope
+      - definitely not
+      - no, I don't want that
+      - no, I don't want to do that
+      - no, I don't feel like it
+      - you are dumb
+      - stop
+      - nooo
+      - noooope
+      - never ever
+      - not in a million years
+      - no way jose
+
 
   - intent: mood_great
     examples: |
@@ -65,6 +103,12 @@ nlu:
       - so so perfect
       - so good
       - so perfect
+      - im good
+      - im great
+      - im amazing
+      - im so great
+      - good
+
 
   - intent: mood_unhappy
     examples: |
@@ -82,6 +126,12 @@ nlu:
       - extremly sad
       - so saad
       - so sad
+      - bad
+      - very bad
+      - awful
+      - terrible
+      - not so good
+
 
   - intent: bot_challenge
     examples: |
@@ -89,3 +139,7 @@ nlu:
       - are you a human?
       - am I talking to a bot?
       - am I talking to a human?
+      - what are you?
+      - who are you?
+      - is this a bot?
+      - is this a human?
