@@ -105,32 +105,93 @@ rules:
       - intent: affirm
       - action: utter_happy
 
-  - rule: Respond to blackjack rules
-    steps:
-      - intent: ask_blackjack_rules
-      - action: utter_blackjack_rules
+  # Roulette Rules Intent Handling
 
-  - rule: Respond to poker rules
+  - rule: Respond to roulette basic rules
+    steps:
+      - intent: roulette_basic_rules
+      - action: utter_roulette_basic_rules
+
+  - rule: Respond to roulette best strategies
+    steps:
+      - intent: roulette_best_strategies
+      - action: utter_roulette_best_strategies
+
+  - rule: Respond to odds of specific roulette bets
+    steps:
+      - intent: roulette_odds_specific_bets
+      - action: utter_roulette_odds_specific_bets
+
+  - rule: Respond to general roulette rules overview
+    steps:
+      - intent: roulette_game_rules_overview
+      - action: utter_roulette_game_rules_overview
+
+  # Blackjack Rules Intent Handling
+
+  - rule: Respond to blackjack basic rules
+    steps:
+      - intent: blackjack_basic_rules
+      - action: utter_blackjack_basic_rules
+
+  - rule: Respond to blackjack card counting
+    steps:
+      - intent: blackjack_card_counting
+      - action: utter_blackjack_card_counting
+
+  - rule: Respond to blackjack advanced strategies
+    steps:
+      - intent: blackjack_advanced_strategies
+      - action: utter_blackjack_advanced_strategies
+
+  - rule: Respond to odds of specific blackjack bets
+    steps:
+      - intent: blackjack_odds_specific_bets
+      - action: utter_blackjack_odds_specific_bets
+
+  - rule: Respond to general blackjack rules overview
+    steps:
+      - intent: blackjack_game_rules_overview
+      - action: utter_blackjack_game_rules_overview
+
+  # Poker Rules Intent Handling
+
+  - rule: Respond to poker basic rules
+    steps:
+      - intent: poker_basic_rules
+      - action: utter_poker_basic_rules
+
+  - rule: Respond to poker advanced strategies
+    steps:
+      - intent: poker_advanced_strategies
+      - action: utter_poker_advanced_strategies
+
+  - rule: Respond to odds of specific poker bets
+    steps:
+      - intent: poker_odds_specific_bets
+      - action: utter_poker_odds_specific_bets
+
+  - rule: Respond to general poker rules overview
+    steps:
+      - intent: poker_game_rules_overview
+      - action: utter_poker_game_rules_overview
+
+  - rule: Show poker question options
     steps:
       - intent: ask_poker_rules
-      - action: utter_poker_rules
+      - action: utter_ask_poker_rules
 
-  - rule: Respond to roulette odds
+  - rule: Show blackjack question options
+    steps:
+      - intent: ask_blackjack_rules
+      - action: utter_ask_blackjack_rules
+
+  - rule: Show roulette question options
     steps:
       - intent: ask_roulette_odds
-      - action: utter_roulette_odds
+      - action: utter_ask_roulette_odds
 
-  - rule: Respond to general rules inquiry
+  - rule: Show game rules options
     steps:
-      - intent: ask_rules
-      - action: utter_ask_rules
-
-  - rule: Button test
-    steps:
-      - intent: button_test
-      - action: utter_button_test
-
-  - rule: Respond to select option
-    steps:
-      - intent: select_option
-      - action: utter_more_info
+      - intent: service_game_rules
+      - action: utter_service_game_rules

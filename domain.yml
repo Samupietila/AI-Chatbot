@@ -6,41 +6,17 @@ intents:
   - affirm
   - deny
   - ask_rules
-  - mood_great
-  - mood_unhappy
-  - bot_challenge
   - button_test
   - ask_poker_rules
   - ask_blackjack_rules
   - ask_roulette_odds
   - select_option
-
-entities:
-  - option
-
-slots:
-  option:
-    type: text
-    mappings:
-      - type: from_entity
-        entity: option
-  action_before_listen:
-    type: text
-    mappings:
-      - type: from_entity
-        entity: option
   - mood_great
   - mood_unhappy
   - bot_challenge
   - service_technical
   - service_bonuses
   - service_deposit_withdrawal
-  - service_account_registration
-  - service_account_creation
-  - service_account_password
-  - service_account_information
-  - service_account_reset_email
-  - service_account_reset_phone
   - service_game_rules
   - service_security_fairplay
   - service_responsible_gaming
@@ -74,54 +50,132 @@ slots:
   - service_account_information
   - service_account_reset_email
   - service_account_reset_phone
+  - roulette_basic_rules
+  - roulette_best_strategies
+  - roulette_odds_specific_bets
+  - roulette_game_rules_overview
+  - blackjack_basic_rules
+  - blackjack_card_counting
+  - blackjack_advanced_strategies
+  - blackjack_odds_specific_bets
+  - blackjack_game_rules_overview
+  - poker_basic_rules
+  - poker_advanced_strategies
+  - poker_odds_specific_bets
+  - poker_game_rules_overview
+
+
+entities:
+  - option
+
+slots:
+  option:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: option
+  action_before_listen:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: option
+
 
 
 responses:
-  utter_greet:
-    - text: "Hey! How are you?"
+
+  utter_blackjack_basic_rules:
+    - text: "In Blackjack, the goal is to get a hand value as close to 21 as possible without going over. You win by having a higher hand value than the dealer without busting. Face cards are worth 10 points, Aces can be worth 1 or 11, and other cards are worth their face value."
+
+  utter_blackjack_card_counting:
+    - text: "Card counting is a strategy used to determine whether the next hand is likely to give an advantage to the player or the dealer. The most common system is the Hi-Lo method, where cards are assigned values and the player keeps a running count to make better betting decisions."
+
+  utter_blackjack_advanced_strategies:
+    - text: "Advanced Blackjack strategies include card counting, bet spreading, and using optimal playing strategies like basic strategy charts. These methods help players make better decisions on when to hit, stand, double down, or split."
+
+  utter_blackjack_odds_specific_bets:
+    - text: "The odds of specific bets in Blackjack can vary. For example, the odds of getting a Blackjack (an Ace and a 10-value card) on the initial deal are approximately 4.8%. The payout for a Blackjack is typically 3:2."
+
+  utter_blackjack_game_rules_overview:
+    - text: "Blackjack is a popular card game where the aim is to beat the dealer's hand without going over 21. Players are dealt two cards and can choose to hit, stand, double down, or split based on their hand and the dealer’s visible card."
+
+  utter_roulette_basic_rules:
+    - text: "Roulette involves a spinning wheel with numbered slots. Players place bets on where they think the ball will land. Bets can be on specific numbers, ranges of numbers, or colors. The wheel has two main types: European (one zero) and American (two zeros)."
+
+  utter_roulette_best_strategies:
+    - text: "Popular Roulette strategies include the Martingale system (doubling bets after losses), the Fibonacci system (betting according to a sequence), and the D'Alembert system (adjusting bets incrementally). Remember, no strategy can guarantee a win due to the game's randomness."
+
+  utter_roulette_odds_specific_bets:
+    - text: "The odds of winning specific bets in Roulette vary. For instance, a straight-up bet on a single number has odds of 37 to 1 (or 38 to 1 in American Roulette), while a bet on red or black has odds of nearly 1 to 1."
+
+  utter_roulette_game_rules_overview:
+    - text: "In Roulette, players bet on where a ball will land on a spinning wheel. Bets can be placed on numbers, colors, or ranges of numbers. The wheel consists of numbered slots, with European Roulette having 37 slots (including one zero) and American Roulette having 38 slots (including two zeros)."
+
+  utter_poker_game_rules_overview:
+    - text: "In Poker, players aim to have the best hand or convince others to fold. Each player is dealt a combination of private and community cards. Players then bet based on the strength of their hand, with betting rounds between card deals. The game ends with the player with the best hand or the last player remaining after all others have folded."
+
+  utter_poker_odds_specific_bets:
+    - text: "The odds of specific poker hands vary. For example, the odds of being dealt a pocket pair in Texas Hold'em are about 6%. The odds of hitting a flush on the flop after being dealt suited cards are roughly 0.8%."
+
+  utter_poker_advanced_strategies:
+    - text: "Advanced poker strategies include concepts like bluffing, understanding pot odds, and reading opponents' tells. Techniques like semi-bluffing and adjusting your play style based on the table dynamics can also help improve your game."
+
+  utter_poker_basic_rules:
+    - text: "Poker is a popular card game that involves betting and individual or group card hands. The most common variant is Texas Hold'em, where each player is dealt two private cards and uses them with five community cards to make the best possible hand. Hands are ranked from high card to royal flush."
 
 
-  utter_ask_rules:
-    - text: "Which game would you like to learn about?"
+  utter_ask_poker_rules:
+    - text: "Hello! Welcome to our poker service. What would you like to know?"
       buttons:
-        - title: "Poker Rules"
-          payload: /ask_poker_rules
+        - title: "Poker Basic Rules"
+          payload: "/poker_basic_rules"
+        - title: "Poker Advanced Strategies"
+          payload: "/poker_advanced_strategies"
+        - title: "Odds of Specific Bets"
+          payload: "/poker_odds_specific_bets"
+        - title: "Game Rules Overview"
+          payload: "/poker_game_rules_overview"
+        - title: "Click here, to ask for a real person"
+          payload: "/ask_for_real_person"
+
+  utter_ask_blackjack_rules:
+    - text: "What would you like to know about Blackjack?"
+      buttons:
+        - title: "Blackjack Basic Rules"
+          payload: "/blackjack_basic_rules"
+        - title: "Blackjack Card Counting"
+          payload: "/blackjack_card_counting"
+        - title: "Blackjack Advanced Strategies"
+          payload: "/blackjack_advanced_strategies"
+        - title: "Odds of Specific Blackjack Bets"
+          payload: "/blackjack_odds_specific_bets"
+        - title: "General Blackjack Rules Overview"
+          payload: "/blackjack_game_rules_overview"
+
+  utter_ask_roulette_odds:
+    - text: "What would you like to know about Roulette?"
+      buttons:
+        - title: "Roulette Basic Rules"
+          payload: "/roulette_basic_rules"
+        - title: "Roulette Best Strategies"
+          payload: "/roulette_best_strategies"
+        - title: "Odds of Specific Roulette Bets"
+          payload: "/roulette_odds_specific_bets"
+        - title: "General Roulette Rules Overview"
+          payload: "/roulette_game_rules_overview"
+
+  utter_service_game_rules:
+    - text : "Please select what you would like to know more about:"
+      buttons:
+        - title: "Poker"
+          payload: "/ask_poker_rules"
         - title: "Blackjack"
-          payload: /ask_blackjack_rules
-        - title: "Roulette Odds"
-          payload: /ask_roulette_odds
+          payload: "/ask_blackjack_rules"
+        - title: "Roulette"
+          payload: "/ask_roulette_odds"
 
-  utter_poker_rules:
-    - text: "Poker is a card game that combines gambling, strategy, and skill. What would you like to know next?"
-      buttons:
-        - title: "Basic rules"
-          payload: /select_option{"option":"basic rules"}
-        - title: "Advanced strategies"
-          payload: /select_option{"option":"advanced strategies"}
 
-  utter_blackjack_rules:
-    - text: "Blackjack is a card game where you aim to beat the dealer by having cards worth 21 points or less. What would you like to know next?"
-      buttons:
-        - title: "Basic rules"
-          payload: /select_option{"option":"basic rules"}
-        - title: "Card counting"
-          payload: /select_option{"option":"card counting"}
-
-  utter_roulette_odds:
-    - text: "Roulette odds depend on the type of bet placed. What would you like to know next?"
-      buttons:
-        - title: "Odds of specific bets"
-          payload: /select_option{"option":"odds of specific bets"}
-        - title: "Best strategies"
-          payload: /select_option{"option":"best strategies"}
-
-  utter_more_info:
-    - text: "Here's more about {option}. What would you like to learn about next?"
-      buttons:
-        - title: "Back to main menu"
-          payload: /greet
-        - title: "Quit"
-          payload: /stop
+  utter_greet:
     - text: "Hello! Welcome to the customer service, what would you like to have help with?"
       buttons:
         - title: "Technical issues"
