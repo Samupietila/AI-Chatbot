@@ -1,9 +1,10 @@
 version: "3.1"
 rules:
-  - rule: when customer asks for real person
+  - rule: when customer asks for a real person
     steps:
       - intent: ask_for_real_person
       - action: utter_ask_for_real_person
+
   ## Technical Support
   - rule: when customer asks for technical support
     steps:
@@ -63,6 +64,30 @@ rules:
     steps:
       - intent: service_fees
       - action: utter_service_fees
+
+  ##########################################################################
+  ############################ BONUS INFORMATION ###########################
+  ##########################################################################
+
+  - rule: when customer asks for bonus information
+    steps:
+      - intent: service_bonus
+      - action: utter_service_bonus
+
+  - rule: when customer asks for how to claim a bonus
+    steps:
+      - intent: bonus_claim
+      - action: utter_bonus_claim
+
+  - rule: when customer asks for bonus wagering requirements
+    steps:
+      - intent: bonus_wagering_requirements
+      - action: utter_bonus_wagering_requirements
+
+  - rule: when customer asks for bonus status
+    steps:
+      - intent: bonus_status
+      - action: utter_bonus_status
 
   - rule: Say goodbye anytime the user says goodbye
     steps:

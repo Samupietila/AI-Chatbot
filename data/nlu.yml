@@ -143,3 +143,25 @@ nlu:
       - who are you?
       - is this a bot?
       - is this a human?
+
+  - intent: bonus_claim
+    examples: |
+      - I want to claim my bonus
+      - How do I claim my bonus?
+      - Claim bonus
+      - I’d like to claim my welcome bonus
+      - How can I get my bonus?
+
+  - intent: bonus_wagering_requirements
+    examples: |
+      - What are the wagering requirements for my bonus?
+      - Tell me about the bonus wagering requirements
+      - What do I need to wager for the bonus?
+      - How do I meet the bonus requirements?
+
+  - intent: bonus_status
+    examples: |
+      - What is the status of my bonus?
+      - Check my bonus status
+      - How can I see my bonus status?
+      - Where do I find my bonus status?
