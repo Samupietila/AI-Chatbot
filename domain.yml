@@ -12,6 +12,11 @@ intents:
   - service_bonuses
   - service_deposit_withdrawal
   - service_account_registration
+  - service_account_creation
+  - service_account_password
+  - service_account_information
+  - service_account_reset_email
+  - service_account_reset_phone
   - service_game_rules
   - service_security_fairplay
   - service_responsible_gaming
@@ -39,6 +44,13 @@ intents:
   - withdrawal_bank_transfer
   - withdrawal_e_wallet
   - service_fees
+  - service_account_registration
+  - service_account_creation
+  - service_account_password
+  - service_account_information
+  - service_account_reset_email
+  - service_account_reset_phone
+
 
 responses:
   utter_greet:
@@ -232,6 +244,49 @@ responses:
         - title: "Click here, to ask for a real person"
           payload: "/ask_for_real_person"
 
+
+  utter_service_account_registration:
+    - text: "How can I help you with account and registration?"
+      buttons:
+        - title: "How do I create an account?"
+          payload: "/service_account_creation"
+        - title: "I forgot my password."
+          payload: "/service_account_password"
+        - title: "How to update account information?"
+          payload: "/service_account_information"
+
+  utter_service_account_creation:
+    - text: "Please press the signup button and fill the form. Link."
+      buttons:
+        - title: "Click here, to ask for a real person"
+          payload: "/ask_for_real_person"
+
+  utter_service_account_password:
+    - text: "How do you want to reset your password."
+      buttons:
+        - title: "Reset password by email. Link."
+          payload: "/service_account_reset_email"
+        - title: "Reset password by phone. Link."
+          payload: "/service_account_reset_phone"
+
+  utter_service_account_reset_email:
+    - text: "Reset password by email. Link."
+      buttons:
+        - title: "Click here, to ask for a real person"
+          payload: "/ask_for_real_person"
+
+  utter_service_account_reset_phone:
+    - text: "Reset password by phone. Link."
+      buttons:
+        - title: "Click here, to ask for a real person"
+          payload: "/ask_for_real_person"
+
+  utter_service_account_information:
+    - text: "Sign in and go to: Settings -> Your account. Link"
+      buttons:
+        - title: "Click here, to ask for a real person"
+          payload: "/ask_for_real_person"
+
   utter_service_technical_availability_info:
     - text: "Money trades are closed during 22:00 - 06:00 everyday due to money transfering laws"
   utter_service_technical_banks_supported:
@@ -242,9 +297,12 @@ responses:
         - title: "Profile page"
           link: "https://www.casino.com/profile"
 
+
+
   ################################################################################################
   ############################## DEFAULT OPTIONS ##########################################
   ################################################################################################
+
 
   utter_cheer_up:
     - text: "Here is something to cheer you up:"
@@ -265,3 +323,5 @@ responses:
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
+
+
