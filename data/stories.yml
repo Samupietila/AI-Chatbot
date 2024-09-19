@@ -445,3 +445,31 @@ stories:
       - action: utter_service_responsible_gaming
       - intent: responsible_gaming_gambling_addiction
       - action: utter_responsible_gaming_gambling_addiction
+
+  # Bonus Information
+  - story: customer service support, how to claim a welcome bonus
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: service_bonus
+      - action: utter_service_bonuses
+      - intent: bonus_claim
+      - action: utter_bonus_claim
+
+  - story: customer service support, what are the wagering requirements
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: service_bonus
+      - action: utter_service_bonuses
+      - intent: bonus_wagering_requirements
+      - action: utter_bonus_wagering_requirements
+
+  - story: customer service support, check bonus status
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: service_bonus
+      - action: utter_service_bonuses
+      - intent: bonus_status
+      - action: utter_bonus_status
