@@ -301,7 +301,7 @@ stories:
       - intent: ask_for_real_person
       - action: utter_ask_for_real_person
 
-### Account and registration stories
+  #### Account and registration stories
 
   - story: Account and registration that asks how to create an account
     steps:
