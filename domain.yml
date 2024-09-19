@@ -63,7 +63,9 @@ intents:
   - poker_advanced_strategies
   - poker_odds_specific_bets
   - poker_game_rules_overview
-
+  - responsible_gaming_setting_limits
+  - responsible_gaming_self_exclude
+  - responsible_gaming_gambling_addiction
 
 entities:
   - option
@@ -80,10 +82,7 @@ slots:
       - type: from_entity
         entity: option
 
-
-
 responses:
-
   utter_blackjack_basic_rules:
     - text: "In Blackjack, the goal is to get a hand value as close to 21 as possible without going over. You win by having a higher hand value than the dealer without busting. Face cards are worth 10 points, Aces can be worth 1 or 11, and other cards are worth their face value."
 
@@ -122,7 +121,6 @@ responses:
 
   utter_poker_basic_rules:
     - text: "Poker is a popular card game that involves betting and individual or group card hands. The most common variant is Texas Hold'em, where each player is dealt two private cards and uses them with five community cards to make the best possible hand. Hands are ranked from high card to royal flush."
-
 
   utter_ask_poker_rules:
     - text: "Hello! Welcome to our poker service. What would you like to know?"
@@ -165,7 +163,7 @@ responses:
           payload: "/roulette_game_rules_overview"
 
   utter_service_game_rules:
-    - text : "Please select what you would like to know more about:"
+    - text: "Please select what you would like to know more about:"
       buttons:
         - title: "Poker"
           payload: "/ask_poker_rules"
@@ -173,7 +171,6 @@ responses:
           payload: "/ask_blackjack_rules"
         - title: "Roulette"
           payload: "/ask_roulette_odds"
-
 
   utter_greet:
     - text: "Hello! Welcome to the customer service, what would you like to have help with?"
@@ -366,7 +363,6 @@ responses:
         - title: "Click here, to ask for a real person"
           payload: "/ask_for_real_person"
 
-
   utter_service_account_registration:
     - text: "How can I help you with account and registration?"
       buttons:
@@ -419,12 +415,41 @@ responses:
         - title: "Profile page"
           link: "https://www.casino.com/profile"
 
+  ################################################################################################
+  ############################## Responsible Gaming ##########################################
+  ################################################################################################
 
+  utter_service_responsible_gaming:
+    - text: "This section is for Responsible Gaming, when using our website. What would you like to know about?"
+      buttons:
+        - title: "How can i set limits for my account?"
+          payload: "/responsible_gaming_setting_limits"
+        - title: "How do i self-exclude from the casino?"
+          payload: "/responsible_gaming_self_exclude"
+        - title: "What should i do if i think i have gambling addiction"
+          payload: "/responsible_gaming_gambling_addiction"
+
+  utter_responsible_gaming_setting_limits:
+    - text: "You can set limits on deposits, losses, wagers, or session time to manage your play. Just go to your account settings under 'Responsible Gaming' and choose the limits that work best for you. Need help setting it up? I can guide you!"
+      buttons:
+        - title: "Set up your limits here!"
+          link: "https://www.casino.com/profile/responsible"
+
+  utter_responsible_gaming_self_exclude:
+    - text: "If you need to take a break, you can self-exclude for a period of time or permanently. Head to the 'Self-Exclusion' option in your account settings, or i can help you to get started right now!"
+      buttons:
+        - title: "Set up your Self-Exclusion here!"
+          link: "https://www.casino.com/profile/responsible/exclusion"
+
+  utter_responsible_gaming_gambling_addiction:
+    - text: "I'm here to help. If you're concerned about your gambling, you can set limits, take a break with self-exlusion, or reach out for support. Need help with resources? I can point you in the right direction."
+      buttons:
+        - title: "Click here for more resources regarding Gambling Addiction"
+          link: "https://www.casino.com/resources"
 
   ################################################################################################
   ############################## DEFAULT OPTIONS ##########################################
   ################################################################################################
-
 
   utter_cheer_up:
     - text: "Here is something to cheer you up:"
@@ -445,5 +470,3 @@ responses:
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
-
-

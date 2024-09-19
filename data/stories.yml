@@ -1,8 +1,6 @@
 version: "3.1"
 
 stories:
-
-
   # Roulette Stories
 
   - story: User asks for basic roulette rules
@@ -89,7 +87,6 @@ stories:
       - intent: ask_roulette_odds
       - action: utter_ask_roulette_odds
 
-
   - story: customer service technical customers game froze, refreshed
     steps:
       - intent: greet
@@ -133,7 +130,6 @@ stories:
       - action: utter_service_technical_status_error
       - intent: ask_for_real_person
       - action: utter_ask_for_real_person
-
 
   - story: Account and registration that asks how to create an account
     steps:
@@ -182,8 +178,6 @@ stories:
       - action: utter_service_account_information
       - intent: ask_for_real_person
       - action: utter_ask_for_real_person
-
-
 
   - story: customer service technical support, Server error
     steps:
@@ -423,3 +417,31 @@ stories:
       - action: utter_service_account_information
       - intent: ask_for_real_person
       - action: utter_ask_for_real_person
+
+  ### Responsible Gaming
+  - story: Responsible Gaming where question regarding limits has been asked
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: service_responsible_gaming
+      - action: utter_service_responsible_gaming
+      - intent: responsible_gaming_setting_limits
+      - action: utter_responsible_gaming_setting_limits
+
+  - story: Responsible gaming where question regarding self-exclude is asked
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: service_responsible_gaming
+      - action: utter_service_responsible_gaming
+      - intent: responsible_gaming_self_exclude
+      - action: utter_responsible_gaming_self_exclude
+
+  - story: Responsible gaming where quesiton regarding addiction is asked
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: service_responsible_gaming
+      - action: utter_service_responsible_gaming
+      - intent: responsible_gaming_gambling_addiction
+      - action: utter_responsible_gaming_gambling_addiction
