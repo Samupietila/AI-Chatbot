@@ -1,24 +1,44 @@
-<head>
-  <link
-    rel="stylesheet"
-    href="https://npm-scalableminds.s3.eu-central-1.amazonaws.com/@scalableminds/chatroom@master/dist/Chatroom.css"
-  />
-</head>
+<head> </head>
 <body>
-  <div class="chat-container"></div>
-
-  <script src="https://npm-scalableminds.s3.eu-central-1.amazonaws.com/@scalableminds/chatroom@master/dist/Chatroom.js"></script>
-  <script type="text/javascript">
-    window.onload = function () {
-      var chatroom = new window.Chatroom({
-        host: "http://localhost:5005",
-        title: "Chat with Mike",
-        container: document.querySelector(".chat-container"),
-        welcomeMessage: "Hi, I am Mike. How may I help you?",
-        speechRecognition: "en-US",
-        voiceLang: "en-US",
-      });
-      chatroom.openChat();
-    };
-  </script>
+  <div id="rasa-chat-widget" data-websocket-url="http://localhost:5005"></div>
+  <script
+    src="https://unpkg.com/@rasahq/rasa-chat"
+    type="application/javascript"
+  ></script>
+  <!-- <script>
+    !(function () {
+      let e = document.createElement("script"),
+        t = document.head || document.getElementsByTagName("head")[0];
+      (e.src = "https://cdn.jsdelivr.net/npm/rasa-webchat@1.0.1/lib/index.js"),
+        // Replace 1.x.x with the version that you want
+        (e.async = !0),
+        (e.onload = () => {
+          window.WebChat.default(
+            {
+              selector: "#webchat",
+              initPayload: "/greet",
+              customData: { language: "en" },
+              socketUrl: "http://localhost:5005",
+              socketPath: "/socket.io/",
+              title: "Chatbot",
+              subtitle: "Ask me anything!",
+              inputTextFieldHint: "Type a message...",
+              connectingText: "Waiting for the server...",
+              hideWhenNotConnected: true,
+              fullScreenMode: false,
+              profileAvatar:
+                "https://cdn.jsdelivr.net/gh/just-ai/rasa-webchat/logo.svg",
+              openLauncherImage:
+                "https://cdn.jsdelivr.net/gh/just-ai/rasa-webchat/rocket.svg",
+              closeLauncherImage:
+                "https://cdn.jsdelivr.net/gh/just-ai/rasa-webchat/close.svg",
+              params: { storage: "local" },
+              displayUnreadCount: true,
+            },
+            null
+          );
+        }),
+        t.insertBefore(e, t.firstChild);
+    })();
+  </script> -->
 </body>
