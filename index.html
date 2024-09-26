@@ -1,44 +1,56 @@
-<head> </head>
-<body>
-  <div id="rasa-chat-widget" data-websocket-url="http://localhost:5005"></div>
-  <script
-    src="https://unpkg.com/@rasahq/rasa-chat"
-    type="application/javascript"
-  ></script>
-  <!-- <script>
-    !(function () {
-      let e = document.createElement("script"),
-        t = document.head || document.getElementsByTagName("head")[0];
-      (e.src = "https://cdn.jsdelivr.net/npm/rasa-webchat@1.0.1/lib/index.js"),
-        // Replace 1.x.x with the version that you want
-        (e.async = !0),
-        (e.onload = () => {
-          window.WebChat.default(
-            {
-              selector: "#webchat",
-              initPayload: "/greet",
-              customData: { language: "en" },
-              socketUrl: "http://localhost:5005",
-              socketPath: "/socket.io/",
-              title: "Chatbot",
-              subtitle: "Ask me anything!",
-              inputTextFieldHint: "Type a message...",
-              connectingText: "Waiting for the server...",
-              hideWhenNotConnected: true,
-              fullScreenMode: false,
-              profileAvatar:
-                "https://cdn.jsdelivr.net/gh/just-ai/rasa-webchat/logo.svg",
-              openLauncherImage:
-                "https://cdn.jsdelivr.net/gh/just-ai/rasa-webchat/rocket.svg",
-              closeLauncherImage:
-                "https://cdn.jsdelivr.net/gh/just-ai/rasa-webchat/close.svg",
-              params: { storage: "local" },
-              displayUnreadCount: true,
-            },
-            null
-          );
-        }),
-        t.insertBefore(e, t.firstChild);
-    })();
-  </script> -->
-</body>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rasa Chat Widget</title>
+    <script src="https://cdn.jsdelivr.net/npm/socket.io-client@4.0.1/dist/socket.io.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/rasa-webchat@latest/lib/index.js"></script>
+  </head>
+  <body>
+    <h1>Socket.IO Test</h1>
+    <script src="https://cdn.jsdelivr.net/npm/socket.io-client@4.0.0/dist/socket.io.min.js"></script>
+    <script>
+      const socket = io("http://localhost:5005");
+      socket.on("connect", () => {
+        console.log("Connected to Socket.IO server");
+      });
+      socket.on("disconnect", () => {
+        console.log("Disconnected from Socket.IO server");
+      });
+    </script>
+    <div id="rasa-chat-widget" data-websocket-url="http://localhost:5005"></div>
+
+    <script>
+      !(function () {
+        let e = document.createElement("script"),
+          t = document.head || document.getElementsByTagName("head")[0];
+        (e.src =
+          "https://cdn.jsdelivr.net/npm/rasa-webchat@1.0.1/lib/index.js"),
+          // Replace 1.x.x with the version that you want
+          (e.async = !0),
+          (e.onload = () => {
+            window.WebChat.default(
+              {
+                selector: "#rasa-chat-widget",
+                initPayload: "/greet",
+                customData: { language: "en" },
+                socketUrl: "http://localhost:5005",
+                socketPath: "/socket.io",
+                title: "Chatbot",
+                subtitle: "Ask me anything!",
+                inputTextFieldHint: "Type a message...",
+                connectingText: "Waiting for the server...",
+                hideWhenNotConnected: true,
+                fullScreenMode: false,
+                params: { storage: "local" },
+                displayUnreadCount: true,
+              },
+              null
+            );
+          }),
+          t.insertBefore(e, t.firstChild);
+      })();
+    </script>
+  </body>
+</html>
