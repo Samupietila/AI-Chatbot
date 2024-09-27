@@ -1,11 +1,6 @@
 import mysql.connector
+from config import DB_CONFIG
 
 def db_connection():
-    config = {
-        'user': 'root',
-        'password': 'mariadb',
-        'host': 'localhost',
-        'database': 'ChatAppDatabase',
-        'raise_on_warnings': True
-    }
+    config = DB_CONFIG
     return mysql.connector.connect(**config)
