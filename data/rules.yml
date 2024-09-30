@@ -93,11 +93,6 @@ rules:
       - intent: goodbye
       - action: utter_goodbye
 
-  - rule: Say 'I am a bot' anytime the user challenges
-    steps:
-      - intent: bot_challenge
-      - action: utter_iamabot
-
   - rule: respond to the mood_great intent with the utter_happy action
     steps:
       - intent: mood_great
@@ -222,7 +217,7 @@ rules:
 
   - rule: when customer asks for bonus information
     steps:
-      - intent: service_bonus
+      - intent: service_bonuses
       - action: utter_service_bonuses
 
   - rule: when customer asks for how to claim a bonus
@@ -244,8 +239,3 @@ rules:
     steps:
       - intent: goodbye
       - action: utter_goodbye
-
-  - rule: Say 'I am a bot' anytime the user challenges
-    steps:
-      - intent: bot_challenge
-      - action: utter_iamabot

@@ -1,0 +1,58 @@
+:root {
+  --primary-color: #af1010;
+  --secondary-color: #efe5a1;
+  --success-color: #28a745;
+}
+.card-footer {
+  background-color: var(--secondary-color);
+}
+#chat-widget-button,
+#chat-widget-send-button,
+.card-header {
+  background-color: var(--primary-color);
+  color: white;
+  border: var(--primary-color);
+}
+#chat-widget-button {
+  width: 50px;
+  height: 50px;
+  font-size: 24px;
+}
+#chat-widget {
+  width: 300px;
+  bottom: 100px;
+  max-height: 700px;
+  right: 20px;
+  font-size: 16px;
+  margin: 0;
+}
+#chat-widget-messages {
+  height: 300px;
+  overflow-y: scroll;
+}
+#button-container {
+  justify-content: space-between;
+  padding: 0 1rem 0.5rem 1rem;
+  margin: 0;
+}
+.btn {
+  padding: 0.2rem;
+  height: auto;
+  font-size: 12px;
+  margin: 1px;
+  background-color: var(--secondary-color);
+  color: black;
+}
+.chat-widget-message-sender {
+  display: flex;
+  justify-content: flex-end;
+}
+.inner-message {
+  margin: 0.2rem;
+  padding: 0.2rem;
+  background-color: var(--secondary-color);
+  border: 1px solid var(--secondary-color);
+  border-radius: 0.5rem;
+  width: auto;
+  min-width: 5rem;
+}

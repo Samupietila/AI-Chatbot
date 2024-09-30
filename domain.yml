@@ -13,7 +13,6 @@ intents:
   - select_option
   - mood_great
   - mood_unhappy
-  - bot_challenge
   - service_technical
   - service_bonuses
   - service_bonus
@@ -73,7 +72,6 @@ intents:
   - responsible_gaming_setting_limits
   - responsible_gaming_self_exclude
   - responsible_gaming_gambling_addiction
-
 
 entities:
   - option
@@ -532,16 +530,6 @@ responses:
         - title: "Click here, to ask for a real person"
           payload: "/ask_for_real_person"
 
-  utter_service_technical_availability_info:
-    - text: "Money trades are closed during 22:00 - 06:00 everyday due to money transfering laws"
-  utter_service_technical_banks_supported:
-    - text: "We only accept transfers from specific banks: \nHere is a list of supported banks:\n- Bank of America\n- Chase\n- Wells Fargo"
-  utter_service_technical_account_status:
-    - text: "The state of your account can also affect if you can deposit/withdraw money. You can check the status of your account by going into your profile page:"
-      buttons:
-        - title: "Profile page"
-          link: "https://www.casino.com/profile"
-
   ################################################################################################
   ############################## DEFAULT OPTIONS ##########################################
   ################################################################################################
@@ -558,8 +546,6 @@ responses:
 
   utter_goodbye:
     - text: "Bye"
-
-
 
 session_config:
   session_expiration_time: 60
