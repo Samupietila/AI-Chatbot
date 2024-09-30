@@ -1,8 +1,12 @@
-version: "3.1"
 
 stories:
+  # Log message story
+  - story: log message time
+    steps:
+      - intent: greet
+      - action: action_log_message_time
+      - action: utter_greet
   # Roulette Stories
-
   - story: User asks for basic roulette rules
     steps:
       - intent: roulette_basic_rules
@@ -473,3 +477,12 @@ stories:
       - action: utter_service_bonuses
       - intent: bonus_status
       - action: utter_bonus_status
+
+### Timestamp
+
+  - story: log message time
+    steps:
+      - intent: greet
+      - action: action_log_message_time
+      - action: utter_greet
+

@@ -72,6 +72,11 @@ intents:
   - responsible_gaming_self_exclude
   - responsible_gaming_gambling_addiction
 
+##### For time stamp
+actions:
+  - action_log_message_time
+  - utter_greet
+
 entities:
   - option
 
@@ -510,6 +515,9 @@ responses:
 
   utter_iamabot:
     - text: "I am a bot, powered by Rasa."
+
+
+
 
 session_config:
   session_expiration_time: 60
