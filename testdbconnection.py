@@ -1,3 +1,4 @@
+#this file is for testing if timestamp can be pushed to database
 import mysql.connector
 import datetime
 
@@ -11,8 +12,8 @@ def log_message_time():
         # Establish the connection with utf8mb4 charset
         connection = mysql.connector.connect(
             host='localhost',
-            user='root',
-            password='admin',
+            user='yourusername',
+            password='yourpassword',
             database='ChatAppDatabase',
             charset='utf8mb4',
             collation='utf8mb4_unicode_ci'

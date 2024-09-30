@@ -1,3 +1,4 @@
+#this file is for taking timestamp and pushing it to the database, it does not work
 import mysql.connector
 from datetime import datetime
 from rasa_sdk import Action, Tracker
@@ -14,8 +15,8 @@ class ActionLogMessageTime(Action):
             # Establish the connection with utf8mb4 charset
             connection = mysql.connector.connect(
                 host='localhost',
-                user='root',
-                password='admin',
+                user='yourusername',
+                password='yourpassword',
                 database='ChatAppDatabase',
                 charset='utf8mb4',
                 collation='utf8mb4_unicode_ci'

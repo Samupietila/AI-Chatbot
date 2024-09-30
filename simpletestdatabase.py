@@ -1,3 +1,4 @@
+#This file is for testing database that it works by pushing user to it
 import mysql.connector
 
 def insert_user():
@@ -8,8 +9,8 @@ def insert_user():
         # Establish the connection to the database
         connection = mysql.connector.connect(
             host='localhost',
-            user='root',
-            password='admin',
+            user='yourusername',
+            password='yourpassword',
             database='ChatAppDatabase',
             charset='utf8mb4',
             collation='utf8mb4_unicode_ci'
