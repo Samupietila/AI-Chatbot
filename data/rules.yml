@@ -1,6 +1,5 @@
 version: "3.1"
 
-
 rules:
   - rule: when customer asks for real person
     steps:
@@ -218,3 +217,35 @@ rules:
     steps:
       - intent: service_game_rules
       - action: utter_service_game_rules
+
+  # Bonus Information
+
+  - rule: when customer asks for bonus information
+    steps:
+      - intent: service_bonus
+      - action: utter_service_bonuses
+
+  - rule: when customer asks for how to claim a bonus
+    steps:
+      - intent: bonus_claim
+      - action: utter_bonus_claim
+
+  - rule: when customer asks for bonus wagering requirements
+    steps:
+      - intent: bonus_wagering_requirements
+      - action: utter_bonus_wagering_requirements
+
+  - rule: when customer asks for bonus status
+    steps:
+      - intent: bonus_status
+      - action: utter_bonus_status
+
+  - rule: Say goodbye anytime the user says goodbye
+    steps:
+      - intent: goodbye
+      - action: utter_goodbye
+
+  - rule: Say 'I am a bot' anytime the user challenges
+    steps:
+      - intent: bot_challenge
+      - action: utter_iamabot

@@ -23,7 +23,6 @@ nlu:
       - moi
       - moi moi
 
-
   - intent: goodbye
     examples: |
       - cu
@@ -40,7 +39,6 @@ nlu:
       - see you soon
       - bye for now
       - ok bye
-
 
   - intent: affirm
     examples: |
@@ -86,7 +84,6 @@ nlu:
       - not in a million years
       - no way jose
 
-
   - intent: mood_great
     examples: |
       - perfect
@@ -109,7 +106,6 @@ nlu:
       - im so great
       - good
 
-
   - intent: mood_unhappy
     examples: |
       - my day was horrible
@@ -131,7 +127,6 @@ nlu:
       - awful
       - terrible
       - not so good
-
 
   - intent: bot_challenge
     examples: |
@@ -178,3 +173,25 @@ nlu:
       - I choose option 1
       - I will go with option 2
       - Option 1 is my choice.
+
+  - intent: bonus_claim
+    examples: |
+      - I want to claim my bonus
+      - How do I claim my bonus?
+      - Claim bonus
+      - I’d like to claim my welcome bonus
+      - How can I get my bonus?
+
+  - intent: bonus_wagering_requirements
+    examples: |
+      - What are the wagering requirements for my bonus?
+      - Tell me about the bonus wagering requirements
+      - What do I need to wager for the bonus?
+      - How do I meet the bonus requirements?
+
+  - intent: bonus_status
+    examples: |
+      - What is the status of my bonus?
+      - Check my bonus status
+      - How can I see my bonus status?
+      - Where do I find my bonus status?
