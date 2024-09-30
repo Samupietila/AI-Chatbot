@@ -1,0 +1,45 @@
+/* This will be used for the base.html
+*/
+
+:root {
+  --sds-size-space-800: 1.5rem;
+  --sds-size-space-600: 1rem;
+  --sds-size-space-200: 0.1rem;
+}
+
+body {
+  margin: 0;
+  background-color: #af1010;
+}
+
+nav {
+  display: flex;
+  width: 120rem;
+  height: 6.875rem;
+  padding: var(--sds-size-space-200);
+  align-items: center;
+  align-content: center;
+  gap: 0rem var(--sds-size-space-600);
+  flex-shrink: 0;
+  flex-wrap: wrap;
+  background-color: #efe5a1;
+}
+
+nav .logo {
+  font-size: 1.5em;
+  font-weight: bold;
+  border-radius: 3.125rem;
+  width: 8.5rem;
+  height: 5.5rem;
+}
+
+nav .nav-links {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  align-content: center;
+  gap: 0.5rem var(--sds-size-space-200);
+
+  flex: 1 0 0;
+  flex-wrap: wrap;
+}

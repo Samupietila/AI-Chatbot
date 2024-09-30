@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link
+      href="{{ url_for('static', filename='css/main.css') }}"
+      rel="stylesheet"
+    />
+    <title>{%block title%}Document{%endblock%}</title>
+  </head>
+  <body>
+    <div class="body">
+      <nav>
+        <a href="/">
+          <img
+            src="{{ url_for('static', filename='images/logo.png') }}"
+            alt="Logo"
+            class="logo"
+          />
+        </a>
+        <div class="nav-links">
+          <a href="/">Home</a>
+          <a href="games">Games</a>
+          <a href="community">Community</a>
+          <a href="help">Help</a>
+          <a href="withdraw-deposit">Withdrawal/Deposit</a>
+          <a href="profile">Profile</a>
+        </div>
+        <div class="auth-buttons">
+          <a href="login" class="btn">Log In</a>
+          <a href="register" class="btn">Register</a>
+        </div>
+      </nav>
+      <!-- "container" variable is the rest of the website in other files -->
+      <div>{%block container%} {%endblock%}</div>
+    </div>
+  </body>
+</html>
