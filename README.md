@@ -32,6 +32,6 @@ to illustrate the flow of conversation using D3.js and Dagre-D3 libraries.
 
 ## Contributors
 
-Samu, Mika, Samuel, Zehra
+Samu, Mika, Samuel, Zehra, Jukka
 
 ## Ohjelmistotuotantoprojekti
