@@ -30,7 +30,27 @@
           <a href="register" class="btn">Register</a>
         </div>
       </nav>
-      <!-- "container" variable is the rest of the website in other files -->
+      <!-- This is the information message used with flash -->
+
+      {% with messages = get_flashed_messages(with_categories=true) %} {% if
+      messages %} {% for category, message in messages %} {% if category ==
+      'error' %}
+      <div class="alert alert-error">
+        {{ message }}
+        <span class="close" onclick="this.parentElement.style.display='none';"
+          >&times;</span
+        >
+      </div>
+      {% else %}
+      <div class="alert alert-success">
+        {{ message }}
+        <span class="close" onclick="this.parentElement.style.display='none';"
+          >&times;</span
+        >
+      </div>
+      {% endif %} {% endfor %} {% endif %} {% endwith %}
+
+      <!-- "container" variable below is the rest of the website in other files -->
       <div>{%block container%} {%endblock%}</div>
     </div>
   </body>
