@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, request, flash
+from flask import Blueprint, render_template, request, flash, redirect, url_for
 
 
 auth = Blueprint('auth', __name__)
@@ -8,15 +8,17 @@ def login():
     if request.method == 'POST':
         email = request.form.get('email')
         password = request.form.get('password')
-        #Database search here
+        #TODO Database search here
         
+        #TODO Put this to the correct side
         
+        flash('Logged in successfully!', category='success')
         
-        #Indend this correctly when function has been given
-        return render_template("login.html")
+    #TODO Indend this correctly when function has been given
+    return render_template("login.html")
 
 @auth.route('/thankyou')
-def logout():
+def thankyou():
     return render_template("thankyou.html")
 
 @auth.route('/register', methods=['GET', 'POST'])
@@ -37,6 +39,8 @@ def register():
             print("Username flash has been triggered")
             flash("Lenght of Username must be more than 3", category='error')
         else:
+            #TODO Account creation is added here
             flash('Account has been created!', category='success')
+            return redirect(url_for('auth.thankyou'))
         
     return render_template("register.html")
