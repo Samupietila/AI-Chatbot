@@ -1,6 +1,10 @@
 version: "3.1"
 
 rules:
+  - rule: always use action_before_listen
+    steps:
+      - action: action_before_listen
+
   - rule: when customer asks for real person
     steps:
       - intent: ask_for_real_person

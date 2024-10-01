@@ -73,6 +73,9 @@ intents:
   - responsible_gaming_self_exclude
   - responsible_gaming_gambling_addiction
 
+actions:
+  - action_before_listen
+
 entities:
   - option
 slots:
