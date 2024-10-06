@@ -1,9 +1,8 @@
-
 # AI Chatbot
 
 This project is designed to create an interactive chatbot using Rasa, 
-integrated with a MySQL database for user authentication. 
-The chatbot provides various functionalities, including:
+
+This project is designed to create an interactive chatbot using Rasa,
 
 - **Greeting users**
 - **Understanding their moods**
@@ -48,12 +47,21 @@ component to illustrate the flow of conversation using D3.js and Dagre-D3 librar
 - Handles various user intents, such as greetings, mood tracking, and service inquiries.
 - Provides tailored responses based on user input, including positive and negative feedback paths.
 
+
 ### Database Integration
 
 - User authentication is facilitated through a MySQL database.
 - Secure password handling using hashing techniques to ensure user credentials are not exposed.
 
 ### Visualization
+
+
+### Database Integration:
+
+- User authentication is facilitated through a MySQL database.
+- Secure password handling using `getpass` to ensure user credentials are not exposed.
+
+### Visualization:
 
 - An HTML page visualizes the Rasa Core conversation flow.
 - Uses D3.js and Dagre-D3 for interactive and dynamic graph rendering.
