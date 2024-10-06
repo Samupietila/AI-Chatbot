@@ -95,9 +95,9 @@ This use case diagram represents the different actors and their interactions wit
 
 1. **Clone the Repository:**
 
-git clone <repository-url>
+git clone repository-url
 
-cd <repository-folder>
+cd repository-folder
 
 2. **Install Required Packages:** Create a virtual environment and activate it:
 
@@ -115,9 +115,7 @@ pip install -r requirements.txt
 
 4. **Configure Database Settings:** Update the Database/config.py file with your MySQL credentials.
 
-5. **Run the Flask Server:**
-
-python app.py
+5. **Run the Flask Server:** python app.py
 
 6. **Interact with the Chatbot**: Access the chatbot via the web interface or command line.
 
