@@ -71,12 +71,15 @@ component to illustrate the flow of conversation using D3.js and Dagre-D3 librar
 ![img.png](img.png)
 
 ![img_1.png](img_1.png)
+
 The project's data modeling includes three main tables: User, which stores user information; UserIssue, which documents issues reported by users; and ChatHistory, which records messages and AI responses in conversations between users and the chatbot.
 
 ### Use case diagram
 
 ![img_2.png](img_2.png) 
-The activity diagram above illustrates the interaction process between the chatbot and the user.This use case diagram represents the different actors and their interactions with the EssiBot system on the website.
+
+This use case diagram represents the different actors and their interactions with the EssiBot system on the website. 
+
 
 ## How to Run the Project
 
@@ -93,22 +96,29 @@ The activity diagram above illustrates the interaction process between the chatb
 1. **Clone the Repository:**
 
 git clone <repository-url>
+
 cd <repository-folder>
 
 2. **Install Required Packages:** Create a virtual environment and activate it:
 
 python -m venv venv
+
 source venv/bin/activate  # For Mac/Linux
+
 venv\Scripts\activate  # For Windows
 
-Install the required Python packages:
+**Install the required Python packages**:
 
 pip install -r requirements.txt
+
 3. **Set Up the Database**: Run the SQL scripts provided to create the necessary tables in your MySQL database.
+
 4. **Configure Database Settings:** Update the Database/config.py file with your MySQL credentials.
+
 5. **Run the Flask Server:**
 
 python app.py
+
 6. **Interact with the Chatbot**: Access the chatbot via the web interface or command line.
 
 ### Visualization
