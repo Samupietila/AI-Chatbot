@@ -132,7 +132,7 @@ Open the HTML page in your browser to view the conversation flow visualization.
 1. **Open the bot-window from the site**
 2. **Greet the bot**
 3. **The bot asks what you need help with**
-4. **User will choose the subject and the bot will asnwer**
+4. **User will choose the subject and the bot will answer**
 
 ## Contributors
 
