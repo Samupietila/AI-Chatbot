@@ -40,6 +40,10 @@ component to illustrate the flow of conversation using D3.js and Dagre-D3 librar
 - **Postman**: For testing API endpoints.
 - **MySQL Workbench:** For database management.
 
+### AI-Tools used
+
+- **ChatGPT**
+
 ## Features
 
 ### Chatbot Functionality
