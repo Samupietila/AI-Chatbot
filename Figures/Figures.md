@@ -10,3 +10,6 @@
 
 ![Essibotactivitydiagram](https://github.com/user-attachments/assets/93740111-9cfc-4188-89a5-83315a94f410)
 
+**Essi-bot User Case-diagram**
+
+![otpusecase](https://github.com/user-attachments/assets/7db943ea-9484-4fcd-a385-5fb775506f2d)
