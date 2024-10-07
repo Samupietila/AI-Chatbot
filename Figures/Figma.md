@@ -1,4 +1,5 @@
 **Figma bot**
+(Figma layout for the bot. Check Botlayout.md for the finished botlayout)
 
 ![Screenshot 2024-10-07 123006](https://github.com/user-attachments/assets/18edc97c-c9f4-40aa-b7dc-e8fb25677f35)
 
