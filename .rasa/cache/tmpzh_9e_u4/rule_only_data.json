@@ -1,0 +1,6 @@
+{
+  "rule_only_slots": [
+    "action_before_listen"
+  ],
+  "rule_only_loops": []
+}
