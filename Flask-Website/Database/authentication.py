@@ -88,3 +88,20 @@ def load_user(user_id):
     finally:
         cursor.close()
         connection.close()
+
+# storing chat history
+def store_chat_history(data):
+    connection = db_connection()
+    cursor = connection.cursor()
+
+    try:
+        query = """INSERT INTO chathistory (userid, messagetimestamp, messagecontent, airesponse) VALUES (%s, %s, %s, %s)"""
+        cursor.execute(query, (data['userid'], data['messagetimestamp'], data['messagecontent'], data['airesponse']))
+        connection.commit()
+        return print("Chat history stored successfully")
+    except Exception as e:
+        print(e)
+        return str(e)
+    finally:
+        cursor.close()
+        connection.close()
