@@ -5,6 +5,7 @@
 - [Setup Instructions](#setup-instructions)
 - [How to Run](#how-to-Run-the-Project)
 - [Contributing](#Contributing)
+- [License](#License)
 - [Contributors](#contributors)
 
 ## Introduction
@@ -140,6 +141,10 @@ We welcome contributions! Please follow these steps:
 4. Push to the branch (`git push origin feature-branch`)
 5. Open a pull request
 
+## License
+
+This project is licensed under the Creative Commons Attribution-NonCommercial 4.0 International License.  
+You can view the full license [here](https://creativecommons.org/licenses/by-nc/4.0/).
 
 ## Contributors
 
