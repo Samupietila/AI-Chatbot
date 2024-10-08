@@ -1,0 +1,228 @@
+version: "3.1"
+
+rules:
+  - rule: when customer asks for real person
+    steps:
+      - intent: ask_for_real_person
+      - action: utter_ask_for_real_person
+  ## Technical Support
+  - rule: when customer asks for technical support
+    steps:
+      - intent: service_technical
+      - action: utter_service_technical
+
+  ##########################################################################
+  ###################### DEPOSIT AND WITHDRAWAL ############################
+  ##########################################################################
+
+  - rule: when customer asks for deposit and withdrawal
+    steps:
+      - intent: service_deposit_withdrawal
+      - action: utter_service_deposit_withdrawal
+
+  - rule: when customer asks for deposit methods
+    steps:
+      - intent: service_deposit_methods
+      - action: utter_service_deposit_methods
+
+  - rule: when customer asks for deposit methods (credit card)
+    steps:
+      - intent: deposit_credit_card
+      - action: utter_deposit_credit_card
+
+  - rule: when customer asks for deposit methods (bank transfer)
+    steps:
+      - intent: deposit_bank_transfer
+      - action: utter_deposit_bank_transfer
+
+  - rule: when customer asks for deposit methods (e-wallet)
+    steps:
+      - intent: deposit_e_wallet
+      - action: utter_deposit_e_wallet
+
+  - rule: when customer asks for withdrawal time
+    steps:
+      - intent: service_withdrawal_time
+      - action: utter_service_withdrawal_time
+
+  - rule: when customer asks for withdrawal methods (credit card)
+    steps:
+      - intent: withdrawal_credit_card
+      - action: utter_withdrawal_credit_card
+
+  - rule: when customer asks for withdrawal methods (bank transfer)
+    steps:
+      - intent: withdrawal_bank_transfer
+      - action: utter_withdrawal_bank_transfer
+
+  - rule: when customer asks for withdrawal methods (e-wallet)
+    steps:
+      - intent: withdrawal_e_wallet
+      - action: utter_withdrawal_e_wallet
+
+  - rule: when customer asks for withdrawal fees
+    steps:
+      - intent: service_fees
+      - action: utter_service_fees
+
+  - rule: Say goodbye anytime the user says goodbye
+    steps:
+      - intent: goodbye
+      - action: utter_goodbye
+
+  - rule: Say 'I am a bot' anytime the user challenges
+    steps:
+      - intent: bot_challenge
+      - action: utter_iamabot
+
+  - rule: respond to the mood_great intent with the utter_happy action
+    steps:
+      - intent: mood_great
+      - action: utter_happy
+
+  - rule: respond to the mood_unhappy intent with the utter_cheer_up action
+    steps:
+      - intent: mood_unhappy
+      - action: utter_cheer_up
+      - action: utter_did_that_help
+
+  - rule: if the user denies that the bot helped, say goodbye
+    condition:
+      - active_loop: null
+      - slot_was_set:
+          - action_before_listen: utter_did_that_help
+    steps:
+      - intent: deny
+      - action: utter_goodbye
+
+  - rule: if the user affirms that the bot helped, say happy
+    condition:
+      - active_loop: null
+      - slot_was_set:
+          - action_before_listen: utter_did_that_help
+    steps:
+      - intent: affirm
+      - action: utter_happy
+
+  # Roulette Rules Intent Handling
+
+  - rule: Respond to roulette basic rules
+    steps:
+      - intent: roulette_basic_rules
+      - action: utter_roulette_basic_rules
+
+  - rule: Respond to roulette best strategies
+    steps:
+      - intent: roulette_best_strategies
+      - action: utter_roulette_best_strategies
+
+  - rule: Respond to odds of specific roulette bets
+    steps:
+      - intent: roulette_odds_specific_bets
+      - action: utter_roulette_odds_specific_bets
+
+  - rule: Respond to general roulette rules overview
+    steps:
+      - intent: roulette_game_rules_overview
+      - action: utter_roulette_game_rules_overview
+
+  # Blackjack Rules Intent Handling
+
+  - rule: Respond to blackjack basic rules
+    steps:
+      - intent: blackjack_basic_rules
+      - action: utter_blackjack_basic_rules
+
+  - rule: Respond to blackjack card counting
+    steps:
+      - intent: blackjack_card_counting
+      - action: utter_blackjack_card_counting
+
+  - rule: Respond to blackjack advanced strategies
+    steps:
+      - intent: blackjack_advanced_strategies
+      - action: utter_blackjack_advanced_strategies
+
+  - rule: Respond to odds of specific blackjack bets
+    steps:
+      - intent: blackjack_odds_specific_bets
+      - action: utter_blackjack_odds_specific_bets
+
+  - rule: Respond to general blackjack rules overview
+    steps:
+      - intent: blackjack_game_rules_overview
+      - action: utter_blackjack_game_rules_overview
+
+  # Poker Rules Intent Handling
+
+  - rule: Respond to poker basic rules
+    steps:
+      - intent: poker_basic_rules
+      - action: utter_poker_basic_rules
+
+  - rule: Respond to poker advanced strategies
+    steps:
+      - intent: poker_advanced_strategies
+      - action: utter_poker_advanced_strategies
+
+  - rule: Respond to odds of specific poker bets
+    steps:
+      - intent: poker_odds_specific_bets
+      - action: utter_poker_odds_specific_bets
+
+  - rule: Respond to general poker rules overview
+    steps:
+      - intent: poker_game_rules_overview
+      - action: utter_poker_game_rules_overview
+
+  - rule: Show poker question options
+    steps:
+      - intent: ask_poker_rules
+      - action: utter_ask_poker_rules
+
+  - rule: Show blackjack question options
+    steps:
+      - intent: ask_blackjack_rules
+      - action: utter_ask_blackjack_rules
+
+  - rule: Show roulette question options
+    steps:
+      - intent: ask_roulette_odds
+      - action: utter_ask_roulette_odds
+
+  - rule: Show game rules options
+    steps:
+      - intent: service_game_rules
+      - action: utter_service_game_rules
+
+  # Bonus Information
+
+  - rule: when customer asks for bonus information
+    steps:
+      - intent: service_bonuses
+      - action: utter_service_bonuses
+
+  - rule: when customer asks for how to claim a bonus
+    steps:
+      - intent: bonus_claim
+      - action: utter_bonus_claim
+
+  - rule: when customer asks for bonus wagering requirements
+    steps:
+      - intent: bonus_wagering_requirements
+      - action: utter_bonus_wagering_requirements
+
+  - rule: when customer asks for bonus status
+    steps:
+      - intent: bonus_status
+      - action: utter_bonus_status
+
+  - rule: Say goodbye anytime the user says goodbye
+    steps:
+      - intent: goodbye
+      - action: utter_goodbye
+
+  - rule: Say 'I am a bot' anytime the user challenges
+    steps:
+      - intent: bot_challenge
+      - action: utter_iamabot
