@@ -1,6 +1,6 @@
 import mysql
-from Database.DbConnection import db_connection
-from website.models import User
+from DbConnection import db_connection
+from ..website.models import User
 
 # Authentication
 def authenticate_user(username, password):
