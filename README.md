@@ -6,6 +6,7 @@
 - [Features](#features)
 - [Setup Instructions](#setup-instructions)
 - [How to Run](#how-to-Run-the-Project)
+- [Contributing](#Contibuting).
 - [Contributors](#contributors)
 
 This project is designed to create an interactive quizzbot using Rasa, intended for customer service purposes. It supports users by answering queries.
@@ -128,6 +129,15 @@ Open the HTML page in your browser to view the conversation flow visualization.
 2. **Greet the bot**
 3. **The bot asks what you need help with**
 4. **User will choose the subject and the bot will answer**
+
+## Contributing
+We welcome contributions! Please follow these steps:
+1. Fork the repository
+2. Create a new branch (`git checkout -b feature-branch`)
+3. Make your changes and commit (`git commit -m 'Add feature'`)
+4. Push to the branch (`git push origin feature-branch`)
+5. Open a pull request
+
 
 ## Contributors
 
