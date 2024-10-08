@@ -1,6 +1,7 @@
-# AI Chatbot
+# Essi-quizzbot - Interactive quizzbot
 
-This project is designed to create an interactive quizzbot using Rasa, 
+This project is designed to create an interactive quizzbot using Rasa.
+
 
 
 - **Greeting users**
