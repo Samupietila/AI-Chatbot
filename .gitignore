@@ -3,4 +3,7 @@ venv/
 models/
 __pycache__
 config.py
-.idea/
+__pycache__/
+**/__pycache__/
+Flask-Website/Database/__pycache__/
+Flask-Website/website/__pycache__/
