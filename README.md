@@ -9,7 +9,7 @@
 
 ## Introduction
 
-# Essi-bot - Interactive quizzbot
+# Essi-bot - Interactive Quizzbot
 
 This project is designed to create an interactive quizzbot using Rasa, intended for customer service purposes. It supports users by answering queries.
 
@@ -76,7 +76,7 @@ component to illustrate the flow of conversation using D3.js and Dagre-D3 librar
 
 The project's data modeling includes three main tables: User, which stores user information; UserIssue, which documents issues reported by users; and ChatHistory, which records messages and AI responses in conversations between users and the chatbot.
 
-### Use case diagram
+### Use Case Diagram
 
 ![img_2.png](img_2.png) 
 
