@@ -1,7 +1,6 @@
 # Essi-bot - Interactive quizzbot
 
-This project is designed to create an interactive quizzbot using Rasa.
-
+This project is designed to create an interactive quizzbot using Rasa, intended for customer service purposes. It supports users by answering queries.
 
 
 - **Greeting users**
