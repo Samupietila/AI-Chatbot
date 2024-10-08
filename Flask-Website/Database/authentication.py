@@ -50,6 +50,28 @@ def register(email, username, password):
         cursor.close()
         connection.close()
         
+# Checking if Username already exists in database'
+def usernameCheck(username):
+    connection = db_connection()
+    cursor = connection.cursor()
+    
+    try:
+        cursor.execute("Select * from user where username = %s", (username))
+        already_exists = cursor.fetchone()
+        if already_exists:
+            return True
+        else:
+            return False
+        
+    except Exception as e:
+        return print(e)
+    
+    finally:
+        cursor.close()
+        connection.close()
+        
+        
+# Checking if Email already exists in database
 def emailCheck(email):
     connection = db_connection()
     cursor = connection.cursor()
@@ -69,9 +91,11 @@ def emailCheck(email):
         cursor.close()
         connection.close()
         
+        
+# Loading User into the session
 def load_user(user_id):
     connection = db_connection()
-    cursor = connection.cursor(dictionary=True)  # Fetch data as dictionary
+    cursor = connection.cursor(dictionary=True)
 
     try:
         query = "SELECT * FROM User WHERE UserID = %s"
@@ -85,6 +109,25 @@ def load_user(user_id):
         
     except mysql.connector.Error as err:
         print(f"Error: {err}")
+    finally:
+        cursor.close()
+        connection.close()
+        
+# Delete user from the databse (For Testing purpose)
+def delete_user(email, password, username):
+    connection = db_connection()
+    cursor = connection.cursor()
+    
+    try:
+        query = "DELETE FROM user WHERE email = %s AND password = %s AND username = %s"
+        cursor.execute(query, (email, password, username))
+        connection.commit()
+        return True
+        
+    except mysql.connector.Error as err:
+        print(f"Error: {err}")
+        return False
+        
     finally:
         cursor.close()
         connection.close()

@@ -1,2 +1,6 @@
 venv/
 config.py
+__pycache__/
+**/__pycache__/
+Flask-Website/Database/__pycache__/
+Flask-Website/website/__pycache__/
