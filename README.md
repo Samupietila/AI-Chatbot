@@ -1,4 +1,4 @@
-# Essi-quizzbot - Interactive quizzbot
+# Essi-bot - Interactive quizzbot
 
 This project is designed to create an interactive quizzbot using Rasa.
 
