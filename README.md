@@ -13,6 +13,7 @@ This project is designed to create an interactive quizzbot using Rasa, intended 
 
 
 - **Responding to queries**
+- **Saving data to database**
 
 Additionally, the project includes a visualization 
 component to illustrate the flow of conversation using D3.js and Dagre-D3 libraries.
