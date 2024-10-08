@@ -11,6 +11,9 @@ def login():
         password = request.form.get('password')
         user = authentication.authenticate_user(username, password)
         if user:
+            print(user)
+
+            
             login_user(user, remember=True)
             flash('Logged in successfully!', category='success')
             redirect(url_for('auth.thankyou'))
@@ -50,9 +53,12 @@ def register():
             flash("Lenght of Username must be more than 3", category='error')
         else:
             emailCheck = authentication.emailCheck(email)
+            usernameCheck = authentication.usernameCheck(username)
             if emailCheck:
                 flash('Email address already exists', category='error')
-            if not emailCheck:
+            elif usernameCheck:
+                flash('Username is already in use')
+            if not emailCheck and usernameCheck:
                 authentication.register(email, username, password1)
                 flash('Account has been created!', category='success')
                 return redirect(url_for('auth.thankyou'))

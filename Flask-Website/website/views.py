@@ -53,7 +53,6 @@ def webhook():
     else:
         bot_response = "Sorry, I didn't get that. Can you rephrase?"
         buttons = []
-    
     print ("Bot response: ", bot_response)
 
     return jsonify({'message': bot_response, 'buttons': buttons})
