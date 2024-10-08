@@ -48,12 +48,6 @@ component to illustrate the flow of conversation using D3.js and Dagre-D3 librar
 - Handles service inquiries.
 - Provides responses based on user input.
 
-
-### Database Integration
-
-- User authentication is facilitated through a MySQL database.
-- Secure password handling using hashing techniques to ensure user credentials are not exposed.
-
 ### Database Integration:
 
 - Records timestamp from start of the chat.
