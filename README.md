@@ -5,7 +5,7 @@
 - [Technologies Used](#technologies-used)
 - [Features](#features)
 - [Setup Instructions](#setup-instructions)
-- [How to Run](#how-to-run)
+- [How to Run](#how-to-Run-the-Project)
 - [Contributors](#contributors)
 
 This project is designed to create an interactive quizzbot using Rasa, intended for customer service purposes. It supports users by answering queries.
