@@ -55,7 +55,6 @@ def webhook():
     else:
         bot_response = "Sorry, I didn't get that. Can you rephrase?"
         buttons = []
-    
     print ("Bot response: ", bot_response)
     user_id = current_user
     print("User ID: ", user_id)

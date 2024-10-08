@@ -1,0 +1,37 @@
+CREATE DATABASE ChatAppDatabase;
+
+USE ChatAppDatabase;
+
+CREATE TABLE User (
+UserID INT PRIMARY KEY,
+Username VARCHAR(100) NOT NULL,
+Email VARCHAR(100) NOT NULL,
+Password VARCHAR(100) NOT NULL,
+RegistrationDate DATE NOT NULL,
+LastLogin DATE
+);
+
+CREATE TABLE UserIssue (
+IssueID INT PRIMARY KEY,
+IssueDescription TEXT NOT NULL,
+IssueCategory VARCHAR(50) NOT NULL,
+UserID INT,
+FOREIGN KEY (UserID) REFERENCES User(UserID)
+);
+
+CREATE TABLE ChatHistory (
+ChatID INT PRIMARY KEY,
+UserID INT,
+MessageTimeStamp TIMESTAMP NOT NULL,
+MessageContent TEXT NOT NULL,
+AIResponse TEXT,
+FOREIGN KEY (UserID) REFERENCES User(UserID)
+);
+
+CREATE TABLE UserMessageLogs (
+LogID INT PRIMARY KEY AUTO_INCREMENT,
+UserID INT,
+MessageTimeStamp TIMESTAMP
+);
+
+
