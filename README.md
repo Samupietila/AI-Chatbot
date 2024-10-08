@@ -1,6 +1,6 @@
 # AI Chatbot
 
-This project is designed to create an interactive chatbot using Rasa, 
+This project is designed to create an interactive quizzbot using Rasa, 
 
 
 - **Greeting users**
