@@ -2,5 +2,5 @@ venv/
 .rasa/
 models/
 __pycache__
-config.py
+backend/config.py
 .idea/
