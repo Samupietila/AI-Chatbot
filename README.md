@@ -30,7 +30,6 @@ component to illustrate the flow of conversation using D3.js and Dagre-D3 librar
 
 - **Mysql-connector-python**: To connect to the MySQL database.
 - **Flask-Cors**: To handle cross-origin resource sharing for API requests.
-- **Getpass**: For securely handling user passwords.
 
 ### Development Tools
 
