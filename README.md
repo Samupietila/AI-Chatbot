@@ -34,6 +34,7 @@ component to illustrate the flow of conversation using D3.js and Dagre-D3 librar
 ### Development Tools
 
 - **Visual Studio Code**: Code editor for development.
+- **Pycharm**: Code editor for development.
 - **Postman**: For testing API endpoints.
 - **MySQL Workbench:** For database management.
 
