@@ -3,7 +3,6 @@
 This project is designed to create an interactive quizzbot using Rasa, intended for customer service purposes. It supports users by answering queries.
 
 
-- **Greeting users**
 - **Responding to queries**
 
 Additionally, the project includes a visualization 
