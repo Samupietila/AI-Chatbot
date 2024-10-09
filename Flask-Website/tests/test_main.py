@@ -52,7 +52,7 @@ def test_register_page(client):
     }
     response = client.post('/register', data=form_data)
     # If register was success, user is redirected to /thankyou, that's why status code 200
-    assert response.status_code == 200
+    assert response.status_code == 302
     
 # Registering password Fail Test
 def test_register_password_fail(client):

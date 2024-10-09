@@ -1,5 +1,5 @@
 from flask import Blueprint, render_template, request, flash, redirect, url_for
-from ..Database import authentication
+from Database import authentication
 from flask_login import login_user, login_required, logout_user, current_user
 from .models import User
 auth = Blueprint('auth', __name__)
@@ -58,7 +58,7 @@ def register():
                 flash('Email address already exists', category='error')
             elif usernameCheck:
                 flash('Username is already in use')
-            if not emailCheck and usernameCheck:
+            if not emailCheck and not usernameCheck:
                 authentication.register(email, username, password1)
                 flash('Account has been created!', category='success')
                 return redirect(url_for('auth.thankyou'))
