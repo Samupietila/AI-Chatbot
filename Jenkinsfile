@@ -88,7 +88,7 @@ pipeline {
                 sh """
                     mkdir -p reports
                     . ${env.PYTHON_ENV}/bin/activate
-                    pytest Flask-Website/tests/ --junitxml=reports/results.xml
+                    pytest Flask-Website/tests/ --junitxml=reports/results.xml || (echo "pytest failed" && exit 1)
                     ls -l reports  # List files in reports directory
                 """
             } else {
@@ -96,19 +96,20 @@ pipeline {
                 bat """
                     if not exist reports (mkdir reports)
                     ${env.PYTHON_ENV}\\Scripts\\activate
-                    pytest Flask-Website\\tests\\ --junitxml=reports\\results.xml
+                    pytest Flask-Website\\tests\\ --junitxml=reports\\results.xml || (echo pytest failed && exit /b 1)
                     dir reports  # List files in reports directory
                 """
             }
         }
     }
-            post {
-                always {
-                    // Archive test results
-                    junit 'reports/results.xml'
-                }
-            }
+    post {
+        always {
+            // Archive test results
+            junit 'reports/results.xml'
         }
+    }
+}
+
     }
 
     post {
