@@ -10,15 +10,12 @@
 
 ## Introduction
 
-# Essi-bot - Interactive Quizzbot
+# Essi-bot - Interactive Quiz bot
 
-This project is designed to create an interactive quizzbot using Rasa, intended for customer service purposes. It supports users by answering queries.
+This project is designed to create an interactive quiz bot using Rasa, intended for customer service purposes. It supports users by answering queries.
 
 - **Responding to queries**
 - **Record user interactions in a MySQL database**
-
-Additionally, the project includes a visualization 
-component to illustrate the flow of conversation using D3.js and Dagre-D3 libraries.
 
 ## Technologies Used
 
