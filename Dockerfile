@@ -8,7 +8,7 @@ WORKDIR /app
 COPY Flask-Website/requirements.txt .
 
 # Install dependencies
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install --no-cache-dir -r Flask-website/requirements.txt .
 
 # Copy the rest of your application code
 COPY . .
