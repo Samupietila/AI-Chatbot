@@ -104,7 +104,7 @@ pipeline {
     post {
         always {
             // Archive test results
-            junit 'reports/results.xml'
+            junit 'Flask-Website/reports/results.xml'
             // Stop and remove the MySQL container
             script {
                 if (isUnix()) {
