@@ -22,6 +22,8 @@ pipeline {
             steps {
                 script {
                     if (isUnix()) {
+                        // Check if Docker daemon is running for Unix-based systems
+                        sh 'docker info > /dev/null 2>&1 || (echo "Docker daemon is not running" && exit 1)'
                         // Start MySQL container for Unix-based systems
                         sh """
                             docker run --name ${env.DB_CONTAINER_NAME} -e MYSQL_ROOT_PASSWORD=${env.DB_PASSWORD} -e MYSQL_DATABASE=${env.DB_NAME} -e MYSQL_USER=${env.DB_USER} -e MYSQL_PASSWORD=${env.DB_PASSWORD} -p ${env.DB_PORT}:3306 -d mysql:latest
@@ -29,12 +31,14 @@ pipeline {
                         // Wait for the database to be ready
                         sh 'sleep 30'
                     } else {
+                        // Check if Docker daemon is running for Windows
+                        bat 'docker info >nul 2>&1 || (echo Docker daemon is not running && exit 1)'
                         // Start MySQL container for Windows
                         bat """
                             docker run --name ${env.DB_CONTAINER_NAME} -e MYSQL_ROOT_PASSWORD=${env.DB_PASSWORD} -e MYSQL_DATABASE=${env.DB_NAME} -e MYSQL_USER=${env.DB_USER} -e MYSQL_PASSWORD=${env.DB_PASSWORD} -p ${env.DB_PORT}:3306 -d mysql:latest
                         """
-                        // Wait for the database to be ready
-                        bat 'timeout /t 30'
+                        // Wait for the database to be ready using ping
+                        bat 'ping -n 30 127.0.0.1 > nul'
                     }
                 }
             }
