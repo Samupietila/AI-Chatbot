@@ -2,90 +2,514 @@
 #### If you want to learn more, please see the docs: https://rasa.com/docs/rasa/testing-your-assistant
 
 stories:
-- story: happy path 1
-  steps:
-  - user: |
-      hello there!
-    intent: greet
-  - action: utter_greet
-  - user: |
-      amazing
-    intent: mood_great
-  - action: utter_happy
+  # Roulette Stories
 
-- story: happy path 2
-  steps:
-  - user: |
-      hello there!
-    intent: greet
-  - action: utter_greet
-  - user: |
-      amazing
-    intent: mood_great
-  - action: utter_happy
-  - user: |
-      bye-bye!
-    intent: goodbye
-  - action: utter_goodbye
+  - story: User asks for basic roulette rules
+    steps:
+      - intent: roulette_basic_rules
+      - action: utter_roulette_basic_rules
 
-- story: sad path 1
-  steps:
-  - user: |
-      hello
-    intent: greet
-  - action: utter_greet
-  - user: |
-      not good
-    intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - user: |
-      yes
-    intent: affirm
-  - action: utter_happy
+  - story: User inquires about roulette best strategies
+    steps:
+      - intent: roulette_best_strategies
+      - action: utter_roulette_best_strategies
 
-- story: sad path 2
-  steps:
-  - user: |
-      hello
-    intent: greet
-  - action: utter_greet
-  - user: |
-      not good
-    intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - user: |
-      not really
-    intent: deny
-  - action: utter_goodbye
+  - story: User wants to know odds of specific roulette bets
+    steps:
+      - intent: mood_unhappy
+      - action: utter_cheer_up
+      - action: utter_did_that_help
+      - intent: deny
+      - action: utter_goodbye
 
-- story: sad path 3
-  steps:
-  - user: |
-      hi
-    intent: greet
-  - action: utter_greet
-  - user: |
-      very terrible
-    intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - user: |
-      no
-    intent: deny
-  - action: utter_goodbye
+  - story: customer service technical support 1
+    steps:
+      - intent: roulette_odds_specific_bets
+      - action: utter_roulette_odds_specific_bets
 
-- story: say goodbye
-  steps:
-  - user: |
-      bye-bye!
-    intent: goodbye
-  - action: utter_goodbye
+  - story: User requests a general overview of roulette rules
+    steps:
+      - intent: roulette_game_rules_overview
+      - action: utter_roulette_game_rules_overview
 
-- story: bot challenge
-  steps:
-  - user: |
-      are you a bot?
-    intent: bot_challenge
-  - action: utter_iamabot
+  # Blackjack Stories
+
+  - story: User asks for basic blackjack rules
+    steps:
+      - intent: blackjack_basic_rules
+      - action: utter_blackjack_basic_rules
+
+  - story: User inquires about blackjack card counting
+    steps:
+      - intent: blackjack_card_counting
+      - action: utter_blackjack_card_counting
+
+  - story: User wants to know advanced blackjack strategies
+    steps:
+      - intent: blackjack_advanced_strategies
+      - action: utter_blackjack_advanced_strategies
+
+  - story: User asks about odds of specific blackjack bets
+    steps:
+      - intent: blackjack_odds_specific_bets
+      - action: utter_blackjack_odds_specific_bets
+
+  - story: User requests a general overview of blackjack rules
+    steps:
+      - intent: blackjack_game_rules_overview
+      - action: utter_blackjack_game_rules_overview
+
+  # Poker Stories
+
+  - story: User asks for basic poker rules
+    steps:
+      - intent: poker_basic_rules
+      - action: utter_poker_basic_rules
+
+  - story: User inquires about advanced poker strategies
+    steps:
+      - intent: poker_advanced_strategies
+      - action: utter_poker_advanced_strategies
+
+  - story: User wants to know odds of specific poker bets
+    steps:
+      - intent: poker_odds_specific_bets
+      - action: utter_poker_odds_specific_bets
+
+  - story: User requests a general overview of poker rules
+    steps:
+      - intent: poker_game_rules_overview
+      - action: utter_poker_game_rules_overview
+
+  - story: User asks for poker rules options
+    steps:
+      - intent: ask_poker_rules
+      - action: utter_ask_poker_rules
+
+  - story: User asks for blackjack rules options
+    steps:
+      - intent: ask_blackjack_rules
+      - action: utter_ask_blackjack_rules
+
+  - story: User asks for roulette odds options
+    steps:
+      - intent: ask_roulette_odds
+      - action: utter_ask_roulette_odds
+
+  - story: customer service technical customers game froze, refreshed
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: service_technical
+      - action: utter_service_technical
+      - intent: service_technical_game_froze
+      - action: utter_service_technical_game_froze
+      - intent: service_technical_game_froze_refresh
+      - action: utter_service_technical_game_froze_refresh
+
+  - story: customer service technical customers game froze, cleaned cache and cookies
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: service_technical
+      - action: utter_service_technical
+      - intent: service_technical_game_froze
+      - action: utter_service_technical_game_froze
+      - intent: service_technical_game_froze_clean_cache
+      - action: utter_service_technical_game_froze_clean_cache
+
+  - story: customer service technical customers game froze, browser updated
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: service_technical
+      - action: utter_service_technical
+      - intent: service_technical_game_froze
+      - action: utter_service_technical_game_froze
+      - intent: service_technical_game_froze_update_browser
+      - action: utter_service_technical_game_froze_update_browser
+
+  - story: customer service technical support that asks for the real person
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: service_technical
+      - action: utter_service_technical
+      - intent: service_technical_status_error
+      - action: utter_service_technical_status_error
+      - intent: ask_for_real_person
+      - action: utter_ask_for_real_person
+
+  - story: Account and registration that asks how to create an account
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: service_account_registration
+      - action: utter_service_account_registration
+      - intent: service_account_creation
+      - action: utter_service_account_creation
+      - intent: ask_for_real_person
+      - action: utter_ask_for_real_person
+
+  - story: Account and registration that asks how to reset password with email
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: service_account_registration
+      - action: utter_service_account_registration
+      - intent: service_account_password
+      - action: utter_service_account_password
+      - intent: service_account_reset_email
+      - action: utter_service_account_reset_email
+      - intent: ask_for_real_person
+      - action: utter_ask_for_real_person
+
+  - story: Account and registration that asks how to reset password with phone
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: service_account_registration
+      - action: utter_service_account_registration
+      - intent: service_account_password
+      - action: utter_service_account_password
+      - intent: service_account_reset_phone
+      - action: utter_service_account_reset_phone
+      - intent: ask_for_real_person
+      - action: utter_ask_for_real_person
+
+  - story: Account and registration that asks how to update account information
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: service_account_registration
+      - action: utter_service_account_registration
+      - intent: service_account_information
+      - action: utter_service_account_information
+      - intent: ask_for_real_person
+      - action: utter_ask_for_real_person
+
+  - story: customer service technical support, Server error
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: service_technical
+      - action: utter_service_technical
+      - intent: service_technical_status_error
+      - action: utter_service_technical_status_error
+      - intent: service_technical_status_server_error
+      - action: utter_service_technical_status_server_error
+
+  - story: customer service technical support, Connection issue
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: service_technical
+      - action: utter_service_technical
+      - intent: service_technical_status_error
+      - action: utter_service_technical_status_error
+      - intent: service_technical_status_connection_issue
+      - action: utter_service_technical_status_connection_issue
+
+  - story: customer service technical support, Connetion timed out
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: service_technical
+      - action: utter_service_technical
+      - intent: service_technical_status_error
+      - action: utter_service_technical_status_error
+      - intent: service_technical_status_connection_timed_out
+      - action: utter_service_technical_status_connection_timed_out
+
+  - story: customer service technical support, deposit availability info
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: service_technical
+      - action: utter_service_technical
+      - intent: service_technical_deposit_error
+      - action: utter_service_technical_deposit_error
+      - intent: service_technical_availability_info
+      - action: utter_service_technical_availability_info
+
+  - story: customer service technical support, deposit banks supported
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: service_technical
+      - action: utter_service_technical
+      - intent: service_technical_deposit_error
+      - action: utter_service_technical_deposit_error
+      - intent: service_technical_banks_supported
+      - action: utter_service_technical_banks_supported
+
+  - story: customer service technical support, deposit account status
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: service_technical
+      - action: utter_service_technical
+      - intent: service_technical_deposit_error
+      - action: utter_service_technical_deposit_error
+      - intent: service_technical_account_status
+      - action: utter_service_technical_account_status
+
+  - story: User asks for game rules
+    steps:
+      - intent: service_game_rules
+      - action: utter_service_game_rules
+
+  - story: happy path
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: mood_great
+      - action: utter_happy
+
+  - story: sad path 1
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: mood_unhappy
+      - action: utter_cheer_up
+      - action: utter_did_that_help
+      - intent: affirm
+      - action: utter_happy
+
+  - story: sad path 2
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: mood_unhappy
+      - action: utter_cheer_up
+      - action: utter_did_that_help
+      - intent: deny
+      - action: utter_goodbye
+
+  #### DEPOSIT AND WITHDRAWAL STORIES
+
+  - story: customer service support to check the deposit methods (credit card)
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: service_deposit_withdrawal
+      - action: utter_service_deposit_withdrawal
+      - intent: service_deposit_methods
+      - action: utter_service_deposit_methods
+      - intent: deposit_credit_card
+      - action: utter_deposit_credit_card
+      - intent: ask_for_real_person
+      - action: utter_ask_for_real_person
+
+  - story: customer service support to check the deposit methods (bank transfer)
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: service_deposit_withdrawal
+      - action: utter_service_deposit_withdrawal
+      - intent: service_deposit_methods
+      - action: utter_service_deposit_methods
+      - intent: deposit_bank_transfer
+      - action: utter_deposit_bank_transfer
+      - intent: ask_for_real_person
+      - action: utter_ask_for_real_person
+
+  - story: customer service support to check the deposit methods (e-wallet)
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: service_deposit_withdrawal
+      - action: utter_service_deposit_withdrawal
+      - intent: service_deposit_methods
+      - action: utter_service_deposit_methods
+      - intent: deposit_e_wallet
+      - action: utter_deposit_e_wallet
+      - intent: ask_for_real_person
+      - action: utter_ask_for_real_person
+
+  - story: customer service support to see how long it takes to withdraw money (creditCard)
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: service_deposit_withdrawal
+      - action: utter_service_deposit_withdrawal
+      - intent: service_withdrawal_time
+      - action: utter_service_withdrawal_time
+      - intent: withdrawal_credit_card
+      - action: utter_withdrawal_credit_card
+      - intent: ask_for_real_person
+      - action: utter_ask_for_real_person
+
+  - story: customer service support to see how long it takes to withdraw money (bankTransfer)
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: service_deposit_withdrawal
+      - action: utter_service_deposit_withdrawal
+      - intent: service_withdrawal_time
+      - action: utter_service_withdrawal_time
+      - intent: withdrawal_bank_transfer
+      - action: utter_withdrawal_bank_transfer
+      - intent: ask_for_real_person
+      - action: utter_ask_for_real_person
+
+  - story: customer service support to see how long it takes to withdraw money (eWallet)
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: service_deposit_withdrawal
+      - action: utter_service_deposit_withdrawal
+      - intent: service_withdrawal_time
+      - action: utter_service_withdrawal_time
+      - intent: withdrawal_e_wallet
+      - action: utter_withdrawal_e_wallet
+      - intent: ask_for_real_person
+      - action: utter_ask_for_real_person
+
+  - story: customer service support to see the depositing or withdrawal fees
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: service_deposit_withdrawal
+      - action: utter_service_deposit_withdrawal
+      - intent: service_fees
+      - action: utter_service_fees
+      - intent: ask_for_real_person
+      - action: utter_ask_for_real_person
+  ### SECURITY & FAIR PLAY STORIES
+  - story: customer service support to give info about the security of the casino
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: service_security_fairplay
+      - action: utter_service_security_fairplay
+      - intent: security_casino
+      - action: utter_security_casino
+      - intent: ask_for_real_person
+      - action: utter_ask_for_real_person
+
+  - story: customer service support to give info about the fairness of the casino
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: service_security_fairplay
+      - action: utter_service_security_fairplay
+      - intent: security_fairness
+      - action: utter_security_fairness
+      - intent: ask_for_real_person
+      - action: utter_ask_for_real_person
+
+  - story: customer service support to give info about the personal data security
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: service_security_fairplay
+      - action: utter_service_security_fairplay
+      - intent: security_personal_data
+      - action: utter_security_personal_data
+
+  #### Account and registration stories
+
+  - story: Account and registration that asks how to create an account
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: service_account_registration
+      - action: utter_service_account_registration
+      - intent: service_account_creation
+      - action: utter_service_account_creation
+      - intent: ask_for_real_person
+      - action: utter_ask_for_real_person
+
+  - story: Account and registration that asks how to reset password with email
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: service_account_registration
+      - action: utter_service_account_registration
+      - intent: service_account_password
+      - action: utter_service_account_password
+      - intent: service_account_reset_email
+      - action: utter_service_account_reset_email
+      - intent: ask_for_real_person
+      - action: utter_ask_for_real_person
+
+  - story: Account and registration that asks how to reset password with phone
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: service_account_registration
+      - action: utter_service_account_registration
+      - intent: service_account_password
+      - action: utter_service_account_password
+      - intent: service_account_reset_phone
+      - action: utter_service_account_reset_phone
+      - intent: ask_for_real_person
+      - action: utter_ask_for_real_person
+
+  - story: Account and registration that asks how to update account information
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: service_account_registration
+      - action: utter_service_account_registration
+      - intent: service_account_information
+      - action: utter_service_account_information
+      - intent: ask_for_real_person
+      - action: utter_ask_for_real_person
+
+  ### Responsible Gaming
+  - story: Responsible Gaming where question regarding limits has been asked
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: service_responsible_gaming
+      - action: utter_service_responsible_gaming
+      - intent: responsible_gaming_setting_limits
+      - action: utter_responsible_gaming_setting_limits
+
+  - story: Responsible gaming where question regarding self-exclude is asked
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: service_responsible_gaming
+      - action: utter_service_responsible_gaming
+      - intent: responsible_gaming_self_exclude
+      - action: utter_responsible_gaming_self_exclude
+
+  - story: Responsible gaming where quesiton regarding addiction is asked
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: service_responsible_gaming
+      - action: utter_service_responsible_gaming
+      - intent: responsible_gaming_gambling_addiction
+      - action: utter_responsible_gaming_gambling_addiction
+
+  # Bonus Information
+  - story: customer service support, how to claim a welcome bonus
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: service_bonus
+      - action: utter_service_bonuses
+      - intent: bonus_claim
+      - action: utter_bonus_claim
+
+  - story: customer service support, what are the wagering requirements
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: service_bonus
+      - action: utter_service_bonuses
+      - intent: bonus_wagering_requirements
+      - action: utter_bonus_wagering_requirements
+
+  - story: customer service support, check bonus status
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: service_bonus
+      - action: utter_service_bonuses
+      - intent: bonus_status
+      - action: utter_bonus_status

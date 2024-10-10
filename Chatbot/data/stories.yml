@@ -15,6 +15,14 @@ stories:
 
   - story: User wants to know odds of specific roulette bets
     steps:
+      - intent: mood_unhappy
+      - action: utter_cheer_up
+      - action: utter_did_that_help
+      - intent: deny
+      - action: utter_goodbye
+
+  - story: customer service technical support 1
+    steps:
       - intent: roulette_odds_specific_bets
       - action: utter_roulette_odds_specific_bets
 
@@ -367,6 +375,37 @@ stories:
       - action: utter_service_fees
       - intent: ask_for_real_person
       - action: utter_ask_for_real_person
+  ### SECURITY & FAIR PLAY STORIES
+  - story: customer service support to give info about the security of the casino
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: service_security_fairplay
+      - action: utter_service_security_fairplay
+      - intent: security_casino
+      - action: utter_security_casino
+      - intent: ask_for_real_person
+      - action: utter_ask_for_real_person
+
+  - story: customer service support to give info about the fairness of the casino
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: service_security_fairplay
+      - action: utter_service_security_fairplay
+      - intent: security_fairness
+      - action: utter_security_fairness
+      - intent: ask_for_real_person
+      - action: utter_ask_for_real_person
+
+  - story: customer service support to give info about the personal data security
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: service_security_fairplay
+      - action: utter_service_security_fairplay
+      - intent: security_personal_data
+      - action: utter_security_personal_data
 
   #### Account and registration stories
 

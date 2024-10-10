@@ -3,6 +3,8 @@ import requests
 from flask import Blueprint, render_template, request, jsonify
 from flask_cors import CORS
 from flask_login import login_required, current_user
+from datetime import timezone, datetime
+from Database.authentication import store_chat_history
 
 views = Blueprint('views', __name__)
 CORS(views)
@@ -54,5 +56,32 @@ def webhook():
         bot_response = "Sorry, I didn't get that. Can you rephrase?"
         buttons = []
     print ("Bot response: ", bot_response)
+    user_id = current_user
+    print("User ID: ", user_id)
 
-    return jsonify({'message': bot_response, 'buttons': buttons})
+    if user_id:
+        message_timestamp = datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M:%S')
+        try:
+            store_chat_history({
+                'userid': "1",
+                'messagetimestamp': message_timestamp,
+                'messagecontent': user_message,
+                'airesponse': bot_response
+            })
+        except Exception as e:
+            print(e)
+            logging.error(e)
+    else:
+        message_timestamp = datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M:%S')
+        try:
+            store_chat_history({
+                'userid': "0",
+                'messagetimestamp': message_timestamp,
+                'messagecontent': user_message,
+                'airesponse': bot_response
+            })
+        except Exception as e:
+            print(e)
+            logging.error(e)
+
+    return jsonify({'message': bot_response, 'buttons': buttons, user_message: user_message})
