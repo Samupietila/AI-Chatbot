@@ -50,13 +50,13 @@ def register(email, username, password):
         cursor.close()
         connection.close()
         
-# Checking if Username already exists in database'
+# Checking if Username already exists in database
 def usernameCheck(username):
     connection = db_connection()
     cursor = connection.cursor()
     
     try:
-        cursor.execute("Select * from user where username = %s", (username))
+        cursor.execute("SELECT * FROM user WHERE username = %s", (username,))
         already_exists = cursor.fetchone()
         if already_exists:
             return True
@@ -64,7 +64,8 @@ def usernameCheck(username):
             return False
         
     except Exception as e:
-        return print(e)
+        print(e)
+        return False
     
     finally:
         cursor.close()
@@ -129,21 +130,21 @@ def store_chat_history(data):
     finally:
         cursor.close()
         connection.close()
-# Delete user from the databse (For Testing purpose)
-def delete_user(email, password, username):
+        
+# Database/authentication.py
+def delete_user(email, username):
     connection = db_connection()
     cursor = connection.cursor()
     
     try:
-        query = "DELETE FROM user WHERE email = %s AND password = %s AND username = %s"
-        cursor.execute(query, (email, password, username))
+        cursor.execute("DELETE FROM user WHERE email = %s AND username = %s", (email, username))
         connection.commit()
-        return True
+        return cursor.rowcount > 0
         
-    except mysql.connector.Error as err:
-        print(f"Error: {err}")
+    except Exception as e:
+        print(e)
         return False
-        
+    
     finally:
         cursor.close()
         connection.close()

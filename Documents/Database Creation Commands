@@ -1,3 +1,5 @@
+Use these commands to create database for the project.
+
 CREATE DATABASE ChatAppDatabase;
 
 USE ChatAppDatabase;
