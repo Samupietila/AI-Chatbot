@@ -17,9 +17,6 @@ This project is designed to create an interactive quiz bot using Rasa, intended 
 - **Responding to queries**
 - **Record user interactions in a MySQL database**
 
-Additionally, the project includes a visualization 
-component to illustrate the flow of conversation using D3.js and Dagre-D3 libraries.
-
 ## Technologies Used
 
 ### Main Technologies
