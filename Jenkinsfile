@@ -105,7 +105,7 @@ pipeline {
     post {
         always {
             // Archive test results
-            junit '**/results.xml'
+            junit 'Flask-Website/reports/results.xml'
         }
     }
 }
