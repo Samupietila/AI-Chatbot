@@ -1,10 +1,21 @@
-# AI Chatbot
+## Table of Contents
+- [Introduction](#introduction)
+- [Technologies Used](#technologies-used)
+- [Features](#features)
+- [Setup Instructions](#setup-instructions)
+- [How to Run](#how-to-Run-the-Project)
+- [Contributing](#Contributing)
+- [License](#License)
+- [Contributors](#contributors)
 
-This project is designed to create an interactive quizzbot using Rasa, 
+## Introduction
 
+# Essi-bot - Interactive Quizzbot
 
-- **Greeting users**
+This project is designed to create an interactive quizzbot using Rasa, intended for customer service purposes. It supports users by answering queries.
+
 - **Responding to queries**
+- **Record user interactions in a MySQL database**
 
 Additionally, the project includes a visualization 
 component to illustrate the flow of conversation using D3.js and Dagre-D3 libraries.
@@ -66,7 +77,7 @@ component to illustrate the flow of conversation using D3.js and Dagre-D3 librar
 
 The project's data modeling includes three main tables: User, which stores user information; UserIssue, which documents issues reported by users; and ChatHistory, which records messages and AI responses in conversations between users and the chatbot.
 
-### Use case diagram
+### Use Case Diagram
 
 ![img_2.png](img_2.png) 
 
@@ -121,6 +132,19 @@ Open the HTML page in your browser to view the conversation flow visualization.
 2. **Greet the bot**
 3. **The bot asks what you need help with**
 4. **User will choose the subject and the bot will answer**
+
+## Contributing
+We welcome contributions! Please follow these steps:
+1. Fork the repository
+2. Create a new branch (`git checkout -b feature-branch`)
+3. Make your changes and commit (`git commit -m 'Add feature'`)
+4. Push to the branch (`git push origin feature-branch`)
+5. Open a pull request
+
+## License
+
+This project is licensed under the Creative Commons Attribution-NonCommercial 4.0 International License.  
+You can view the full license [here](https://creativecommons.org/licenses/by-nc/4.0/).
 
 ## Contributors
 

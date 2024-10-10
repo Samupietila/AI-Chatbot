@@ -9,11 +9,11 @@ def login():
     if request.method == 'POST':
         username = request.form.get('username')
         password = request.form.get('password')
+        print(username)
+        print(password)
         user = authentication.authenticate_user(username, password)
         if user:
             print(user)
-
-            
             login_user(user, remember=True)
             flash('Logged in successfully!', category='success')
             redirect(url_for('auth.thankyou'))
@@ -58,7 +58,7 @@ def register():
                 flash('Email address already exists', category='error')
             elif usernameCheck:
                 flash('Username is already in use')
-            if not emailCheck and usernameCheck:
+            if not emailCheck and not usernameCheck:
                 authentication.register(email, username, password1)
                 flash('Account has been created!', category='success')
                 return redirect(url_for('auth.thankyou'))

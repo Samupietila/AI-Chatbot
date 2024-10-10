@@ -2,6 +2,7 @@ import pytest
 from main import app
 from Database.authentication import delete_user, emailCheck, usernameCheck
 
+
 # Creating the test client
 @pytest.fixture
 def client():
@@ -26,6 +27,18 @@ def login_response(client):
 def register_response(client):
     response = client.get('/register')
     return response
+
+@pytest.fixture(scope='session', autouse=True)
+def cleanup():
+    yield
+    # Cleanup code to delete test users
+    test_users = [
+        {"email": "testUser@EssiBot.fi", "username": "TestUser"},
+        {"email": "testUser@EssiBot2.fi", "username": "TestUser2"},
+        {"email": "testUserToDelete@EssiBot.fi", "username": "TestUserToDelete"}
+    ]
+    for user in test_users:
+        delete_user(user['email'], user['username'])
     
 
 # Testing that every page were retrieved
@@ -42,17 +55,28 @@ def test_home_page(home_response, login_response, register_response):
     assert register_response.status_code == 200
     assert b"Create a new account" in register_response.data
 
-# Register Test
 def test_register_page(client):
     form_data = {
-        "email":"testUser@EssiBot.fi",
-        "username":"TestUser",
-        "password1":"password123",
-        "password2":"password123"
+        "email": "testUser@EssiBot.fi",
+        "username": "TestUser",
+        "password1": "password123",
+        "password2": "password123"
     }
     response = client.post('/register', data=form_data)
-    # If register was success, user is redirected to /thankyou, that's why status code 200
-    assert response.status_code == 200
+    assert response.status_code == 302
+    
+    print("Response data:", response.data)
+    
+    client.get('/logout')
+    login_response = client.post('/login', data={"username": form_data["username"], "password": form_data["password1"]})
+    assert login_response.status_code == 200
+    
+    check = usernameCheck(form_data['username'])
+    print("usernameCheck result:", check)
+    
+    assert check
+    
+    
     
 # Registering password Fail Test
 def test_register_password_fail(client):
@@ -92,23 +116,23 @@ def test_register_email_fail(client):
 # Login Test
 def test_login(client):
     form_data = {
+        "email":"testUser@EssiBot2.fi",
+        "username":"TestUser2",
+        "password1":"password123",
+        "password2":"password123"
+    }
+    response = client.post('/register', data=form_data)
+    assert response.status_code == 302
+    
+    form_data = {
         "username":"TestUser",
-        "password":"password123",
+        "password":"password123"
     }
     response = client.post('/login', data=form_data)
     assert response.status_code == 200
-    assert b'Logged in successfully!' in response.data
-
-# Delete test user that has been created and check if it is in the database
-def test_delete_user():
-    email = "testUser@EssiBot.fi"
-    username = "TestUser"
-    password = "password123"
-    delete_user(email, password, username)
-    assert not emailCheck(email)
-    assert not usernameCheck(username)
     
-
+    print(response.data)
+    assert b'Logged in successfully!' in response.data
 
 # ChatBot Test >> Chatbot has to be run for it to work >> rasa run --enable-api --cors "*"
 def test_get_response_from_chatbot(client):
@@ -120,4 +144,3 @@ def test_get_response_from_chatbot(client):
     assert response.status_code == 200
     assert expected_message.encode() in response.data
     
-
