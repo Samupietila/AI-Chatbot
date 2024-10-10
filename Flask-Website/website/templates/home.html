@@ -1,4 +1,12 @@
 {% extends "base.html" %} {% block title %} Home {% endblock %} {%block
 container%}
-<h1>Home.html</h1>
+<h1>Welcome to the Casino website</h1>
+<a class="landing-page" href="/">
+  <img
+    src="{{ url_for('static', filename='images/logo.png') }}"
+    alt="Logo"
+    class="logo"
+  />
+</a>
+
 {%endblock%}

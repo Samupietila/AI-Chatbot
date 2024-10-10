@@ -8,6 +8,7 @@
   --primary-color: #af1010;
   --secondary-color: #efe5a1;
   --success-color: #28a745;
+  --button-color: #af1010;
 }
 
 body {
@@ -19,13 +20,12 @@ nav {
   display: flex;
   width: 100%;
   height: 100%;
-  padding: var(--sds-size-space-200);
   align-items: center;
   align-content: center;
   gap: 0rem var(--sds-size-space-600);
   flex-shrink: 0;
   flex-wrap: wrap;
-  background-color: #efe5a1;
+  background-color: var(--secondary-color);
 }
 
 nav .logo {
@@ -34,17 +34,37 @@ nav .logo {
   border-radius: 3.125rem;
   width: 8.5rem;
   height: 5.5rem;
+  margin-left: 1rem;
+  padding: 0.5rem;
 }
 
 nav .nav-links {
   display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  align-content: center;
-  gap: 0.5rem var(--sds-size-space-200);
-
-  flex: 1 0 0;
-  flex-wrap: wrap;
+  gap: 1rem;
+  margin-left: auto;
+}
+nav .nav-links a {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-size: 1.5rem;
+}
+nav .auth-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-right: 1rem;
+}
+nav .auth-buttons a {
+  color: var(--secondary-color);
+  text-decoration: none;
+  font-size: 1.5rem;
+  padding: 10px 20px;
+  border-radius: 15px;
+  background-color: var(--button-color);
+  transition: background-color 0.3s ease;
+}
+nav .auth-buttons a:hover {
+  background-color: black;
+  color: var(--primary-color);
 }
 
 .card-footer {
@@ -92,6 +112,16 @@ nav .nav-links {
   background-color: var(--secondary-color);
   color: black;
 }
+.btn:hover {
+  background-color: var(--primary-color);
+  color: white;
+  border-color: #efe5a1;
+}
+.btn-primary {
+  background-color: var(--primary-color);
+  color: white;
+  border-color: #af1010;
+}
 .chat-widget-message-sender {
   display: flex;
   justify-content: flex-end;
@@ -104,4 +134,56 @@ nav .nav-links {
   border-radius: 0.5rem;
   width: auto;
   min-width: 5rem;
+}
+
+/* LOGINPAGE REGISTERPAGE */
+
+.alert {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+.alert span {
+  margin-left: 1rem;
+}
+
+.login-page-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.login-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 2rem;
+  border-radius: 1rem;
+  background-color: var(--secondary-color);
+}
+.login-container h3 {
+  text-align: center;
+  font-size: 3rem;
+  color: var(--primary-color);
+  padding-bottom: 2rem;
+}
+/* LANDING PAGE */
+.landing-page {
+  display: flex;
+  flex-direction: column;
+  padding-top: 5rem;
+  align-items: center;
+  height: 100vh;
+}
+h1 {
+  font-size: 3rem;
+  color: var(--secondary-color);
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  padding-top: 3rem;
+}
+.landing-page img {
+  border-radius: 30%;
+  border: 5px solid var(--secondary-color);
 }
