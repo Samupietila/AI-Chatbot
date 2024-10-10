@@ -81,23 +81,27 @@ pipeline {
         }
 
         stage('Run Tests') {
-            steps {
-                script {
-                    if (isUnix()) {
-                        // Activate the virtual environment and run tests for Unix-based systems
-                        sh """
-                            . ${env.PYTHON_ENV}/bin/activate
-                            pytest Flask-Website/tests/ --junitxml=reports/results.xml
-                        """
-                    } else {
-                        // Activate the virtual environment and run tests for Windows
-                        bat """
-                            ${env.PYTHON_ENV}\\Scripts\\activate
-                            pytest tests\\ --junitxml=reports\\results.xml              
-                        """
-                    }
-                }
+    steps {
+        script {
+            if (isUnix()) {
+                // Create the reports directory if it doesn't exist and run tests for Unix-based systems
+                sh """
+                    mkdir -p reports
+                    . ${env.PYTHON_ENV}/bin/activate
+                    pytest Flask-Website/tests/ --junitxml=reports/results.xml
+                    ls -l reports  # List files in reports directory
+                """
+            } else {
+                // Create the reports directory if it doesn't exist and run tests for Windows
+                bat """
+                    if not exist reports (mkdir reports)
+                    ${env.PYTHON_ENV}\\Scripts\\activate
+                    pytest Flask-Website\\tests\\ --junitxml=reports\\results.xml
+                    dir reports  # List files in reports directory
+                """
             }
+        }
+    }
             post {
                 always {
                     // Archive test results
