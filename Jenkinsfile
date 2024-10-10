@@ -14,7 +14,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 // Checkout code from GitHub
-                git branch: 'main', url: 'https://github.com/Samupietila/AI-Chatbot.git'
+                git branch: 'Mikan-DB-Sekoilua', url: 'https://github.com/Samupietila/AI-Chatbot.git'
             }
         }
 
