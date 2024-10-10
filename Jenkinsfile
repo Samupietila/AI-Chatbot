@@ -48,7 +48,7 @@ pipeline {
                         sh 'python3 -m venv ${PYTHON_ENV}'
                     } else {
                         // Create virtual environment for Windows
-                        bat 'python -m venv %PYTHON_ENV%'
+                        bat "C:\\Users\\mika1\\AppData\\Local\\Programs\\Python\\Python39\\python.exe -m venv venv"
                     }
                 }
             }
