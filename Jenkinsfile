@@ -105,7 +105,7 @@ pipeline {
     post {
         always {
             // Archive test results
-            junit 'reports/results.xml'
+            junit '**/results.xml'
         }
     }
 }
