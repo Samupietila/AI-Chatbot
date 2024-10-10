@@ -93,7 +93,7 @@ pipeline {
                         // Activate the virtual environment and run tests for Windows
                         bat """
                             ${env.PYTHON_ENV}\\Scripts\\activate
-                            pytest Flask-Website\\tests\\ --junitxml=reports\\results.xml
+                            pytest tests\\ --junitxml=reports\\results.xml              
                         """
                     }
                 }
