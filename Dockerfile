@@ -5,10 +5,10 @@ FROM python:3.10-slim
 WORKDIR /app
 
 # Copy the requirements file to the container
-COPY requirements.txt .
+COPY Flask-Website/requirements.txt .
 
 # Install dependencies
-RUN pip install --no-cache-dir -r Flask-website/requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy the rest of your application code
 COPY . .
