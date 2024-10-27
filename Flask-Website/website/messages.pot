@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2024-10-27 18:03+0200\n"
+"POT-Creation-Date: 2024-10-27 19:11+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,43 +21,82 @@ msgstr ""
 msgid "Website-Title"
 msgstr ""
 
-#: templates/base.html:39
-msgid " Home "
+#: templates/base.html:40 templates/home.html:1
+msgid "Home"
 msgstr ""
 
-#: templates/base.html:40
+#: templates/base.html:43 templates/games.html:1
 msgid "Games"
 msgstr ""
 
-#: templates/base.html:41
+#: templates/base.html:46 templates/community.html:1
 msgid "Community"
 msgstr ""
 
-#: templates/base.html:42
+#: templates/base.html:49 templates/help.html:1
 msgid "Help"
 msgstr ""
 
-#: templates/base.html:44
+#: templates/base.html:52
 msgid "Withdrawal/Deposit"
 msgstr ""
 
-#: templates/base.html:46
+#: templates/base.html:55 templates/profile.html:1 templates/profile.html:3
 msgid "Profile"
 msgstr ""
 
-#: templates/base.html:57
+#: templates/base.html:79
 msgid "Logout"
 msgstr ""
 
-#: templates/base.html:59
+#: templates/base.html:81
 msgid "Log In"
 msgstr ""
 
-#: templates/base.html:60
+#: templates/base.html:82 templates/register.html:1 templates/register.html:6
 msgid "Register"
 msgstr ""
 
-#: templates/base.html:118
+#: templates/base.html:140
 msgid "Send"
+msgstr ""
+
+#: templates/chatbot.html:1
+msgid "Chatbot "
+msgstr ""
+
+#: templates/home.html:3
+msgid "Welcome to the Casino website"
+msgstr ""
+
+#: templates/login.html:1 templates/login.html:6 templates/login.html:29
+msgid "Login"
+msgstr ""
+
+#: templates/login.html:8 templates/register.html:18
+msgid "Username"
+msgstr ""
+
+#: templates/login.html:18 templates/register.html:28
+#: templates/register.html:38
+msgid "Password"
+msgstr ""
+
+#: templates/register.html:8
+msgid "Email Address"
+msgstr ""
+
+#: templates/register.html:49
+msgid "Create a new account"
+msgstr ""
+
+#: templates/thankyou.html:1
+msgid ""
+"Thank you for\n"
+"registering!"
+msgstr ""
+
+#: templates/thankyou.html:3
+msgid "Thank you for registering"
 msgstr ""
 
