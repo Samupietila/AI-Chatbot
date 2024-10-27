@@ -56,7 +56,7 @@ msgstr "Kirjaudu Sisään"
 
 #: templates/base.html:60
 msgid "Register"
-msgstr "Register"
+msgstr "Rekisteröinti"
 
 #: templates/base.html:118
 msgid "Send"
