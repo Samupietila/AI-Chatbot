@@ -8,14 +8,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2024-10-27 19:11+0200\n"
+"POT-Creation-Date: 2024-10-27 19:21+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.16.0\n"
+"Generated-By: Babel 2.9.1\n"
 
 #: templates/base.html:25
 msgid "Website-Title"
@@ -77,13 +77,33 @@ msgstr ""
 msgid "Username"
 msgstr ""
 
+#: templates/login.html:14
+msgid "Enter Username"
+msgstr ""
+
 #: templates/login.html:18 templates/register.html:28
 #: templates/register.html:38
 msgid "Password"
 msgstr ""
 
+#: templates/login.html:24 templates/register.html:34
+msgid "Enter password"
+msgstr ""
+
 #: templates/register.html:8
 msgid "Email Address"
+msgstr ""
+
+#: templates/register.html:14
+msgid "Enter email"
+msgstr ""
+
+#: templates/register.html:24
+msgid "Enter username"
+msgstr ""
+
+#: templates/register.html:44
+msgid "Enter password again"
 msgstr ""
 
 #: templates/register.html:49
