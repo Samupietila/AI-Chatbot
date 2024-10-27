@@ -6,7 +6,7 @@ def get_locale():
         language = request.cookies.get('language')
         if language:
             return language
-        return request.accept_languages.best_match(['en', 'fr', 'fi'])
+        return request.accept_languages.best_match(['en', 'fi', 'ar'])
 
 def create_app():
     app = Flask(__name__)
