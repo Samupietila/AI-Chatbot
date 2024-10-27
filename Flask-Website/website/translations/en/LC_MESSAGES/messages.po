@@ -1,0 +1,64 @@
+# English translations for PROJECT.
+# Copyright (C) 2024 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2024-10-27 18:03+0200\n"
+"PO-Revision-Date: 2024-10-27 18:03+0200\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: en\n"
+"Language-Team: en <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: templates/base.html:25
+msgid "Website-Title"
+msgstr "CasinoDoTCom"
+
+#: templates/base.html:39
+msgid " Home "
+msgstr "Home"
+
+#: templates/base.html:40
+msgid "Games"
+msgstr "Games"
+
+#: templates/base.html:41
+msgid "Community"
+msgstr "Community"
+
+#: templates/base.html:42
+msgid "Help"
+msgstr "Help"
+
+#: templates/base.html:44
+msgid "Withdrawal/Deposit"
+msgstr "Withdrawal/Deposit"
+
+#: templates/base.html:46
+msgid "Profile"
+msgstr "Profile"
+
+#: templates/base.html:57
+msgid "Logout"
+msgstr "Logout"
+
+#: templates/base.html:59
+msgid "Log In"
+msgstr "Log in"
+
+#: templates/base.html:60
+msgid "Register"
+msgstr "Register"
+
+#: templates/base.html:118
+msgid "Send"
+msgstr "Send"
+
