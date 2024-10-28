@@ -21,104 +21,104 @@ msgstr ""
 
 #: templates/base.html:25
 msgid "Website-Title"
-msgstr ""
+msgstr "عنوان الموقع"
 
 #: templates/base.html:40 templates/home.html:1
 msgid "Home"
-msgstr ""
+msgstr "الرئيسية"
 
 #: templates/base.html:43 templates/games.html:1
 msgid "Games"
-msgstr ""
+msgstr "الألعاب"
 
 #: templates/base.html:46 templates/community.html:1
 msgid "Community"
-msgstr ""
+msgstr "المجتمع"
 
 #: templates/base.html:49 templates/help.html:1
 msgid "Help"
-msgstr ""
+msgstr "المساعدة"
 
 #: templates/base.html:52
 msgid "Withdrawal/Deposit"
-msgstr ""
+msgstr "السحب/الإيداع"
 
 #: templates/base.html:55 templates/profile.html:1 templates/profile.html:3
 msgid "Profile"
-msgstr ""
+msgstr "الملف الشخصي"
 
 #: templates/base.html:79
 msgid "Logout"
-msgstr ""
+msgstr "تسجيل الخروج"
 
 #: templates/base.html:81
 msgid "Log In"
-msgstr ""
+msgstr "تسجيل الدخول"
 
 #: templates/base.html:82 templates/register.html:1 templates/register.html:6
 msgid "Register"
-msgstr ""
+msgstr "إنشاء حساب"
 
 #: templates/base.html:140
 msgid "Send"
-msgstr ""
+msgstr "إرسال"
 
 #: templates/chatbot.html:1
 msgid "Chatbot "
-msgstr ""
+msgstr "الدردشة الآلية"
 
 #: templates/home.html:3
 msgid "Welcome to the Casino website"
-msgstr ""
+msgstr "مرحبًا بك في موقع الكازينو"
 
 #: templates/login.html:1 templates/login.html:6 templates/login.html:29
 msgid "Login"
-msgstr ""
+msgstr "تسجيل الدخول"
 
 #: templates/login.html:8 templates/register.html:18
 msgid "Username"
-msgstr ""
+msgstr "اسم المستخدم"
 
 #: templates/login.html:14
 msgid "Enter Username"
-msgstr ""
+msgstr "أدخل اسم المستخدم"
 
 #: templates/login.html:18 templates/register.html:28
 #: templates/register.html:38
 msgid "Password"
-msgstr ""
+msgstr "كلمة المرور"
 
 #: templates/login.html:24 templates/register.html:34
 msgid "Enter password"
-msgstr ""
+msgstr "أدخل كلمة المرور"
 
 #: templates/register.html:8
 msgid "Email Address"
-msgstr ""
+msgstr "عنوان البريد الإلكتروني"
 
 #: templates/register.html:14
 msgid "Enter email"
-msgstr ""
+msgstr "أدخل البريد الإلكتروني"
 
 #: templates/register.html:24
 msgid "Enter username"
-msgstr ""
+msgstr "أدخل اسم المستخدم"
 
 #: templates/register.html:44
 msgid "Enter password again"
-msgstr ""
+msgstr "أدخل كلمة المرور مرة أخرى"
 
 #: templates/register.html:49
 msgid "Create a new account"
-msgstr ""
+msgstr "إنشاء حساب جديد"
 
 #: templates/thankyou.html:1
 msgid ""
 "Thank you for\n"
 "registering!"
-msgstr ""
+msgstr "شكرًا لك على التسجيل!"
 
 #: templates/thankyou.html:3
 msgid "Thank you for registering"
-msgstr ""
+msgstr "شكرًا لك على التسجيل"
 
