@@ -1,0 +1,24 @@
+Translations:
+
+1.in templates extract transateable items
+example: {% trans %} Translate {% endtrans %} #This will extract messageid "msgid" "Translate"
+
+2.Then we use the command (NOTE: You have to be in the same folder as babel.cfg is found at...In our project it's in Flask-Website/website):
+
+pybabel extract -F babel.cfg -o messages.pot . #this scans all templates for translateable items and makes a .pot file where you can find all extracted messages
+You can check if the messageid's are fine
+
+
+
+3.These following commands will be used to make the actual Translation files that will be used for the translations based of messages.pot file
+
+pybabel init -i messages.pot -d translations -l en #The end part defines the language
+pybabel init -i messages.pot -d translations -l fi
+pybabel init -i messages.pot -d translations -l ar
+
+4. Add the translations into the .po files found in the 
+"msgid" "Translate"
+"msgstr" "Hello, this is translation"
+
+5.Compile the messages into the object file
+pybabel compile -d translations
