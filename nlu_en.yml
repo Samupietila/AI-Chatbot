@@ -1,0 +1,190 @@
+version: "3.1"
+nlu:
+  - intent: greet
+    examples: |
+      - hey
+      - hello
+      - hi
+      - hello there
+      - good morning
+      - good evening
+      - moin
+      - hey there
+      - let's go
+      - hey dude
+      - goodmorning
+      - goodevening
+      - good afternoon
+
+  - intent: goodbye
+    examples: |
+      - cu
+      - good bye
+      - see you later
+      - good night
+      - bye
+      - goodbye
+      - have a nice day
+      - see you around
+      - bye bye
+      - see you later
+      - ciao
+      - see you soon
+      - bye for now
+      - ok bye
+
+  - intent: affirm
+    examples: |
+      - yes
+      - y
+      - indeed
+      - of course
+      - that sounds good
+      - correct
+      - absolutely
+      - sure
+      - definitely
+      - yes, please
+      - yes, I'd like to
+      - yes, I'd like to do that
+      - of course, please
+      - yes, make it so
+      - yes, I want that
+      - ok
+      - yep
+      - yeah
+      - ok, cool
+
+  - intent: deny
+    examples: |
+      - no
+      - n
+      - never
+      - I don't think so
+      - don't like that
+      - no way
+      - not really
+      - nope
+      - definitely not
+      - no, I don't want that
+      - no, I don't want to do that
+      - no, I don't feel like it
+      - you are dumb
+      - stop
+      - nooo
+      - noooope
+      - never ever
+      - not in a million years
+      - no way jose
+
+  - intent: mood_great
+    examples: |
+      - perfect
+      - great
+      - amazing
+      - feeling like a king
+      - wonderful
+      - I am feeling very good
+      - I am great
+      - I am amazing
+      - I am going to save the world
+      - super stoked
+      - extremely good
+      - so so perfect
+      - so good
+      - so perfect
+      - I'm good
+      - I'm great
+      - I'm amazing
+      - I'm so great
+      - good
+
+  - intent: mood_unhappy
+    examples: |
+      - my day was horrible
+      - I am sad
+      - I don't feel very well
+      - I am disappointed
+      - super sad
+      - I'm so sad
+      - sad
+      - very sad
+      - unhappy
+      - not good
+      - not very good
+      - extremely sad
+      - so sad
+      - so sad
+      - bad
+      - very bad
+      - awful
+      - terrible
+      - not so good
+
+  - intent: bot_challenge
+    examples: |
+      - are you a bot?
+      - are you a human?
+      - am I talking to a bot?
+      - am I talking to a human?
+      - what are you?
+      - who are you?
+      - is this a bot?
+      - is this a human?
+
+  - intent: ask_blackjack_rules
+    examples: |
+      - What are the rules for blackjack?
+      - Can you explain the blackjack rules?
+      - How do I play blackjack?
+
+  - intent: ask_poker_rules
+    examples: |
+      - What are the rules for poker?
+      - Can you explain the poker rules?
+      - How do I play poker?
+
+  - intent: ask_roulette_odds
+    examples: |
+      - What are the odds in roulette?
+      - Can you tell me the roulette odds?
+      - How likely am I to win in roulette?
+
+  - intent: ask_rules
+    examples: |
+      - Can you explain the rules?
+      - How do I play this game?
+      - I need the rules.
+
+  - intent: button_test
+    examples: |
+      - Show me buttons
+      - I'd like to see button options.
+
+  - intent: select_option
+    examples: |
+      - I choose option 1
+      - I will go with option 2
+      - Option 1 is my choice.
+
+  - intent: bonus_claim
+    examples: |
+      - I want to claim my bonus
+      - How do I claim my bonus?
+      - Claim bonus
+      - I’d like to claim my welcome bonus
+      - How can I get my bonus?
+
+  - intent: bonus_wagering_requirements
+    examples: |
+      - What are the wagering requirements for my bonus?
+      - Tell me about the bonus wagering requirements
+      - What do I need to wager for the bonus?
+      - How do I meet the bonus requirements?
+
+  - intent: bonus_status
+    examples: |
+      - What is the status of my bonus?
+      - Check my bonus status
+      - How can I see my bonus status?
+      - Where do I find my bonus status?
