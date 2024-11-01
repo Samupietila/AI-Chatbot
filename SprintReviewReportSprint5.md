@@ -16,9 +16,9 @@
   - Samu
 
 ## Overview of the Sprint
-- **Total Number of User Stories Completed**: [Enter Number]
-- **Total Number of Tasks Completed**: [Enter Number]
-- **Total Number of Tasks Pending**: [Enter Number]
+- **Total Number of User Stories Completed**: 3
+- **Total Number of Tasks Completed**: 
+- **Total Number of Tasks Pending**: 
 
 ## Demonstration of Completed Work
 - **User Stories Completed**:
