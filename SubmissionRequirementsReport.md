@@ -1,20 +1,25 @@
 ## Submission Requirements Report
 
-User Interface Localization
+Submit a report outlining the team's activities in each area of focus within the sprint, covering:
 
-Database Localization
+**User Interface Localization**
 
-Product Backlog Update
+**Database Localization**
 
-Localization Resources Identification
+**Product Backlog Update**
 
-Sprint Planning and Review
+**Localization Resources Identification**
+
+**Sprint Planning and Review**
 
 Additional Requirement:
 Include a table within the report that specifies individual contributions. This table should detail:
 
-Team member names
+**Team member names**
+**Assigned tasks**
+**Time spent on each task**
 
-Assigned tasks
-
-Time spent on each task
+Jukka
+- Sprint planning and review: 3 hours
+- Database localization: 3 hours
+- User interface localization (Essi-bot): 1 hour
