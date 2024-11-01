@@ -1,7 +1,5 @@
 ## Submission Requirements Report
 
-Submit a report outlining the team's activities in each area of focus within the sprint, covering:
-
 ## User Interface Localization and Localization Resources Identification
 
 **Front-End Localization in Flask:**
