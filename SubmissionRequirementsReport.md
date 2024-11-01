@@ -42,3 +42,7 @@ Mika
 - Daily sprints: 3 hours
 - Website Localization: 17 Hours
 - Chatbot Localization: 4 Hours
+
+Zehra
+- Essi-bot translations/localization: 9 hours
+- Daily sprints: 3 hours
