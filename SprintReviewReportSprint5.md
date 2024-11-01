@@ -36,7 +36,7 @@
     - **Acceptance Criteria Met**: [Yes/No]
   - [ID 5]
     - **Description**: [Culturally relevant webpage in preferred language]
-    - **Acceptance Criteria Met**: [Yes/No]
+    - **Acceptance Criteria Met**: [Yes]
 
 ## Issues Encountered
 - **Challenges Faced**:
