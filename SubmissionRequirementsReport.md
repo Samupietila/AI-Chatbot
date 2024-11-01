@@ -40,8 +40,9 @@ Jukka
 
 Mika
 - Daily sprints: 3 hours
-- Website Localization: 17 Hours
-- Chatbot Localization: 4 Hours
+- Research for Project: 3 Hours
+- Website Localization: 14 Hours
+- Chatbot Localization: 7 Hours
 
 Zehra
 - Essi-bot translations/localization: 9 hours
