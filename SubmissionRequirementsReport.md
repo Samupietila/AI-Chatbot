@@ -6,6 +6,7 @@ Submit a report outlining the team's activities in each area of focus within the
 
 **Database Localization**
 
+we implemented field-level localizaiton in our database to support multiple languages—Finnish, English, and Arabic—by adding a dedicated translations table. This approach enables specific fields, such as usernames, message content, and issue descriptions, to store translations directly in the database, without duplicating entire records for each language.
 
 
 **Product Backlog Update**
