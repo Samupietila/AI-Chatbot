@@ -6,6 +6,8 @@ Submit a report outlining the team's activities in each area of focus within the
 
 **Database Localization**
 
+
+
 **Product Backlog Update**
 
 **Localization Resources Identification**
