@@ -34,6 +34,7 @@ We updated the Product Backlog to align with the goals for Sprint 5 and created 
 **Time spent on each task**
 
 Jukka
+- Mixed tasks: 1 hour
 - Sprint planning and review: 3 hours
 - Database localization: 3 hours
 - User interface localization (Essi-bot): 1 hour
