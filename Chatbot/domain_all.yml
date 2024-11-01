@@ -1,0 +1,1315 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - ask_rules
+  - button_test
+  - ask_poker_rules
+  - ask_blackjack_rules
+  - ask_roulette_odds
+  - select_option
+  - mood_great
+  - mood_unhappy
+  - service_technical
+  - service_bonuses
+  - service_bonus
+  - bonus_claim
+  - bonus_wagering_requirements
+  - bonus_status
+  - service_deposit_withdrawal
+  - service_game_rules
+  - service_security_fairplay
+  - service_responsible_gaming
+  - service_technical_game_froze
+  - service_technical_status_error
+  - service_technical_deposit_error
+  - service_technical_game_froze_refresh
+  - service_technical_game_froze_clean_cache
+  - service_technical_game_froze_update_browser
+  - service_technical_status_server_error
+  - service_technical_status_connection_issue
+  - service_technical_status_connection_timed_out
+  - service_technical_account_status
+  - service_technical_banks_supported
+  - service_technical_availability_info
+  - ask_for_real_person
+  - approval_yes
+  - approval_no
+  - service_deposit_methods
+  - deposit_credit_card
+  - deposit_bank_transfer
+  - deposit_e_wallet
+  - service_withdrawal_time
+  - withdrawal_credit_card
+  - withdrawal_bank_transfer
+  - withdrawal_e_wallet
+  - service_fees
+  - security_casino
+  - security_fairness
+  - security_personal_data
+  - service_account_registration
+  - service_account_creation
+  - service_account_password
+  - service_account_information
+  - service_account_reset_email
+  - service_account_reset_phone
+  - roulette_basic_rules
+  - roulette_best_strategies
+  - roulette_odds_specific_bets
+  - roulette_game_rules_overview
+  - blackjack_basic_rules
+  - blackjack_card_counting
+  - blackjack_advanced_strategies
+  - blackjack_odds_specific_bets
+  - blackjack_game_rules_overview
+  - poker_basic_rules
+  - poker_advanced_strategies
+  - poker_odds_specific_bets
+  - poker_game_rules_overview
+  - responsible_gaming_setting_limits
+  - responsible_gaming_self_exclude
+  - responsible_gaming_gambling_addiction
+
+slots:
+  language:
+    type: text
+    initial_value: "en"
+  option:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: option
+
+actions:
+  - action_before_listen
+  - action_set_language
+
+entities:
+  - option
+responses:
+  utter_blackjack_basic_rules:
+    - language: "en"
+      text: "In Blackjack, the goal is to get a hand value as close to 21 as possible without going over. You win by having a higher hand value than the dealer without busting. Face cards are worth 10 points, Aces can be worth 1 or 11, and other cards are worth their face value."
+    - language: "fi"
+      text: "Blackjackissa tavoitteena on saada käden arvo mahdollisimman lähelle 21:stä ylittämättä sitä. Voitat, kun sinulla on korkeampi käden arvo kuin jakajalla ilman, että ylität 21. Kuvakortit ovat arvoltaan 10 pistettä, ässät voivat olla 1 tai 11, ja muut kortit ovat arvoltaan niiden nimellisarvon mukaisia."
+    - language: "ar"
+      text: "في لعبة البلاك جاك، الهدف هو الحصول على قيمة يد قريبة من 21 دون تجاوزها. تفوز من خلال امتلاك قيمة يد أعلى من يد الموزع دون أن تتجاوز 21. ورق الوجه يساوي 10 نقاط، ويمكن أن تساوي الآسات 1 أو 11، وتساوي الأوراق الأخرى قيمتها الاسمية."
+
+  utter_blackjack_card_counting:
+    - language: "en"
+      text: "Card counting is a strategy used to determine whether the next hand is likely to give an advantage to the player or the dealer. The most common system is the Hi-Lo method, where cards are assigned values and the player keeps a running count to make better betting decisions."
+    - language: "fi"
+      text: "Korttien laskeminen on strategia, jota käytetään määrittämään, onko seuraavan käden todennäköisesti edullista pelaajalle tai jakajalle. Yleisin järjestelmä on Hi-Lo-menetelmä, jossa korteille annetaan arvot ja pelaaja pitää yllä juoksevaa laskentaa tehdäkseen parempia vedonlyöntipäätöksiä."
+    - language: "ar"
+      text: "عد الأوراق هو استراتيجية تُستخدم لتحديد ما إذا كانت اليد التالية من المحتمل أن تعطي ميزة للاعب أو للموزع. النظام الأكثر شيوعًا هو طريقة هاي-لو، حيث تُعطى الأوراق قيمًا ويحافظ اللاعب على عدد متتابع لاتخاذ قرارات أفضل في المراهنة."
+
+  utter_blackjack_advanced_strategies:
+    - language: "en"
+      text: "Advanced Blackjack strategies include card counting, bet spreading, and using optimal playing strategies like basic strategy charts. These methods help players make better decisions on when to hit, stand, double down, or split."
+    - language: "fi"
+      text: "Edistyneet blackjack-strategiat sisältävät korttien laskemisen, vedonlyöntien levittämisen ja optimaalisten pelistrategioiden, kuten perusstrategia-kaavioiden, käytön. Nämä menetelmät auttavat pelaajia tekemään parempia päätöksiä siitä, milloin lyödä, jäädä, tuplata tai jakaa."
+    - language: "ar"
+      text: "تشمل استراتيجيات البلاك جاك المتقدمة عد الأوراق، نشر الرهانات، واستخدام استراتيجيات اللعب المثلى مثل مخططات الاستراتيجية الأساسية. تساعد هذه الطرق اللاعبين على اتخاذ قرارات أفضل بشأن متى يجب عليهم الضرب، أو التوقف، أو المضاعفة، أو الانقسام."
+
+  utter_blackjack_odds_specific_bets:
+    - language: "en"
+      text: "The odds of specific bets in Blackjack can vary. For example, the odds of getting a Blackjack (an Ace and a 10-value card) on the initial deal are approximately 4.8%. The payout for a Blackjack is typically 3:2."
+    - language: "fi"
+      text: "Blackjackin erityisten vetojen todennäköisyydet voivat vaihdella. Esimerkiksi todennäköisyys saada blackjack (ässän ja 10-arvoisen kortin yhdistelmä) ensimmäisessä jaossa on noin 4.8%. Blackjackin voitto on tyypillisesti 3:2."
+    - language: "ar"
+      text: "يمكن أن تختلف احتمالات الرهانات المحددة في البلاك جاك. على سبيل المثال، فإن احتمالات الحصول على بلاك جاك (آس وبطاقة بقيمة 10) في الصفقة الأولى تقارب 4.8%. العائد لبلاك جاك عادة ما يكون 3:2."
+
+  utter_blackjack_game_rules_overview:
+    - language: "en"
+      text: "Blackjack is a popular card game where the aim is to beat the dealer's hand without going over 21. Players are dealt two cards and can choose to hit, stand, double down, or split based on their hand and the dealer’s visible card."
+    - language: "fi"
+      text: "Blackjack on suosittu korttipeli, jonka tavoitteena on voittaa jakajan käsi ylittämättä 21. Pelaajille jaetaan kaksi korttia, ja he voivat valita lyödä, jäädä, tuplata tai jakaa kätensä jakajan näkyvän kortin perusteella."
+    - language: "ar"
+      text: "البلاك جاك هي لعبة ورق شائعة حيث الهدف هو هزيمة يد الموزع دون تجاوز 21. يتم توزيع ورقتين على اللاعبين ويمكنهم الاختيار بين الضرب، التوقف، المضاعفة، أو الانقسام بناءً على يدهم والورقة المرئية للموزع."
+
+  utter_roulette_basic_rules:
+    - language: "en"
+      text: "Roulette involves a spinning wheel with numbered slots. Players place bets on where they think the ball will land. Bets can be on specific numbers, ranges of numbers, or colors. The wheel has two main types: European (one zero) and American (two zeros)."
+    - language: "fi"
+      text: "Roullette sisältää pyörivän pyörän, jossa on numeroituja koloja. Pelaajat asettavat vetoja sen mukaan, mihin he uskovat pallon laskeutuvan. Vedot voivat olla tiettyjä numeroita, numeroiden alueita tai värejä. Pyörällä on kaksi päätyyppiä: eurooppalainen (yksi nolla) ja amerikkalainen (kaksi nollaa)."
+    - language: "ar"
+      text: "تتضمن لعبة الروليت عجلة دوارة بها فتحات مرقمة. يقوم اللاعبون بوضع رهانات على المكان الذي يعتقدون أن الكرة ستستقر فيه. يمكن أن تكون الرهانات على أرقام محددة، أو نطاقات من الأرقام، أو الألوان. تحتوي العجلة على نوعين رئيسيين: الأوروبية (صفر واحد) والأمريكية (زيرو زيرو)."
+
+  utter_roulette_best_strategies:
+    - language: "en"
+      text: "Popular Roulette strategies include the Martingale system (doubling bets after losses), the Fibonacci system (betting according to a sequence), and the D'Alembert system (adjusting bets incrementally). Remember, no strategy can guarantee a win due to the game's randomness."
+    - language: "fi"
+      text: "Suositut ruletistrategiat sisältävät Martingale-järjestelmän (vedonlyöntien tuplaaminen häviöiden jälkeen), Fibonacci-järjestelmän (vetäminen sekvenssin mukaan) ja D'Alembert-järjestelmän (vedonlyöntien säätäminen vähitellen). Muista, että mikään strategia ei voi taata voittoa pelin sattumanvaraisuuden vuoksi."
+    - language: "ar"
+      text: "تشمل استراتيجيات الروليت الشائعة نظام مارتينغال (مضاعفة الرهانات بعد الخسائر)، نظام فيبوناتشي (المراهنة وفقًا لتسلسل)، ونظام دالمبيرت (تعديل الرهانات بشكل تدريجي). تذكر، لا يمكن لأي استراتيجية ضمان الفوز بسبب عشوائية اللعبة."
+
+  utter_roulette_odds_specific_bets:
+    - language: "en"
+      text: "The odds of winning specific bets in Roulette vary. For instance, a straight-up bet on a single number has odds of 37 to 1 (or 38 to 1 in American Roulette), while a bet on red or black has odds of nearly 1 to 1."
+    - language: "fi"
+      text: "Voitto-odotukset tiettyjen vetojen kohdalla ruletissa vaihtelevat. Esimerkiksi suora veto yhdelle numerolle on 37:1 (tai 38:1 amerikkalaisessa ruletissa), kun taas veto punaiselle tai mustalle on lähes 1:1."
+    - language: "ar"
+      text: "تختلف احتمالات الفوز بالرهانات المحددة في لعبة الروليت. على سبيل المثال، فإن الرهان المباشر على رقم واحد لديه احتمالات 37 إلى 1 (أو 38 إلى 1 في الروليت الأمريكية)، بينما رهان على الأحمر أو الأسود لديه احتمالات تقارب 1 إلى 1."
+
+  utter_roulette_game_rules_overview:
+    - language: "en"
+      text: "In Roulette, players bet on where a ball will land on a spinning wheel. Bets can be placed on numbers, colors, or ranges of numbers. The wheel consists of numbered slots, with European Roulette having 37 slots (including one zero) and American Roulette having 38 slots (including two zeros)."
+    - language: "fi"
+      text: "Ruletissa pelaajat asettavat vetoja siihen, mihin pallo laskeutuu pyörivällä pyörällä. Vedot voidaan asettaa numeroille, väreille tai numeroiden alueille. Pyörä koostuu numeroiduista koloista, ja eurooppalaisessa ruletissa on 37 koloa (yksi nolla) ja amerikkalaisessa ruletissa 38 koloa (kaksi nollaa)."
+    - language: "ar"
+      text: "في الروليت، يراهن اللاعبون على المكان الذي ستستقر فيه الكرة على العجلة الدوارة. يمكن وضع الرهانات على الأرقام، الألوان، أو نطاقات من الأرقام. تتكون العجلة من فتحات مرقمة، حيث تحتوي الروليت الأوروبية على 37 فتحة (بما في ذلك صفر واحد) والروليت الأمريكية تحتوي على 38 فتحة (بما في ذلك صفرين)."
+  utter_poker_game_rules_overview:
+    - language: "en"
+      text: "In Poker, players aim to have the best hand or convince others to fold. Each player is dealt a combination of private and community cards. Players then bet based on the strength of their hand, with betting rounds between card deals. The game ends with the player with the best hand or the last player remaining after all others have folded."
+    - language: "fi"
+      text: "Pokerissa pelaajat pyrkivät saamaan parhaan käden tai saamaan muut luovuttamaan. Jokaiselle pelaajalle jaetaan yksityisiä ja yhteisiä kortteja, ja panostuskierrokset käydään korttien jakamisen välillä. Peli päättyy, kun jäljellä on paras käsi tai viimeinen pelaaja, joka ei ole luovuttanut."
+    - language: "ar"
+      text: "في لعبة البوكر، يهدف اللاعبون إلى الحصول على أفضل يد أو إقناع الآخرين بالانسحاب. يتم توزيع مجموعة من البطاقات الخاصة والعامة لكل لاعب. يقوم اللاعبون بالمراهنة بناءً على قوة أيديهم. تنتهي اللعبة بأفضل يد أو بآخر لاعب متبقي بعد انسحاب الآخرين."
+
+  utter_poker_odds_specific_bets:
+    - language: "en"
+      text: "The odds of specific poker hands vary. For example, the odds of being dealt a pocket pair in Texas Hold'em are about 6%. The odds of hitting a flush on the flop after being dealt suited cards are roughly 0.8%."
+    - language: "fi"
+      text: "Tiettyjen pokerikäsien todennäköisyydet vaihtelevat. Esimerkiksi mahdollisuus saada pari käteen Texas Hold'emissa on noin 6 %. Mahdollisuus saada värisuora flopilla on noin 0,8 %."
+    - language: "ar"
+      text: "تختلف احتمالات الأيدي المحددة في البوكر. على سبيل المثال، احتمالية الحصول على زوج في Texas Hold'em حوالي 6%. احتمالية الحصول على Flush في Flop بعد توزيع أوراق مناسبة حوالي 0.8%."
+
+  utter_poker_advanced_strategies:
+    - language: "en"
+      text: "Advanced poker strategies include concepts like bluffing, understanding pot odds, and reading opponents' tells. Techniques like semi-bluffing and adjusting your play style based on the table dynamics can also help improve your game."
+    - language: "fi"
+      text: "Edistyneet pokeristrategiat sisältävät käsitteitä kuten bluffaus, pottitodennäköisyyksien ymmärtäminen ja vastustajien eleiden lukeminen. Tekniikat kuten puolibluffaus ja pelityylin säätäminen pöydän dynamiikan mukaan voivat myös parantaa peliäsi."
+    - language: "ar"
+      text: "تشمل استراتيجيات البوكر المتقدمة مفاهيم مثل الخداع، وفهم احتمالات الوعاء، وقراءة إشارات الخصوم. يمكن أن تساعد تقنيات مثل الخداع الجزئي وتعديل أسلوب لعبك بناءً على ديناميات الطاولة أيضًا في تحسين لعبتك."
+
+utter_poker_basic_rules:
+  - language: "en"
+    text: "Poker is a popular card game that involves betting and individual or group card hands. The most common variant is Texas Hold'em, where each player is dealt two private cards and uses them with five community cards to make the best possible hand. Hands are ranked from high card to royal flush."
+  - language: "fi"
+    text: "Pokeri on suosittu korttipeli, joka sisältää panostamista ja yksilöllisiä tai ryhmäkäsikortteja. Yleisin variantti on Texas Hold'em, jossa jokaiselle pelaajalle jaetaan kaksi yksityistä korttia ja he käyttävät niitä yhdessä viiden yhteisen kortin kanssa luodakseen parhaan mahdollisen käden. Käsien arvostus vaihtelee korkeimmasta kortista kuninkaalliseen värisuoraan."
+  - language: "ar"
+    text: "البوكر هي لعبة ورق شهيرة تتضمن المراهنة والأيدي الفردية أو الجماعية. النسخة الأكثر شيوعًا هي تكساس هولدم، حيث يتم توزيع ورقتين خاصتين على كل لاعب ويستخدمونهما مع خمس ورقات مشتركة لتكوين أفضل يد ممكنة. تُصنف الأيدي من الورقة العليا إلى السلسلة الملكية."
+
+utter_ask_poker_rules:
+  - language: "en"
+    text: "Hello! Welcome to our poker service. What would you like to know?"
+    buttons:
+      - title: "Poker Basic Rules"
+        payload: "/poker_basic_rules"
+      - title: "Poker Advanced Strategies"
+        payload: "/poker_advanced_strategies"
+      - title: "Odds of Specific Bets"
+        payload: "/poker_odds_specific_bets"
+      - title: "Game Rules Overview"
+        payload: "/poker_game_rules_overview"
+      - title: "Click here, to ask for a real person"
+        payload: "/ask_for_real_person"
+  - language: "fi"
+    text: "Hei! Tervetuloa pokeripalveluumme. Mitä haluaisit tietää?"
+    buttons:
+      - title: "Pokerin Perussäännöt"
+        payload: "/poker_basic_rules"
+      - title: "Pokerin Kehittyneet Strategiat"
+        payload: "/poker_advanced_strategies"
+      - title: "Tiettyjen Panosten Todennäköisyydet"
+        payload: "/poker_odds_specific_bets"
+      - title: "Pelin Sääntöjen Yhteenveto"
+        payload: "/poker_game_rules_overview"
+      - title: "Klikkaa tästä, kysyäksesi oikealta henkilöltä"
+        payload: "/ask_for_real_person"
+  - language: "ar"
+    text: "مرحبًا! أهلاً بك في خدمة البوكر لدينا. ماذا تريد أن تعرف؟"
+    buttons:
+      - title: "قواعد البوكر الأساسية"
+        payload: "/poker_basic_rules"
+      - title: "استراتيجيات البوكر المتقدمة"
+        payload: "/poker_advanced_strategies"
+      - title: "احتمالات الرهانات المحددة"
+        payload: "/poker_odds_specific_bets"
+      - title: "نظرة عامة على قواعد اللعبة"
+        payload: "/poker_game_rules_overview"
+      - title: "انقر هنا لطلب شخص حقيقي"
+        payload: "/ask_for_real_person"
+
+utter_ask_blackjack_rules:
+  - language: "en"
+    text: "What would you like to know about Blackjack?"
+    buttons:
+      - title: "Blackjack Basic Rules"
+        payload: "/blackjack_basic_rules"
+      - title: "Blackjack Card Counting"
+        payload: "/blackjack_card_counting"
+      - title: "Blackjack Advanced Strategies"
+        payload: "/blackjack_advanced_strategies"
+      - title: "Odds of Specific Blackjack Bets"
+        payload: "/blackjack_odds_specific_bets"
+      - title: "General Blackjack Rules Overview"
+        payload: "/blackjack_game_rules_overview"
+  - language: "fi"
+    text: "Mitä haluaisit tietää Blackjackista?"
+    buttons:
+      - title: "Blackjackin Perussäännöt"
+        payload: "/blackjack_basic_rules"
+      - title: "Blackjackin Korttilaskenta"
+        payload: "/blackjack_card_counting"
+      - title: "Blackjackin Kehittyneet Strategiat"
+        payload: "/blackjack_advanced_strategies"
+      - title: "Tiettyjen Blackjack Panosten Todennäköisyydet"
+        payload: "/blackjack_odds_specific_bets"
+      - title: "Yleinen Yhteenveto Blackjackin Säännöistä"
+        payload: "/blackjack_game_rules_overview"
+  - language: "ar"
+    text: "ماذا تريد أن تعرف عن البلاك جاك؟"
+    buttons:
+      - title: "قواعد البلاك جاك الأساسية"
+        payload: "/blackjack_basic_rules"
+      - title: "عد الأوراق في البلاك جاك"
+        payload: "/blackjack_card_counting"
+      - title: "استراتيجيات البلاك جاك المتقدمة"
+        payload: "/blackjack_advanced_strategies"
+      - title: "احتمالات الرهانات المحددة في البلاك جاك"
+        payload: "/blackjack_odds_specific_bets"
+      - title: "نظرة عامة على قواعد البلاك جاك العامة"
+        payload: "/blackjack_game_rules_overview"
+
+utter_ask_roulette_odds:
+  - language: "en"
+    text: "What would you like to know about Roulette?"
+    buttons:
+      - title: "Roulette Basic Rules"
+        payload: "/roulette_basic_rules"
+      - title: "Roulette Best Strategies"
+        payload: "/roulette_best_strategies"
+      - title: "Odds of Specific Roulette Bets"
+        payload: "/roulette_odds_specific_bets"
+      - title: "General Roulette Rules Overview"
+        payload: "/roulette_game_rules_overview"
+  - language: "fi"
+    text: "Mitä haluaisit tietää ruletista?"
+    buttons:
+      - title: "Ruletin Perussäännöt"
+        payload: "/roulette_basic_rules"
+      - title: "Ruletin Parhaat Strategiat"
+        payload: "/roulette_best_strategies"
+      - title: "Tiettyjen Ruletin Panosten Todennäköisyydet"
+        payload: "/roulette_odds_specific_bets"
+      - title: "Yleinen Yhteenveto Ruletin Säännöistä"
+        payload: "/roulette_game_rules_overview"
+  - language: "ar"
+    text: "ماذا تريد أن تعرف عن الروليت؟"
+    buttons:
+      - title: "قواعد الروليت الأساسية"
+        payload: "/roulette_basic_rules"
+      - title: "أفضل استراتيجيات الروليت"
+        payload: "/roulette_best_strategies"
+      - title: "احتمالات الرهانات المحددة في الروليت"
+        payload: "/roulette_odds_specific_bets"
+      - title: "نظرة عامة على قواعد الروليت العامة"
+        payload: "/roulette_game_rules_overview"
+
+utter_service_game_rules:
+  - language: "en"
+    text: "Please select what you would like to know more about:"
+    buttons:
+      - title: "Poker"
+        payload: "/ask_poker_rules"
+      - title: "Blackjack"
+        payload: "/ask_blackjack_rules"
+      - title: "Roulette"
+        payload: "/ask_roulette_odds"
+  - language: "fi"
+    text: "Valitse, mistä haluaisit tietää lisää:"
+    buttons:
+      - title: "Pokeri"
+        payload: "/ask_poker_rules"
+      - title: "Blackjack"
+        payload: "/ask_blackjack_rules"
+      - title: "Ruletti"
+        payload: "/ask_roulette_odds"
+  - language: "ar"
+    text: "يرجى اختيار ما تريد معرفة المزيد عنه:"
+    buttons:
+      - title: "البوكر"
+        payload: "/ask_poker_rules"
+      - title: "البلاك جاك"
+        payload: "/ask_blackjack_rules"
+      - title: "الروليت"
+        payload: "/ask_roulette_odds"
+
+utter_greet:
+  - language: "en"
+    text: "Hello! Welcome to the customer service, what would you like to have help with?"
+    buttons:
+      - title: "Technical issues"
+        payload: "/service_technical"
+      - title: "Bonuses & Promotion"
+        payload: "/service_bonuses"
+      - title: "Deposit & Withdrawal"
+        payload: "/service_deposit_withdrawal"
+      - title: "Account and Registration"
+        payload: "/service_account_registration"
+      - title: "Game Rules"
+        payload: "/service_game_rules"
+      - title: "Security and Fair play"
+        payload: "/service_security_fairplay"
+      - title: "Responsible Gaming"
+        payload: "/service_responsible_gaming"
+      - title: "Click here, to ask for a real person"
+        payload: "/ask_for_real_person"
+  - language: "fi"
+    text: "Hei! Tervetuloa asiakaspalveluun, miten voin auttaa sinua?"
+    buttons:
+      - title: "Tekniset ongelmat"
+        payload: "/service_technical"
+      - title: "Bonukset ja kampanjat"
+        payload: "/service_bonuses"
+      - title: "Talletus ja nostot"
+        payload: "/service_deposit_withdrawal"
+      - title: "Tili ja rekisteröinti"
+        payload: "/service_account_registration"
+      - title: "Pelin säännöt"
+        payload: "/service_game_rules"
+      - title: "Turvallisuus ja reilu peli"
+        payload: "/service_security_fairplay"
+      - title: "Vastuullinen pelaaminen"
+        payload: "/service_responsible_gaming"
+      - title: "Klikkaa tästä, kysyäksesi oikealta henkilöltä"
+        payload: "/ask_for_real_person"
+  - language: "ar"
+    text: "مرحبًا! أهلاً بك في خدمة العملاء، كيف يمكنني مساعدتك؟"
+    buttons:
+      - title: "مشكلات تقنية"
+        payload: "/service_technical"
+      - title: "المكافآت والعروض الترويجية"
+        payload: "/service_bonuses"
+      - title: "الإيداع والسحب"
+        payload: "/service_deposit_withdrawal"
+      - title: "الحساب والتسجيل"
+        payload: "/service_account_registration"
+      - title: "قواعد اللعبة"
+        payload: "/service_game_rules"
+      - title: "الأمان واللعب النزيه"
+        payload: "/service_security_fairplay"
+      - title: "المقامرة المسؤولة"
+        payload: "/service_responsible_gaming"
+      - title: "انقر هنا لطلب شخص حقيقي"
+        payload: "/ask_for_real_person"
+  ################################################################################################
+  ############################## SECURITY & FAIR PLAY ############################################
+  ################################################################################################
+utter_service_security_fairplay:
+  - language: "en"
+    text: "Regarding security and fair play, here are some information to check:"
+    buttons:
+      - title: "How secure is the casino?"
+        payload: "/security_casino"
+      - title: "How are the games verified for fairness?"
+        payload: "/security_fairness"
+      - title: "What personal data is collected and how is it used?"
+        payload: "/security_personal_data"
+      - title: "Click here, to ask for a real person"
+        payload: "/ask_for_real_person"
+  - language: "fi"
+    text: "Turvallisuudesta ja reilusta pelistä, tässä on joitakin tietoja tarkistettavaksi:"
+    buttons:
+      - title: "Kuinka turvallinen kasino on?"
+        payload: "/security_casino"
+      - title: "Kuinka pelit tarkistetaan reiluuden varmistamiseksi?"
+        payload: "/security_fairness"
+      - title: "Mitä henkilötietoja kerätään ja miten niitä käytetään?"
+        payload: "/security_personal_data"
+      - title: "Klikkaa tästä kysyäksesi oikealta henkilöltä"
+        payload: "/ask_for_real_person"
+  - language: "ar"
+    text: "بخصوص الأمان واللعب النزيه، إليك بعض المعلومات للتحقق منها:"
+    buttons:
+      - title: "ما مدى أمان الكازينو؟"
+        payload: "/security_casino"
+      - title: "كيف يتم التحقق من الألعاب للعدالة؟"
+        payload: "/security_fairness"
+      - title: "ما هي البيانات الشخصية التي يتم جمعها وكيف يتم استخدامها؟"
+        payload: "/security_personal_data"
+      - title: "انقر هنا، لطلب شخص حقيقي"
+        payload: "/ask_for_real_person"
+
+utter_service_deposit_withdrawal:
+  - language: "en"
+    text: "Regarding deposit / withdrawal of money, here are some information to check:"
+    buttons:
+      - title: "What are the deposit methods?"
+        payload: "/service_deposit_methods"
+      - title: "How long does it take to withdraw money?"
+        payload: "/service_withdrawal_time"
+      - title: "Are there any fees for depositing or withdrawing money?"
+        payload: "/service_fees"
+      - title: "Click here, to ask for a real person"
+        payload: "/ask_for_real_person"
+  - language: "fi"
+    text: "Talletuksen / noston suhteen, tässä on joitakin tietoja tarkistettavaksi:"
+    buttons:
+      - title: "Mitkä ovat talletustavat?"
+        payload: "/service_deposit_methods"
+      - title: "Kuinka kauan rahan nostaminen kestää?"
+        payload: "/service_withdrawal_time"
+      - title: "Onko talletuksista tai nostoista maksuja?"
+        payload: "/service_fees"
+      - title: "Klikkaa tästä kysyäksesi oikealta henkilöltä"
+        payload: "/ask_for_real_person"
+  - language: "ar"
+    text: "بخصوص إيداع / سحب الأموال، إليك بعض المعلومات للتحقق منها:"
+    buttons:
+      - title: "ما هي طرق الإيداع؟"
+        payload: "/service_deposit_methods"
+      - title: "كم يستغرق سحب الأموال؟"
+        payload: "/service_withdrawal_time"
+      - title: "هل هناك أي رسوم للإيداع أو السحب؟"
+        payload: "/service_fees"
+      - title: "انقر هنا، لطلب شخص حقيقي"
+        payload: "/ask_for_real_person"
+  ############################################ Button1 ####################################################
+  ################################### What are the deposit methods? #######################################
+utter_service_deposit_methods:
+  - text:
+      - lang: "en"
+        content: "Here are the deposit methods available:"
+      - lang: "fi"
+        content: "Tässä ovat käytettävissä olevat talletusmenetelmät:"
+      - lang: "ar"
+        content: "إليك طرق الإيداع المتاحة:"
+    buttons:
+      - title:
+          - lang: "en"
+            content: "Credit Card"
+          - lang: "fi"
+            content: "Luottokortti"
+          - lang: "ar"
+            content: "بطاقة ائتمان"
+        payload: "/deposit_credit_card"
+      - title:
+          - lang: "en"
+            content: "Bank Transfer"
+          - lang: "fi"
+            content: "Pankkisiirto"
+          - lang: "ar"
+            content: "تحويل بنكي"
+        payload: "/deposit_bank_transfer"
+      - title:
+          - lang: "en"
+            content: "E-Wallet"
+          - lang: "fi"
+            content: "Sähköinen lompakko"
+          - lang: "ar"
+            content: "محفظة إلكترونية"
+        payload: "/deposit_e_wallet"
+      - title:
+          - lang: "en"
+            content: "Click here, to ask for a real person"
+          - lang: "fi"
+            content: "Klikkaa tästä kysyäksesi oikealta henkilöltä"
+          - lang: "ar"
+            content: "انقر هنا، لطلب مساعدة شخص حقيقي"
+        payload: "/ask_for_real_person"
+utter_deposit_credit_card:
+  - text:
+      - lang: "en"
+        content: "You can deposit money using a credit card, here are the supported credit cards:\n\n- Visa\n- Mastercard\n- American Express"
+      - lang: "fi"
+        content: "Voit tallettaa rahaa luottokortilla, tässä ovat tuetut luottokortit:\n\n- Visa\n- Mastercard\n- American Express"
+      - lang: "ar"
+        content: "يمكنك إيداع الأموال باستخدام بطاقة ائتمان، إليك بطاقات الائتمان المدعومة:\n\n- فيزا\n- ماستركارد\n- أمريكان إكسبريس"
+    buttons:
+      - title:
+          - lang: "en"
+            content: "[Press here to deposit to casino](http://127.0.0.1:5000/withdraw-deposit)"
+          - lang: "fi"
+            content: "[Paina tästä talletaaksesi kasinoon](http://127.0.0.1:5000/withdraw-deposit)"
+          - lang: "ar"
+            content: "[اضغط هنا للإيداع في الكازينو](http://127.0.0.1:5000/withdraw-deposit)"
+        link: "https://www.casino.com/deposit"
+      - title:
+          - lang: "en"
+            content: "Click here, to ask for a real person"
+          - lang: "fi"
+            content: "Klikkaa tästä kysyäksesi oikealta henkilöltä"
+          - lang: "ar"
+            content: "انقر هنا، لطلب مساعدة شخص حقيقي"
+        payload: "/ask_for_real_person"
+
+utter_deposit_bank_transfer:
+  - text:
+      - lang: "en"
+        content: "You can deposit money using a bank transfer, here are the supported banks:\n\n- Bank of America\n- Chase\n- Wells Fargo"
+      - lang: "fi"
+        content: "Voit tallettaa rahaa pankkisiirrolla, tässä ovat tuetut pankit:\n\n- Bank of America\n- Chase\n- Wells Fargo"
+      - lang: "ar"
+        content: "يمكنك إيداع الأموال باستخدام تحويل بنكي، إليك البنوك المدعومة:\n\n- بنك أمريكا\n- تشيس\n- ويلز فارجو"
+    buttons:
+      - title:
+          - lang: "en"
+            content: "[Press here to deposit to casino](http://127.0.0.1:5000/withdraw-deposit)"
+          - lang: "fi"
+            content: "[Paina tästä talletaaksesi kasinoon](http://127.0.0.1:5000/withdraw-deposit)"
+          - lang: "ar"
+            content: "[اضغط هنا للإيداع في الكازينو](http://127.0.0.1:5000/withdraw-deposit)"
+        link: "https://www.casino.com/deposit"
+      - title:
+          - lang: "en"
+            content: "Click here, to ask for a real person"
+          - lang: "fi"
+            content: "Klikkaa tästä kysyäksesi oikealta henkilöltä"
+          - lang: "ar"
+            content: "انقر هنا، لطلب مساعدة شخص حقيقي"
+        payload: "/ask_for_real_person"
+
+utter_deposit_e_wallet:
+  - text:
+      - lang: "en"
+        content: "You can deposit money using an e-wallet, here are the supported e-wallets:\n\n- Paypal\n- Skrill\n- Neteller"
+      - lang: "fi"
+        content: "Voit tallettaa rahaa sähköisellä lompakolla, tässä ovat tuetut sähköiset lompakot:\n\n- Paypal\n- Skrill\n- Neteller"
+      - lang: "ar"
+        content: "يمكنك إيداع الأموال باستخدام محفظة إلكترونية، إليك المحافظ الإلكترونية المدعومة:\n\n- باي بال\n- سكرل\n- نيتلر"
+    buttons:
+      - title:
+          - lang: "en"
+            content: "[Press here to deposit to casino](http://127.0.0.1:5000/withdraw-deposit)"
+          - lang: "fi"
+            content: "[Paina tästä talletaaksesi kasinoon](http://127.0.0.1:5000/withdraw-deposit)"
+          - lang: "ar"
+            content: "[اضغط هنا للإيداع في الكازينو](http://127.0.0.1:5000/withdraw-deposit)"
+        link: "https://www.casino.com/deposit"
+      - title:
+          - lang: "en"
+            content: "Click here, to ask for a real person"
+          - lang: "fi"
+            content: "Klikkaa tästä kysyäksesi oikealta henkilöltä"
+          - lang: "ar"
+            content: "انقر هنا، لطلب مساعدة شخص حقيقي"
+        payload: "/ask_for_real_person"
+
+############################################ Button2 ###############################################################
+################################### How long does it take to withdraw money? #######################################
+utter_service_withdrawal_time:
+  - text:
+      - lang: "en"
+        content: "Tell us which method you used to deposit money, and we will tell you how long it takes to withdraw money:"
+      - lang: "fi"
+        content: "Kerro meille, mitä menetelmää käytit talletukseen, niin kerromme, kuinka kauan kestää nostaa rahaa:"
+      - lang: "ar"
+        content: "أخبرنا بالطريقة التي استخدمتها لإيداع المال، وسنخبرك كم من الوقت يستغرق سحب الأموال:"
+    buttons:
+      - title:
+          - lang: "en"
+            content: "Credit Card"
+          - lang: "fi"
+            content: "Luottokortti"
+          - lang: "ar"
+            content: "بطاقة ائتمان"
+        payload: "/withdrawal_credit_card"
+      - title:
+          - lang: "en"
+            content: "Bank Transfer"
+          - lang: "fi"
+            content: "Pankkisiirto"
+          - lang: "ar"
+            content: "تحويل بنكي"
+        payload: "/withdrawal_bank_transfer"
+      - title:
+          - lang: "en"
+            content: "E-Wallet"
+          - lang: "fi"
+            content: "Sähköinen lompakko"
+          - lang: "ar"
+            content: "محفظة إلكترونية"
+        payload: "/withdrawal_e_wallet"
+      - title:
+          - lang: "en"
+            content: "Click here, to ask for a real person"
+          - lang: "fi"
+            content: "Klikkaa tästä kysyäksesi oikealta henkilöltä"
+          - lang: "ar"
+            content: "انقر هنا، لطلب مساعدة شخص حقيقي"
+        payload: "/ask_for_real_person"
+
+utter_withdrawal_credit_card:
+  - text:
+      - lang: "en"
+        content: "If you deposited money using a credit card, it will take 3-5 business days to withdraw money."
+      - lang: "fi"
+        content: "Jos talletit rahaa luottokortilla, rahojen nostamiseen menee 3-5 työpäivää."
+      - lang: "ar"
+        content: "إذا قمت بإيداع الأموال باستخدام بطاقة ائتمان، فسيستغرق سحب الأموال من 3 إلى 5 أيام عمل."
+    buttons:
+      - title:
+          - lang: "en"
+            content: "[Press here to withdraw to casino](http://127.0.0.1:5000/withdraw-deposit)"
+          - lang: "fi"
+            content: "[Paina tästä nostaaaksesi kasinolle](http://127.0.0.1:5000/withdraw-deposit)"
+          - lang: "ar"
+            content: "[اضغط هنا لسحب الأموال إلى الكازينو](http://127.0.0.1:5000/withdraw-deposit)"
+        link: "https://www.casino.com/withdraw"
+      - title:
+          - lang: "en"
+            content: "Click here, to ask for a real person"
+          - lang: "fi"
+            content: "Klikkaa tästä kysyäksesi oikealta henkilöltä"
+          - lang: "ar"
+            content: "انقر هنا، لطلب مساعدة شخص حقيقي"
+        payload: "/ask_for_real_person"
+
+utter_withdrawal_bank_transfer:
+  - text:
+      - lang: "en"
+        content: "If you deposited money using a bank transfer, it will take 5-7 business days to withdraw money."
+      - lang: "fi"
+        content: "Jos talletit rahaa pankkisiirrolla, rahojen nostamiseen menee 5-7 työpäivää."
+      - lang: "ar"
+        content: "إذا قمت بإيداع الأموال باستخدام التحويل البنكي، فسيستغرق سحب الأموال من 5 إلى 7 أيام عمل."
+buttons:
+  - title:
+      - lang: "en"
+        content: "[Press here to withdraw to casino](http://127.0.0.1:5000/withdraw-deposit)"
+      - lang: "fi"
+        content: "[Paina tästä nostaaaksesi kasinolle](http://127.0.0.1:5000/withdraw-deposit)"
+      - lang: "ar"
+        content: "[اضغط هنا لسحب الأموال إلى الكازينو](http://127.0.0.1:5000/withdraw-deposit)"
+    link: "https://www.casino.com/withdraw"
+  - title:
+      - lang: "en"
+        content: "Click here, to ask for a real person"
+      - lang: "fi"
+        content: "Klikkaa tästä kysyäksesi oikealta henkilöltä"
+      - lang: "ar"
+        content: "انقر هنا، لطلب مساعدة شخص حقيقي"
+    payload: "/ask_for_real_person"
+
+utter_withdrawal_e_wallet:
+  - text:
+      - lang: "en"
+        content: "If you deposited money using an e-wallet, it will take 1-3 business days to withdraw money."
+      - lang: "fi"
+        content: "Jos talletit rahaa sähköisellä lompakolla, rahojen nostamiseen menee 1-3 työpäivää."
+      - lang: "ar"
+        content: "إذا قمت بإيداع الأموال باستخدام محفظة إلكترونية، فسيستغرق سحب الأموال من 1 إلى 3 أيام عمل."
+    buttons:
+      - title:
+          - lang: "en"
+            content: "[Press here to withdraw to casino](http://127.0.0.1:5000/withdraw-deposit)"
+          - lang: "fi"
+            content: "[Paina tästä nostaaaksesi kasinolle](http://127.0.0.1:5000/withdraw-deposit)"
+          - lang: "ar"
+            content: "[اضغط هنا لسحب الأموال إلى الكازينو](http://127.0.0.1:5000/withdraw-deposit)"
+        link: "https://www.casino.com/withdraw"
+      - title:
+          - lang: "en"
+            content: "Click here, to ask for a real person"
+          - lang: "fi"
+            content: "Klikkaa tästä kysyäksesi oikealta henkilöltä"
+          - lang: "ar"
+            content: "انقر هنا، لطلب مساعدة شخص حقيقي"
+        payload: "/ask_for_real_person"
+
+############################################ Button3 ##############################################################################
+################################### Are there any fees for depositing or withdrawing money? #######################################
+utter_service_fees:
+  - text:
+      - lang: "en"
+        content: "Here is a link to the fees for depositing or withdrawing money:"
+      - lang: "fi"
+        content: "Tässä on linkki talletus- tai nostomaksuihin:"
+      - lang: "ar"
+        content: "إليك رابط للرسوم الخاصة بإيداع أو سحب الأموال:"
+    buttons:
+      - title:
+          - lang: "en"
+            content: "[Fees for the casino](http://127.0.0.1:5000/withdraw-deposit)"
+          - lang: "fi"
+            content: "[Maksut kasinolle](http://127.0.0.1:5000/withdraw-deposit)"
+          - lang: "ar"
+            content: "[الرسوم المتعلقة بالكازينو](http://127.0.0.1:5000/withdraw-deposit)"
+        link: "https://www.casino.com/fees"
+      - title:
+          - lang: "en"
+            content: "Click here, to ask for a real person"
+          - lang: "fi"
+            content: "Klikkaa tästä kysyäksesi oikealta henkilöltä"
+          - lang: "ar"
+            content: "انقر هنا، لطلب مساعدة شخص حقيقي"
+        payload: "/ask_for_real_person"
+
+################################################################################################
+############################## TECHNICAL SUPPORT ###############################################
+################################################################################################
+utter_ask_for_real_person:
+  - text:
+      - lang: "en"
+        content: "Allright! We're going to queue you for customer service..."
+      - lang: "fi"
+        content: "Hyvä! Jonotamme sinut asiakaspalveluun..."
+      - lang: "ar"
+        content: "حسنًا! سنقوم بانتظارك لخدمة العملاء..."
+
+utter_customer_approval:
+  - text:
+      - lang: "en"
+        content: "Was this help useful?"
+      - lang: "fi"
+        content: "Oliko tästä avusta hyötyä?"
+      - lang: "ar"
+        content: "هل كانت هذه المساعدة مفيدة؟"
+    buttons:
+      - title:
+          - lang: "en"
+            content: "Yes, this information helped me."
+          - lang: "fi"
+            content: "Kyllä, tämä tieto auttoi minua."
+          - lang: "ar"
+            content: "نعم، هذه المعلومات ساعدتني."
+        payload: "/approval_yes"
+      - title:
+          - lang: "en"
+            content: "No, this information did not help me"
+          - lang: "fi"
+            content: "Ei, tämä tieto ei auttanut minua."
+          - lang: "ar"
+            content: "لا، هذه المعلومات لم تساعدني."
+        payload: "/approval_no"
+
+utter_service_technical:
+  - text:
+      - lang: "en"
+        content: "Allright! Let what kind of Technical issues you are facing with"
+      - lang: "fi"
+        content: "Hyvä! Kerro, millaisia teknisiä ongelmia kohtaat."
+      - lang: "ar"
+        content: "حسنًا! دعني أعرف نوع المشكلات التقنية التي تواجهها."
+    buttons:
+      - title:
+          - lang: "en"
+            content: "The game froze, what should I do?"
+          - lang: "fi"
+            content: "Peli jumiutui, mitä minun pitäisi tehdä?"
+          - lang: "ar"
+            content: "توقف اللعبة، ماذا يجب أن أفعل؟"
+        payload: "/service_technical_game_froze"
+      - title:
+          - lang: "en"
+            content: "Game has given a status error"
+          - lang: "fi"
+            content: "Peli on antanut tilan virheen"
+          - lang: "ar"
+            content: "اللعبة أعطت خطأ في الحالة"
+        payload: "/service_technical_status_error"
+      - title:
+          - lang: "en"
+            content: "Why can't I deposit money?"
+          - lang: "fi"
+            content: "Miksi en voi tallettaa rahaa?"
+          - lang: "ar"
+            content: "لماذا لا أستطيع إيداع المال؟"
+        payload: "/service_technical_deposit_error"
+      - title:
+          - lang: "en"
+            content: "Click here, to ask for a real person"
+          - lang: "fi"
+            content: "Klikkaa tästä kysyäksesi oikealta henkilöltä"
+          - lang: "ar"
+            content: "انقر هنا، لطلب مساعدة شخص حقيقي"
+        payload: "/ask_for_real_person"
+
+utter_service_technical_game_froze:
+  - text:
+      - lang: "en"
+        content: "Here are common ways to solve the issue, did any of these help?"
+      - lang: "fi"
+        content: "Tässä on yleisiä tapoja ratkaista ongelma, auttoiko jokin näistä?"
+      - lang: "ar"
+        content: "إليك بعض الطرق الشائعة لحل المشكلة، هل ساعد أي منها؟"
+    buttons:
+      - title:
+          - lang: "en"
+            content: "Refresh the page"
+          - lang: "fi"
+            content: "Päivitä sivu"
+          - lang: "ar"
+            content: "تحديث الصفحة"
+        payload: "/service_technical_game_froze_refresh"
+      - title:
+          - lang: "en"
+            content: "Clean up the cache and cookies"
+          - lang: "fi"
+            content: "Tyhjennä välimuisti ja evästeet"
+          - lang: "ar"
+            content: "تنظيف ذاكرة التخزين المؤقت وملفات تعريف الارتباط"
+        payload: "/service_technical_game_froze_clean_cache"
+      - title:
+          - lang: "en"
+            content: "Update your browser to the newest version"
+          - lang: "fi"
+            content: "Päivitä selain uusimpaan versioon"
+          - lang: "ar"
+            content: "تحديث المتصفح إلى أحدث إصدار"
+        payload: "/service_technical_game_froze_update_browser"
+      - title:
+          - lang: "en"
+            content: "No, none of these helped to fix the problem."
+          - lang: "fi"
+            content: "Ei, mikään näistä ei auttanut ratkaisemaan ongelmaa."
+          - lang: "ar"
+            content: "لا، لم يساعد أي من ذلك في حل المشكلة."
+        payload: "/ask_for_real_person"
+
+utter_service_technical_game_froze_refresh:
+  - text:
+      - lang: "en"
+        content: "It's a good thing that refreshing the website helped!"
+      - lang: "fi"
+        content: "Hyvä, että sivun päivittäminen auttoi!"
+      - lang: "ar"
+        content: "من الجيد أن تحديث الموقع قد ساعد!"
+
+utter_service_technical_game_froze_clean_cache:
+  - text:
+      - lang: "en"
+        content: "It's a good thing that cleaning the cache and cookies helped!"
+      - lang: "fi"
+        content: "Hyvä, että välimuistin ja evästeiden tyhjentäminen auttoi!"
+      - lang: "ar"
+        content: "من الجيد أن تنظيف ذاكرة التخزين المؤقت وملفات تعريف الارتباط قد ساعد!"
+
+utter_service_technical_game_froze_update_browser:
+  - text:
+      - lang: "en"
+        content: "It's a good thing that updating the browser helped!"
+      - lang: "fi"
+        content: "Hyvä, että selaimen päivittäminen auttoi!"
+      - lang: "ar"
+        content: "من الجيد أن تحديث المتصفح قد ساعد!"
+
+utter_service_technical_status_error:
+  - text:
+      - lang: "en"
+        content: "In the case of the game giving an error code, which one was it?"
+      - lang: "fi"
+        content: "Mikä virhekoodi pelillä oli?"
+      - lang: "ar"
+        content: "في حالة إعطاء اللعبة رمز خطأ، أي واحد كان؟"
+    buttons:
+      - title:
+          - lang: "en"
+            content: "Status Code: Server Error"
+          - lang: "fi"
+            content: "Tilakoodi: Palvelinvirhe"
+          - lang: "ar"
+            content: "رمز الحالة: خطأ في الخادم"
+        payload: "/service_technical_status_server_error"
+      - title:
+          - lang: "en"
+            content: "Error Code: Connection Issue"
+          - lang: "fi"
+            content: "Virhekoodi: Yhteysongelma"
+          - lang: "ar"
+            content: "رمز الخطأ: مشكلة في الاتصال"
+        payload: "/service_technical_status_connection_issue"
+      - title:
+          - lang: "en"
+            content: "Error Code: Connection timed out"
+          - lang: "fi"
+            content: "Virhekoodi: Yhteys katkaistu"
+          - lang: "ar"
+            content: "رمز الخطأ: انتهت مهلة الاتصال"
+        payload: "/service_technical_status_connection_timed_out"
+      - title:
+          - lang: "en"
+            content: "Click here, to ask for a real person"
+          - lang: "fi"
+            content: "Klikkaa tästä kysyäksesi oikealta henkilöltä"
+          - lang: "ar"
+            content: "انقر هنا، لطلب مساعدة شخص حقيقي"
+        payload: "/ask_for_real_person"
+
+utter_service_technical_status_server_error:
+  - text:
+      - lang: "en"
+        content: "Status Code: Server Error. Indicates that there has been an error on the server's side, causing the game to crash. Technical support has been informed about this issue."
+      - lang: "fi"
+        content: "Tilakoodi: Palvelinvirhe. Tämä tarkoittaa, että palvelimella on ollut virhe, mikä on aiheuttanut pelin kaatumisen. Tekninen tuki on saanut tiedon tästä ongelmasta."
+      - lang: "ar"
+        content: "رمز الحالة: خطأ في الخادم. يشير إلى أن هناك خطأ من جانب الخادم، مما تسبب في تعطل اللعبة. تم إبلاغ الدعم الفني عن هذه المشكلة."
+
+utter_service_technical_status_connection_issue:
+  - text:
+      - lang: "en"
+        content: "Status Code: Connection Issue. Indicates that a proper connection to the server cannot be created, which has caused the error. Technical support has been informed about this issue."
+      - lang: "fi"
+        content: "Tilakoodi: Yhteysongelma. Tämä tarkoittaa, että palvelimeen ei voida luoda asianmukaista yhteyttä, mikä on aiheuttanut virheen. Tekninen tuki on saanut tiedon tästä ongelmasta."
+      - lang: "ar"
+        content: "رمز الحالة: مشكلة في الاتصال. يشير إلى أنه لا يمكن إنشاء اتصال صحيح بالخادم، مما تسبب في الخطأ. تم إبلاغ الدعم الفني عن هذه المشكلة."
+
+utter_service_technical_status_connection_timed_out:
+  - text:
+      - lang: "en"
+        content: "Status Code: Connection Timed out. Indicates that the connection to the server has cut out. Technical support has been informed about this issue."
+      - lang: "fi"
+        content: "Tilakoodi: Yhteys katkaistu. Tämä tarkoittaa, että yhteys palvelimeen on katkennut. Tekninen tuki on saanut tiedon tästä ongelmasta."
+      - lang: "ar"
+        content: "رمز الحالة: انتهت مهلة الاتصال. يشير إلى أن الاتصال بالخادم قد انقطع. تم إبلاغ الدعم الفني عن هذه المشكلة."
+
+utter_service_technical_deposit_error:
+  - text:
+      - lang: "en"
+        content: "Regarding deposit / withdrawal of money, here is some information to check:"
+      - lang: "fi"
+        content: "Mitä tulee rahojen talletukseen / nostamiseen, tässä on joitakin tarkistettavia tietoja:"
+      - lang: "ar"
+        content: "فيما يتعلق بإيداع / سحب الأموال، إليك بعض المعلومات للتحقق منها:"
+    buttons:
+      - title:
+          - lang: "en"
+            content: "Availability"
+          - lang: "fi"
+            content: "Saatavuus"
+          - lang: "ar"
+            content: "توفر"
+        payload: "/service_technical_availability_info"
+      - title:
+          - lang: "en"
+            content: "Banks supported"
+          - lang: "fi"
+            content: "Tuetut pankit"
+          - lang: "ar"
+            content: "البنوك المدعومة"
+        payload: "/service_technical_banks_supported"
+      - title:
+          - lang: "en"
+            content: "Account status"
+          - lang: "fi"
+            content: "Tilin tila"
+          - lang: "ar"
+            content: "حالة الحساب"
+        payload: "/service_technical_account_status"
+      - title:
+          - lang: "en"
+            content: "Click here, to ask for a real person"
+          - lang: "fi"
+            content: "Klikkaa tästä kysyäksesi oikealta henkilöltä"
+          - lang: "ar"
+            content: "انقر هنا، لطلب مساعدة شخص حقيقي"
+        payload: "/ask_for_real_person"
+
+utter_service_account_registration:
+  - text:
+      - lang: "en"
+        content: "How can I help you with account and registration?"
+      - lang: "fi"
+        content: "Kuinka voin auttaa sinua tilin ja rekisteröinnin kanssa?"
+      - lang: "ar"
+        content: "كيف يمكنني مساعدتك في حسابك والتسجيل؟"
+    buttons:
+      - title:
+          - lang: "en"
+            content: "How do I create an account?"
+          - lang: "fi"
+            content: "Kuinka luon tilin?"
+          - lang: "ar"
+            content: "كيف يمكنني إنشاء حساب؟"
+        payload: "/service_account_creation"
+      - title:
+          - lang: "en"
+            content: "I forgot my password."
+          - lang: "fi"
+            content: "Unohdin salasanani."
+          - lang: "ar"
+            content: "نسيت كلمة المرور الخاصة بي."
+        payload: "/service_account_password"
+      - title:
+          - lang: "en"
+            content: "How to update account information?"
+          - lang: "fi"
+            content: "Kuinka päivittää tilin tietoja?"
+          - lang: "ar"
+            content: "كيف يمكنني تحديث معلومات الحساب؟"
+        payload: "/service_account_information"
+
+utter_service_account_creation:
+  - text:
+      - lang: "en"
+        content: "Please press the signup button and fill the form. Link."
+      - lang: "fi"
+        content: "Paina rekisteröitymispainiketta ja täytä lomake. Linkki."
+      - lang: "ar"
+        content: "يرجى الضغط على زر التسجيل وملء النموذج. الرابط."
+    buttons:
+      - title:
+          - lang: "en"
+            content: "Click here, to ask for a real person"
+          - lang: "fi"
+            content: "Klikkaa tästä kysyäksesi oikealta henkilöltä"
+          - lang: "ar"
+            content: "انقر هنا، لطلب مساعدة شخص حقيقي"
+        payload: "/ask_for_real_person"
+
+utter_service_account_password:
+  - text:
+      - lang: "en"
+        content: "How do you want to reset your password?"
+      - lang: "fi"
+        content: "Miten haluat palauttaa salasanasi?"
+      - lang: "ar"
+        content: "كيف تريد إعادة تعيين كلمة المرور الخاصة بك؟"
+    buttons:
+      - title:
+          - lang: "en"
+            content: "Reset password by email. Link."
+          - lang: "fi"
+            content: "Nollaa salasana sähköpostitse. Linkki."
+          - lang: "ar"
+            content: "إعادة تعيين كلمة المرور عبر البريد الإلكتروني. الرابط."
+        payload: "/service_account_reset_email"
+      - title:
+          - lang: "en"
+            content: "Reset password by phone. Link."
+          - lang: "fi"
+            content: "Nollaa salasana puhelimitse. Linkki."
+          - lang: "ar"
+            content: "إعادة تعيين كلمة المرور عبر الهاتف. الرابط."
+        payload: "/service_account_reset_phone"
+
+utter_service_technical_availability_info:
+  - text:
+      - lang: "en"
+        content: "Money trades are closed from 22:00 to 06:00 every day due to money transferring laws."
+      - lang: "fi"
+        content: "Rahatapahtumat ovat suljettuina joka päivä klo 22.00-06.00 rahansiirtolain vuoksi."
+      - lang: "ar"
+        content: "تكون معاملات الأموال مغلقة من 22:00 إلى 06:00 كل يوم بسبب قوانين تحويل الأموال."
+
+utter_service_technical_banks_supported:
+  - text:
+      - lang: "en"
+        content: "We only accept transfers from specific banks: Here is a list of supported banks:\n- Bank of America\n- Chase\n- Wells Fargo"
+      - lang: "fi"
+        content: "Hyväksymme vain siirrot tietyistä pankeista: Tässä on luettelo tuetuista pankeista:\n- Bank of America\n- Chase\n- Wells Fargo"
+      - lang: "ar"
+        content: "نقبل فقط التحويلات من بنوك معينة: إليك قائمة بالبنوك المدعومة:\n- بنك أمريكا\n- تشيس\n- ويلز فارجو"
+
+utter_service_technical_account_status:
+  - text:
+      - lang: "en"
+        content: "The state of your account can also affect if you can deposit/withdraw money. You can check the status of your account by going to your profile page:"
+      - lang: "fi"
+        content: "Tilisi tila voi myös vaikuttaa siihen, voitko tallettaa/nostaa rahaa. Voit tarkistaa tilisi tilan siirtymällä profiilisivullesi:"
+      - lang: "ar"
+        content: "يمكن أن يؤثر وضع حسابك أيضًا على قدرتك على إيداع / سحب الأموال. يمكنك التحقق من حالة حسابك من خلال الانتقال إلى صفحة ملفك الشخصي:"
+    buttons:
+      - title:
+          - lang: "en"
+            content: "Profile page"
+          - lang: "fi"
+            content: "Profiilisivu"
+          - lang: "ar"
+            content: "صفحة الملف الشخصي"
+        link: "https://www.casino.com/profile"
+
+  ################################################################################################
+  ############################## Responsible Gaming ##########################################
+  ################################################################################################
+
+utter_service_responsible_gaming:
+  - text:
+      - lang: "en"
+        content: "This section is for Responsible Gaming. What would you like to know about?"
+      - lang: "fi"
+        content: "Tämä osio on vastuullisesta pelaamisesta. Mitä haluaisit tietää?"
+      - lang: "ar"
+        content: "هذا القسم مخصص للمقامرة المسؤولة. ماذا تريد أن تعرف؟"
+    buttons:
+      - title:
+          - lang: "en"
+            content: "How can I set limits for my account?"
+          - lang: "fi"
+            content: "Kuinka voin asettaa rajoja tililleni?"
+          - lang: "ar"
+            content: "كيف يمكنني ضبط حدود حسابي؟"
+        payload: "/responsible_gaming_setting_limits"
+      - title:
+          - lang: "en"
+            content: "How do I self-exclude from the casino?"
+          - lang: "fi"
+            content: "Kuinka voin itse sulkea itseni kasinosta?"
+          - lang: "ar"
+            content: "كيف يمكنني استبعاد نفسي من الكازينو؟"
+        payload: "/responsible_gaming_self_exclude"
+      - title:
+          - lang: "en"
+            content: "What should I do if I think I have a gambling addiction?"
+          - lang: "fi"
+            content: "Mitä minun pitäisi tehdä, jos epäilen, että minulla on uhkapeliriippuvuus?"
+          - lang: "ar"
+            content: "ماذا يجب أن أفعل إذا كنت أعتقد أن لدي إدمان على القمار؟"
+        payload: "/responsible_gaming_gambling_addiction"
+
+utter_responsible_gaming_setting_limits:
+  - text:
+      - lang: "en"
+        content: "You can set limits on deposits, losses, wagers, or session time to manage your play. Go to your account settings under 'Responsible Gaming' to choose the limits that work best for you. Need help setting it up? I can guide you!"
+      - lang: "fi"
+        content: "Voit asettaa rajoja talletuksille, häviöille, panoksille tai istuntoajalle hallitaksesi pelaamistasi. Siirry tilisi asetuksiin kohdassa 'Vastuullinen pelaaminen' ja valitse itsellesi sopivat rajat. Tarvitsetko apua sen määrittämisessä? Voin opastaa sinua!"
+      - lang: "ar"
+        content: "يمكنك ضبط حدود الودائع والخسائر والمراهنات أو وقت الجلسة لإدارة لعبك. انتقل إلى إعدادات حسابك ضمن 'المقامرة المسؤولة' لاختيار الحدود التي تناسبك. هل تحتاج إلى مساعدة في إعداد ذلك؟ يمكنني إرشادك!"
+    buttons:
+      - title:
+          - lang: "en"
+            content: "Set up your limits here!"
+          - lang: "fi"
+            content: "Aseta rajasi täällä!"
+          - lang: "ar"
+            content: "قم بإعداد حدودك هنا!"
+        link: "https://www.casino.com/profile/responsible"
+
+utter_responsible_gaming_self_exclude:
+  - text:
+      - lang: "en"
+        content: "If you need to take a break, you can self-exclude for a period of time or permanently. Go to the 'Self-Exclusion' option in your account settings, or I can help you get started right now!"
+      - lang: "fi"
+        content: "Jos tarvitset taukoa, voit itse sulkea itsesi määräajaksi tai pysyvästi. Siirry tilisi asetuksissa kohtaan 'Itse sulkeminen', tai voin auttaa sinua aloittamaan nyt!"
+      - lang: "ar"
+        content: "إذا كنت بحاجة إلى أخذ قسط من الراحة، يمكنك استبعاد نفسك لفترة من الوقت أو بشكل دائم. انتقل إلى خيار 'الاستبعاد الذاتي' في إعدادات حسابك، أو يمكنني مساعدتك في البدء الآن!"
+    buttons:
+      - title:
+          - lang: "en"
+            content: "Set up your Self-Exclusion here!"
+          - lang: "fi"
+            content: "Aseta itsesi sulkemiseen täällä!"
+          - lang: "ar"
+            content: "قم بإعداد الاستبعاد الذاتي هنا!"
+        link: "https://www.casino.com/profile/responsible/exclusion"
+
+utter_responsible_gaming_gambling_addiction:
+  - text:
+      - lang: "en"
+        content: "I'm here to help. If you're concerned about your gambling, you can set limits, take a break with self-exclusion, or reach out for support. Need help with resources? I can point you in the right direction."
+      - lang: "fi"
+        content: "Olen täällä auttaakseni. Jos olet huolissasi uhkapelaamisesta, voit asettaa rajoja, pitää tauon itsesulkemisella tai pyytää apua. Tarvitsetko apua resursseissa? Voin ohjata sinua oikeaan suuntaan."
+      - lang: "ar"
+        content: "أنا هنا للمساعدة. إذا كنت قلقًا بشأن قمارك، يمكنك ضبط الحدود، أخذ استراحة مع الاستبعاد الذاتي، أو التواصل مع الدعم. تحتاج إلى مساعدة في الموارد؟ يمكنني توجيهك في الاتجاه الصحيح."
+    buttons:
+      - title:
+          - lang: "en"
+            content: "Click here for more resources regarding Gambling Addiction"
+          - lang: "fi"
+            content: "Klikkaa tästä saadaksesi lisää resursseja uhkapeliriippuvuudesta"
+          - lang: "ar"
+            content: "انقر هنا للحصول على مزيد من الموارد المتعلقة بإدمان القمار"
+        link: "https://www.casino.com/resources"
+
+  ################################################################################################
+  ############################## BONUSES AND PROMOTIONS #########################################
+  ################################################################################################
+
+utter_service_bonuses:
+  - text:
+      - lang: "en"
+        content: "Here you can find information about bonuses and promotions. Please select one of the options below:"
+      - lang: "fi"
+        content: "Täältä löydät tietoa bonuksista ja kampanjoista. Valitse jokin alla olevista vaihtoehdoista:"
+      - lang: "ar"
+        content: "هنا يمكنك العثور على معلومات حول المكافآت والعروض الترويجية. يرجى اختيار أحد الخيارات أدناه:"
+    buttons:
+      - title:
+          - lang: "en"
+            content: "Welcome Bonus"
+          - lang: "fi"
+            content: "Tervetuliaisbonus"
+          - lang: "ar"
+            content: "مكافأة الترحيب"
+        payload: "/service_bonuses_welcome"
+      - title:
+          - lang: "en"
+            content: "Deposit Bonus"
+          - lang: "fi"
+            content: "Talletusbonus"
+          - lang: "ar"
+            content: "مكافأة الإيداع"
+        payload: "/service_bonuses_deposit"
+      - title:
+          - lang: "en"
+            content: "Loyalty Program"
+          - lang: "fi"
+            content: "Uskollisuusohjelma"
+          - lang: "ar"
+            content: "برنامج الولاء"
+        payload: "/service_bonuses_loyalty"
+      - title:
+          - lang: "en"
+            content: "Click here, to ask for a real person"
+          - lang: "fi"
+            content: "Klikkaa tästä kysyäksesi oikealta henkilöltä"
+          - lang: "ar"
+            content: "انقر هنا، لطلب مساعدة شخص حقيقي"
+        payload: "/ask_for_real_person"
+utter_bonus_claim:
+  - text: "To claim your welcome bonus, follow these steps:"
+    buttons:
+      - title: "Sign up now"
+        link: "https://www.casino.com/signup"
+      - title: "Click here, to ask for a real person"
+        payload: "/ask_for_real_person"
+
+utter_bonus_wagering_requirements:
+  - text: "The wagering requirements for the bonus are as follows:"
+    buttons:
+      - title: "Check details"
+        link: "https://www.casino.com/bonus-terms"
+      - title: "Click here, to ask for a real person"
+        payload: "/ask_for_real_person"
+
+utter_bonus_status:
+  - text: "To check your bonus status, please log in to your account and visit the bonuses section."
+    buttons:
+      - title: "Log in"
+        link: "https://www.casino.com/login"
+      - title: "Click here, to ask for a real person"
+        payload: "/ask_for_real_person"
+
+utter_service_account_reset_email:
+  - text: "Reset password by email. [Link](https://www.casino.com/reset-email)"
+    buttons:
+      - title: "Click here, to ask for a real person"
+        payload: "/ask_for_real_person"
+
+utter_service_account_reset_phone:
+  - text: "Reset password by phone. [Link](https://www.casino.com/reset-phone)"
+    buttons:
+      - title: "Click here, to ask for a real person"
+        payload: "/ask_for_real_person"
+
+utter_service_account_information:
+  - text: "Sign in and go to: Settings -> Your account. [Link](https://www.casino.com/account-settings)"
+    buttons:
+      - title: "Click here, to ask for a real person"
+        payload: "/ask_for_real_person"
+
+################################################################################################
+############################################# DEFAULT OPTIONS ##################################
+################################################################################################
+
+utter_cheer_up:
+  - text: "Here is something to cheer you up:"
+    image: "https://i.imgur.com/nGF1K8f.jpg"
+
+utter_did_that_help:
+  - text: "Did that help you?"
+
+utter_happy:
+  - text: "Great, carry on!"
+
+utter_goodbye:
+  - text: "Bye"
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

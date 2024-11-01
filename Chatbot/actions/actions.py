@@ -1,20 +1,26 @@
+
+from typing import Any, Text, Dict, List
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
-from rasa_sdk.events import SessionStarted, ActionExecuted
-import logging
-print("Imported logging")
-logger = logging.getLogger(__name__)
-logger.setLevel(logging.DEBUG)
-print("Set logging level to DEBUG")
+from rasa_sdk.events import SlotSet
 
+class ActionSetLanguage(Action):
 
+    def name(self) -> Text:
+        return "action_set_language"
 
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
-class ActionBeforeListen(Action):
-    def name(self):
-        return "action_before_listen"
-    async def run(self, dispatcher, tracker, domain):
-        last_action_name = tracker.latest_action_name
-        logger.debug(f"Last action name: {last_action_name}")
-        logger.debug(f"Tracker: {tracker}")
-        return [SlotSet("before_listen", last_action_name)]
+        user_message = tracker.latest_message.get('text').lower()
+        if 'english' in user_message or 'en' in user_message:
+            language = 'en'
+        elif 'finnish' in user_message or 'fin' in user_message:
+            language = 'fi'
+        elif 'arabic' in user_message or 'ar' in user_message:
+            language = 'ar'
+        else:
+            language = 'en'  # Default to English
+
+        return [SlotSet("language", language)]

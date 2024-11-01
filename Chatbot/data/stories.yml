@@ -1,6 +1,12 @@
 version: "3.1"
 
 stories:
+  - story: Bot greets
+    steps:
+      - intent: greet
+      - action: action_set_language
+      - action: utter_greet
+
   # Roulette Stories
 
   - story: User asks for basic roulette rules

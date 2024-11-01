@@ -1,10 +1,6 @@
 version: "3.1"
 
 rules:
-  - rule: always use action_before_listen
-    steps:
-      - action: action_before_listen
-
   - rule: when customer asks for real person
     steps:
       - intent: ask_for_real_person
@@ -20,7 +16,7 @@ rules:
   ##########################################################################
   - rule: when customer asks for security and fair play
     steps:
-      - intent: service_security_fair_play
+      - intent: service_security_fairplay
       - action: utter_service_security_fairplay
 
   - rule: when customer asks for security of the casino
