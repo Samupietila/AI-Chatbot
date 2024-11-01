@@ -37,3 +37,4 @@ Jukka
 - Sprint planning and review: 3 hours
 - Database localization: 3 hours
 - User interface localization (Essi-bot): 1 hour
+- Submission requirements report: 1 hour
