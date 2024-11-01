@@ -111,7 +111,7 @@ venv\Scripts\activate  # For Windows
 
 pip install -r requirements.txt
 
-3. **Set Up the Database**: Run the SQL scripts provided to create the necessary tables in your MySQL database.
+3. **Set Up the Database**: Run the SQL scripts provided to create the necessary tables in your MySQL database. Check database localization from DatabaseLocalization.md
 
 4. **Configure Database Settings:** Update the Database/config.py file with your MySQL credentials.
 
