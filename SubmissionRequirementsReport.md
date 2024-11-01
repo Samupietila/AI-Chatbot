@@ -37,3 +37,8 @@ Jukka
 - Database localization: 3 hours
 - User interface localization (Essi-bot): 1 hour
 - Submission requirements report: 1 hour
+
+Mika
+- Daily sprints: 3 hours
+- Website Localization: 17 Hours
+- Chatbot Localization: 4 Hours
