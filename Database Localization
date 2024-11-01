@@ -148,6 +148,3 @@ DELETE FROM translations
 
 WHERE TableName = 'user' AND ColumnName = 'Username' AND RowID = 1 AND LanguageCode = 'FI';
 
-
-
-Jukka 1 tunti
