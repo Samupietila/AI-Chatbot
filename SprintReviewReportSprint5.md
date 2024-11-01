@@ -29,7 +29,13 @@
     - **Description**: [Navigation menus on the webpage to be in selected language]
     - **Acceptance Criteria Met**: [Yes]
   - [ID 3]
-    - **Description**: [Brief Description]
+    - **Description**: [Interacting with Essi-bot with preferred language]
+    - **Acceptance Criteria Met**: [Yes/No]
+  - [ID 4]
+    - **Description**: [Responses in preferred language]
+    - **Acceptance Criteria Met**: [Yes/No]
+  - [ID 5]
+    - **Description**: [Culturally relevant webpage in preferred language]
     - **Acceptance Criteria Met**: [Yes/No]
 
 ## Issues Encountered
@@ -49,4 +55,4 @@
 ## Conclusion
 - **Summary of the Sprint Review**: 
   - [Enter Summary of Key Points Discussed]
-- **Next Sprint Planning Date**: [Enter Date]
+- **Next Sprint Planning Date**: [4.11.2024]
