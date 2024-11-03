@@ -47,3 +47,9 @@ Mika
 Zehra
 - Essi-bot translations/localization: 9 hours
 - Daily sprints: 3 hours
+
+
+Samuel
+- Mixed tasks: 4h
+- Daily sprints: 3 hours
+- Research for Project: 2 Hours
