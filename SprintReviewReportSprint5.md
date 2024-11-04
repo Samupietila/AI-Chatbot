@@ -54,5 +54,5 @@
 
 ## Conclusion
 - **Summary of the Sprint Review**: 
-  - [Enter Summary of Key Points Discussed]
-- **Next Sprint Planning Date**: [4.11.2024]
+  - In Sprint 5, the team made significant progress toward achieving the localization goal, successfully completing five user stories and five tasks. However, the team faced challenges, particularly with localizing the Essi-bot interactions, which led to some acceptance criteria not being met for user stories focused on bot interaction and responses in the preferred language. Despite these obstacles, essential localization features, including language selection and culturally relevant web content, were delivered effectively. Moving forward the next sprint planning session is scheduled.
+- **Next Sprint Planning Date**: 4.11.2024
