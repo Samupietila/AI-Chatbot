@@ -53,3 +53,6 @@ Samuel
 - Mixed tasks: 4h
 - Daily sprints: 3 hours
 - Research for Project: 2 Hours
+
+Samu
+- Research for Project: 2.5 Hours
