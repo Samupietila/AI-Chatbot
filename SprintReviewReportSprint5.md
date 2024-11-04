@@ -1,4 +1,4 @@
-# Sprint Review Meeting Report Template
+# Sprint Review Report
 
 ## Sprint Review Details
 - **Sprint Name**: Sprint 5
@@ -16,9 +16,9 @@
   - Samu
 
 ## Overview of the Sprint
-- **Total Number of User Stories Completed**: 3
-- **Total Number of Tasks Completed**: 
-- **Total Number of Tasks Pending**: 
+- **Total Number of User Stories Completed**: 5
+- **Total Number of Tasks Completed**: 5
+- **Total Number of Tasks Pending**: 1
 
 ## Demonstration of Completed Work
 - **User Stories Completed**:
@@ -30,10 +30,10 @@
     - **Acceptance Criteria Met**: [Yes]
   - [ID 3]
     - **Description**: [Interacting with Essi-bot with preferred language]
-    - **Acceptance Criteria Met**: [Yes/No]
+    - **Acceptance Criteria Met**: [No]
   - [ID 4]
     - **Description**: [Responses in preferred language]
-    - **Acceptance Criteria Met**: [Yes/No]
+    - **Acceptance Criteria Met**: [No]
   - [ID 5]
     - **Description**: [Culturally relevant webpage in preferred language]
     - **Acceptance Criteria Met**: [Yes]
