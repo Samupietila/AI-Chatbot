@@ -1,6 +1,12 @@
 version: "3.1"
 
 rules:
+  - rule: greet user
+    steps:
+      - intent: greet
+      - action: action_set_language
+      - action: utter_greet
+
   - rule: when customer asks for real person
     steps:
       - intent: ask_for_real_person
@@ -103,24 +109,6 @@ rules:
       - intent: mood_unhappy
       - action: utter_cheer_up
       - action: utter_did_that_help
-
-  - rule: if the user denies that the bot helped, say goodbye
-    condition:
-      - active_loop: null
-      - slot_was_set:
-          - action_before_listen: utter_did_that_help
-    steps:
-      - intent: deny
-      - action: utter_goodbye
-
-  - rule: if the user affirms that the bot helped, say happy
-    condition:
-      - active_loop: null
-      - slot_was_set:
-          - action_before_listen: utter_did_that_help
-    steps:
-      - intent: affirm
-      - action: utter_happy
 
   # Roulette Rules Intent Handling
 

@@ -45,8 +45,15 @@ def chatbot():
 @views.route('/webhook', methods=['POST'])
 def webhook():
     user_message = request.json.get('message')
+    randomData = request.json
+    metadata = request.json.get('metadata', {})
     print("User message: ", user_message)
-    rasa_response = requests.post(RASA_API_URL, json={'sender': 'default', 'message': user_message})
+    payload = {
+        'sender': 'default',
+        'message': user_message,
+        'metadata': metadata
+    }
+    rasa_response = requests.post(RASA_API_URL, json=payload)
     rasa_response_json = rasa_response.json()
     print("Rasa response: ", rasa_response_json)
 

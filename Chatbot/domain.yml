@@ -79,7 +79,9 @@ slots:
     type: text
     initial_value: "en"
     mappings:
-      - type: from_text
+      - type: from_entity
+        entity: metadata
+        value: language
 
 actions:
   - action_set_language
@@ -87,6 +89,74 @@ actions:
 entities:
   - option
 responses:
+  utter_greet:
+    - condition:
+        - type: slot
+          name: language
+          value: "en"
+      text: "Hello! Welcome to the customer service, what would you like to have help with?"
+      buttons:
+        - title: "Technical issues"
+          payload: "/service_technical"
+        - title: "Bonuses & Promotion"
+          payload: "/service_bonuses"
+        - title: "Deposit & Withdrawal"
+          payload: "/service_deposit_withdrawal"
+        - title: "Account and Registration"
+          payload: "/service_account_registration"
+        - title: "Game Rules"
+          payload: "/service_game_rules"
+        - title: "Security and Fair play"
+          payload: "/service_security_fairplay"
+        - title: "Responsible Gaming"
+          payload: "/service_responsible_gaming"
+        - title: "Click here, to ask for a real person"
+          payload: "/ask_for_real_person"
+    - condition:
+        - type: slot
+          name: language
+          value: "fi"
+      text: "Hei! Tervetuloa asiakaspalveluun, miten voin auttaa sinua?"
+      buttons:
+        - title: "Tekniset ongelmat"
+          payload: "/service_technical"
+        - title: "Bonukset ja kampanjat"
+          payload: "/service_bonuses"
+        - title: "Talletus ja nostot"
+          payload: "/service_deposit_withdrawal"
+        - title: "Tili ja rekisteröinti"
+          payload: "/service_account_registration"
+        - title: "Pelin säännöt"
+          payload: "/service_game_rules"
+        - title: "Turvallisuus ja reilu peli"
+          payload: "/service_security_fairplay"
+        - title: "Vastuullinen pelaaminen"
+          payload: "/service_responsible_gaming"
+        - title: "Klikkaa tästä, kysyäksesi oikealta henkilöltä"
+          payload: "/ask_for_real_person"
+    - condition:
+        - type: slot
+          name: language
+          value: "ar"
+      text: "مرحبًا! أهلاً بك في خدمة العملاء، كيف يمكنني مساعدتك؟"
+      buttons:
+        - title: "مشكلات تقنية"
+          payload: "/service_technical"
+        - title: "المكافآت والعروض الترويجية"
+          payload: "/service_bonuses"
+        - title: "الإيداع والسحب"
+          payload: "/service_deposit_withdrawal"
+        - title: "الحساب والتسجيل"
+          payload: "/service_account_registration"
+        - title: "قواعد اللعبة"
+          payload: "/service_game_rules"
+        - title: "الأمان واللعب النزيه"
+          payload: "/service_security_fairplay"
+        - title: "المقامرة المسؤولة"
+          payload: "/service_responsible_gaming"
+        - title: "انقر هنا لطلب شخص حقيقي"
+          payload: "/ask_for_real_person"
+
   utter_blackjack_basic_rules:
     - condition:
         - type: slot
@@ -489,73 +559,6 @@ responses:
         - title: "الروليت"
           payload: "/ask_roulette_odds"
 
-  utter_greet:
-    - condition:
-        - type: slot
-          name: language
-          value: "en"
-      text: "Hello! Welcome to the customer service, what would you like to have help with?"
-      buttons:
-        - title: "Technical issues"
-          payload: "/service_technical"
-        - title: "Bonuses & Promotion"
-          payload: "/service_bonuses"
-        - title: "Deposit & Withdrawal"
-          payload: "/service_deposit_withdrawal"
-        - title: "Account and Registration"
-          payload: "/service_account_registration"
-        - title: "Game Rules"
-          payload: "/service_game_rules"
-        - title: "Security and Fair play"
-          payload: "/service_security_fairplay"
-        - title: "Responsible Gaming"
-          payload: "/service_responsible_gaming"
-        - title: "Click here, to ask for a real person"
-          payload: "/ask_for_real_person"
-    - condition:
-        - type: slot
-          name: language
-          value: "fi"
-      text: "Hei! Tervetuloa asiakaspalveluun, miten voin auttaa sinua?"
-      buttons:
-        - title: "Tekniset ongelmat"
-          payload: "/service_technical"
-        - title: "Bonukset ja kampanjat"
-          payload: "/service_bonuses"
-        - title: "Talletus ja nostot"
-          payload: "/service_deposit_withdrawal"
-        - title: "Tili ja rekisteröinti"
-          payload: "/service_account_registration"
-        - title: "Pelin säännöt"
-          payload: "/service_game_rules"
-        - title: "Turvallisuus ja reilu peli"
-          payload: "/service_security_fairplay"
-        - title: "Vastuullinen pelaaminen"
-          payload: "/service_responsible_gaming"
-        - title: "Klikkaa tästä, kysyäksesi oikealta henkilöltä"
-          payload: "/ask_for_real_person"
-    - condition:
-        - type: slot
-          name: language
-          value: "ar"
-      text: "مرحبًا! أهلاً بك في خدمة العملاء، كيف يمكنني مساعدتك؟"
-      buttons:
-        - title: "مشكلات تقنية"
-          payload: "/service_technical"
-        - title: "المكافآت والعروض الترويجية"
-          payload: "/service_bonuses"
-        - title: "الإيداع والسحب"
-          payload: "/service_deposit_withdrawal"
-        - title: "الحساب والتسجيل"
-          payload: "/service_account_registration"
-        - title: "قواعد اللعبة"
-          payload: "/service_game_rules"
-        - title: "الأمان واللعب النزيه"
-          payload: "/service_security_fairplay"
-        - title: "المقامرة المسؤولة"
-          payload: "/service_responsible_gaming"
-        - title: "انقر هنا لطلب شخص حقيقي"
-          payload: "/ask_for_real_person"
     ################################################################################################
     ############################## SECURITY & FAIR PLAY ############################################
     ################################################################################################
