@@ -1,52 +1,52 @@
-{% extends "base.html" %} {% block title %} Register {% endblock %} {%block
-container%}
+{% extends "base.html" %} {% block title %} {% trans %}Register{% endtrans %} {%
+endblock %} {%block container%}
 <div class="login-page-container">
   <div class="login-container">
     <form method="POST">
-      <h3 align="center">Register</h3>
+      <h3 align="center">{% trans %}Register{% endtrans %}</h3>
       <div class="form-group">
-        <label for="email">Email Address</label>
+        <label for="email">{% trans %}Email Address{% endtrans %}</label>
         <input
           type="email"
           class="form-control"
           id="email"
           name="email"
-          placeholder="Enter email"
+          placeholder="{% trans %}Enter email{% endtrans %}"
         />
       </div>
       <div class="form-group">
-        <label for="password">Username</label>
+        <label for="password">{% trans %}Username{% endtrans %}</label>
         <input
           type="username"
           class="form-control"
           id="username"
           name="username"
-          placeholder="Enter username"
+          placeholder="{% trans %}Enter username{% endtrans %}"
         />
       </div>
       <div class="form-group">
-        <label for="password1">Password</label>
+        <label for="password1">{% trans %}Password{% endtrans %}</label>
         <input
           type="password"
           class="form-control"
           id="password1"
           name="password1"
-          placeholder="Enter password"
+          placeholder="{% trans %}Enter password{% endtrans %}"
         />
       </div>
       <div class="form-group">
-        <label for="password2">Password</label>
+        <label for="password2">{% trans %}Password{% endtrans %}</label>
         <input
           type="password"
           class="form-control"
           id="password2"
           name="password2"
-          placeholder="Enter password again"
+          placeholder="{% trans %}Enter password again{% endtrans %}"
         />
       </div>
       <br />
       <button type="submit" class="btn btn-primary">
-        Create a new account
+        {% trans %}Create a new account{% endtrans %}
       </button>
     </form>
   </div>
