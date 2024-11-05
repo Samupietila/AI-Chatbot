@@ -1,0 +1,10 @@
+[
+  {
+    "text": "heippa",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.45049360394477844
+    }
+  }
+]
