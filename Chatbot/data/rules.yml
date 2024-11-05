@@ -1,6 +1,12 @@
 version: "3.1"
 
 rules:
+  - rule: greet user
+    steps:
+      - intent: greet
+      - action: action_set_language
+      - action: utter_greet
+
   - rule: when customer asks for real person
     steps:
       - intent: ask_for_real_person
@@ -10,6 +16,29 @@ rules:
     steps:
       - intent: service_technical
       - action: utter_service_technical
+
+  ##########################################################################
+  ###################### SECURITY & FAIR PLAY ##############################
+  ##########################################################################
+  - rule: when customer asks for security and fair play
+    steps:
+      - intent: service_security_fairplay
+      - action: utter_service_security_fairplay
+
+  - rule: when customer asks for security of the casino
+    steps:
+      - intent: security_casino
+      - action: utter_security_casino
+
+  - rule: when customer asks for fairness of the casino
+    steps:
+      - intent: security_fairness
+      - action: utter_security_fairness
+
+  - rule: when customer asks about personal data security
+    steps:
+      - intent: security_personal_data
+      - action: utter_security_personal_data
 
   ##########################################################################
   ###################### DEPOSIT AND WITHDRAWAL ############################
@@ -70,11 +99,6 @@ rules:
       - intent: goodbye
       - action: utter_goodbye
 
-  - rule: Say 'I am a bot' anytime the user challenges
-    steps:
-      - intent: bot_challenge
-      - action: utter_iamabot
-
   - rule: respond to the mood_great intent with the utter_happy action
     steps:
       - intent: mood_great
@@ -85,24 +109,6 @@ rules:
       - intent: mood_unhappy
       - action: utter_cheer_up
       - action: utter_did_that_help
-
-  - rule: if the user denies that the bot helped, say goodbye
-    condition:
-      - active_loop: null
-      - slot_was_set:
-          - action_before_listen: utter_did_that_help
-    steps:
-      - intent: deny
-      - action: utter_goodbye
-
-  - rule: if the user affirms that the bot helped, say happy
-    condition:
-      - active_loop: null
-      - slot_was_set:
-          - action_before_listen: utter_did_that_help
-    steps:
-      - intent: affirm
-      - action: utter_happy
 
   # Roulette Rules Intent Handling
 
@@ -221,8 +227,3 @@ rules:
     steps:
       - intent: goodbye
       - action: utter_goodbye
-
-  - rule: Say 'I am a bot' anytime the user challenges
-    steps:
-      - intent: bot_challenge
-      - action: utter_iamabot

@@ -3,6 +3,7 @@ venv/
 models/
 __pycache__
 config.py
+.rasa
 __pycache__/
 **/__pycache__/
 Flask-Website/Database/__pycache__/

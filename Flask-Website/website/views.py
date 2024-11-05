@@ -1,8 +1,11 @@
 import logging
 import requests
-from flask import Blueprint, render_template, request, jsonify
+from flask import Blueprint, render_template, request, jsonify, make_response, url_for, redirect
 from flask_cors import CORS
 from flask_login import login_required, current_user
+from datetime import timezone, datetime
+from Database.authentication import store_chat_history
+from flask_babel import gettext as _
 
 views = Blueprint('views', __name__)
 CORS(views)
@@ -10,7 +13,7 @@ RASA_API_URL = 'http://localhost:5005/webhooks/rest/webhook'
 
 @views.route('/')
 def home():
-    return render_template("home.html")
+    return render_template("home.html",)
 
 @views.route('/games')
 @login_required
@@ -41,9 +44,16 @@ def chatbot():
 
 @views.route('/webhook', methods=['POST'])
 def webhook():
-    user_message = request.json['message']
+    user_message = request.json.get('message')
+    randomData = request.json
+    metadata = request.json.get('metadata', {})
     print("User message: ", user_message)
-    rasa_response = requests.post(RASA_API_URL, json={'sender': 'test_user', 'message': user_message})
+    payload = {
+        'sender': 'default',
+        'message': user_message,
+        'metadata': metadata
+    }
+    rasa_response = requests.post(RASA_API_URL, json=payload)
     rasa_response_json = rasa_response.json()
     print("Rasa response: ", rasa_response_json)
 
@@ -54,5 +64,51 @@ def webhook():
         bot_response = "Sorry, I didn't get that. Can you rephrase?"
         buttons = []
     print ("Bot response: ", bot_response)
+    user_id = current_user
+    print("User ID: ", user_id)
 
-    return jsonify({'message': bot_response, 'buttons': buttons})
+    if user_id:
+        message_timestamp = datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M:%S')
+        try:
+            store_chat_history({
+                'userid': "1",
+                'messagetimestamp': message_timestamp,
+                'messagecontent': user_message,
+                'airesponse': bot_response
+            })
+        except Exception as e:
+            print(e)
+            logging.error(e)
+    else:
+        message_timestamp = datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M:%S')
+        try:
+            store_chat_history({
+                'userid': "0",
+                'messagetimestamp': message_timestamp,
+                'messagecontent': user_message,
+                'airesponse': bot_response
+            })
+        except Exception as e:
+            print(e)
+            logging.error(e)
+
+
+    return jsonify({'message': bot_response, 'buttons': buttons, user_message: user_message})
+
+@views.route('/set_language/<language>')
+def set_language(language):
+    
+    rasa_server_url = 'http://localhost:5055/conversations/default/tracker/events'
+    headers = {'Content-Type': 'application/json'}
+    data = {
+        "event": "slot",
+        "name": "language",
+        "value": language
+    }
+    
+    print(data)
+    response = requests.post(rasa_server_url, headers=headers, json=data)
+    response = make_response(redirect(url_for('views.home')))
+    response.set_cookie('language', language)
+    return response
+

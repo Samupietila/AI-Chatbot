@@ -1,0 +1,24 @@
+#### This file contains tests to evaluate that your bot behaves as expected.
+#### If you want to learn more, please see the docs: https://rasa.com/docs/rasa/testing-your-assistant
+
+stories:
+  - story: test_greet
+    steps:
+      - user: |
+          hello
+        intent: greet
+      - action: utter_greet
+
+  - story: test_mood_great
+    steps:
+      - user: |
+          amazing
+        intent: mood_great
+      - action: utter_happy
+
+  - story: test_goodbye
+    steps:
+      - user: |
+          goodbye
+        intent: goodbye
+      - action: utter_goodbye

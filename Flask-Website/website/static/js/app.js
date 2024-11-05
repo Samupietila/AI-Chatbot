@@ -29,9 +29,29 @@ $(document).ready(function () {
     $("#chat-widget-input").val("");
   });
 
+  function getCookie(name) {
+    let cookieArr = document.cookie.split(";");
+    for (let i = 0; i < cookieArr.length; i++) {
+      let cookiePair = cookieArr[i].split("=");
+      if (name == cookiePair[0].trim()) {
+        return decodeURIComponent(cookiePair[1]);
+      }
+    }
+    return null;
+  }
+
   function sendMessage(userMessage, buttonName) {
     if (userMessage) {
       clearButtons();
+      let language = getCookie("language");
+      let data = {
+        message: userMessage,
+        user_id: "under work",
+        metadata: {
+          language: language,
+        },
+      };
+      console.log(data);
       if (buttonName) {
         var messageHtml =
           '<div class=chat-widget-message-sender><div class="inner-message id="user-message"><strong>You:</strong><div class="chat-widget-message chat-widget-message-right">' +
@@ -45,12 +65,11 @@ $(document).ready(function () {
           "</div></div></div>";
       }
       $("#chat-widget-messages").append(messageHtml);
-
       $.ajax({
         type: "POST",
         url: "http://127.0.0.1:5000/webhook",
         contentType: "application/json",
-        data: JSON.stringify({ message: userMessage }),
+        data: JSON.stringify(data),
         success: function (data) {
           var botResponse = data.message;
           var buttons = data.buttons;
@@ -59,7 +78,6 @@ $(document).ready(function () {
             botResponse +
             "</div></div></div>";
           $("#chat-widget-messages").append(botMessageHtml);
-
           if (buttons.length > 0) {
             const buttonHtml = $('<div class="button-container mt-2"></div>');
             buttons.forEach(function (button) {

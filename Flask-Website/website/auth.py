@@ -1,6 +1,6 @@
 from flask import Blueprint, render_template, request, flash, redirect, url_for
 from Database import authentication
-from flask_login import login_user, login_required, logout_user, current_user
+from flask_login import login_user, login_required, logout_user
 from .models import User
 auth = Blueprint('auth', __name__)
 
@@ -9,11 +9,11 @@ def login():
     if request.method == 'POST':
         username = request.form.get('username')
         password = request.form.get('password')
+        print(username)
+        print(password)
         user = authentication.authenticate_user(username, password)
         if user:
             print(user)
-
-            
             login_user(user, remember=True)
             flash('Logged in successfully!', category='success')
             redirect(url_for('auth.thankyou'))
