@@ -11,7 +11,7 @@ def create_app():
     login_manager.init_app(app)
     
     from Database import authentication
-    
+
     @login_manager.user_loader
     def load_user(id):
         return authentication.load_user(id)
