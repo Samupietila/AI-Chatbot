@@ -1,0 +1,195 @@
+version: "3.1"
+nlu:
+  - intent: greet
+    examples: |
+      - hei
+      - terve
+      - moikka
+      - moi
+      - hyvää huomenta
+      - hyvää iltaa
+      - moro
+      - heippa
+      - lähdetään
+      - moi kaveri
+      - huomenta
+      - iltaa
+      - hyvää iltapäivää
+      - heippa
+      - hyvää huomenta
+      - terve
+      - moikka
+      - moi
+      - moi moi
+
+  - intent: goodbye
+    examples: |
+      - näkemiin
+      - hyvästi
+      - nähdään myöhemmin
+      - hyvää yötä
+      - hei hei
+      - näkemiin
+      - mukavaa päivää
+      - nähdään
+      - heippa
+      - nähdään myöhemmin
+      - ciao
+      - nähdään pian
+      - hei sitten
+      - ok, moikka
+
+  - intent: affirm
+    examples: |
+      - kyllä
+      - joo
+      - todellakin
+      - tietenkin
+      - kuulostaa hyvältä
+      - oikein
+      - ehdottomasti
+      - varmasti
+      - ihan varmasti
+      - kyllä, kiitos
+      - kyllä, haluaisin
+      - kyllä, haluaisin tehdä sen
+      - tietenkin, kiitos
+      - kyllä, tee niin
+      - kyllä, haluan sen
+      - ok
+      - jep
+      - joo
+      - ok, hienoa
+
+  - intent: deny
+    examples: |
+      - ei
+      - en
+      - ei koskaan
+      - en usko niin
+      - en pidä siitä
+      - ei missään nimessä
+      - ei oikein
+      - ei
+      - ei, en halua sitä
+      - ei, en halua tehdä sitä
+      - ei, en jaksa
+      - olet tyhmä
+      - lopeta
+      - eiii
+      - eiii
+      - ei koskaan
+      - ei koskaan
+      - ei missään nimessä
+
+  - intent: mood_great
+    examples: |
+      - täydellistä
+      - mahtavaa
+      - upeaa
+      - tuntuu kuninkaalta
+      - ihanaa
+      - voin erittäin hyvin
+      - olen loistava
+      - olen mahtava
+      - aion pelastaa maailman
+      - super innoissani
+      - erittäin hyvä
+      - niin niin täydellistä
+      - niin hyvää
+      - niin täydellistä
+      - olen hyvä
+      - olen loistava
+      - olen mahtava
+      - olen niin hyvä
+      - hyvä
+
+  - intent: mood_unhappy
+    examples: |
+      - päiväni oli hirveä
+      - olen surullinen
+      - en voi hyvin
+      - olen pettynyt
+      - todella surullinen
+      - olen niin surullinen
+      - surullinen
+      - hyvin surullinen
+      - onneton
+      - ei hyvä
+      - ei kovin hyvä
+      - äärimmäisen surullinen
+      - niin surullinen
+      - niin surullinen
+      - huono
+      - todella huono
+      - kamala
+      - kauhea
+      - ei niin hyvä
+
+  - intent: bot_challenge
+    examples: |
+      - oletko botti?
+      - oletko ihminen?
+      - puhunko bottiin?
+      - puhunko ihmiseen?
+      - mitä sinä olet?
+      - kuka sinä olet?
+      - onko tämä botti?
+      - onko tämä ihminen?
+
+  - intent: ask_blackjack_rules
+    examples: |
+      - Mitkä ovat blackjackin säännöt?
+      - Voitko selittää blackjackin säännöt?
+      - Miten pelaan blackjackia?
+
+  - intent: ask_poker_rules
+    examples: |
+      - Mitkä ovat pokerin säännöt?
+      - Voitko selittää pokerin säännöt?
+      - Miten pelaan pokeria?
+
+  - intent: ask_roulette_odds
+    examples: |
+      - Mitkä ovat mahdollisuudet ruletissa?
+      - Voitko kertoa ruletin mahdollisuuksista?
+      - Kuinka todennäköisesti voitan ruletissa?
+
+  - intent: ask_rules
+    examples: |
+      - Voitko selittää säännöt?
+      - Miten pelaan tätä peliä?
+      - Tarvitsen säännöt.
+
+  - intent: button_test
+    examples: |
+      - Näytä minulle painikkeet
+      - Haluan nähdä painikevaihtoehdot.
+
+  - intent: select_option
+    examples: |
+      - Valitsen vaihtoehdon 1
+      - Menen vaihtoehdolla 2
+      - Vaihtoehto 1 on valintani.
+
+  - intent: bonus_claim
+    examples: |
+      - Haluan lunastaa bonukseni
+      - Miten lunastan bonukseni?
+      - Lunasta bonus
+      - Haluaisin lunastaa tervetulobonukseni
+      - Miten saan bonukseni?
+
+  - intent: bonus_wagering_requirements
+    examples: |
+      - Mitkä ovat bonuksen kierrätysvaatimukset?
+      - Kerro minulle bonuksen kierrätysvaatimuksista
+      - Mitä minun on kierrätettävä bonuksen vuoksi?
+      - Miten täytän bonuksen vaatimukset?
+
+  - intent: bonus_status
+    examples: |
+      - Mikä on bonukseni tila?
+      - Tarkista bonukseni tila
+      - Miten voin nähdä bonukseni tilan?
+      - Mistä löydän bonukseni tilan?

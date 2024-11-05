@@ -1,9 +1,11 @@
 version: "3.1"
 
 rules:
-  - rule: always use action_before_listen
+  - rule: greet user
     steps:
-      - action: action_before_listen
+      - intent: greet
+      - action: action_set_language
+      - action: utter_greet
 
   - rule: when customer asks for real person
     steps:
@@ -20,7 +22,7 @@ rules:
   ##########################################################################
   - rule: when customer asks for security and fair play
     steps:
-      - intent: service_security_fair_play
+      - intent: service_security_fairplay
       - action: utter_service_security_fairplay
 
   - rule: when customer asks for security of the casino
@@ -107,24 +109,6 @@ rules:
       - intent: mood_unhappy
       - action: utter_cheer_up
       - action: utter_did_that_help
-
-  - rule: if the user denies that the bot helped, say goodbye
-    condition:
-      - active_loop: null
-      - slot_was_set:
-          - action_before_listen: utter_did_that_help
-    steps:
-      - intent: deny
-      - action: utter_goodbye
-
-  - rule: if the user affirms that the bot helped, say happy
-    condition:
-      - active_loop: null
-      - slot_was_set:
-          - action_before_listen: utter_did_that_help
-    steps:
-      - intent: affirm
-      - action: utter_happy
 
   # Roulette Rules Intent Handling
 

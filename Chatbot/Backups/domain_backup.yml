@@ -1,0 +1,552 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - ask_rules
+  - button_test
+  - ask_poker_rules
+  - ask_blackjack_rules
+  - ask_roulette_odds
+  - select_option
+  - mood_great
+  - mood_unhappy
+  - service_technical
+  - service_bonuses
+  - service_bonus
+  - bonus_claim
+  - bonus_wagering_requirements
+  - bonus_status
+  - service_deposit_withdrawal
+  - service_game_rules
+  - service_security_fairplay
+  - service_responsible_gaming
+  - service_technical_game_froze
+  - service_technical_status_error
+  - service_technical_deposit_error
+  - service_technical_game_froze_refresh
+  - service_technical_game_froze_clean_cache
+  - service_technical_game_froze_update_browser
+  - service_technical_status_server_error
+  - service_technical_status_connection_issue
+  - service_technical_status_connection_timed_out
+  - service_technical_account_status
+  - service_technical_banks_supported
+  - service_technical_availability_info
+  - ask_for_real_person
+  - approval_yes
+  - approval_no
+  - service_deposit_methods
+  - deposit_credit_card
+  - deposit_bank_transfer
+  - deposit_e_wallet
+  - service_withdrawal_time
+  - withdrawal_credit_card
+  - withdrawal_bank_transfer
+  - withdrawal_e_wallet
+  - service_fees
+  - security_casino
+  - security_fairness
+  - security_personal_data
+  - service_account_registration
+  - service_account_creation
+  - service_account_password
+  - service_account_information
+  - service_account_reset_email
+  - service_account_reset_phone
+  - roulette_basic_rules
+  - roulette_best_strategies
+  - roulette_odds_specific_bets
+  - roulette_game_rules_overview
+  - blackjack_basic_rules
+  - blackjack_card_counting
+  - blackjack_advanced_strategies
+  - blackjack_odds_specific_bets
+  - blackjack_game_rules_overview
+  - poker_basic_rules
+  - poker_advanced_strategies
+  - poker_odds_specific_bets
+  - poker_game_rules_overview
+  - responsible_gaming_setting_limits
+  - responsible_gaming_self_exclude
+  - responsible_gaming_gambling_addiction
+
+entities:
+  - option
+slots:
+  option:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: option
+  action_before_listen:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: option
+
+responses:
+  utter_blackjack_basic_rules:
+    - text: "In Blackjack, the goal is to get a hand value as close to 21 as possible without going over. You win by having a higher hand value than the dealer without busting. Face cards are worth 10 points, Aces can be worth 1 or 11, and other cards are worth their face value."
+
+  utter_blackjack_card_counting:
+    - text: "Card counting is a strategy used to determine whether the next hand is likely to give an advantage to the player or the dealer. The most common system is the Hi-Lo method, where cards are assigned values and the player keeps a running count to make better betting decisions."
+
+  utter_blackjack_advanced_strategies:
+    - text: "Advanced Blackjack strategies include card counting, bet spreading, and using optimal playing strategies like basic strategy charts. These methods help players make better decisions on when to hit, stand, double down, or split."
+
+  utter_blackjack_odds_specific_bets:
+    - text: "The odds of specific bets in Blackjack can vary. For example, the odds of getting a Blackjack (an Ace and a 10-value card) on the initial deal are approximately 4.8%. The payout for a Blackjack is typically 3:2."
+
+  utter_blackjack_game_rules_overview:
+    - text: "Blackjack is a popular card game where the aim is to beat the dealer's hand without going over 21. Players are dealt two cards and can choose to hit, stand, double down, or split based on their hand and the dealer’s visible card."
+
+  utter_roulette_basic_rules:
+    - text: "Roulette involves a spinning wheel with numbered slots. Players place bets on where they think the ball will land. Bets can be on specific numbers, ranges of numbers, or colors. The wheel has two main types: European (one zero) and American (two zeros)."
+
+  utter_roulette_best_strategies:
+    - text: "Popular Roulette strategies include the Martingale system (doubling bets after losses), the Fibonacci system (betting according to a sequence), and the D'Alembert system (adjusting bets incrementally). Remember, no strategy can guarantee a win due to the game's randomness."
+
+  utter_roulette_odds_specific_bets:
+    - text: "The odds of winning specific bets in Roulette vary. For instance, a straight-up bet on a single number has odds of 37 to 1 (or 38 to 1 in American Roulette), while a bet on red or black has odds of nearly 1 to 1."
+
+  utter_roulette_game_rules_overview:
+    - text: "In Roulette, players bet on where a ball will land on a spinning wheel. Bets can be placed on numbers, colors, or ranges of numbers. The wheel consists of numbered slots, with European Roulette having 37 slots (including one zero) and American Roulette having 38 slots (including two zeros)."
+
+  utter_poker_game_rules_overview:
+    - text: "In Poker, players aim to have the best hand or convince others to fold. Each player is dealt a combination of private and community cards. Players then bet based on the strength of their hand, with betting rounds between card deals. The game ends with the player with the best hand or the last player remaining after all others have folded."
+
+  utter_poker_odds_specific_bets:
+    - text: "The odds of specific poker hands vary. For example, the odds of being dealt a pocket pair in Texas Hold'em are about 6%. The odds of hitting a flush on the flop after being dealt suited cards are roughly 0.8%."
+
+  utter_poker_advanced_strategies:
+    - text: "Advanced poker strategies include concepts like bluffing, understanding pot odds, and reading opponents' tells. Techniques like semi-bluffing and adjusting your play style based on the table dynamics can also help improve your game."
+
+  utter_poker_basic_rules:
+    - text: "Poker is a popular card game that involves betting and individual or group card hands. The most common variant is Texas Hold'em, where each player is dealt two private cards and uses them with five community cards to make the best possible hand. Hands are ranked from high card to royal flush."
+
+  utter_ask_poker_rules:
+    - text: "Hello! Welcome to our poker service. What would you like to know?"
+      buttons:
+        - title: "Poker Basic Rules"
+          payload: "/poker_basic_rules"
+        - title: "Poker Advanced Strategies"
+          payload: "/poker_advanced_strategies"
+        - title: "Odds of Specific Bets"
+          payload: "/poker_odds_specific_bets"
+        - title: "Game Rules Overview"
+          payload: "/poker_game_rules_overview"
+        - title: "Click here, to ask for a real person"
+          payload: "/ask_for_real_person"
+
+  utter_ask_blackjack_rules:
+    - text: "What would you like to know about Blackjack?"
+      buttons:
+        - title: "Blackjack Basic Rules"
+          payload: "/blackjack_basic_rules"
+        - title: "Blackjack Card Counting"
+          payload: "/blackjack_card_counting"
+        - title: "Blackjack Advanced Strategies"
+          payload: "/blackjack_advanced_strategies"
+        - title: "Odds of Specific Blackjack Bets"
+          payload: "/blackjack_odds_specific_bets"
+        - title: "General Blackjack Rules Overview"
+          payload: "/blackjack_game_rules_overview"
+
+  utter_ask_roulette_odds:
+    - text: "What would you like to know about Roulette?"
+      buttons:
+        - title: "Roulette Basic Rules"
+          payload: "/roulette_basic_rules"
+        - title: "Roulette Best Strategies"
+          payload: "/roulette_best_strategies"
+        - title: "Odds of Specific Roulette Bets"
+          payload: "/roulette_odds_specific_bets"
+        - title: "General Roulette Rules Overview"
+          payload: "/roulette_game_rules_overview"
+
+  utter_service_game_rules:
+    - text: "Please select what you would like to know more about:"
+      buttons:
+        - title: "Poker"
+          payload: "/ask_poker_rules"
+        - title: "Blackjack"
+          payload: "/ask_blackjack_rules"
+        - title: "Roulette"
+          payload: "/ask_roulette_odds"
+
+  utter_greet:
+    - text: "Hello! Welcome to the customer service, what would you like to have help with?"
+      buttons:
+        - title: "Technical issues"
+          payload: "/service_technical"
+        - title: "Bonuses & Promotion"
+          payload: "/service_bonuses"
+        - title: "Deposit & Withdrawal"
+          payload: "/service_deposit_withdrawal"
+        - title: "Account and Registration"
+          payload: "/service_account_registration"
+        - title: "Game Rules"
+          payload: "/service_game_rules"
+        - title: "Security and Fair play"
+          payload: "/service_security_fairplay"
+        - title: "Responsible Gaming"
+          payload: "/service_responsible_gaming"
+        - title: "Click here, to ask for a real person"
+          payload: "/ask_for_real_person"
+
+  ################################################################################################
+  ############################## SECURITY & FAIR PLAY ############################################
+  ################################################################################################
+  utter_service_security_fairplay:
+    - text: "Regarding security and fair play, here are some information to check:"
+      buttons:
+        - title: "How secure is the casino?"
+          payload: "/security_casino"
+        - title: "How  are the games verified for fairness?"
+          payload: "/security_fairness"
+        - title: "What personal data is collected and how is it used?"
+          payload: "/security_personal_data"
+        - title: "Click here, to ask for a real person"
+          payload: "/ask_for_real_person"
+
+  utter_security_casino:
+    - text: "The casino is secured with the latest encryption technology, ensuring that your personal data is safe and secure."
+      buttons:
+        - title: "See more about the security"
+          link: "https://www.casino.com/security"
+        - title: "Click here, to ask for a real person"
+          payload: "/ask_for_real_person"
+
+  utter_security_fairness:
+    - text: "The games are verified for fairness by an independent third party, ensuring that the games are fair and random."
+      buttons:
+        - title: "See more about the fairness"
+          link: "https://www.casino.com/fairness"
+        - title: "Click here, to ask for a real person"
+          payload: "/ask_for_real_person"
+
+  utter_security_personal_data:
+    - text: "The personal data collected is used to provide you with the best gaming experience, and is never shared with third parties."
+      buttons:
+        - title: "See more about the personal data"
+          link: "https://www.casino.com/personal_data"
+        - title: "Click here, to ask for a real person"
+          payload: "/ask_for_real_person"
+
+  ################################################################################################
+  ############################## DEPOSIT AND WITHDRAWAL ##########################################
+  ################################################################################################
+  utter_service_deposit_withdrawal:
+    - text: "Regarding deposit / withdrawal of money, here are some information to check:"
+      buttons:
+        - title: "What are the deposit methods?"
+          payload: "/service_deposit_methods"
+        - title: "How long does it take to withdraw money?"
+          payload: "/service_withdrawal_time"
+        - title: "Are there any fees for depositing or withdrawing money?"
+          payload: "/service_fees"
+        - title: "Click here, to ask for a real person"
+          payload: "/ask_for_real_person"
+  ############################################ Button1 ####################################################
+  ################################### What are the deposit methods? #######################################
+  utter_service_deposit_methods:
+    - text: "Here are the deposit methods available:"
+      buttons:
+        - title: "Credit Card"
+          payload: "/deposit_credit_card"
+        - title: "Bank Transfer"
+          payload: "/deposit_bank_transfer"
+        - title: "E-Wallet"
+          payload: "/deposit_e_wallet"
+        - title: "Click here, to ask for a real person"
+          payload: "/ask_for_real_person"
+
+  utter_deposit_credit_card:
+    - text: "You can deposit money using a credit card, here are the supported credit cards:\n\n- Visa\n- Mastercard\n- American Express"
+      buttons:
+        - title: "[Press here to deposit to casino](http://127.0.0.1:5000/withdraw-deposit)"
+          link: "https://www.casino.com/deposit"
+        - title: "Click here, to ask for a real person"
+          payload: "/ask_for_real_person"
+  utter_deposit_bank_transfer:
+    - text: "You can deposit money using a bank transfer, here are the supported banks:\nHere is a list of supported banks:\n\n- Bank of America\n- Chase\n- Wells Fargo"
+      buttons:
+        - title: "[Press here to deposit to casino](http://127.0.0.1:5000/withdraw-deposit)"
+          link: "https://www.casino.com/deposit"
+        - title: "Click here, to ask for a real person"
+          payload: "/ask_for_real_person"
+  utter_deposit_e_wallet:
+    - text: "You can deposit money using an e-wallet, here are the supported e-wallets:\nHere is a list of supported e-wallets:\n\n- Paypal\n- Skrill\n- Neteller"
+      buttons:
+        - title: "[Press here to deposit to casino](http://127.0.0.1:5000/withdraw-deposit)"
+          link: "https://www.casino.com/deposit"
+        - title: "Click here, to ask for a real person"
+          payload: "/ask_for_real_person"
+  ############################################ Button2 ###############################################################
+  ################################### How long does it take to withdraw money? #######################################
+  utter_service_withdrawal_time:
+    - text: "Tell us which method you used to deposit money, and we will tell you how long it takes to withdraw money:"
+      buttons:
+        - title: "Credit Card"
+          payload: "/withdrawal_credit_card"
+        - title: "Bank Transfer"
+          payload: "/withdrawal_bank_transfer"
+        - title: "E-Wallet"
+          payload: "/withdrawal_e_wallet"
+        - title: "Click here, to ask for a real person"
+          payload: "/ask_for_real_person"
+  utter_withdrawal_credit_card:
+    - text: "If you deposited money using a credit card, it will take 3-5 business days to withdraw money."
+      buttons:
+        - title: "[Press here to withdraw to casino](http://127.0.0.1:5000/withdraw-deposit)"
+          link: "https://www.casino.com/withdraw"
+        - title: "Click here, to ask for a real person"
+          payload: "/ask_for_real_person"
+  utter_withdrawal_bank_transfer:
+    - text: "If you deposited money using a bank transfer, it will take 5-7 business days to withdraw money."
+      buttons:
+        - title: "[Press here to withdraw to casino](http://127.0.0.1:5000/withdraw-deposit)"
+          link: "https://www.casino.com/withdraw"
+        - title: "Click here, to ask for a real person"
+          payload: "/ask_for_real_person"
+  utter_withdrawal_e_wallet:
+    - text: "If you deposited money using an e-wallet, it will take 1-3 business days to withdraw money."
+      buttons:
+        - title: "[Press here to withdraw to casino](http://127.0.0.1:5000/withdraw-deposit)"
+          link: "https://www.casino.com/withdraw"
+        - title: "Click here, to ask for a real person"
+          payload: "/ask_for_real_person"
+  ############################################ Button3 ##############################################################################
+  ################################### Are there any fees for depositing or withdrawing money? #######################################
+  utter_service_fees:
+    - text: "Here is a link to the fees for depositing or withdrawing money:"
+      buttons:
+        - title: "[Fees for the casino](http://127.0.0.1:5000/withdraw-deposit)"
+          link: "https://www.casino.com/fees"
+        - title: "Click here, to ask for a real person"
+          payload: "/ask_for_real_person"
+
+  ################################################################################################
+  ############################## TECHNICAL SUPPORT ###############################################
+  ################################################################################################
+  utter_ask_for_real_person:
+    - text: "Allright! We're going to queue you for customer service..."
+
+  utter_customer_approval:
+    - text: "Was this help useful?"
+      buttons:
+        - title: "Yes, this information helped me."
+          payload: "/approval_yes"
+        - title: "No, this information did not help me"
+          payload: "/approval_no"
+
+  utter_service_technical:
+    - text: "Allright! Let what kind of Technical issues you are facing with"
+      buttons:
+        - title: "The game froze, what should i do?"
+          payload: "/service_technical_game_froze"
+        - title: "Game has given a status error"
+          payload: "/service_technical_status_error"
+        - title: "why can't i deposit money?"
+          payload: "/service_technical_deposit_error"
+        - title: "Click here, to ask for a real person"
+          payload: "/ask_for_real_person"
+
+  utter_service_technical_game_froze:
+    - text: "Here are common ways to solve the issue, did any of these help?"
+      buttons:
+        - title: "Refresh the page"
+          payload: "/service_technical_game_froze_refresh"
+        - title: "Clean up the cache and cookies"
+          payload: "/service_technical_game_froze_clean_cache"
+        - title: "Update your browser to the newest version"
+          payload: "/service_technical_game_froze_update_browser"
+        - title: "No, none of these helped to fix the problem."
+          payload: "/ask_for_real_person"
+
+  utter_service_technical_game_froze_refresh:
+    - text: "It's a good thing that refreshing the website helped!"
+
+  utter_service_technical_game_froze_clean_cache:
+    - text: "It's a good thing that cleaning the cache and cookies helped!"
+
+  utter_service_technical_game_froze_update_browser:
+    - text: "It's a good thing that updating the browser helped!"
+
+  utter_service_technical_status_error:
+    - text: "In the case of the game given a error code, which one was it"
+      buttons:
+        - title: "Status Code: Server Error"
+          payload: "/service_technical_status_server_error"
+        - title: "Error Code: Connection Issue"
+          payload: "/service_technical_status_connection_issue"
+        - title: "Error Code: Connection timed out"
+          payload: "/service_technical_status_connection_timed_out"
+        - title: "Click here, to ask for a real person"
+          payload: "/ask_for_real_person"
+
+  utter_service_technical_status_server_error:
+    - text: "Status Code: Server Error. Indicates that there as been an error on the servers side and due to that, game has crashed. \nTechnical support has been informed about this issue, support will be notified about this."
+  utter_service_technical_status_connection_issue:
+    - text: "Status Code: Connection Issue. Indicates that a proper connection to the server cannot be created, and due to it has caused the error. \nTechnical support has been informed about this issue, support will be notified about this."
+  utter_service_technical_status_connection_timed_out:
+    - text: "Status Code: Connection Timed out. Indicates that a connection to the server has cut out. \nTechnical support has been informed about this issue, support will be notified about this."
+
+  utter_service_technical_deposit_error:
+    - text: "Regarding deposit / withdrawal of money, here are some information to check:"
+      buttons:
+        - title: "Availability"
+          payload: "/service_technical_availability_info"
+        - title: "Banks supported"
+          payload: "/service_technical_banks_supported"
+        - title: "Account status"
+          payload: "/service_technical_account_status"
+        - title: "Click here, to ask for a real person"
+          payload: "/ask_for_real_person"
+
+  utter_service_account_registration:
+    - text: "How can I help you with account and registration?"
+      buttons:
+        - title: "How do I create an account?"
+          payload: "/service_account_creation"
+        - title: "I forgot my password."
+          payload: "/service_account_password"
+        - title: "How to update account information?"
+          payload: "/service_account_information"
+
+  utter_service_account_creation:
+    - text: "Please press the signup button and fill the form. Link."
+      buttons:
+        - title: "Click here, to ask for a real person"
+          payload: "/ask_for_real_person"
+
+  utter_service_account_password:
+    - text: "How do you want to reset your password."
+      buttons:
+        - title: "Reset password by email. Link."
+          payload: "/service_account_reset_email"
+        - title: "Reset password by phone. Link."
+          payload: "/service_account_reset_phone"
+
+  utter_service_technical_availability_info:
+    - text: "Money trades are closed during 22:00 - 06:00 everyday due to money transfering laws"
+  utter_service_technical_banks_supported:
+    - text: "We only accept transfers from specific banks: \nHere is a list of supported banks:\n- Bank of America\n- Chase\n- Wells Fargo"
+  utter_service_technical_account_status:
+    - text: "The state of your account can also affect if you can deposit/withdraw money. You can check the status of your account by going into your profile page:"
+      buttons:
+        - title: "Profile page"
+          link: "https://www.casino.com/profile"
+
+  ################################################################################################
+  ############################## Responsible Gaming ##########################################
+  ################################################################################################
+
+  utter_service_responsible_gaming:
+    - text: "This section is for Responsible Gaming, when using our website. What would you like to know about?"
+      buttons:
+        - title: "How can i set limits for my account?"
+          payload: "/responsible_gaming_setting_limits"
+        - title: "How do i self-exclude from the casino?"
+          payload: "/responsible_gaming_self_exclude"
+        - title: "What should i do if i think i have gambling addiction"
+          payload: "/responsible_gaming_gambling_addiction"
+
+  utter_responsible_gaming_setting_limits:
+    - text: "You can set limits on deposits, losses, wagers, or session time to manage your play. Just go to your account settings under 'Responsible Gaming' and choose the limits that work best for you. Need help setting it up? I can guide you!"
+      buttons:
+        - title: "Set up your limits here!"
+          link: "https://www.casino.com/profile/responsible"
+
+  utter_responsible_gaming_self_exclude:
+    - text: "If you need to take a break, you can self-exclude for a period of time or permanently. Head to the 'Self-Exclusion' option in your account settings, or i can help you to get started right now!"
+      buttons:
+        - title: "Set up your Self-Exclusion here!"
+          link: "https://www.casino.com/profile/responsible/exclusion"
+
+  utter_responsible_gaming_gambling_addiction:
+    - text: "I'm here to help. If you're concerned about your gambling, you can set limits, take a break with self-exlusion, or reach out for support. Need help with resources? I can point you in the right direction."
+      buttons:
+        - title: "Click here for more resources regarding Gambling Addiction"
+          link: "https://www.casino.com/resources"
+
+  ################################################################################################
+  ############################## BONUSES AND PROMOTIONS #########################################
+  ################################################################################################
+  utter_service_bonuses:
+    - text: "Here you can find information about bonuses and promotions. Please select one of the options below:"
+      buttons:
+        - title: "Claim a bonus"
+          payload: "/bonus_claim"
+        - title: "Wagering requirements"
+          payload: "/bonus_wagering_requirements"
+        - title: "Bonus status"
+          payload: "/bonus_status"
+        - title: "Click here, to ask for a real person"
+          payload: "/ask_for_real_person"
+
+  utter_bonus_claim:
+    - text: "To claim your welcome bonus, follow these steps:"
+      buttons:
+        - title: "Sign up now"
+          link: "https://www.casino.com/signup"
+        - title: "Click here, to ask for a real person"
+          payload: "/ask_for_real_person"
+
+  utter_bonus_wagering_requirements:
+    - text: "The wagering requirements for the bonus are as follows:"
+      buttons:
+        - title: "Check details"
+          link: "https://www.casino.com/bonus-terms"
+        - title: "Click here, to ask for a real person"
+          payload: "/ask_for_real_person"
+
+  utter_bonus_status:
+    - text: "To check your bonus status, please log in to your account and visit the bonuses section."
+      buttons:
+        - title: "Log in"
+          link: "https://www.casino.com/login"
+        - title: "Click here, to ask for a real person"
+          payload: "/ask_for_real_person"
+
+  utter_service_account_reset_email:
+    - text: "Reset password by email. Link."
+      buttons:
+        - title: "Click here, to ask for a real person"
+          payload: "/ask_for_real_person"
+
+  utter_service_account_reset_phone:
+    - text: "Reset password by phone. Link."
+      buttons:
+        - title: "Click here, to ask for a real person"
+          payload: "/ask_for_real_person"
+
+  utter_service_account_information:
+    - text: "Sign in and go to: Settings -> Your account. Link"
+      buttons:
+        - title: "Click here, to ask for a real person"
+          payload: "/ask_for_real_person"
+
+  ################################################################################################
+  ############################## DEFAULT OPTIONS ##########################################
+  ################################################################################################
+
+  utter_cheer_up:
+    - text: "Here is something to cheer you up:"
+      image: "https://i.imgur.com/nGF1K8f.jpg"
+
+  utter_did_that_help:
+    - text: "Did that help you?"
+
+  utter_happy:
+    - text: "Great, carry on!"
+
+  utter_goodbye:
+    - text: "Bye"
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

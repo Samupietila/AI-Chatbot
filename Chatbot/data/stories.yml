@@ -1,6 +1,12 @@
 version: "3.1"
 
 stories:
+  - story: Bot greets
+    steps:
+      - intent: greet
+      - action: action_set_language
+      - action: utter_greet
+
   # Roulette Stories
 
   - story: User asks for basic roulette rules
@@ -98,6 +104,7 @@ stories:
   - story: customer service technical customers game froze, refreshed
     steps:
       - intent: greet
+      - action: action_set_language
       - action: utter_greet
       - intent: service_technical
       - action: utter_service_technical
@@ -109,6 +116,7 @@ stories:
   - story: customer service technical customers game froze, cleaned cache and cookies
     steps:
       - intent: greet
+      - action: action_set_language
       - action: utter_greet
       - intent: service_technical
       - action: utter_service_technical
@@ -120,6 +128,7 @@ stories:
   - story: customer service technical customers game froze, browser updated
     steps:
       - intent: greet
+      - action: action_set_language
       - action: utter_greet
       - intent: service_technical
       - action: utter_service_technical
@@ -131,6 +140,7 @@ stories:
   - story: customer service technical support that asks for the real person
     steps:
       - intent: greet
+      - action: action_set_language
       - action: utter_greet
       - intent: service_technical
       - action: utter_service_technical
@@ -142,6 +152,7 @@ stories:
   - story: Account and registration that asks how to create an account
     steps:
       - intent: greet
+      - action: action_set_language
       - action: utter_greet
       - intent: service_account_registration
       - action: utter_service_account_registration
@@ -153,6 +164,7 @@ stories:
   - story: Account and registration that asks how to reset password with email
     steps:
       - intent: greet
+      - action: action_set_language
       - action: utter_greet
       - intent: service_account_registration
       - action: utter_service_account_registration
@@ -166,6 +178,7 @@ stories:
   - story: Account and registration that asks how to reset password with phone
     steps:
       - intent: greet
+      - action: action_set_language
       - action: utter_greet
       - intent: service_account_registration
       - action: utter_service_account_registration
@@ -179,6 +192,7 @@ stories:
   - story: Account and registration that asks how to update account information
     steps:
       - intent: greet
+      - action: action_set_language
       - action: utter_greet
       - intent: service_account_registration
       - action: utter_service_account_registration
@@ -190,6 +204,7 @@ stories:
   - story: customer service technical support, Server error
     steps:
       - intent: greet
+      - action: action_set_language
       - action: utter_greet
       - intent: service_technical
       - action: utter_service_technical
@@ -201,6 +216,7 @@ stories:
   - story: customer service technical support, Connection issue
     steps:
       - intent: greet
+      - action: action_set_language
       - action: utter_greet
       - intent: service_technical
       - action: utter_service_technical
@@ -212,6 +228,7 @@ stories:
   - story: customer service technical support, Connetion timed out
     steps:
       - intent: greet
+      - action: action_set_language
       - action: utter_greet
       - intent: service_technical
       - action: utter_service_technical
@@ -223,6 +240,7 @@ stories:
   - story: customer service technical support, deposit availability info
     steps:
       - intent: greet
+      - action: action_set_language
       - action: utter_greet
       - intent: service_technical
       - action: utter_service_technical
@@ -234,6 +252,7 @@ stories:
   - story: customer service technical support, deposit banks supported
     steps:
       - intent: greet
+      - action: action_set_language
       - action: utter_greet
       - intent: service_technical
       - action: utter_service_technical
@@ -245,6 +264,7 @@ stories:
   - story: customer service technical support, deposit account status
     steps:
       - intent: greet
+      - action: action_set_language
       - action: utter_greet
       - intent: service_technical
       - action: utter_service_technical
@@ -261,6 +281,7 @@ stories:
   - story: happy path
     steps:
       - intent: greet
+      - action: action_set_language
       - action: utter_greet
       - intent: mood_great
       - action: utter_happy
@@ -268,6 +289,7 @@ stories:
   - story: sad path 1
     steps:
       - intent: greet
+      - action: action_set_language
       - action: utter_greet
       - intent: mood_unhappy
       - action: utter_cheer_up
@@ -278,6 +300,7 @@ stories:
   - story: sad path 2
     steps:
       - intent: greet
+      - action: action_set_language
       - action: utter_greet
       - intent: mood_unhappy
       - action: utter_cheer_up
@@ -290,6 +313,7 @@ stories:
   - story: customer service support to check the deposit methods (credit card)
     steps:
       - intent: greet
+      - action: action_set_language
       - action: utter_greet
       - intent: service_deposit_withdrawal
       - action: utter_service_deposit_withdrawal
@@ -303,6 +327,7 @@ stories:
   - story: customer service support to check the deposit methods (bank transfer)
     steps:
       - intent: greet
+      - action: action_set_language
       - action: utter_greet
       - intent: service_deposit_withdrawal
       - action: utter_service_deposit_withdrawal
@@ -316,6 +341,7 @@ stories:
   - story: customer service support to check the deposit methods (e-wallet)
     steps:
       - intent: greet
+      - action: action_set_language
       - action: utter_greet
       - intent: service_deposit_withdrawal
       - action: utter_service_deposit_withdrawal
@@ -329,6 +355,7 @@ stories:
   - story: customer service support to see how long it takes to withdraw money (creditCard)
     steps:
       - intent: greet
+      - action: action_set_language
       - action: utter_greet
       - intent: service_deposit_withdrawal
       - action: utter_service_deposit_withdrawal
@@ -342,6 +369,7 @@ stories:
   - story: customer service support to see how long it takes to withdraw money (bankTransfer)
     steps:
       - intent: greet
+      - action: action_set_language
       - action: utter_greet
       - intent: service_deposit_withdrawal
       - action: utter_service_deposit_withdrawal
@@ -355,6 +383,7 @@ stories:
   - story: customer service support to see how long it takes to withdraw money (eWallet)
     steps:
       - intent: greet
+      - action: action_set_language
       - action: utter_greet
       - intent: service_deposit_withdrawal
       - action: utter_service_deposit_withdrawal
@@ -368,6 +397,7 @@ stories:
   - story: customer service support to see the depositing or withdrawal fees
     steps:
       - intent: greet
+      - action: action_set_language
       - action: utter_greet
       - intent: service_deposit_withdrawal
       - action: utter_service_deposit_withdrawal
@@ -379,6 +409,7 @@ stories:
   - story: customer service support to give info about the security of the casino
     steps:
       - intent: greet
+      - action: action_set_language
       - action: utter_greet
       - intent: service_security_fairplay
       - action: utter_service_security_fairplay
@@ -390,6 +421,7 @@ stories:
   - story: customer service support to give info about the fairness of the casino
     steps:
       - intent: greet
+      - action: action_set_language
       - action: utter_greet
       - intent: service_security_fairplay
       - action: utter_service_security_fairplay
@@ -401,6 +433,7 @@ stories:
   - story: customer service support to give info about the personal data security
     steps:
       - intent: greet
+      - action: action_set_language
       - action: utter_greet
       - intent: service_security_fairplay
       - action: utter_service_security_fairplay
@@ -412,6 +445,7 @@ stories:
   - story: Account and registration that asks how to create an account
     steps:
       - intent: greet
+      - action: action_set_language
       - action: utter_greet
       - intent: service_account_registration
       - action: utter_service_account_registration
@@ -423,6 +457,7 @@ stories:
   - story: Account and registration that asks how to reset password with email
     steps:
       - intent: greet
+      - action: action_set_language
       - action: utter_greet
       - intent: service_account_registration
       - action: utter_service_account_registration
@@ -436,6 +471,7 @@ stories:
   - story: Account and registration that asks how to reset password with phone
     steps:
       - intent: greet
+      - action: action_set_language
       - action: utter_greet
       - intent: service_account_registration
       - action: utter_service_account_registration
@@ -449,6 +485,7 @@ stories:
   - story: Account and registration that asks how to update account information
     steps:
       - intent: greet
+      - action: action_set_language
       - action: utter_greet
       - intent: service_account_registration
       - action: utter_service_account_registration
@@ -461,6 +498,7 @@ stories:
   - story: Responsible Gaming where question regarding limits has been asked
     steps:
       - intent: greet
+      - action: action_set_language
       - action: utter_greet
       - intent: service_responsible_gaming
       - action: utter_service_responsible_gaming
@@ -470,6 +508,7 @@ stories:
   - story: Responsible gaming where question regarding self-exclude is asked
     steps:
       - intent: greet
+      - action: action_set_language
       - action: utter_greet
       - intent: service_responsible_gaming
       - action: utter_service_responsible_gaming
@@ -479,6 +518,7 @@ stories:
   - story: Responsible gaming where quesiton regarding addiction is asked
     steps:
       - intent: greet
+      - action: action_set_language
       - action: utter_greet
       - intent: service_responsible_gaming
       - action: utter_service_responsible_gaming
@@ -489,6 +529,7 @@ stories:
   - story: customer service support, how to claim a welcome bonus
     steps:
       - intent: greet
+      - action: action_set_language
       - action: utter_greet
       - intent: service_bonus
       - action: utter_service_bonuses
@@ -498,6 +539,7 @@ stories:
   - story: customer service support, what are the wagering requirements
     steps:
       - intent: greet
+      - action: action_set_language
       - action: utter_greet
       - intent: service_bonus
       - action: utter_service_bonuses
@@ -507,6 +549,7 @@ stories:
   - story: customer service support, check bonus status
     steps:
       - intent: greet
+      - action: action_set_language
       - action: utter_greet
       - intent: service_bonus
       - action: utter_service_bonuses
