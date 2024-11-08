@@ -43,6 +43,8 @@ stories:
     steps:
       - intent: blackjack_basic_rules
       - action: utter_blackjack_basic_rules
+      - slot_was_set:
+          - language: "en"
 
   - story: User inquires about blackjack card counting
     steps:

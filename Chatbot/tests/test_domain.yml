@@ -1,12 +1,9 @@
-#### This file contains tests to evaluate that your bot behaves as expected.
-#### If you want to learn more, please see the docs: https://rasa.com/docs/rasa/testing-your-assistant
-
 stories:
   - story: test_greet
     steps:
       - user: |
           hello
-        intent: greet
+      - intent: greet
       - action: utter_greet
 
   - story: test_mood_great
@@ -22,3 +19,792 @@ stories:
           goodbye
         intent: goodbye
       - action: utter_goodbye
+
+  - story: test_utter_greet_en
+    steps:
+      - user: |
+          hello
+        intent: greet
+      - action: utter_greet
+
+  - story: test_utter_greet_fi
+    steps:
+      - user: |
+          hello
+        intent: greet
+      - action: utter_greet
+
+  - story: test_utter_greet_ar
+    steps:
+      - user: |
+          hello
+        intent: greet
+      - action: utter_greet
+
+  - story: test_utter_blackjack_basic_rules_en
+    steps:
+      - user: |
+          hello
+        intent: greet
+      - action: utter_blackjack_basic_rules
+
+  - story: test_utter_blackjack_basic_rules_fi
+    steps:
+      - user: |
+          hello
+        intent: greet
+      - action: utter_blackjack_basic_rules
+
+  - story: test_utter_blackjack_basic_rules_ar
+    steps:
+      - user: |
+          hello
+        intent: greet
+      - action: utter_blackjack_basic_rules
+
+  - story: test_utter_blackjack_card_counting_en
+    steps:
+      - user: |
+          hello
+        intent: greet
+      - action: utter_blackjack_card_counting
+
+  - story: test_utter_blackjack_card_counting_fi
+    steps:
+      - user: |
+          hello
+        intent: greet
+      - action: utter_blackjack_card_counting
+
+  - story: test_utter_blackjack_card_counting_ar
+    steps:
+      - user: |
+          hello
+        intent: greet
+      - action: utter_blackjack_card_counting
+
+  - story: test_utter_blackjack_advanced_strategies_en
+    steps:
+      - user: |
+          hello
+        intent: greet
+      - action: utter_blackjack_advanced_strategies
+
+  - story: test_utter_blackjack_advanced_strategies_fi
+    steps:
+      - user: |
+          hello
+        intent: greet
+      - action: utter_blackjack_advanced_strategies
+
+  - story: test_utter_blackjack_advanced_strategies_ar
+    steps:
+      - user: |
+          hello
+        intent: greet
+      - action: utter_blackjack_advanced_strategies
+
+  - story: test_utter_blackjack_odds_specific_bets_en
+    steps:
+      - user: |
+          hello
+        intent: greet
+      - action: utter_blackjack_odds_specific_bets
+
+  - story: test_utter_blackjack_odds_specific_bets_fi
+    steps:
+      - user: |
+          hello
+        intent: greet
+      - action: utter_blackjack_odds_specific_bets
+
+  - story: test_utter_blackjack_odds_specific_bets_ar
+    steps:
+      - user: |
+          hello
+        intent: greet
+      - action: utter_blackjack_odds_specific_bets
+
+  - story: test_utter_blackjack_game_rules_overview_en
+    steps:
+      - user: |
+          hello
+        intent: greet
+      - action: utter_blackjack_game_rules_overview
+
+  - story: test_utter_blackjack_game_rules_overview_fi
+    steps:
+      - user: |
+          hello
+        intent: greet
+      - action: utter_blackjack_game_rules_overview
+
+  - story: test_utter_blackjack_game_rules_overview_ar
+    steps:
+      - user: |
+          hello
+        intent: greet
+      - action: utter_blackjack_game_rules_overview
+
+  - story: test_utter_roulette_basic_rules_en
+    steps:
+      - user: |
+          hello
+        intent: greet
+      - action: utter_roulette_basic_rules
+
+  - story: test_utter_roulette_basic_rules_fi
+    steps:
+      - user: |
+          hello
+        intent: greet
+      - action: utter_roulette_basic_rules
+
+  - story: test_utter_roulette_basic_rules_ar
+    steps:
+      - user: |
+          hello
+        intent: greet
+      - action: utter_roulette_basic_rules
+
+  - story: test_utter_roulette_best_strategies_en
+    steps:
+      - user: |
+          hello
+        intent: greet
+      - action: utter_roulette_best_strategies
+
+  - story: test_utter_roulette_best_strategies_fi
+    steps:
+      - user: |
+          hello
+        intent: greet
+      - action: utter_roulette_best_strategies
+
+  - story: test_utter_roulette_best_strategies_ar
+    steps:
+      - user: |
+          hello
+        intent: greet
+      - action: utter_roulette_best_strategies
+
+  - story: test_utter_roulette_odds_specific_bets_en
+    steps:
+      - user: |
+          hello
+        intent: greet
+      - action: utter_roulette_odds_specific_bets
+
+  - story: test_utter_roulette_odds_specific_bets_fi
+    steps:
+      - user: |
+          hello
+        intent: greet
+      - action: utter_roulette_odds_specific_bets
+
+  - story: test_utter_roulette_odds_specific_bets_ar
+    steps:
+      - user: |
+          hello
+        intent: greet
+      - action: utter_roulette_odds_specific_bets
+
+  - story: test_utter_roulette_game_rules_overview_en
+    steps:
+      - user: |
+          hello
+        intent: greet
+      - action: utter_roulette_game_rules_overview
+
+  - story: test_utter_roulette_game_rules_overview_fi
+    steps:
+      - user: |
+          hello
+        intent: greet
+      - action: utter_roulette_game_rules_overview
+
+  - story: test_utter_roulette_game_rules_overview_ar
+    steps:
+      - user: |
+          hello
+        intent: greet
+      - action: utter_roulette_game_rules_overview
+
+  - story: test_utter_poker_game_rules_overview_en
+    steps:
+      - user: |
+          hello
+        intent: greet
+      - action: utter_poker_game_rules_overview
+
+  - story: test_utter_poker_game_rules_overview_fi
+    steps:
+      - user: |
+          hello
+        intent: greet
+      - action: utter_poker_game_rules_overview
+
+  - story: test_utter_poker_game_rules_overview_ar
+    steps:
+      - user: |
+          hello
+        intent: greet
+      - action: utter_poker_game_rules_overview
+
+  - story: test_utter_poker_odds_specific_bets_en
+    steps:
+      - user: |
+          hello
+        intent: greet
+      - action: utter_poker_odds_specific_bets
+
+  - story: test_utter_poker_odds_specific_bets_fi
+    steps:
+      - user: |
+          hello
+        intent: greet
+      - action: utter_poker_odds_specific_bets
+
+  - story: test_utter_poker_odds_specific_bets_ar
+    steps:
+      - user: |
+          hello
+        intent: greet
+      - action: utter_poker_odds_specific_bets
+
+  - story: test_utter_poker_advanced_strategies_en
+    steps:
+      - user: |
+          utter_poker_advanced_strategies
+        intent: utter_poker_advanced_strategies
+      - action: utter_poker_advanced_strategies
+
+  - story: test_utter_poker_advanced_strategies_fi
+    steps:
+      - user: |
+          utter_poker_advanced_strategies
+        intent: utter_poker_advanced_strategies
+      - action: utter_poker_advanced_strategies
+
+  - story: test_utter_poker_advanced_strategies_ar
+    steps:
+      - user: |
+          utter_poker_advanced_strategies
+        intent: utter_poker_advanced_strategies
+      - action: utter_poker_advanced_strategies
+
+  - story: test_utter_poker_basic_rules_en
+    steps:
+      - user: |
+          utter_poker_basic_rules
+        intent: utter_poker_basic_rules
+      - action: utter_poker_basic_rules
+
+  - story: test_utter_poker_basic_rules_fi
+    steps:
+      - user: |
+          utter_poker_basic_rules
+        intent: utter_poker_basic_rules
+      - action: utter_poker_basic_rules
+
+  - story: test_utter_poker_basic_rules_ar
+    steps:
+      - user: |
+          utter_poker_basic_rules
+        intent: utter_poker_basic_rules
+      - action: utter_poker_basic_rules
+
+  - story: test_utter_ask_poker_rules_en
+    steps:
+      - user: |
+          hello
+        intent: greet
+      - action: utter_ask_poker_rules
+
+  - story: test_utter_ask_poker_rules_fi
+    steps:
+      - user: |
+          hello
+        intent: greet
+      - action: utter_ask_poker_rules
+
+  - story: test_utter_ask_poker_rules_ar
+    steps:
+      - user: |
+          hello
+        intent: greet
+      - action: utter_ask_poker_rules
+
+  - story: test_utter_ask_blackjack_rules_en
+    steps:
+      - user: |
+          hello
+        intent: greet
+      - action: utter_ask_blackjack_rules
+
+  - story: test_utter_ask_blackjack_rules_fi
+    steps:
+      - user: |
+          hello
+        intent: greet
+      - action: utter_ask_blackjack_rules
+
+  - story: test_utter_ask_blackjack_rules_ar
+    steps:
+      - user: |
+          hello
+        intent: greet
+      - action: utter_ask_blackjack_rules
+responses:
+  utter_greet_en:
+    - condition:
+        - type: slot
+          name: language
+          value: "en"
+    - text: "Hello! Welcome to the customer service, what would you like to have help with?"
+    - buttons:
+        - title: "Technical issues"
+          payload: "/service_technical"
+        - title: "Bonuses & Promotion"
+          payload: "/service_bonuses"
+        - title: "Deposit & Withdrawal"
+          payload: "/service_deposit_withdrawal"
+        - title: "Account and Registration"
+          payload: "/service_account_registration"
+        - title: "Game Rules"
+          payload: "/service_game_rules"
+        - title: "Security and Fair play"
+          payload: "/service_security_fairplay"
+        - title: "Responsible Gaming"
+          payload: "/service_responsible_gaming"
+        - title: "Click here, to ask for a real person"
+          payload: "/ask_for_real_person"
+
+  utter_greet_fi:
+    - condition:
+        - type: slot
+          name: language
+          value: "fi"
+    - text: "Hei! Tervetuloa asiakaspalveluun, miten voin auttaa sinua?"
+    - buttons:
+        - title: "Tekniset ongelmat"
+          payload: "/service_technical"
+        - title: "Bonukset ja kampanjat"
+          payload: "/service_bonuses"
+        - title: "Talletus ja nostot"
+          payload: "/service_deposit_withdrawal"
+        - title: "Tili ja rekisteröinti"
+          payload: "/service_account_registration"
+        - title: "Pelin säännöt"
+          payload: "/service_game_rules"
+        - title: "Turvallisuus ja reilu peli"
+          payload: "/service_security_fairplay"
+        - title: "Vastuullinen pelaaminen"
+          payload: "/service_responsible_gaming"
+        - title: "Klikkaa tästä, kysyäksesi oikealta henkilöltä"
+          payload: "/ask_for_real_person"
+
+  utter_greet_ar:
+    - condition:
+        - type: slot
+          name: language
+          value: "ar"
+    - text: "مرحبًا! أهلاً بك في خدمة العملاء، كيف يمكنني مساعدتك؟"
+    - buttons:
+        - title: "مشكلات تقنية"
+          payload: "/service_technical"
+        - title: "المكافآت والعروض الترويجية"
+          payload: "/service_bonuses"
+        - title: "الإيداع والسحب"
+          payload: "/service_deposit_withdrawal"
+        - title: "الحساب والتسجيل"
+          payload: "/service_account_registration"
+        - title: "قواعد اللعبة"
+          payload: "/service_game_rules"
+        - title: "الأمان واللعب النزيه"
+          payload: "/service_security_fairplay"
+        - title: "المقامرة المسؤولة"
+          payload: "/service_responsible_gaming"
+        - title: "انقر هنا لطلب شخص حقيقي"
+          payload: "/ask_for_real_person"
+
+  utter_blackjack_basic_rules_en:
+    - condition:
+        - type: slot
+          name: language
+          value: "en"
+    - text: "In Blackjack, the goal is to get a hand value as close to 21 as possible without going over. You win by having a higher hand value than the dealer without busting. Face cards are worth 10 points, Aces can be worth 1 or 11, and other cards are worth their face value."
+
+  utter_blackjack_basic_rules_fi:
+    - condition:
+        - type: slot
+          name: language
+          value: "fi"
+    - text: "Blackjackissa tavoitteena on saada käden arvo mahdollisimman lähelle 21:stä ylittämättä sitä. Voitat, kun sinulla on korkeampi käden arvo kuin jakajalla ilman, että ylität 21. Kuvakortit ovat arvoltaan 10 pistettä, ässät voivat olla 1 tai 11, ja muut kortit ovat arvoltaan niiden nimellisarvon mukaisia."
+
+  utter_blackjack_basic_rules_ar:
+    - condition:
+        - type: slot
+          name: language
+          value: "ar"
+    - text: "في لعبة البلاك جاك، الهدف هو الحصول على قيمة يد قريبة من 21 دون تجاوزها. تفوز من خلال امتلاك قيمة يد أعلى من يد الموزع دون أن تتجاوز 21. ورق الوجه يساوي 10 نقاط، ويمكن أن تساوي الآسات 1 أو 11، وتساوي الأوراق الأخرى قيمتها الاسمية."
+
+  utter_blackjack_card_counting_en:
+    - condition:
+        - type: slot
+          name: language
+          value: "en"
+    - text: "Card counting is a strategy used to determine whether the next hand is likely to give an advantage to the player or the dealer. The most common system is the Hi-Lo method, where cards are assigned values and the player keeps a running count to make better betting decisions."
+
+  utter_blackjack_card_counting_fi:
+    - condition:
+        - type: slot
+          name: language
+          value: "fi"
+    - text: "Korttien laskeminen on strategia, jota käytetään määrittämään, onko seuraavan käden todennäköisesti edullista pelaajalle tai jakajalle. Yleisin järjestelmä on Hi-Lo-menetelmä, jossa korteille annetaan arvot ja pelaaja pitää yllä juoksevaa laskentaa tehdäkseen parempia vedonlyöntipäätöksiä."
+
+  utter_blackjack_card_counting_ar:
+    - condition:
+        - type: slot
+          name: language
+          value: "ar"
+    - text: "عد الأوراق هو استراتيجية تُستخدم لتحديد ما إذا كانت اليد التالية من المحتمل أن تعطي ميزة للاعب أو للموزع. النظام الأكثر شيوعًا هو طريقة هاي-لو، حيث تُعطى الأوراق قيمًا ويحافظ اللاعب على عدد متتابع لاتخاذ قرارات أفضل في المراهنة."
+
+  utter_blackjack_advanced_strategies_en:
+    - condition:
+        - type: slot
+          name: language
+          value: "en"
+    - text: "Advanced Blackjack strategies include card counting, bet spreading, and using optimal playing strategies like basic strategy charts. These methods help players make better decisions on when to hit, stand, double down, or split."
+
+  utter_blackjack_advanced_strategies_fi:
+    - condition:
+        - type: slot
+          name: language
+          value: "fi"
+    - text: "Edistyneet blackjack-strategiat sisältävät korttien laskemisen, vedonlyöntien levittämisen ja optimaalisten pelistrategioiden, kuten perusstrategia-kaavioiden, käytön. Nämä menetelmät auttavat pelaajia tekemään parempia päätöksiä siitä, milloin lyödä, jäädä, tuplata tai jakaa."
+
+  utter_blackjack_advanced_strategies_ar:
+    - condition:
+        - type: slot
+          name: language
+          value: "ar"
+    - text: "تشمل استراتيجيات البلاك جاك المتقدمة عد الأوراق، نشر الرهانات، واستخدام استراتيجيات اللعب المثلى مثل مخططات الاستراتيجية الأساسية. تساعد هذه الطرق اللاعبين على اتخاذ قرارات أفضل بشأن متى يجب عليهم الضرب، أو التوقف، أو المضاعفة، أو الانقسام."
+
+  utter_blackjack_odds_specific_bets_en:
+    - condition:
+        - type: slot
+          name: language
+          value: "en"
+    - text: "The odds of specific bets in Blackjack can vary. For example, the odds of getting a Blackjack (an Ace and a 10-value card) on the initial deal are approximately 4.8%. The payout for a Blackjack is typically 3:2."
+
+  utter_blackjack_odds_specific_bets_fi:
+    - condition:
+        - type: slot
+          name: language
+          value: "fi"
+    - text: "Blackjackin erityisten vetojen todennäköisyydet voivat vaihdella. Esimerkiksi todennäköisyys saada blackjack (ässän ja 10-arvoisen kortin yhdistelmä) ensimmäisessä jaossa on noin 4.8%. Blackjackin voitto on tyypillisesti 3:2."
+
+  utter_blackjack_odds_specific_bets_ar:
+    - condition:
+        - type: slot
+          name: language
+          value: "ar"
+    - text: "يمكن أن تختلف احتمالات الرهانات المحددة في البلاك جاك. على سبيل المثال، فإن احتمالات الحصول على بلاك جاك (آس وبطاقة بقيمة 10) في الصفقة الأولى تقارب 4.8%. العائد لبلاك جاك عادة ما يكون 3:2."
+
+  utter_blackjack_game_rules_overview_en:
+    - condition:
+        - type: slot
+          name: language
+          value: "en"
+    - text: "Blackjack is a popular card game where the aim is to beat the dealer's hand without going over 21. Players are dealt two cards and can choose to hit, stand, double down, or split based on their hand and the dealer’s visible card."
+
+  utter_blackjack_game_rules_overview_fi:
+    - condition:
+        - type: slot
+          name: language
+          value: "fi"
+    - text: "Blackjack on suosittu korttipeli, jonka tavoitteena on voittaa jakajan käsi ylittämättä 21. Pelaajille jaetaan kaksi korttia, ja he voivat valita lyödä, jäädä, tuplata tai jakaa kätensä jakajan näkyvän kortin perusteella."
+
+  utter_blackjack_game_rules_overview_ar:
+    - condition:
+        - type: slot
+          name: language
+          value: "ar"
+    - text: "البلاك جاك هي لعبة ورق شائعة حيث الهدف هو هزيمة يد الموزع دون تجاوز 21. يتم توزيع ورقتين على اللاعبين ويمكنهم الاختيار بين الضرب، التوقف، المضاعفة، أو الانقسام بناءً على يدهم والورقة المرئية للموزع."
+
+  utter_roulette_basic_rules_en:
+    - condition:
+        - type: slot
+          name: language
+          value: "en"
+    - text: "Roulette involves a spinning wheel with numbered slots. Players place bets on where they think the ball will land. Bets can be on specific numbers, ranges of numbers, or colors. The wheel has two main types: European (one zero) and American (two zeros)."
+
+  utter_roulette_basic_rules_fi:
+    - condition:
+        - type: slot
+          name: language
+          value: "fi"
+    - text: "Roullette sisältää pyörivän pyörän, jossa on numeroituja koloja. Pelaajat asettavat vetoja sen mukaan, mihin he uskovat pallon laskeutuvan. Vedot voivat olla tiettyjä numeroita, numeroiden alueita tai värejä. Pyörällä on kaksi päätyyppiä: eurooppalainen (yksi nolla) ja amerikkalainen (kaksi nollaa)."
+
+  utter_roulette_basic_rules_ar:
+    - condition:
+        - type: slot
+          name: language
+          value: "ar"
+    - text: "تتضمن لعبة الروليت عجلة دوارة بها فتحات مرقمة. يقوم اللاعبون بوضع رهانات على المكان الذي يعتقدون أن الكرة ستستقر فيه. يمكن أن تكون الرهانات على أرقام محددة، أو نطاقات من الأرقام، أو الألوان. تحتوي العجلة على نوعين رئيسيين: الأوروبية (صفر واحد) والأمريكية (زيرو زيرو)."
+
+  utter_roulette_best_strategies_en:
+    - condition:
+        - type: slot
+          name: language
+          value: "en"
+    - text: "Popular Roulette strategies include the Martingale system (doubling bets after losses), the Fibonacci system (betting according to a sequence), and the D'Alembert system (adjusting bets incrementally). Remember, no strategy can guarantee a win due to the game's randomness."
+
+  utter_roulette_best_strategies_fi:
+    - condition:
+        - type: slot
+          name: language
+          value: "fi"
+    - text: "Suositut ruletistrategiat sisältävät Martingale-järjestelmän (vedonlyöntien tuplaaminen häviöiden jälkeen), Fibonacci-järjestelmän (vetäminen sekvenssin mukaan) ja D'Alembert-järjestelmän (vedonlyöntien säätäminen vähitellen). Muista, että mikään strategia ei voi taata voittoa pelin sattumanvaraisuuden vuoksi."
+
+  utter_roulette_best_strategies_ar:
+    - condition:
+        - type: slot
+          name: language
+          value: "ar"
+    - text: "تشمل استراتيجيات الروليت الشائعة نظام مارتينغال (مضاعفة الرهانات بعد الخسائر)، نظام فيبوناتشي (المراهنة وفقًا لتسلسل)، ونظام دالمبيرت (تعديل الرهانات بشكل تدريجي). تذكر، لا يمكن لأي استراتيجية ضمان الفوز بسبب عشوائية اللعبة."
+
+  utter_roulette_odds_specific_bets_en:
+    - condition:
+        - type: slot
+          name: language
+          value: "en"
+    - text: "The odds of winning specific bets in Roulette vary. For instance, a straight-up bet on a single number has odds of 37 to 1 (or 38 to 1 in American Roulette), while a bet on red or black has odds of nearly 1 to 1."
+
+  utter_roulette_odds_specific_bets_fi:
+    - condition:
+        - type: slot
+          name: language
+          value: "fi"
+    - text: "Voitto-odotukset tiettyjen vetojen kohdalla ruletissa vaihtelevat. Esimerkiksi suora veto yhdelle numerolle on 37:1 (tai 38:1 amerikkalaisessa ruletissa), kun taas veto punaiselle tai mustalle on lähes 1:1."
+
+  utter_roulette_odds_specific_bets_ar:
+    - condition:
+        - type: slot
+          name: language
+          value: "ar"
+    - text: "تختلف احتمالات الفوز بالرهانات المحددة في لعبة الروليت. على سبيل المثال، فإن الرهان المباشر على رقم واحد لديه احتمالات 37 إلى 1 (أو 38 إلى 1 في الروليت الأمريكية)، بينما رهان على الأحمر أو الأسود لديه احتمالات تقارب 1 إلى 1."
+
+  utter_roulette_game_rules_overview_en:
+    - condition:
+        - type: slot
+          name: language
+          value: "en"
+    - text: "In Roulette, players bet on where a ball will land on a spinning wheel. Bets can be placed on numbers, colors, or ranges of numbers. The wheel consists of numbered slots, with European Roulette having 37 slots (including one zero) and American Roulette having 38 slots (including two zeros)."
+
+  utter_roulette_game_rules_overview_fi:
+    - condition:
+        - type: slot
+          name: language
+          value: "fi"
+    - text: "Ruletissa pelaajat asettavat vetoja siihen, mihin pallo laskeutuu pyörivällä pyörällä. Vedot voidaan asettaa numeroille, väreille tai numeroiden alueille. Pyörä koostuu numeroiduista koloista, ja eurooppalaisessa ruletissa on 37 koloa (yksi nolla) ja amerikkalaisessa ruletissa 38 koloa (kaksi nollaa)."
+
+  utter_roulette_game_rules_overview_ar:
+    - condition:
+        - type: slot
+          name: language
+          value: "ar"
+    - text: "في الروليت، يراهن اللاعبون على المكان الذي ستستقر فيه الكرة على العجلة الدوارة. يمكن وضع الرهانات على الأرقام، الألوان، أو نطاقات من الأرقام. تتكون العجلة من فتحات مرقمة، حيث تحتوي الروليت الأوروبية على 37 فتحة (بما في ذلك صفر واحد) والروليت الأمريكية تحتوي على 38 فتحة (بما في ذلك صفرين)."
+
+  utter_poker_game_rules_overview_en:
+    - condition:
+        - type: slot
+          name: language
+          value: "en"
+    - text: "In Poker, players aim to have the best hand or convince others to fold. Each player is dealt a combination of private and community cards. Players then bet based on the strength of their hand, with betting rounds between card deals. The game ends with the player with the best hand or the last player remaining after all others have folded."
+
+  utter_poker_game_rules_overview_fi:
+    - condition:
+        - type: slot
+          name: language
+          value: "fi"
+    - text: "Pokerissa pelaajat pyrkivät saamaan parhaan käden tai saamaan muut luovuttamaan. Jokaiselle pelaajalle jaetaan yksityisiä ja yhteisiä kortteja, ja panostuskierrokset käydään korttien jakamisen välillä. Peli päättyy, kun jäljellä on paras käsi tai viimeinen pelaaja, joka ei ole luovuttanut."
+
+  utter_poker_game_rules_overview_ar:
+    - condition:
+        - type: slot
+          name: language
+          value: "ar"
+    - text: "في لعبة البوكر، يهدف اللاعبون إلى الحصول على أفضل يد أو إقناع الآخرين بالانسحاب. يتم توزيع مجموعة من البطاقات الخاصة والعامة لكل لاعب. يقوم اللاعبون بالمراهنة بناءً على قوة أيديهم. تنتهي اللعبة بأفضل يد أو بآخر لاعب متبقي بعد انسحاب الآخرين."
+
+  utter_poker_odds_specific_bets_en:
+    - condition:
+        - type: slot
+          name: language
+          value: "en"
+    - text: "The odds of specific poker hands vary. For example, the odds of being dealt a pocket pair in Texas Hold'em are about 6%. The odds of hitting a flush on the flop after being dealt suited cards are roughly 0.8%."
+
+  utter_poker_odds_specific_bets_fi:
+    - condition:
+        - type: slot
+          name: language
+          value: "fi"
+    - text: "Tiettyjen pokerikäsien todennäköisyydet vaihtelevat. Esimerkiksi mahdollisuus saada pari käteen Texas Hold'emissa on noin 6 %. Mahdollisuus saada värisuora flopilla on noin 0,8 %."
+
+  utter_poker_odds_specific_bets_ar:
+    - condition:
+        - type: slot
+          name: language
+          value: "ar"
+    - text: "تختلف احتمالات الأيدي المحددة في البوكر. على سبيل المثال، احتمالية الحصول على زوج في Texas Hold'em حوالي 6%. احتمالية الحصول على Flush في Flop بعد توزيع أوراق مناسبة حوالي 0.8%."
+
+  utter_poker_advanced_strategies_en:
+    - condition:
+        - type: slot
+          name: language
+          value: "en"
+    - text: "Advanced poker strategies include concepts like bluffing, understanding pot odds, and reading opponents' tells. Techniques like semi-bluffing and adjusting your play style based on the table dynamics can also help improve your game."
+
+  utter_poker_advanced_strategies_fi:
+    - condition:
+        - type: slot
+          name: language
+          value: "fi"
+    - text: "Edistyneet pokeristrategiat sisältävät käsitteitä kuten bluffaus, pottitodennäköisyyksien ymmärtäminen ja vastustajien eleiden lukeminen. Tekniikat kuten puolibluffaus ja pelityylin säätäminen pöydän dynamiikan mukaan voivat myös parantaa peliäsi."
+
+  utter_poker_advanced_strategies_ar:
+    - condition:
+        - type: slot
+          name: language
+          value: "ar"
+    - text: "تشمل استراتيجيات البوكر المتقدمة مفاهيم مثل الخداع، وفهم احتمالات الوعاء، وقراءة إشارات الخصوم. يمكن أن تساعد تقنيات مثل الخداع الجزئي وتعديل أسلوب لعبك بناءً على ديناميات الطاولة أيضًا في تحسين لعبتك."
+
+  utter_poker_basic_rules_en:
+    - condition:
+        - type: slot
+          name: language
+          value: "en"
+    - text: "Poker is a popular card game that involves betting and individual or group card hands. The most common variant is Texas Hold'em, where each player is dealt two private cards and uses them with five community cards to make the best possible hand. Hands are ranked from high card to royal flush."
+
+  utter_poker_basic_rules_fi:
+    - condition:
+        - type: slot
+          name: language
+          value: "fi"
+    - text: "Pokeri on suosittu korttipeli, joka sisältää panostamista ja yksilöllisiä tai ryhmäkäsikortteja. Yleisin variantti on Texas Hold'em, jossa jokaiselle pelaajalle jaetaan kaksi yksityistä korttia ja he käyttävät niitä yhdessä viiden yhteisen kortin kanssa luodakseen parhaan mahdollisen käden. Käsien arvostus vaihtelee korkeimmasta kortista kuninkaalliseen värisuoraan."
+
+  utter_poker_basic_rules_ar:
+    - condition:
+        - type: slot
+          name: language
+          value: "ar"
+    - text: "البوكر هي لعبة ورق شهيرة تتضمن المراهنة والأيدي الفردية أو الجماعية. النسخة الأكثر شيوعًا هي تكساس هولدم، حيث يتم توزيع ورقتين خاصتين على كل لاعب ويستخدمونهما مع خمس ورقات مشتركة لتكوين أفضل يد ممكنة. تُصنف الأيدي من الورقة العليا إلى السلسلة الملكية."
+
+  utter_ask_poker_rules_en:
+    - condition:
+        - type: slot
+          name: language
+          value: "en"
+    - text: "Hello! Welcome to our poker service. What would you like to know?"
+    - buttons:
+        - title: "Poker Basic Rules"
+          payload: "/poker_basic_rules"
+        - title: "Poker Advanced Strategies"
+          payload: "/poker_advanced_strategies"
+        - title: "Odds of Specific Bets"
+          payload: "/poker_odds_specific_bets"
+        - title: "Game Rules Overview"
+          payload: "/poker_game_rules_overview"
+        - title: "Click here, to ask for a real person"
+          payload: "/ask_for_real_person"
+
+  utter_ask_poker_rules_fi:
+    - condition:
+        - type: slot
+          name: language
+          value: "fi"
+    - text: "Hei! Tervetuloa pokeripalveluumme. Mitä haluaisit tietää?"
+    - buttons:
+        - title: "Pokerin Perussäännöt"
+          payload: "/poker_basic_rules"
+        - title: "Pokerin Kehittyneet Strategiat"
+          payload: "/poker_advanced_strategies"
+        - title: "Tiettyjen Panosten Todennäköisyydet"
+          payload: "/poker_odds_specific_bets"
+        - title: "Pelin Sääntöjen Yhteenveto"
+          payload: "/poker_game_rules_overview"
+        - title: "Klikkaa tästä, kysyäksesi oikealta henkilöltä"
+          payload: "/ask_for_real_person"
+
+  utter_ask_poker_rules_ar:
+    - condition:
+        - type: slot
+          name: language
+          value: "ar"
+    - text: "مرحبًا! أهلاً بك في خدمة البوكر لدينا. ماذا تريد أن تعرف؟"
+    - buttons:
+        - title: "قواعد البوكر الأساسية"
+          payload: "/poker_basic_rules"
+        - title: "استراتيجيات البوكر المتقدمة"
+          payload: "/poker_advanced_strategies"
+        - title: "احتمالات الرهانات المحددة"
+          payload: "/poker_odds_specific_bets"
+        - title: "نظرة عامة على قواعد اللعبة"
+          payload: "/poker_game_rules_overview"
+        - title: "انقر هنا لطلب شخص حقيقي"
+          payload: "/ask_for_real_person"
+
+  utter_ask_blackjack_rules_en:
+    - condition:
+        - type: slot
+          name: language
+          value: "en"
+      text: "What would you like to know about Blackjack?"
+      buttons:
+        - title: "Blackjack Basic Rules"
+          payload: "/blackjack_basic_rules"
+        - title: "Blackjack Card Counting"
+          payload: "/blackjack_card_counting"
+        - title: "Blackjack Advanced Strategies"
+          payload: "/blackjack_advanced_strategies"
+        - title: "Odds of Specific Blackjack Bets"
+          payload: "/blackjack_odds_specific_bets"
+        - title: "General Blackjack Rules Overview"
+          payload: "/blackjack_game_rules_overview"
+
+  utter_ask_blackjack_rules_fi:
+    - condition:
+        - type: slot
+          name: language
+          value: "fi"
+      text: "Mitä haluaisit tietää Blackjackista?"
+      buttons:
+        - title: "Blackjackin Perussäännöt"
+          payload: "/blackjack_basic_rules"
+        - title: "Blackjackin Korttilaskenta"
+          payload: "/blackjack_card_counting"
+        - title: "Blackjackin Kehittyneet Strategiat"
+          payload: "/blackjack_advanced_strategies"
+        - title: "Tiettyjen Blackjack Panosten Todennäköisyydet"
+          payload: "/blackjack_odds_specific_bets"
+        - title: "Yleinen Yhteenveto Blackjackin Säännöistä"
+          payload: "/blackjack_game_rules_overview"
+
+  utter_ask_blackjack_rules_ar:
+    - condition:
+        - type: slot
+          name: language
+          value: "ar"
+      text: "ماذا تريد أن تعرف عن البلاك جاك؟"
+      buttons:
+        - title: "قواعد البلاك جاك الأساسية"
+          payload: "/blackjack_basic_rules"
+        - title: "عد الأوراق في البلاك جاك"
+          payload: "/blackjack_card_counting"
+        - title: "استراتيجيات البلاك جاك المتقدمة"
+          payload: "/blackjack_advanced_strategies"
+        - title: "احتمالات الرهانات المحددة في البلاك جاك"
+          payload: "/blackjack_odds_specific_bets"
+        - title: "نظرة عامة على قواعد البلاك جاك العامة"
+          payload: "/blackjack_game_rules_overview"

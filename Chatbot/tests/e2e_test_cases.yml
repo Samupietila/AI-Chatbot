@@ -1,0 +1,11 @@
+version: "3.0"
+test_stories:
+  - story: Test Blackjack Basic Rules in English
+    steps:
+      - user: |
+          /blackjack_basic_rules  # Define the intent explicitly if needed
+        metadata:
+          language: "en"
+      - action: utter_ask_blackjack_rules
+      - slot_was_set:
+          - language: "en"

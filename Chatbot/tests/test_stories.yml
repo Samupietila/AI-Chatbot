@@ -14,14 +14,6 @@ stories:
       - intent: roulette_best_strategies
       - action: utter_roulette_best_strategies
 
-  - story: User wants to know odds of specific roulette bets
-    steps:
-      - intent: mood_unhappy
-      - action: utter_cheer_up
-      - action: utter_did_that_help
-      - intent: deny
-      - action: utter_goodbye
-
   - story: customer service technical support 1
     steps:
       - intent: roulette_odds_specific_bets
