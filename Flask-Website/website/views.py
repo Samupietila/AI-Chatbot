@@ -98,7 +98,7 @@ def webhook():
 @views.route('/set_language/<language>')
 def set_language(language):
     
-    rasa_server_url = 'http://localhost:5055/conversations/default/tracker/events'
+    """rasa_server_url = 'http://localhost:5055/conversations/default/tracker/events'
     headers = {'Content-Type': 'application/json'}
     data = {
         "event": "slot",
@@ -107,7 +107,7 @@ def set_language(language):
     }
     
     print(data)
-    response = requests.post(rasa_server_url, headers=headers, json=data)
+    response = requests.post(rasa_server_url, headers=headers, json=data)"""
     response = make_response(redirect(url_for('views.home')))
     response.set_cookie('language', language)
     return response

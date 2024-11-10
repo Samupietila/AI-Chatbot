@@ -148,3 +148,34 @@ def delete_user(email, username):
     finally:
         cursor.close()
         connection.close()
+        
+        # Localized welcome message
+
+def get_localized_welcome_message(language_code):
+    connection = db_connection()
+    cursor = connection.cursor()
+
+    try:
+        query = """
+        SELECT COALESCE(t.TranslatedText, 'Welcome!') AS WelcomeMessage
+        FROM translations t
+        WHERE t.TableName = 'user'
+          AND t.ColumnName = 'WelcomeMessage'
+          AND t.RowID = 1
+          AND t.LanguageCode = %s
+        """
+
+        cursor.execute(query, (language_code,))
+        result = cursor.fetchone()
+
+        message = result[0] if result else 'Welcome!'
+        print(f"Localized Welcome Message: {message}")
+        return message
+
+    except mysql.connector.Error as err:
+        print(f"Error: {err}")
+        return 'Welcome!'
+
+    finally:
+        cursor.close()
+        connection.close()

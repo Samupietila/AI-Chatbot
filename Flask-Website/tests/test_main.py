@@ -40,21 +40,128 @@ def cleanup():
     for user in test_users:
         delete_user(user['email'], user['username'])
     
+# TESTS
+@pytest.fixture
+def home_response_en(client):
+    response = client.get('/', headers={"Accept-Language": "en"})
+    return response
 
-# Testing that every page were retrieved
-def test_home_page(home_response, login_response, register_response):
-    # Verify Homepage
-    assert home_response.status_code == 200
-    assert b"Home.html" in home_response.data
-    
-    # Verify Login Page
-    assert login_response.status_code == 200
-    assert b"Login" in login_response.data
-    
-    # Verify Register Page
-    assert register_response.status_code == 200
-    assert b"Create a new account" in register_response.data
+@pytest.fixture
+def home_response_fi(client):
+    response = client.get('/', headers={"Accept-Language": "fi"})
+    return response
 
+@pytest.fixture
+def home_response_ar(client):
+    response = client.get('/', headers={"Accept-Language": "ar"})
+    return response
+
+@pytest.fixture
+def login_response_en(client):
+    response = client.get('/login', headers={"Accept-Language": "en"})
+    return response
+
+@pytest.fixture
+def login_response_fi(client):
+    response = client.get('/login', headers={"Accept-Language": "fi"})
+    return response
+    
+@pytest.fixture
+def login_response_ar(client):
+    response = client.get('/login', headers={"Accept-Language": "ar"})
+    return response
+
+@pytest.fixture
+def register_response_en(client):
+    response = client.get('/register', headers={"Accept-Language": "en"})
+    return response
+
+@pytest.fixture
+def register_response_fi(client):
+    response = client.get('/register', headers={"Accept-Language": "fi"})
+    return response
+
+@pytest.fixture
+def register_response_ar(client):
+    response = client.get('/register', headers={"Accept-Language": "ar"})
+    return response
+    
+# For Context
+def test_localization_home_page(home_response_en, home_response_fi, home_response_ar):
+    
+    # Checking status Code
+    assert home_response_fi.status_code == 200
+    assert home_response_ar.status_code == 200
+    assert home_response_en.status_code == 200
+    
+    assert "مرحبًا بك في موقع الكازينو" in home_response_ar.data.decode('utf-8')
+    assert "Tervetuloa" in home_response_fi.data.decode('utf-8')
+    assert "Welcome" in home_response_en.data.decode('utf-8')
+
+    
+def test_localization_get_register_response_en(register_response_en):
+    
+    # Checking status code
+    assert register_response_en.status_code == 200
+    
+    # Asserting the necessary context
+    assert "Register" in register_response_en.data.decode('utf-8')
+    assert "Username" in register_response_en.data.decode('utf-8')
+    assert "Password" in register_response_en.data.decode('utf-8')
+
+    
+    
+def test_localization_get_register_response_fi(register_response_fi):
+    
+    #Checking Status Code
+    assert register_response_fi.status_code == 200
+    
+    #Asserting thigns
+    assert "Rekisteröi" in register_response_fi.data.decode('utf-8')
+    assert "Käyttäjänimi" in register_response_fi.data.decode('utf-8')
+    assert "Salasana" in register_response_fi.data.decode('utf-8')
+    
+def test_localization_get_register_response_ar(register_response_ar):
+    
+    #Checking Status Code
+    assert register_response_ar.status_code == 200
+    
+    #Asserting thigns
+    assert "إنشاء حساب" in register_response_ar.data.decode('utf-8')
+    assert "عنوان البريد الإلكتروني" in register_response_ar.data.decode('utf-8')
+    assert "اسم المستخدم" in register_response_ar.data.decode('utf-8')
+    
+def test_localization_get_login_response_en(login_response_en):
+    
+    # Checking Status code
+    assert login_response_en.status_code == 200
+    
+    # Asserting Things
+    assert "Login" in login_response_en.data.decode('utf-8')
+    assert "Username" in login_response_en.data.decode('utf-8')
+    assert "Password" in login_response_en.data.decode('utf-8')
+    
+def test_localization_get_login_response_fi(login_response_fi):
+    
+    #Checking Status Code
+    assert login_response_fi.status_code == 200
+    
+    # Asserting things
+    assert "Kirjaudu Sisään" in login_response_fi.data.decode('utf-8')
+    assert "Käyttäjänimi" in login_response_fi.data.decode('utf-8')
+    assert "Salasana" in login_response_fi.data.decode('utf-8')
+        
+def test_localization_get_login_response_ar(login_response_ar):
+    
+    # Checking Status Code
+    assert login_response_ar.status_code == 200
+    
+    # Asserting things
+    assert "تسجيل الدخول" in login_response_ar.data.decode('utf-8')
+    assert "اسم المستخدم" in login_response_ar.data.decode('utf-8')
+    assert "كلمة المرور" in login_response_ar.data.decode('utf-8')
+
+# Testing the database
 def test_register_page(client):
     form_data = {
         "email": "testUser@EssiBot.fi",
@@ -135,12 +242,16 @@ def test_login(client):
     assert b'Logged in successfully!' in response.data
 
 # ChatBot Test >> Chatbot has to be run for it to work >> rasa run --enable-api --cors "*"
+"""
 def test_get_response_from_chatbot(client):
     expected_message="Hello! Welcome to the customer service, what would you like to have help with?"
     payload = {
-        "message" : "Hello, chatbot!"
+        "message": "Hello, chatbot!",
+        "metadata": {
+            "language": "en"
+        }
     }
     response = client.post('/webhook', json=payload)
     assert response.status_code == 200
     assert expected_message.encode() in response.data
-    
+    """
