@@ -1,1 +1,399 @@
-# None of the test stories failed - all good!
+version: "3.1"
+stories:
+  - story: Responsible Gaming where question regarding limits has been asked (./tests/test_stories.yml)
+    steps:
+      - intent: greet
+      - action: utter_greet # predicted: action_set_language
+      - intent: service_responsible_gaming
+      - action: utter_service_responsible_gaming
+      - intent: responsible_gaming_setting_limits
+      - action: utter_responsible_gaming_setting_limits
+  - story: Responsible gaming where question regarding self-exclude is asked (./tests/test_stories.yml)
+    steps:
+      - intent: greet
+      - action: utter_greet # predicted: action_set_language
+      - intent: service_responsible_gaming
+      - action: utter_service_responsible_gaming
+      - intent: responsible_gaming_self_exclude
+      - action: utter_responsible_gaming_self_exclude # predicted: action_default_fallback
+  - story: Responsible gaming where quesiton regarding addiction is asked (./tests/test_stories.yml)
+    steps:
+      - intent: greet
+      - action: utter_greet # predicted: action_set_language
+      - intent: service_responsible_gaming
+      - action: utter_service_responsible_gaming
+      - intent: responsible_gaming_gambling_addiction
+      - action: utter_responsible_gaming_gambling_addiction
+  - story: customer service support, how to claim a welcome bonus (./tests/test_stories.yml)
+    steps:
+      - intent: greet
+      - action: utter_greet # predicted: action_set_language
+      - intent: service_bonus
+      - action: utter_service_bonuses
+      - intent: bonus_claim
+      - action: utter_bonus_claim
+  - story: customer service support, what are the wagering requirements (./tests/test_stories.yml)
+    steps:
+      - intent: greet
+      - action: utter_greet # predicted: action_set_language
+      - intent: service_bonus
+      - action: utter_service_bonuses
+      - intent: bonus_wagering_requirements
+      - action: utter_bonus_wagering_requirements
+  - story: customer service support, check bonus status (./tests/test_stories.yml)
+    steps:
+      - intent: greet
+      - action: utter_greet # predicted: action_set_language
+      - intent: service_bonus
+      - action: utter_service_bonuses
+      - intent: bonus_status
+      - action: utter_bonus_status
+  - story: test_utter_blackjack_card_counting_en (./tests/test_domain.yml)
+    steps:
+      - intent: greet
+      - action: utter_blackjack_card_counting # predicted: action_set_language
+  - story: test_utter_blackjack_advanced_strategies_en (./tests/test_domain.yml)
+    steps:
+      - intent: greet
+      - action: utter_blackjack_advanced_strategies # predicted: action_set_language
+  - story: test_utter_blackjack_odds_specific_bets_en (./tests/test_domain.yml)
+    steps:
+      - intent: greet
+      - action: utter_blackjack_odds_specific_bets # predicted: action_set_language
+  - story: test_utter_blackjack_game_rules_overview_en (./tests/test_domain.yml)
+    steps:
+      - intent: greet
+      - action: utter_blackjack_game_rules_overview # predicted: action_set_language
+  - story: test_greet (./tests/test_domain.yml)
+    steps:
+      - user: |-
+          hello
+      - action: action_listen # predicted: action_default_fallback
+      - intent: greet
+      - action: utter_greet # predicted: action_set_language
+  - story: test_utter_roulette_basic_rules_en (./tests/test_domain.yml)
+    steps:
+      - intent: greet
+      - action: utter_roulette_basic_rules # predicted: action_set_language
+  - story: test_utter_roulette_best_strategies_en (./tests/test_domain.yml)
+    steps:
+      - intent: greet
+      - action: utter_roulette_best_strategies # predicted: action_set_language
+  - story: test_utter_roulette_odds_specific_bets_en (./tests/test_domain.yml)
+    steps:
+      - intent: greet
+      - action: utter_roulette_odds_specific_bets # predicted: action_set_language
+  - story: test_utter_roulette_game_rules_overview_en (./tests/test_domain.yml)
+    steps:
+      - intent: greet
+      - action: utter_roulette_game_rules_overview # predicted: action_set_language
+  - story: test_utter_poker_game_rules_overview_en (./tests/test_domain.yml)
+    steps:
+      - intent: greet
+      - action: utter_poker_game_rules_overview # predicted: action_set_language
+  - story: test_utter_poker_odds_specific_bets_en (./tests/test_domain.yml)
+    steps:
+      - intent: greet
+      - action: utter_poker_odds_specific_bets # predicted: action_set_language
+  - story: test_utter_poker_advanced_strategies_en (./tests/test_domain.yml)
+    steps:
+      - intent: utter_poker_advanced_strategies # predicted: ask_poker_rules: utter_poker_advanced_strategies
+      - action: utter_poker_advanced_strategies # predicted: action_default_fallback
+  - story: test_utter_poker_basic_rules_en (./tests/test_domain.yml)
+    steps:
+      - intent: utter_poker_basic_rules # predicted: ask_poker_rules: utter_poker_basic_rules
+      - action: utter_poker_basic_rules # predicted: action_default_fallback
+  - story: test_utter_ask_poker_rules_en (./tests/test_domain.yml)
+    steps:
+      - intent: greet
+      - action: utter_ask_poker_rules # predicted: action_set_language
+  - story: test_utter_ask_blackjack_rules_en (./tests/test_domain.yml)
+    steps:
+      - intent: greet
+      - action: utter_ask_blackjack_rules # predicted: action_set_language
+  - story: test_utter_greet_en (./tests/test_domain.yml)
+    steps:
+      - intent: greet
+      - action: utter_greet # predicted: action_set_language
+  - story: customer service technical customers game froze, refreshed (./tests/test_stories.yml)
+    steps:
+      - intent: greet
+      - action: utter_greet # predicted: action_set_language
+      - intent: service_technical
+      - action: utter_service_technical
+      - intent: service_technical_game_froze
+      - action: utter_service_technical_game_froze # predicted: action_default_fallback
+      - intent: service_technical_game_froze_refresh
+      - action: utter_service_technical_game_froze_refresh # predicted: action_default_fallback
+  - story: customer service technical customers game froze, cleaned cache and cookies (./tests/test_stories.yml)
+    steps:
+      - intent: greet
+      - action: utter_greet # predicted: action_set_language
+      - intent: service_technical
+      - action: utter_service_technical
+      - intent: service_technical_game_froze
+      - action: utter_service_technical_game_froze # predicted: action_default_fallback
+      - intent: service_technical_game_froze_clean_cache
+      - action: utter_service_technical_game_froze_clean_cache # predicted: action_default_fallback
+  - story: customer service technical customers game froze, browser updated (./tests/test_stories.yml)
+    steps:
+      - intent: greet
+      - action: utter_greet # predicted: action_set_language
+      - intent: service_technical
+      - action: utter_service_technical
+      - intent: service_technical_game_froze
+      - action: utter_service_technical_game_froze # predicted: action_default_fallback
+      - intent: service_technical_game_froze_update_browser
+      - action: utter_service_technical_game_froze_update_browser
+  - story: customer service technical support that asks for the real person (./tests/test_stories.yml)
+    steps:
+      - intent: greet
+      - action: utter_greet # predicted: action_set_language
+      - intent: service_technical
+      - action: utter_service_technical
+      - intent: service_technical_status_error
+      - action: utter_service_technical_status_error # predicted: utter_blackjack_odds_specific_bets
+      - intent: ask_for_real_person
+      - action: utter_ask_for_real_person
+  - story: Account and registration that asks how to create an account (./tests/test_stories.yml)
+    steps:
+      - intent: greet
+      - action: utter_greet # predicted: action_set_language
+      - intent: service_account_registration
+      - action: utter_service_account_registration
+      - intent: service_account_creation
+      - action: utter_service_account_creation # predicted: action_default_fallback
+      - intent: ask_for_real_person
+      - action: utter_ask_for_real_person
+  - story: Account and registration that asks how to reset password with email (./tests/test_stories.yml)
+    steps:
+      - intent: greet
+      - action: utter_greet # predicted: action_set_language
+      - intent: service_account_registration
+      - action: utter_service_account_registration
+      - intent: service_account_password
+      - action: utter_service_account_password
+      - intent: service_account_reset_email
+      - action: utter_service_account_reset_email # predicted: action_default_fallback
+      - intent: ask_for_real_person
+      - action: utter_ask_for_real_person
+  - story: Account and registration that asks how to reset password with phone (./tests/test_stories.yml)
+    steps:
+      - intent: greet
+      - action: utter_greet # predicted: action_set_language
+      - intent: service_account_registration
+      - action: utter_service_account_registration
+      - intent: service_account_password
+      - action: utter_service_account_password
+      - intent: service_account_reset_phone
+      - action: utter_service_account_reset_phone
+      - intent: ask_for_real_person
+      - action: utter_ask_for_real_person
+  - story: Account and registration that asks how to update account information (./tests/test_stories.yml)
+    steps:
+      - intent: greet
+      - action: utter_greet # predicted: action_set_language
+      - intent: service_account_registration
+      - action: utter_service_account_registration
+      - intent: service_account_information
+      - action: utter_service_account_information # predicted: action_default_fallback
+      - intent: ask_for_real_person
+      - action: utter_ask_for_real_person
+  - story: customer service technical support, Server error (./tests/test_stories.yml)
+    steps:
+      - intent: greet
+      - action: utter_greet # predicted: action_set_language
+      - intent: service_technical
+      - action: utter_service_technical
+      - intent: service_technical_status_error
+      - action: utter_service_technical_status_error # predicted: utter_blackjack_odds_specific_bets
+      - intent: service_technical_status_server_error
+      - action: utter_service_technical_status_server_error # predicted: action_default_fallback
+  - story: customer service technical support, Connection issue (./tests/test_stories.yml)
+    steps:
+      - intent: greet
+      - action: utter_greet # predicted: action_set_language
+      - intent: service_technical
+      - action: utter_service_technical
+      - intent: service_technical_status_error
+      - action: utter_service_technical_status_error # predicted: utter_blackjack_odds_specific_bets
+      - intent: service_technical_status_connection_issue
+      - action: utter_service_technical_status_connection_issue # predicted: utter_roulette_best_strategies
+  - story: customer service technical support, Connetion timed out (./tests/test_stories.yml)
+    steps:
+      - intent: greet
+      - action: utter_greet # predicted: action_set_language
+      - intent: service_technical
+      - action: utter_service_technical
+      - intent: service_technical_status_error
+      - action: utter_service_technical_status_error # predicted: utter_blackjack_odds_specific_bets
+      - intent: service_technical_status_connection_timed_out
+      - action: utter_service_technical_status_connection_timed_out # predicted: action_default_fallback
+  - story: customer service technical support, deposit availability info (./tests/test_stories.yml)
+    steps:
+      - intent: greet
+      - action: utter_greet # predicted: action_set_language
+      - intent: service_technical
+      - action: utter_service_technical
+      - intent: service_technical_deposit_error
+      - action: utter_service_technical_deposit_error # predicted: action_default_fallback
+      - intent: service_technical_availability_info
+      - action: utter_service_technical_availability_info
+  - story: test_utter_blackjack_basic_rules_en (./tests/test_domain.yml)
+    steps:
+      - intent: greet
+      - action: utter_blackjack_basic_rules # predicted: action_set_language
+  - story: customer service technical support, deposit banks supported (./tests/test_stories.yml)
+    steps:
+      - intent: greet
+      - action: utter_greet # predicted: action_set_language
+      - intent: service_technical
+      - action: utter_service_technical
+      - intent: service_technical_deposit_error
+      - action: utter_service_technical_deposit_error # predicted: action_default_fallback
+      - intent: service_technical_banks_supported
+      - action: utter_service_technical_banks_supported # predicted: action_default_fallback
+  - story: customer service technical support, deposit account status (./tests/test_stories.yml)
+    steps:
+      - intent: greet
+      - action: utter_greet # predicted: action_set_language
+      - intent: service_technical
+      - action: utter_service_technical
+      - intent: service_technical_deposit_error
+      - action: utter_service_technical_deposit_error # predicted: action_default_fallback
+      - intent: service_technical_account_status
+      - action: utter_service_technical_account_status # predicted: action_default_fallback
+  - story: happy path (./tests/test_stories.yml)
+    steps:
+      - intent: greet
+      - action: utter_greet # predicted: action_set_language
+      - intent: mood_great
+      - action: utter_happy
+  - story: sad path 1 (./tests/test_stories.yml)
+    steps:
+      - intent: greet
+      - action: utter_greet # predicted: action_set_language
+      - intent: mood_unhappy
+      - action: utter_cheer_up
+      - action: utter_did_that_help
+      - intent: affirm
+      - action: utter_happy
+  - story: sad path 2 (./tests/test_stories.yml)
+    steps:
+      - intent: greet
+      - action: utter_greet # predicted: action_set_language
+      - intent: mood_unhappy
+      - action: utter_cheer_up
+      - action: utter_did_that_help
+      - intent: deny
+      - action: utter_goodbye
+  - story: customer service support to check the deposit methods (credit card) (./tests/test_stories.yml)
+    steps:
+      - intent: greet
+      - action: utter_greet # predicted: action_set_language
+      - intent: service_deposit_withdrawal
+      - action: utter_service_deposit_withdrawal
+      - intent: service_deposit_methods
+      - action: utter_service_deposit_methods
+      - intent: deposit_credit_card
+      - action: utter_deposit_credit_card
+      - intent: ask_for_real_person
+      - action: utter_ask_for_real_person
+  - story: customer service support to check the deposit methods (bank transfer) (./tests/test_stories.yml)
+    steps:
+      - intent: greet
+      - action: utter_greet # predicted: action_set_language
+      - intent: service_deposit_withdrawal
+      - action: utter_service_deposit_withdrawal
+      - intent: service_deposit_methods
+      - action: utter_service_deposit_methods
+      - intent: deposit_bank_transfer
+      - action: utter_deposit_bank_transfer
+      - intent: ask_for_real_person
+      - action: utter_ask_for_real_person
+  - story: customer service support to check the deposit methods (e-wallet) (./tests/test_stories.yml)
+    steps:
+      - intent: greet
+      - action: utter_greet # predicted: action_set_language
+      - intent: service_deposit_withdrawal
+      - action: utter_service_deposit_withdrawal
+      - intent: service_deposit_methods
+      - action: utter_service_deposit_methods
+      - intent: deposit_e_wallet
+      - action: utter_deposit_e_wallet
+      - intent: ask_for_real_person
+      - action: utter_ask_for_real_person
+  - story: customer service support to see how long it takes to withdraw money (creditCard) (./tests/test_stories.yml)
+    steps:
+      - intent: greet
+      - action: utter_greet # predicted: action_set_language
+      - intent: service_deposit_withdrawal
+      - action: utter_service_deposit_withdrawal
+      - intent: service_withdrawal_time
+      - action: utter_service_withdrawal_time
+      - intent: withdrawal_credit_card
+      - action: utter_withdrawal_credit_card
+      - intent: ask_for_real_person
+      - action: utter_ask_for_real_person
+  - story: customer service support to see how long it takes to withdraw money (bankTransfer) (./tests/test_stories.yml)
+    steps:
+      - intent: greet
+      - action: utter_greet # predicted: action_set_language
+      - intent: service_deposit_withdrawal
+      - action: utter_service_deposit_withdrawal
+      - intent: service_withdrawal_time
+      - action: utter_service_withdrawal_time
+      - intent: withdrawal_bank_transfer
+      - action: utter_withdrawal_bank_transfer
+      - intent: ask_for_real_person
+      - action: utter_ask_for_real_person
+  - story: customer service support to see how long it takes to withdraw money (eWallet) (./tests/test_stories.yml)
+    steps:
+      - intent: greet
+      - action: utter_greet # predicted: action_set_language
+      - intent: service_deposit_withdrawal
+      - action: utter_service_deposit_withdrawal
+      - intent: service_withdrawal_time
+      - action: utter_service_withdrawal_time
+      - intent: withdrawal_e_wallet
+      - action: utter_withdrawal_e_wallet
+      - intent: ask_for_real_person
+      - action: utter_ask_for_real_person
+  - story: customer service support to see the depositing or withdrawal fees (./tests/test_stories.yml)
+    steps:
+      - intent: greet
+      - action: utter_greet # predicted: action_set_language
+      - intent: service_deposit_withdrawal
+      - action: utter_service_deposit_withdrawal
+      - intent: service_fees
+      - action: utter_service_fees
+      - intent: ask_for_real_person
+      - action: utter_ask_for_real_person
+  - story: customer service support to give info about the security of the casino (./tests/test_stories.yml)
+    steps:
+      - intent: greet
+      - action: utter_greet # predicted: action_set_language
+      - intent: service_security_fairplay
+      - action: utter_service_security_fairplay
+      - intent: security_casino
+      - action: utter_security_casino
+      - intent: ask_for_real_person
+      - action: utter_ask_for_real_person
+  - story: customer service support to give info about the fairness of the casino (./tests/test_stories.yml)
+    steps:
+      - intent: greet
+      - action: utter_greet # predicted: action_set_language
+      - intent: service_security_fairplay
+      - action: utter_service_security_fairplay
+      - intent: security_fairness
+      - action: utter_security_fairness
+      - intent: ask_for_real_person
+      - action: utter_ask_for_real_person
+  - story: customer service support to give info about the personal data security (./tests/test_stories.yml)
+    steps:
+      - intent: greet
+      - action: utter_greet # predicted: action_set_language
+      - intent: service_security_fairplay
+      - action: utter_service_security_fairplay
+      - intent: security_personal_data
+      - action: utter_security_personal_data
