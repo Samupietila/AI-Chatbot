@@ -242,8 +242,8 @@ def test_login(client):
     assert b'Logged in successfully!' in response.data
 
 # ChatBot Test >> Chatbot has to be run for it to work >> rasa run --enable-api --cors "*"
-"""
-def test_get_response_from_chatbot(client):
+
+def test_get_response_from_chatbot_en(client):
     expected_message="Hello! Welcome to the customer service, what would you like to have help with?"
     payload = {
         "message": "Hello, chatbot!",
@@ -254,4 +254,29 @@ def test_get_response_from_chatbot(client):
     response = client.post('/webhook', json=payload)
     assert response.status_code == 200
     assert expected_message.encode() in response.data
-    """
+    
+    
+def test_get_response_from_chatbot_fi(client):
+    expected_message="Hello! Welcome to the customer service, what would you like to have help with?"
+    payload = {
+        "message": "Hei, chatbot!",
+        "metadata": {
+            "language": "fi"
+        }
+    }
+    response = client.post('/webhook', json=payload)
+    assert response.status_code == 200
+    assert expected_message.encode() in response.data
+    
+def test_get_response_from_chatbot_ar(client):
+    expected_message="Hello! Welcome to the customer service, what would you like to have help with?"
+    payload = {
+        "message": "Hello, chatbot!",
+        "metadata": {
+            "language": "en"
+        }
+    }
+    response = client.post('/webhook', json=payload)
+    assert response.status_code == 200
+    assert expected_message.encode() in response.data
+    
