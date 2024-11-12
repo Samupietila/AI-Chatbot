@@ -1,46 +1,4 @@
 {
-  "bonus_claim": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 10,
-    "confused_with": {}
-  },
-  "deny": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 42,
-    "confused_with": {}
-  },
-  "ask_roulette_odds": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 10,
-    "confused_with": {}
-  },
-  "ask_blackjack_rules": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 9,
-    "confused_with": {}
-  },
-  "mood_unhappy": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 51,
-    "confused_with": {}
-  },
-  "ask_rules": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 6,
-    "confused_with": {}
-  },
   "goodbye": {
     "precision": 1.0,
     "recall": 0.9714285714285714,
@@ -50,39 +8,11 @@
       "greet": 1
     }
   },
-  "greet": {
-    "precision": 0.9743589743589743,
-    "recall": 1.0,
-    "f1-score": 0.9870129870129869,
-    "support": 38,
-    "confused_with": {}
-  },
-  "button_test": {
+  "ask_roulette_odds": {
     "precision": 1.0,
     "recall": 1.0,
     "f1-score": 1.0,
-    "support": 4,
-    "confused_with": {}
-  },
-  "bonus_wagering_requirements": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 8,
-    "confused_with": {}
-  },
-  "bot_challenge": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 24,
-    "confused_with": {}
-  },
-  "ask_poker_rules": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 9,
+    "support": 10,
     "confused_with": {}
   },
   "mood_great": {
@@ -92,11 +22,53 @@
     "support": 49,
     "confused_with": {}
   },
+  "mood_unhappy": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 51,
+    "confused_with": {}
+  },
+  "ask_blackjack_rules": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 9,
+    "confused_with": {}
+  },
+  "ask_rules": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 6,
+    "confused_with": {}
+  },
   "select_option": {
     "precision": 1.0,
     "recall": 1.0,
     "f1-score": 1.0,
     "support": 6,
+    "confused_with": {}
+  },
+  "deny": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 42,
+    "confused_with": {}
+  },
+  "bonus_wagering_requirements": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 8,
+    "confused_with": {}
+  },
+  "button_test": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 4,
     "confused_with": {}
   },
   "affirm": {
@@ -106,11 +78,39 @@
     "support": 50,
     "confused_with": {}
   },
+  "bonus_claim": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 10,
+    "confused_with": {}
+  },
+  "ask_poker_rules": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 9,
+    "confused_with": {}
+  },
   "bonus_status": {
     "precision": 1.0,
     "recall": 1.0,
     "f1-score": 1.0,
     "support": 8,
+    "confused_with": {}
+  },
+  "greet": {
+    "precision": 0.9743589743589743,
+    "recall": 1.0,
+    "f1-score": 0.9870129870129869,
+    "support": 38,
+    "confused_with": {}
+  },
+  "bot_challenge": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 24,
     "confused_with": {}
   },
   "accuracy": 0.9972144846796658,
@@ -123,7 +123,7 @@
   "weighted avg": {
     "precision": 0.9972859081494178,
     "recall": 0.9972144846796658,
-    "f1-score": 0.9972123875478605,
+    "f1-score": 0.9972123875478603,
     "support": 359
   },
   "micro avg": {

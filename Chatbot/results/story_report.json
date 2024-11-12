@@ -1,581 +1,5 @@
 {
-  "utter_service_technical_game_froze_update_browser": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 1
-  },
-  "": {
-    "precision": 0.0,
-    "recall": 0.0,
-    "f1-score": 0.0,
-    "support": 1
-  },
-  "utter_responsible_gaming_setting_limits": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 1
-  },
-  "service_deposit_methods": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 3
-  },
-  "utter_service_technical_game_froze": {
-    "precision": 0.0,
-    "recall": 0.0,
-    "f1-score": 0.0,
-    "support": 3
-  },
-  "utter_ask_poker_rules": {
-    "precision": 1.0,
-    "recall": 0.5,
-    "f1-score": 0.6666666666666666,
-    "support": 2
-  },
-  "utter_service_technical_status_error": {
-    "precision": 0.0,
-    "recall": 0.0,
-    "f1-score": 0.0,
-    "support": 4
-  },
-  "action_listen": {
-    "precision": 1.0,
-    "recall": 0.9939759036144579,
-    "f1-score": 0.9969788519637462,
-    "support": 166
-  },
-  "mood_unhappy": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 2
-  },
-  "utter_responsible_gaming_gambling_addiction": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 1
-  },
-  "utter_ask_blackjack_rules": {
-    "precision": 1.0,
-    "recall": 0.5,
-    "f1-score": 0.6666666666666666,
-    "support": 2
-  },
-  "utter_roulette_basic_rules": {
-    "precision": 1.0,
-    "recall": 0.5,
-    "f1-score": 0.6666666666666666,
-    "support": 2
-  },
-  "ask_roulette_odds": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 1
-  },
-  "utter_ask_for_real_person": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 14
-  },
-  "service_account_reset_email": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 1
-  },
-  "utter_greet": {
-    "precision": 0.0,
-    "recall": 0.0,
-    "f1-score": 0.0,
-    "support": 35
-  },
-  "security_casino": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 1
-  },
-  "service_account_reset_phone": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 1
-  },
-  "utter_service_technical_account_status": {
-    "precision": 0.0,
-    "recall": 0.0,
-    "f1-score": 0.0,
-    "support": 1
-  },
-  "service_technical": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 10
-  },
-  "utter_service_game_rules": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 1
-  },
-  "utter_service_account_registration": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 4
-  },
-  "service_account_registration": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 4
-  },
-  "utter_bonus_claim": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 1
-  },
-  "service_bonus": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 3
-  },
-  "service_technical_game_froze_clean_cache": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 1
-  },
-  "roulette_odds_specific_bets": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 1
-  },
-  "utter_poker_odds_specific_bets": {
-    "precision": 1.0,
-    "recall": 0.5,
-    "f1-score": 0.6666666666666666,
-    "support": 2
-  },
-  "utter_ask_roulette_odds": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 1
-  },
-  "service_responsible_gaming": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 3
-  },
-  "utter_roulette_game_rules_overview": {
-    "precision": 1.0,
-    "recall": 0.5,
-    "f1-score": 0.6666666666666666,
-    "support": 2
-  },
-  "service_technical_game_froze": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 3
-  },
-  "service_technical_status_server_error": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 1
-  },
-  "utter_service_bonuses": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 3
-  },
-  "utter_roulette_odds_specific_bets": {
-    "precision": 1.0,
-    "recall": 0.5,
-    "f1-score": 0.6666666666666666,
-    "support": 2
-  },
-  "responsible_gaming_setting_limits": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 1
-  },
-  "utter_bonus_status": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 1
-  },
-  "utter_bonus_wagering_requirements": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 1
-  },
-  "poker_odds_specific_bets": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 1
-  },
-  "service_withdrawal_time": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 3
-  },
-  "blackjack_odds_specific_bets": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 1
-  },
-  "security_fairness": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 1
-  },
-  "utter_poker_advanced_strategies": {
-    "precision": 1.0,
-    "recall": 0.3333333333333333,
-    "f1-score": 0.5,
-    "support": 3
-  },
-  "utter_service_technical_game_froze_refresh": {
-    "precision": 0.0,
-    "recall": 0.0,
-    "f1-score": 0.0,
-    "support": 1
-  },
-  "service_technical_status_error": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 4
-  },
-  "utter_service_deposit_methods": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 3
-  },
-  "security_personal_data": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 1
-  },
-  "utter_service_technical_status_connection_timed_out": {
-    "precision": 0.0,
-    "recall": 0.0,
-    "f1-score": 0.0,
-    "support": 1
-  },
   "utter_service_technical_banks_supported": {
-    "precision": 0.0,
-    "recall": 0.0,
-    "f1-score": 0.0,
-    "support": 1
-  },
-  "utter_service_technical_deposit_error": {
-    "precision": 0.0,
-    "recall": 0.0,
-    "f1-score": 0.0,
-    "support": 3
-  },
-  "deposit_bank_transfer": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 1
-  },
-  "service_technical_game_froze_update_browser": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 1
-  },
-  "utter_cheer_up": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 2
-  },
-  "utter_security_fairness": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 1
-  },
-  "utter_blackjack_odds_specific_bets": {
-    "precision": 0.2,
-    "recall": 0.5,
-    "f1-score": 0.28571428571428575,
-    "support": 2
-  },
-  "utter_service_technical": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 10
-  },
-  "utter_service_account_information": {
-    "precision": 0.0,
-    "recall": 0.0,
-    "f1-score": 0.0,
-    "support": 1
-  },
-  "utter_service_technical_availability_info": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 1
-  },
-  "withdrawal_credit_card": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 1
-  },
-  "utter_service_security_fairplay": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 3
-  },
-  "mood_great": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 2
-  },
-  "utter_service_account_reset_phone": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 1
-  },
-  "utter_blackjack_basic_rules": {
-    "precision": 1.0,
-    "recall": 0.5,
-    "f1-score": 0.6666666666666666,
-    "support": 2
-  },
-  "service_account_password": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 2
-  },
-  "service_technical_deposit_error": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 3
-  },
-  "deny": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 1
-  },
-  "utter_goodbye": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 2
-  },
-  "roulette_basic_rules": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 1
-  },
-  "utter_blackjack_game_rules_overview": {
-    "precision": 1.0,
-    "recall": 0.5,
-    "f1-score": 0.6666666666666666,
-    "support": 2
-  },
-  "roulette_game_rules_overview": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 1
-  },
-  "utter_service_technical_status_server_error": {
-    "precision": 0.0,
-    "recall": 0.0,
-    "f1-score": 0.0,
-    "support": 1
-  },
-  "ask_blackjack_rules": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 1
-  },
-  "responsible_gaming_gambling_addiction": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 1
-  },
-  "goodbye": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 1
-  },
-  "utter_withdrawal_credit_card": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 1
-  },
-  "utter_security_casino": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 1
-  },
-  "utter_service_responsible_gaming": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 3
-  },
-  "service_deposit_withdrawal": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 7
-  },
-  "utter_service_deposit_withdrawal": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 7
-  },
-  "utter_deposit_e_wallet": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 1
-  },
-  "poker_game_rules_overview": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 1
-  },
-  "affirm": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 1
-  },
-  "withdrawal_bank_transfer": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 1
-  },
-  "bonus_claim": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 1
-  },
-  "utter_withdrawal_e_wallet": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 1
-  },
-  "blackjack_card_counting": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 1
-  },
-  "service_account_creation": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 1
-  },
-  "utter_roulette_best_strategies": {
-    "precision": 0.5,
-    "recall": 0.5,
-    "f1-score": 0.5,
-    "support": 2
-  },
-  "utter_service_technical_status_connection_issue": {
-    "precision": 0.0,
-    "recall": 0.0,
-    "f1-score": 0.0,
-    "support": 1
-  },
-  "greet": {
-    "precision": 0.9795918367346939,
-    "recall": 1.0,
-    "f1-score": 0.9896907216494846,
-    "support": 48
-  },
-  "bonus_wagering_requirements": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 1
-  },
-  "deposit_credit_card": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 1
-  },
-  "utter_security_personal_data": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 1
-  },
-  "service_technical_game_froze_refresh": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 1
-  },
-  "service_technical_account_status": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 1
-  },
-  "withdrawal_e_wallet": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 1
-  },
-  "blackjack_basic_rules": {
     "precision": 1.0,
     "recall": 1.0,
     "f1-score": 1.0,
@@ -585,183 +9,15 @@
     "precision": 1.0,
     "recall": 1.0,
     "f1-score": 1.0,
-    "support": 2
-  },
-  "utter_service_technical_game_froze_clean_cache": {
-    "precision": 0.0,
-    "recall": 0.0,
-    "f1-score": 0.0,
-    "support": 1
-  },
-  "utter_withdrawal_bank_transfer": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 1
-  },
-  "bonus_status": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 1
-  },
-  "utter_responsible_gaming_self_exclude": {
-    "precision": 0.0,
-    "recall": 0.0,
-    "f1-score": 0.0,
-    "support": 1
-  },
-  "utter_poker_basic_rules": {
-    "precision": 1.0,
-    "recall": 0.3333333333333333,
-    "f1-score": 0.5,
     "support": 3
   },
-  "utter_deposit_credit_card": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 1
-  },
-  "blackjack_game_rules_overview": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 1
-  },
-  "utter_service_account_reset_email": {
-    "precision": 0.0,
-    "recall": 0.0,
-    "f1-score": 0.0,
-    "support": 1
-  },
-  "utter_service_account_password": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 2
-  },
-  "utter_happy": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 3
-  },
-  "utter_blackjack_advanced_strategies": {
-    "precision": 1.0,
-    "recall": 0.5,
-    "f1-score": 0.6666666666666666,
-    "support": 2
-  },
-  "service_technical_banks_supported": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 1
-  },
-  "utter_blackjack_card_counting": {
-    "precision": 1.0,
-    "recall": 0.5,
-    "f1-score": 0.6666666666666666,
-    "support": 2
-  },
-  "blackjack_advanced_strategies": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 1
-  },
-  "utter_poker_game_rules_overview": {
-    "precision": 1.0,
-    "recall": 0.5,
-    "f1-score": 0.6666666666666666,
-    "support": 2
-  },
-  "service_fees": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 1
-  },
-  "poker_basic_rules": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 1
-  },
-  "ask_for_real_person": {
+  "utter_ask_for_real_person": {
     "precision": 1.0,
     "recall": 1.0,
     "f1-score": 1.0,
     "support": 14
   },
-  "utter_service_account_creation": {
-    "precision": 0.0,
-    "recall": 0.0,
-    "f1-score": 0.0,
-    "support": 1
-  },
-  "service_security_fairplay": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 3
-  },
-  "service_technical_availability_info": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 1
-  },
-  "utter_service_fees": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 1
-  },
-  "roulette_best_strategies": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 1
-  },
-  "poker_advanced_strategies": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 1
-  },
-  "service_technical_status_connection_timed_out": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 1
-  },
-  "deposit_e_wallet": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 1
-  },
-  "service_technical_status_connection_issue": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 1
-  },
-  "responsible_gaming_self_exclude": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 1
-  },
-  "service_game_rules": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 1
-  },
-  "service_account_information": {
+  "utter_service_account_reset_email": {
     "precision": 1.0,
     "recall": 1.0,
     "f1-score": 1.0,
@@ -773,41 +29,395 @@
     "f1-score": 1.0,
     "support": 1
   },
+  "utter_service_technical_status_connection_issue": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 1
+  },
+  "utter_goodbye": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 2
+  },
+  "utter_service_account_information": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 1
+  },
+  "utter_service_account_registration": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 4
+  },
+  "utter_security_personal_data": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 1
+  },
+  "utter_service_technical_game_froze": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 3
+  },
+  "utter_service_technical_deposit_error": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 3
+  },
+  "utter_service_account_creation": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 1
+  },
+  "utter_deposit_credit_card": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 1
+  },
+  "utter_service_responsible_gaming": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 3
+  },
+  "utter_service_deposit_withdrawal": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 7
+  },
+  "utter_service_technical_status_error": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 4
+  },
+  "utter_happy": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 2
+  },
+  "utter_security_fairness": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 1
+  },
+  "utter_bonus_wagering_requirements": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 1
+  },
+  "utter_blackjack_card_counting": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 1
+  },
+  "utter_cheer_up": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 3
+  },
+  "utter_deposit_e_wallet": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 1
+  },
+  "utter_poker_game_rules_overview": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 1
+  },
+  "utter_roulette_best_strategies": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 1
+  },
+  "utter_ask_roulette_odds": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 1
+  },
+  "utter_blackjack_advanced_strategies": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 1
+  },
+  "utter_service_technical_account_status": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 1
+  },
+  "utter_blackjack_odds_specific_bets": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 1
+  },
+  "utter_roulette_basic_rules": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 1
+  },
+  "utter_service_account_reset_phone": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 1
+  },
+  "utter_service_technical_status_connection_timed_out": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 1
+  },
+  "utter_roulette_odds_specific_bets": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 1
+  },
+  "utter_poker_basic_rules": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 1
+  },
+  "utter_service_technical_availability_info": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 1
+  },
+  "utter_service_deposit_methods": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 3
+  },
+  "action_listen": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 149
+  },
+  "utter_service_technical_game_froze_clean_cache": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 1
+  },
+  "utter_service_technical_status_server_error": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 1
+  },
+  "utter_withdrawal_bank_transfer": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 1
+  },
+  "utter_security_casino": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 1
+  },
+  "utter_greet": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 34
+  },
+  "utter_bonus_claim": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 1
+  },
+  "utter_ask_blackjack_rules": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 1
+  },
+  "utter_ask_poker_rules": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 1
+  },
+  "utter_service_technical": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 10
+  },
+  "utter_responsible_gaming_self_exclude": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 1
+  },
+  "utter_service_account_password": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 2
+  },
+  "utter_service_game_rules": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 1
+  },
   "utter_service_withdrawal_time": {
     "precision": 1.0,
     "recall": 1.0,
     "f1-score": 1.0,
     "support": 3
   },
-  "ask_poker_rules": {
-    "precision": 0.3333333333333333,
+  "utter_withdrawal_credit_card": {
+    "precision": 1.0,
     "recall": 1.0,
-    "f1-score": 0.5,
+    "f1-score": 1.0,
     "support": 1
   },
-  "micro avg": {
-    "precision": 0.9814814814814815,
-    "recall": 0.8496993987975952,
-    "f1-score": 0.9108485499462944,
-    "support": 499
+  "utter_blackjack_basic_rules": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 1
   },
+  "action_set_language": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 34
+  },
+  "utter_service_fees": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 1
+  },
+  "utter_service_security_fairplay": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 3
+  },
+  "utter_service_bonuses": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 3
+  },
+  "utter_service_technical_game_froze_update_browser": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 1
+  },
+  "utter_roulette_game_rules_overview": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 1
+  },
+  "utter_poker_odds_specific_bets": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 1
+  },
+  "utter_blackjack_game_rules_overview": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 1
+  },
+  "utter_withdrawal_e_wallet": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 1
+  },
+  "utter_responsible_gaming_gambling_addiction": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 1
+  },
+  "utter_bonus_status": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 1
+  },
+  "utter_responsible_gaming_setting_limits": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 1
+  },
+  "utter_service_technical_game_froze_refresh": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 1
+  },
+  "utter_poker_advanced_strategies": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 1
+  },
+  "accuracy": 1.0,
   "macro avg": {
-    "precision": 0.8626940852676949,
-    "recall": 0.8180201722922225,
-    "f1-score": 0.8290512762798538,
-    "support": 499
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 335
   },
   "weighted avg": {
-    "precision": 0.8772620070072117,
-    "recall": 0.8496993987975952,
-    "f1-score": 0.8571978743552152,
-    "support": 499
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 335
   },
-  "accuracy": 0.8496993987975952,
+  "micro avg": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 335
+  },
   "conversation_accuracy": {
-    "accuracy": 0.2753623188405797,
-    "correct": 19,
+    "accuracy": 1.0,
+    "correct": 52,
     "with_warnings": 0,
-    "total": 69
+    "total": 52
   }
 }
