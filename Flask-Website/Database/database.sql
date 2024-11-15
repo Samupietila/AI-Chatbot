@@ -32,3 +32,18 @@ CREATE TABLE IF NOT EXISTS ChatHistory (
     AIResponse TEXT,
     FOREIGN KEY (UserID) REFERENCES User(UserID)
 );
+
+ALTER TABLE user CONVERT TO CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci; ALTER TABLE chathistory CONVERT TO CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+-- Create translations table
+
+
+CREATE TABLE translations ( TranslationID INT PRIMARY KEY AUTO_INCREMENT, TableName VARCHAR(50) NOT NULL, ColumnName VARCHAR(50) NOT NULL, RowID INT NOT NULL, LanguageCode CHAR(2) NOT NULL, TranslatedText TEXT NOT NULL, UNIQUE(TableName, ColumnName, RowID, LanguageCode) );
+
+-- Create welcome message to database:
+
+INSERT INTO translations (TableName, ColumnName, RowID, LanguageCode, TranslatedText)
+VALUES
+('user', 'WelcomeMessage', 1, 'EN', 'Welcome to our site!'),
+('user', 'WelcomeMessage', 1, 'FI', 'Tervetuloa sivustollemme!'),
+('user', 'WelcomeMessage', 1, 'AR', 'مرحبًا بكم في موقعنا!');
