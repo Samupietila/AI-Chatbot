@@ -53,6 +53,7 @@ def webhook():
         'message': user_message,
         'metadata': metadata
     }
+    print(payload)
     rasa_response = requests.post(RASA_API_URL, json=payload)
     rasa_response_json = rasa_response.json()
     print("Rasa response: ", rasa_response_json)

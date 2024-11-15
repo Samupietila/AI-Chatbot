@@ -1,7 +1,8 @@
 import pytest
 from main import app
 from Database.authentication import delete_user, emailCheck, usernameCheck
-
+import time
+import json
 
 # Creating the test client
 @pytest.fixture
@@ -9,7 +10,26 @@ def client():
     app.config['TESTING'] = True
     with app.test_client() as client:
         yield client
+
+@pytest.fixture
+def client_en():
+    app.config['TESTING'] = True
+    with app.test_client() as client_en:
+        yield client_en
     
+@pytest.fixture
+def client_finnish():
+    app.config['TESTING'] = True
+    with app.test_client() as client_finnish:
+        yield client_finnish
+        
+@pytest.fixture
+def client_ar():
+    app.config['TESTING'] = True
+    with app.test_client() as client_ar:
+        yield client_ar
+
+
 # Get Homepage
 @pytest.fixture
 def home_response(client):
@@ -85,7 +105,7 @@ def register_response_fi(client):
 def register_response_ar(client):
     response = client.get('/register', headers={"Accept-Language": "ar"})
     return response
-    
+        
 # For Context
 def test_localization_home_page(home_response_en, home_response_fi, home_response_ar):
     
@@ -97,8 +117,7 @@ def test_localization_home_page(home_response_en, home_response_fi, home_respons
     assert "مرحبًا بك في موقع الكازينو" in home_response_ar.data.decode('utf-8')
     assert "Tervetuloa" in home_response_fi.data.decode('utf-8')
     assert "Welcome" in home_response_en.data.decode('utf-8')
-
-    
+ 
 def test_localization_get_register_response_en(register_response_en):
     
     # Checking status code
@@ -108,8 +127,6 @@ def test_localization_get_register_response_en(register_response_en):
     assert "Register" in register_response_en.data.decode('utf-8')
     assert "Username" in register_response_en.data.decode('utf-8')
     assert "Password" in register_response_en.data.decode('utf-8')
-
-    
     
 def test_localization_get_register_response_fi(register_response_fi):
     
@@ -183,8 +200,6 @@ def test_register_page(client):
     
     assert check
     
-    
-    
 # Registering password Fail Test
 def test_register_password_fail(client):
     form_data = {
@@ -251,32 +266,40 @@ def test_get_response_from_chatbot_en(client):
             "language": "en"
         }
     }
-    response = client.post('/webhook', json=payload)
-    assert response.status_code == 200
-    assert expected_message.encode() in response.data
+    response_en = client.post('/webhook', json=payload)
+    print(response_en)
+    time.sleep(3)
+    assert response_en.status_code == 200
+    assert expected_message.encode() in response_en.data
     
-    
-def test_get_response_from_chatbot_fi(client):
-    expected_message="Hello! Welcome to the customer service, what would you like to have help with?"
+
+def test_get_response_from_chatbot_fi(client_finnish):
+    expected_message="Hei! Tervetuloa asiakaspalveluun, miten voin auttaa sinua?"
     payload = {
-        "message": "Hei, chatbot!",
+        "message": "moi kaveri",
         "metadata": {
             "language": "fi"
         }
     }
-    response = client.post('/webhook', json=payload)
-    assert response.status_code == 200
-    assert expected_message.encode() in response.data
+    response_fi = client_finnish.post('/webhook', json=payload)
+    print(response_fi.data)
+    time.sleep(3)
+    assert response_fi.status_code == 200
+    assert expected_message.encode() in response_fi.data
     
-def test_get_response_from_chatbot_ar(client):
-    expected_message="Hello! Welcome to the customer service, what would you like to have help with?"
+def test_get_response_from_chatbot_ar(client_ar):
+    expected_message = "مرحبًا! أهلاً بك في خدمة العملاء، كيف يمكنني مساعدتك؟"
     payload = {
         "message": "Hello, chatbot!",
         "metadata": {
-            "language": "en"
+            "language": "ar"
         }
     }
-    response = client.post('/webhook', json=payload)
-    assert response.status_code == 200
-    assert expected_message.encode() in response.data
-    
+    response_ar = client_ar.post('/webhook', json=payload)
+    print(response_ar.data)
+    response_data = response_ar.data.decode('utf-8')
+    response_json = json.loads(response_data)
+    actual_message = response_json.get('message', '')
+    print(actual_message)
+    assert response_ar.status_code == 200
+    assert expected_message == actual_message
