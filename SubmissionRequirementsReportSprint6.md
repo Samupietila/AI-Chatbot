@@ -27,8 +27,9 @@ Mika
 - Chatbot Localization: 7 Hours
 
 Zehra
-- Essi-bot translations/localization: 9 hours
+- Research for Project: 2 Hours
 - Daily sprints: 3 hours
+- Functional Testing 3h
 
 
 Samuel
