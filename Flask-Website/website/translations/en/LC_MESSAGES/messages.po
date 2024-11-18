@@ -7,117 +7,142 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2024-10-27 19:21+0200\n"
-"PO-Revision-Date: 2024-10-27 19:22+0200\n"
+"POT-Creation-Date: 2024-11-18 09:23+0200\n"
+"PO-Revision-Date: 2024-11-18 09:23+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: en\n"
 "Language-Team: en <LL@li.org>\n"
-"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.9.1\n"
+"Generated-By: Babel 2.16.0\n"
 
-#: templates/base.html:25
+#: auth.py:19
+msgid "Logged in successfully!"
+msgstr "Logged in successfully!"
+
+#: auth.py:22
+msgid "Username or password does not match"
+msgstr "Username or password does not match"
+
+#: auth.py:46
+msgid "Email is required"
+msgstr "Email is required"
+
+#: auth.py:49
+msgid "Passwords are not matching"
+msgstr "Passwords are not matching"
+
+#: auth.py:52
+msgid "Password must be greater than 7 characters"
+msgstr "Password must be greater than 7 characters"
+
+#: auth.py:55
+msgid "Lenght of Username must be more than 3"
+msgstr "Length of Username must be more than 3"
+
+#: auth.py:60
+msgid "Email address already exists"
+msgstr "Email address already exists"
+
+#: auth.py:62
+msgid "Username is already in use"
+msgstr "Username is already in use"
+
+#: auth.py:65
+msgid "Account has been created!"
+msgstr "Account has been created!"
+
+#: templates/base.html:26
 msgid "Website-Title"
-msgstr ""
+msgstr "Website-Title"
 
-#: templates/base.html:40 templates/home.html:1
+#: templates/base.html:41 templates/home.html:1
 msgid "Home"
-msgstr ""
+msgstr "Home"
 
-#: templates/base.html:43 templates/games.html:1
+#: templates/base.html:44 templates/games.html:1
 msgid "Games"
-msgstr ""
+msgstr "Games"
 
-#: templates/base.html:46 templates/community.html:1
+#: templates/base.html:47 templates/community.html:1
 msgid "Community"
-msgstr ""
+msgstr "Community"
 
-#: templates/base.html:49 templates/help.html:1
+#: templates/base.html:50 templates/help.html:1
 msgid "Help"
-msgstr ""
+msgstr "Help"
 
-#: templates/base.html:52
+#: templates/base.html:53
 msgid "Withdrawal/Deposit"
-msgstr ""
+msgstr "Withdrawal/Deposit"
 
-#: templates/base.html:55 templates/profile.html:1 templates/profile.html:3
+#: templates/base.html:56 templates/profile.html:1 templates/profile.html:3
 msgid "Profile"
-msgstr ""
+msgstr "Profile"
 
-#: templates/base.html:79
+#: templates/base.html:80
 msgid "Logout"
-msgstr ""
+msgstr "Logout"
 
-#: templates/base.html:81
+#: templates/base.html:82
 msgid "Log In"
-msgstr ""
+msgstr "Log In"
 
-#: templates/base.html:82 templates/register.html:1 templates/register.html:6
+#: templates/base.html:83 templates/register.html:1 templates/register.html:6
 msgid "Register"
-msgstr ""
+msgstr "Register"
 
-#: templates/base.html:140
+#: templates/base.html:141
 msgid "Send"
-msgstr ""
+msgstr "Send"
 
 #: templates/chatbot.html:1
 msgid "Chatbot "
-msgstr ""
+msgstr "Chatbot"
 
 #: templates/home.html:3
 msgid "Welcome to the Casino website"
-msgstr ""
+msgstr "Welcome to the Casino website"
 
 #: templates/login.html:1 templates/login.html:6 templates/login.html:29
 msgid "Login"
-msgstr ""
+msgstr "Login"
 
 #: templates/login.html:8 templates/register.html:18
 msgid "Username"
-msgstr ""
+msgstr "Username"
 
 #: templates/login.html:14
 msgid "Enter Username"
-msgstr ""
+msgstr "Enter Username"
 
 #: templates/login.html:18 templates/register.html:28
 #: templates/register.html:38
 msgid "Password"
-msgstr ""
+msgstr "Password"
 
 #: templates/login.html:24 templates/register.html:34
 msgid "Enter password"
-msgstr ""
+msgstr "Enter password"
 
 #: templates/register.html:8
 msgid "Email Address"
-msgstr ""
+msgstr "Email Address"
 
 #: templates/register.html:14
 msgid "Enter email"
-msgstr ""
+msgstr "Enter email"
 
 #: templates/register.html:24
 msgid "Enter username"
-msgstr ""
+msgstr "Enter username"
 
 #: templates/register.html:44
 msgid "Enter password again"
-msgstr ""
+msgstr "Enter password again"
 
 #: templates/register.html:49
 msgid "Create a new account"
-msgstr ""
-
-#: templates/thankyou.html:1
-msgid ""
-"Thank you for\n"
-"registering!"
-msgstr ""
-
-#: templates/thankyou.html:3
-msgid "Thank you for registering"
-msgstr ""
-
+msgstr "Create a new account"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2024-11-11 13:11+0200\n"
+"POT-Creation-Date: 2024-11-18 09:23+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -25,31 +25,31 @@ msgstr ""
 msgid "Username or password does not match"
 msgstr ""
 
-#: auth.py:45
+#: auth.py:46
 msgid "Email is required"
 msgstr ""
 
-#: auth.py:48
+#: auth.py:49
 msgid "Passwords are not matching"
 msgstr ""
 
-#: auth.py:51
+#: auth.py:52
 msgid "Password must be greater than 7 characters"
 msgstr ""
 
-#: auth.py:54
+#: auth.py:55
 msgid "Lenght of Username must be more than 3"
 msgstr ""
 
-#: auth.py:59
+#: auth.py:60
 msgid "Email address already exists"
 msgstr ""
 
-#: auth.py:61
+#: auth.py:62
 msgid "Username is already in use"
 msgstr ""
 
-#: auth.py:64
+#: auth.py:65
 msgid "Account has been created!"
 msgstr ""
 
@@ -144,15 +144,5 @@ msgstr ""
 
 #: templates/register.html:49
 msgid "Create a new account"
-msgstr ""
-
-#: templates/thankyou.html:1
-msgid ""
-"Thank you for\n"
-"registering!"
-msgstr ""
-
-#: templates/thankyou.html:3
-msgid "Thank you for registering"
 msgstr ""
 
