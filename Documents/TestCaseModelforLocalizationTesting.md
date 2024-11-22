@@ -1,0 +1,5 @@
+| **Test Case ID** | **Test Scenario** | **Test Steps** | **Expected Result** | **Actual Result** | **Pass/Fail** | **Comments** |
+|------------------|-------------------|----------------|---------------------|------------------|---------------|-------------|
+| **DB-LANG-002**  | Verify localized welcome message in database for Finnish | 1. Set language to Finnish <br> 2. Retrieve welcome message from database | Message should be displayed in Finnish |Message is in Finnish | Pass | Works as expected |
+| **DB-LANG-003**  | Verify localized welcome message in database for Arabic | 1. Set language to Arabic <br> 2. Retrieve welcome message from database | Message should be displayed in Arabic | Message is in Arabic | Pass |  Works as expected |
+| **DB-LANG-004**  | Verify fallback message for unsupported language | 1. Set language to unsupported value (e.g., 'ES') <br> 2. Retrieve welcome message | Default message should be displayed (e.g., "Welcome!") | Default message | Pass |  Works as expected |

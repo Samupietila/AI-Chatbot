@@ -2,6 +2,7 @@ from flask import Blueprint, render_template, request, flash, redirect, url_for
 from Database import authentication
 from flask_login import login_user, login_required, logout_user
 from .models import User
+from flask_babel import gettext as _
 auth = Blueprint('auth', __name__)
 
 @auth.route('/login', methods=['GET', 'POST'])
@@ -15,10 +16,10 @@ def login():
         if user:
             print(user)
             login_user(user, remember=True)
-            flash('Logged in successfully!', category='success')
+            flash(_('Logged in successfully!'), category='success')
             redirect(url_for('auth.thankyou'))
         else:
-            flash('Username or password does not match', category='error')
+            flash(_('Username or password does not match'), category='error')
     return render_template("login.html")
 
 @auth.route('/logout')
@@ -29,7 +30,8 @@ def logout():
 
 @auth.route('/thankyou')
 def thankyou():
-    return render_template("thankyou.html")
+    message = request.args.get('message', '')
+    return render_template("thankyou.html", message = message)
 
 @auth.route('/register', methods=['GET', 'POST'])
 def register():
@@ -41,26 +43,29 @@ def register():
         
         if not email:
             print('Email is required')
-            flash('Email is required', category='error')
+            flash(_('Email is required'), category='error')
         elif password1 != password2:
             print('Passwords not matching')
-            flash('Passwords are not matching', category='error')
+            flash(_('Passwords are not matching'), category='error')
         elif len(password1) < 8:
             print("Password flash triggered")
-            flash("Password must be greater than 7 characters", category='error')
+            flash(_("Password must be greater than 7 characters"), category='error')
         elif len(username) < 4:
             print("Username flash has been triggered")
-            flash("Lenght of Username must be more than 3", category='error')
+            flash(_("Lenght of Username must be more than 3"), category='error')
         else:
             emailCheck = authentication.emailCheck(email)
             usernameCheck = authentication.usernameCheck(username)
             if emailCheck:
-                flash('Email address already exists', category='error')
+                flash(_('Email address already exists'), category='error')
             elif usernameCheck:
-                flash('Username is already in use')
+                flash(_('Username is already in use'))
             if not emailCheck and not usernameCheck:
                 authentication.register(email, username, password1)
-                flash('Account has been created!', category='success')
-                return redirect(url_for('auth.thankyou'))
+                flash(_('Account has been created!'), category='success')
+                language = request.cookies.get('language')
+                message = authentication.get_localized_welcome_message(language)
+                print(message)
+                return redirect(url_for('auth.thankyou', message=message))
         
     return render_template("register.html")

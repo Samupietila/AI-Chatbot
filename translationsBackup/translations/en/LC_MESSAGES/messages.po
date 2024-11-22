@@ -1,99 +1,64 @@
-# Translations template for PROJECT.
+# English translations for PROJECT.
 # Copyright (C) 2024 ORGANIZATION
 # This file is distributed under the same license as the PROJECT project.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2024-11-18 09:23+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"POT-Creation-Date: 2024-10-27 19:21+0200\n"
+"PO-Revision-Date: 2024-10-27 19:22+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: en\n"
+"Language-Team: en <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.16.0\n"
+"Generated-By: Babel 2.9.1\n"
 
-#: auth.py:19
-msgid "Logged in successfully!"
-msgstr ""
-
-#: auth.py:22
-msgid "Username or password does not match"
-msgstr ""
-
-#: auth.py:46
-msgid "Email is required"
-msgstr ""
-
-#: auth.py:49
-msgid "Passwords are not matching"
-msgstr ""
-
-#: auth.py:52
-msgid "Password must be greater than 7 characters"
-msgstr ""
-
-#: auth.py:55
-msgid "Lenght of Username must be more than 3"
-msgstr ""
-
-#: auth.py:60
-msgid "Email address already exists"
-msgstr ""
-
-#: auth.py:62
-msgid "Username is already in use"
-msgstr ""
-
-#: auth.py:65
-msgid "Account has been created!"
-msgstr ""
-
-#: templates/base.html:26
+#: templates/base.html:25
 msgid "Website-Title"
 msgstr ""
 
-#: templates/base.html:41 templates/home.html:1
+#: templates/base.html:40 templates/home.html:1
 msgid "Home"
 msgstr ""
 
-#: templates/base.html:44 templates/games.html:1
+#: templates/base.html:43 templates/games.html:1
 msgid "Games"
 msgstr ""
 
-#: templates/base.html:47 templates/community.html:1
+#: templates/base.html:46 templates/community.html:1
 msgid "Community"
 msgstr ""
 
-#: templates/base.html:50 templates/help.html:1
+#: templates/base.html:49 templates/help.html:1
 msgid "Help"
 msgstr ""
 
-#: templates/base.html:53
+#: templates/base.html:52
 msgid "Withdrawal/Deposit"
 msgstr ""
 
-#: templates/base.html:56 templates/profile.html:1 templates/profile.html:3
+#: templates/base.html:55 templates/profile.html:1 templates/profile.html:3
 msgid "Profile"
 msgstr ""
 
-#: templates/base.html:80
+#: templates/base.html:79
 msgid "Logout"
 msgstr ""
 
-#: templates/base.html:82
+#: templates/base.html:81
 msgid "Log In"
 msgstr ""
 
-#: templates/base.html:83 templates/register.html:1 templates/register.html:6
+#: templates/base.html:82 templates/register.html:1 templates/register.html:6
 msgid "Register"
 msgstr ""
 
-#: templates/base.html:141
+#: templates/base.html:140
 msgid "Send"
 msgstr ""
 
@@ -144,5 +109,15 @@ msgstr ""
 
 #: templates/register.html:49
 msgid "Create a new account"
+msgstr ""
+
+#: templates/thankyou.html:1
+msgid ""
+"Thank you for\n"
+"registering!"
+msgstr ""
+
+#: templates/thankyou.html:3
+msgid "Thank you for registering"
 msgstr ""
 
