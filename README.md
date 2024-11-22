@@ -78,7 +78,7 @@ This project is designed to create an interactive quiz bot using Rasa, intended 
 
 1. **Clone the Repository:**
 
-git clone [repository-url](https://github.com/Samupietila/AI-Chatbot.git)
+git clone https://github.com/Samupietila/AI-Chatbot.git
 
 cd repository-folder
 
