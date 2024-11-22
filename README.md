@@ -60,26 +60,12 @@ This project is designed to create an interactive quiz bot using Rasa, intended 
 ### Database Integration:
 
 - Records timestamp from start of the chat.
+- Returns localized welcome message after registration.
 
 ### Visualization:
 
 - An HTML page visualizes the Rasa Core conversation flow.
 - Uses D3.js and Dagre-D3 for interactive and dynamic graph rendering.
-
-### Data Modeling
-
-![img.png](img.png)
-
-![img_1.png](img_1.png)
-
-The project's data modeling includes three main tables: User, which stores user information; UserIssue, which documents issues reported by users; and ChatHistory, which records messages and AI responses in conversations between users and the chatbot.
-
-### Use Case Diagram
-
-![img_2.png](img_2.png) 
-
-This use case diagram represents the different actors and their interactions with the EssiBot system on the website. 
-
 
 ## How to Run the Project
 

@@ -17,6 +17,8 @@ We updated the Product Backlog to align with the goals for Sprint 6 and created 
 Jukka
 - Modeling test cases: 4 hours
 - Database Localization: 4 hours
+- Daily Sprints 3 hours
+- Mixed 0.5h
 
 Mika
 - Daily sprints: 3 hours
@@ -25,8 +27,9 @@ Mika
 - Chatbot Localization: 7 Hours
 
 Zehra
-- Essi-bot translations/localization: 9 hours
+- Research for Project: 2 Hours
 - Daily sprints: 3 hours
+- Functional Testing 3h
 
 
 Samuel

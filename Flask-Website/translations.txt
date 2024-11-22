@@ -5,7 +5,9 @@ example: {% trans %} Translate {% endtrans %} #This will extract messageid "msgi
 
 2.Then we use the command (NOTE: You have to be in the same folder as babel.cfg is found at...In our project it's in Flask-Website/website):
 
-pybabel extract -F babel.cfg -o messages.pot . #this scans all templates for translateable items and makes a .pot file where you can find all extracted messages
+pybabel extract -F babel.cfg -o messages.pot . 
+
+#this scans all templates for translateable items and makes a .pot file where you can find all extracted messages
 You can check if the messageid's are fine
 
 
