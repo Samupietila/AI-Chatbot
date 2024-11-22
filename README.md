@@ -1,4 +1,5 @@
 ## Table of Contents
+
 - [Introduction](#introduction)
 - [Technologies Used](#technologies-used)
 - [Features](#features)
@@ -31,8 +32,6 @@ This project is designed to create an interactive quiz bot using Rasa, intended 
 
 - **HTML/CSS:** For structuring and styling the user interface.
 - **JavaScript**: To manage interactions within the chat interface.
-- **D3.js**: A JavaScript library for producing dynamic, interactive data visualizations in web browsers.
-- **Dagre-D3**: A D3-based library for creating directed graphs.
 
 ### Python Libraries
 
@@ -61,11 +60,11 @@ This project is designed to create an interactive quiz bot using Rasa, intended 
 
 - Records timestamp from start of the chat.
 - Returns localized welcome message after registration.
+- Saves user information about registered users.
 
 ### Visualization:
 
 - An HTML page visualizes the Rasa Core conversation flow.
-- Uses D3.js and Dagre-D3 for interactive and dynamic graph rendering.
 
 ## How to Run the Project
 
@@ -73,51 +72,69 @@ This project is designed to create an interactive quiz bot using Rasa, intended 
 
 - Python 3.x installed on your machine.
 - MySQL Server set up and running.
-- Node.js installed for D3.js and Dagre-D3.
-
-
+- Node.js installed.
 
 ### Setup Instructions
 
 1. **Clone the Repository:**
 
-git clone repository-url
+git clone [repository-url](https://github.com/Samupietila/AI-Chatbot.git)
 
 cd repository-folder
 
 2. **Install Required Packages:** Create a virtual environment and activate it:
 
+# For Mac/Linux
+
+source venv/bin/activate
+python3 -m venv venv
+
+# For Windows
+
 python -m venv venv
-
-source venv/bin/activate  # For Mac/Linux
-
-venv\Scripts\activate  # For Windows
+venv\Scripts\activate
 
 **Install the required Python packages**:
 
-pip install -r requirements.txt
+pip install -r Chatbot/requirements.txt
+pip install -r Flask-Website/requirements.txt
 
-3. **Set Up the Database**: Run the SQL scripts provided to create the necessary tables in your MySQL database. Check database localization from DatabaseLocalization.md
+3. **Configure Database Settings:** Update the Database/config.py file with your MySQL credentials.
 
-4. **Configure Database Settings:** Update the Database/config.py file with your MySQL credentials.
+4. **Set Up the Database**: Run the SQL scripts provided in **Flask-Website/Database/database.sql** to create the necessary tables in your MySQL database.
 
-5. **Run the Flask Server:** python app.py
+5. **First terminal to train and run rasa:**
+   From your project root folder:
 
-6. **Interact with the Chatbot**: Access the chatbot via the web interface or command line.
+   rasa train
 
-### Visualization
+### After successfully trained new rasa model
 
-Open the HTML page in your browser to view the conversation flow visualization.
+    rasa run
+
+6. **Second terminal to run rasa actions:**
+   cd Chatbot
+   rasa run actions
+
+7. **Third terminal to run Flask server:**
+   cd Flask-Website
+   python main.py
+
+8. **Interact with the Chatbot:**
+   Access the chatbot via the web interface from the link that Flask server gives.
+   e.g. "Running on http://127.0.0.1:5000"
 
 ## How to use Essi-bot
 
-1. **Open the bot-window from the site**
-2. **Greet the bot**
+1. **Open the bot-window from chatbot icon at the sites right bottom corner**
+2. **Greet the bot by sending a message to it** e.g. "Hello"
 3. **The bot asks what you need help with**
 4. **User will choose the subject and the bot will answer**
 
 ## Contributing
+
 We welcome contributions! Please follow these steps:
+
 1. Fork the repository
 2. Create a new branch (`git checkout -b feature-branch`)
 3. Make your changes and commit (`git commit -m 'Add feature'`)

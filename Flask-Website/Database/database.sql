@@ -1,3 +1,4 @@
+-- SQLBook: Code
 -- Create the ChatAppDatabase
 CREATE DATABASE IF NOT EXISTS ChatAppDatabase;
 
