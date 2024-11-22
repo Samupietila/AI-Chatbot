@@ -78,7 +78,9 @@ This project is designed to create an interactive quiz bot using Rasa, intended 
 
 1. **Clone the Repository:**
 
-```git clone https://github.com/Samupietila/AI-Chatbot.git```
+```
+git clone https://github.com/Samupietila/AI-Chatbot.git
+```
 
 cd repository-folder
 
@@ -86,8 +88,11 @@ cd repository-folder
 
 # For Mac/Linux
 
-```source venv/bin/activate```
-```python3 -m venv venv```
+```
+source venv/bin/activate
+
+python3 -m venv venv
+```
 
 # For Windows
 
@@ -98,8 +103,10 @@ venv\Scripts\activate
 
 **Install the required Python packages**:
 
-```pip install -r Chatbot/requirements.txt```
-```pip install -r Flask-Website/requirements.txt```
+```
+pip install -r Chatbot/requirements.txt
+pip install -r Flask-Website/requirements.txt
+```
 
 3. **Configure Database Settings:** Update the Database/config.py file with your MySQL credentials.
 
@@ -108,21 +115,29 @@ venv\Scripts\activate
 5. **First terminal to train and run rasa:**
    From your project root folder:
 
-   ```rasa train```
+   ```
+   rasa train
+   ```
 
 ### After successfully trained new rasa model
 
-   ```rasa run```
+   ```
+   rasa run
+```
 
 6. **Second terminal to run rasa actions:**
-   ```cd Chatbot```
-   ```rasa run actions```
+   ```
+   cd Chatbot
+   rasa run actions
+   ```
 
 7. **Third terminal to run Flask server:**
-   ```cd Flask-Website```
-   ```python main.py```
+   ```
+   cd Flask-Website
+   python main.py
+   ```
 
-8. **Interact with the Chatbot:**
+9. **Interact with the Chatbot:**
    Access the chatbot via the web interface from the link that Flask server gives.
    e.g. "Running on http://127.0.0.1:5000"
 
