@@ -64,14 +64,14 @@ def webhook():
         bot_response = "Sorry, I didn't get that. Can you rephrase?"
         buttons = []
     print ("Bot response: ", bot_response)
-    user_id = current_user
+    user_id = current_user.get_id()
     print("User ID: ", user_id)
 
     if user_id:
         message_timestamp = datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M:%S')
         try:
             store_chat_history({
-                'userid': "1",
+                'userid': user_id,
                 'messagetimestamp': message_timestamp,
                 'messagecontent': user_message,
                 'airesponse': bot_response
