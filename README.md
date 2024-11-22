@@ -59,7 +59,7 @@ This project is designed to create an interactive quiz bot using Rasa, intended 
 ### Database Integration:
 
 - Records timestamp from start of the chat.
-- Returns localized welcome message after registration.
+- Returns localized welcome message after registration based on the selected language of the page.
 - Saves user information about registered users.
 
 ### Visualization:
