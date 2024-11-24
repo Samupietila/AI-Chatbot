@@ -144,9 +144,22 @@ Analytics help track the most common user questions, allowing for targeted chatb
 Ensure that files like ``nlu.yml``, ``domain.yml``, and ``stories.yml``are update
 d with every change. Proper documentation is crucial for future developers.
 
-## Testing
+# Training the Chatbot for New Features and Languages
 
-Test your chatbot using **Rasa Shell** for quick checks or automated testing pipelines to ensure smooth functionality.
+Once you’ve added new languages, intents, responses, or features, it’s important to retrain the chatbot to ensure the changes are properly integrated. Follow these key steps to make sure your bot works as expected:
+
+## 1. Train the Model
+
+```
+rasa train
+```
+
+### Testing
+
+Test your chatbot using ```rasa shell ```for quick checks or automated testing pipelines to ensure smooth functionality.
+```
+rasa shell
+```
 
 # Conclusion
 
