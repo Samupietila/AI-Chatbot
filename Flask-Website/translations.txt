@@ -1,6 +1,6 @@
 Translations:
 
-1.in templates extract transateable items
+1.in templates extract translateable items
 example: {% trans %} Translate {% endtrans %} #This will extract messageid "msgid" "Translate"
 
 2.Then we use the command (NOTE: You have to be in the same folder as babel.cfg is found at...In our project it's in Flask-Website/website):
