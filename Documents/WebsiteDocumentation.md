@@ -54,10 +54,10 @@ This website utilizes Flask-Babel library's getText function that fetches marked
 
 # 6. Database Management
 
-<!-- --> Where does it happen-->
-<!-- --> images/Database/authentication.py-->
-<!-- --> Database Configuration: How to configure the database connection.-->
-<!-- --> Creating and Updating Tables: Instructions on how to create and update database tables.-->
+<!--  Where does it happen-->
+<!--  images/Database/authentication.py-->
+<!--  Database Configuration: How to configure the database connection.-->
+<!--  Creating and Updating Tables: Instructions on how to create and update database tables.-->
 
 # 7. Testing
 
