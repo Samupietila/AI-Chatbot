@@ -1,34 +1,44 @@
 # 1. Introduction
 
-Overview: A brief description of what the Flask-Website is and its main features.
-Purpose: The purpose of the website and the problems it solves.
+Purpose of this website is to host the integration of the Rasa framework based Chatbot called "Essi-Bot"
+// The website utilizes Flask framework written in Python and uses API to interact with the quizbot.
 
 # 2. Getting Started
 
-Prerequisites: List any software or tools needed to run the website (e.g., Python, Flask, MySQL).
-Installation: Step-by-step instructions on how to install the website on a local machine.
-Configuration: Instructions on how to configure the website, including setting up environment variables and database connections.
+// Prerequisites: List any software or tools needed to run the website (e.g., Python, Flask, MySQL).
+// Installation: Step-by-step instructions on how to install the website on a local machine.
+// Configuration: Instructions on how to configure the website, including setting up environment variables and database connections.
+
+## Tools required for this website:
+
+- Python programming language installed (Chatbot requires Python 3.9 to run)
+- MySQL (In this case we used MariaDB as our Database)
+- Flask (Webframework that makes the website)
+- Flask-Babel & getText() (These are used for the localization of the website)
 
 # 3. Localization
 
-How is the website localized
+## What is getText() and what is Flask-Babel
 
-> > What is getText() and what is Flask-Babel
-> > images/essi-bot_websitelocalization
+This website utilizes Flask-Babel library's getText function that fetches marked localization phrases into a template that will be used to produce all the necessary messages, which are then written in their localized versions and then converted into binary, which allows the website to change quickly from one language to another.
+
+## How to use it
+
+// images/essi-bot_websitelocalization
 
 # 4. Adding Pages
 
-Creating a New Page: Step-by-step instructions on how to add a new page to the website.
+// Creating a New Page: Step-by-step instructions on how to add a new page to the website.
 
 > > This is from views.py
 > > Eaxmple: images/essi-bot_website.png
 
-Updating Navigation: How to update the navigation menu to include the new page.
+// Updating Navigation: How to update the navigation menu to include the new page.
 
 > > This is from website/templates/base.html
 > > Image where to add things: images/essi-bot_navlink
 
-Templates and Static Files: How to create and use templates and static files (CSS, JavaScript, images).
+// Templates and Static Files: How to create and use templates and static files (CSS, JavaScript, images).
 
 > > Logically speaking how it works
 > > What is the purpose of base.html
@@ -59,11 +69,11 @@ Templates and Static Files: How to create and use templates and static files (CS
 
 # 8. Deployment
 
-Preparing for Deployment: Steps to prepare the website for deployment.
-Deploying to a Server: Instructions on how to deploy the website to a production server.
-Environment Variables: How to set environment variables for production.
+// Preparing for Deployment: Steps to prepare the website for deployment.
+// Deploying to a Server: Instructions on how to deploy the website to a production server.
+// Environment Variables: How to set environment variables for production.
 
 # 9. Troubleshooting
 
-Common Issues: List of common issues and their solutions.
-Debugging Tips: Tips for debugging and troubleshooting problems.
+// Common Issues: List of common issues and their solutions.
+// Debugging Tips: Tips for debugging and troubleshooting problems.
