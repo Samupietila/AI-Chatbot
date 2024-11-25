@@ -1,13 +1,13 @@
 # 1. Introduction
 
 Purpose of this website is to host the integration of the Rasa framework based Chatbot called "Essi-Bot"
-// The website utilizes Flask framework written in Python and uses API to interact with the quizbot.
+The website utilizes Flask framework written in Python and uses API to interact with the quizbot.
 
 # 2. Getting Started
 
-// Prerequisites: List any software or tools needed to run the website (e.g., Python, Flask, MySQL).
-// Installation: Step-by-step instructions on how to install the website on a local machine.
-// Configuration: Instructions on how to configure the website, including setting up environment variables and database connections.
+[comment]: # Prerequisites: List any software or tools needed to run the website (e.g., Python, Flask, MySQL).
+[comment]: # Installation: Step-by-step instructions on how to install the website on a local machine.
+[comment]: # Configuration: Instructions on how to configure the website, including setting up environment variables and database connections.
 
 ## Tools required for this website:
 
