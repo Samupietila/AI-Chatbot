@@ -131,6 +131,7 @@ DB_CONFIG = {
    From your project root folder go to "Chatbot"-folder:
 
    ```
+   cd Chatbot
    rasa train
    ```
 
