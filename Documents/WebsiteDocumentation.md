@@ -1,13 +1,16 @@
 # 1. Introduction
 
-Purpose of this website is to host the integration of the Rasa framework based Chatbot called "Essi-Bot"
-The website utilizes Flask framework written in Python and uses API to interact with the quizbot.
+## 1. Introduction
+
+### Overview
+
+The Flask-Website is a web application built using the Flask framework. It includes features such as user authentication, a Rasa chatbot integration, and more.
+
+### Purpose
+
+The purpose of this website is to provide a platform for users to interact with various services, including a chatbot for customer support.
 
 # 2. Getting Started
-
-<!-- This is a comment Prerequisites: List any software or tools needed to run the website (e.g., Python, Flask, MySQL).-->
-<!-- Installation: Step-by-step instructions on how to install the website on a local machine.-->
-<!-- Configuration: Instructions on how to configure the website, including setting up environment variables and database connections.-->
 
 ## Tools required for this website:
 
@@ -114,54 +117,138 @@ Last thing to do is to compile the translations by using this command in the ter
 pybabel compile -d translations
 ```
 
+After running the command to compile the messages, there should now be a .mo file. That means that the translations have been created successfully.
+
 # 4. Adding Pages
 
-<!--  Creating a New Page: Step-by-step instructions on how to add a new page to the website. -->
+To add a new page in to the website you need to:
 
-<!--   This is from views.py-->
-<!--  Eaxmple: images/essi-bot_website.png-->
+## Create a new .html file:
 
-<!--  Updating Navigation: How to update the navigation menu to include the new page.-->
+into the templates folder found in
 
-<!--  This is from website/templates/base.html-->
-<!--  Image where to add things: images/essi-bot_navlink-->
+```
+Flask-Website/website/templates
+```
 
-<!--  Templates and Static Files: How to create and use templates and static files (CSS, JavaScript, images).-->
+create a new .html file Example: "newpage.html"
 
-<!--  Logically speaking how it works-->
-<!--  What is the purpose of base.html-->
+## Create a function that creates the website
+
+You need to create a decorator for the website so that Flask will redirect you to the correct place
+
+```
+@views.route('/newpage')
+```
+
+```
+return render_template("newpage.html")
+```
+
+The end result of the function for the website is:
+
+```
+@views.route('/newpage')
+def newPage():
+    return render_template("newpage.html")
+```
+
+This will give the user the .html to show, while also applying base.html to it.
 
 # 5. Rasa Chatbot Integration
 
-<!--  Where does the integration happen-->
-<!--  Overview: Explanation of how the Rasa chatbot is integrated into the website.-->
-<!--  Tell about Webhook-->
-<!--  images/essi-bot_webhook-->
-<!--  Connecting Rasa to Flask: How to connect the Rasa chatbot to the Flask application.-->
+Integration of the Rasa chatbot is handled in the views.py file, through the use of API requests. Specifically the Flask application sends a POST requests to the Rasa server's webhook endpoint with the user's message and the metadata(which includes the language the user has decide to use).
+
+The default address for this is currently configured as:
+
+```
+http://localhost:5005/webhooks/rest/webhook
+```
 
 # 6. Database Management
 
-<!--  Where does it happen-->
-<!--  images/Database/authentication.py-->
-<!--  Database Configuration: How to configure the database connection.-->
-<!--  Creating and Updating Tables: Instructions on how to create and update database tables.-->
+For a working database connection it is important to have a config.py file created into the Flask-Website/Database folder
+
+And inside of it you want to have the following added:
+
+```
+DB_CONFIG = {
+    'user': 'usernametoaccessyourdatabase',
+    'password': 'yourdatabasepassword',
+    'host': 'localhost',
+    'database': 'ChatAppDatabase',
+    'charset': 'utf8mb4',
+    'collation': 'utf8mb4_unicode_ci',
+    'raise_on_warnings': True
+}
+
+```
+
+And the functions for database actions are found in the Flask-Website/Database/authentication.py file.
+
+## Creating and Updating Tables
+
+To create and update database tables, follow these steps:
+
+### Creating Tables
+
+1. **Use the SQL File**: The database schema is defined in the `database.sql` file located in the `Flask-Website/Database` folder. You can use this file to create the tables.
+
+2. **Execute the SQL File**: Run the following command in your MySQL or MariaDB client to execute the SQL file and create the tables.
+
+   ```bash
+   mysql -u yourusername -p yourpassword ChatAppDatabase < /path/to/Flask-Website/Database/database.sql
+   ```
+
+### Updating Tables
+
+1. **Modify the SQL File**: Update the `database.sql` file with the necessary changes to the table schema.
+
+2. **Apply the Changes**: Re-run the updated `database.sql` file to apply the changes to the database.
+
+   ```bash
+   mysql -u yourusername -p yourpassword ChatAppDatabase < /path/to/Flask-Website/Database/database.sql
+   ```
+
+By following these steps, you can create and update database tables in your Flask application using the provided SQL file.
 
 # 7. Testing
 
-<!--  Where can you find them-->
-<!--  What is pytest-->
-<!--  How to make them-->
-<!--  Running Tests: How to run the test suite.-->
-<!-- Writing Tests: Guidelines for writing new tests.-->
-<!--  Test Coverage: How to check test coverage.-->
+## Overview
 
-# 8. Deployment
+For testing of the Flask-Website a testing library called "pytest" will be used for this.
 
-<!--  Preparing for Deployment: Steps to prepare the website for deployment.-->
-<!--  Deploying to a Server: Instructions on how to deploy the website to a production server.-->
-<!--  Environment Variables: How to set environment variables for production.-->
+## Where to find tests:
 
-# 9. Troubleshooting
+All test files are located in the "tests" folder found in
 
-<!--  Common Issues: List of common issues and their solutions.-->
-<!--  Debugging Tips: Tips for debugging and troubleshooting problems.-->
+```
+Flask-Website/tests
+```
+
+## Creating new tests:
+
+To create new tests it is important to know that for pytest to be able to run the tests each of the test functions need to have the prefix "test\_"
+
+Example of a test function:
+
+```
+def test_home_page(client):
+    response = client.get('/')
+    assert response.status_code == 200
+    assert b"Welcome to the Casino" in response.data
+```
+
+By following these guidelines and examples, you can ensure that your Flask-Website is thoroughly tested.
+
+once all of the test files have been made, to actually run the tests, you need to be inside the Flask-Website folder
+
+```
+cd Flask-Website
+```
+
+and run the following command:
+
+```
+pytest
+```
