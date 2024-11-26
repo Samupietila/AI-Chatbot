@@ -31,6 +31,10 @@ jobs:
           # Create and activate a virtual environment
           python -m venv venv
           source venv/bin/activate  # Activate the virtual environment
+          pip install -r Flask-Website/requirements.txt
+
+          # Also install coverage and pytest to run tests and measure coverage
+          pip install coverage pytest      
       - name: Run tests and generate coverage report
         run: |
           # Run tests with coverage collection
