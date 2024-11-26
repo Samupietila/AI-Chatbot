@@ -24,6 +24,7 @@ jobs:
 
       - name: Debug directory structure
         run:
+          echo "hello"
           ls -la
             
       - name: Analyze with SonarCloud
