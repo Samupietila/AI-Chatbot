@@ -24,9 +24,14 @@ jobs:
 
       - name: Debug directory structure
         run: |
-          echo "Listing root directory:"
-          ls -R /github/workspace
-        
+          echo "Workspace exists:"
+          if [ -d "/github/workspace" ]; then
+            echo "Directory exists"
+            ls -R /github/workspace
+          else
+            echo "Directory does not exist"
+            exit 1
+          fi
       - name: Analyze with SonarCloud
 
         # You can pin the exact commit or the version.
