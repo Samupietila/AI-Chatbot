@@ -43,3 +43,5 @@ jobs:
             -Dsonar.organization=dogface3
             -Dsonar.sources=Flask-Website
             -Dsonar.projectBaseDir=.
+            -Dsonar.exclusions=Flask-Website/mynev/**
+
