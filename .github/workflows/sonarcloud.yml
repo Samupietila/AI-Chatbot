@@ -42,4 +42,4 @@ jobs:
             -Dsonar.projectKey=dogface3_AI-Chatbot
             -Dsonar.organization=dogface3
             -Dsonar.sources=Flask-Website
-            -Dsonar.projectBaseDir=AI-Chatbot
+            -Dsonar.projectBaseDir=.
