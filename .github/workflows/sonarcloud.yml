@@ -23,15 +23,9 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Debug directory structure
-        run: |
-          echo "Workspace exists:"
-          if [ -d "/github/workspace" ]; then
-            echo "Directory exists"
-            ls -R /github/workspace
-          else
-            echo "Directory does not exist"
-            exit 1
-          fi
+        run:
+          ls -la
+            
       - name: Analyze with SonarCloud
 
         # You can pin the exact commit or the version.
