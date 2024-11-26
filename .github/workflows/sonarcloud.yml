@@ -22,10 +22,21 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Debug directory structure
-        run:
-          echo "hello"
-          ls -la
+      - name: Run tests and generate coverage report
+        run: |
+          # Run tests with coverage collection
+          coverage run -m pytest  # Run pytest and collect coverage
+          
+          # Generate a report in multiple formats
+          coverage report  # Text-based report
+          coverage html  # HTML report for local use
+          
+          # Generate the LCOV report for SonarCloud analysis
+          mkdir -p coverage-reports  # Create a folder to store coverage report
+          coverage lcov > coverage-reports/coverage.lcov  # Save coverage in LCOV format
+          
+          # Optionally check the generated coverage report
+          ls -la coverage-reports
             
       - name: Analyze with SonarCloud
 
