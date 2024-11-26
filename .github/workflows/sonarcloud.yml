@@ -28,8 +28,9 @@ jobs:
 
       - name: Install dependencies
         run: |
-          pip install Flask-Website/requirements.txt
-          pip install coverage pytest  # Install pytest and coverage
+          # Create and activate a virtual environment
+          python -m venv venv
+          source venv/bin/activate  # Activate the virtual environment
       - name: Run tests and generate coverage report
         run: |
           # Run tests with coverage collection
