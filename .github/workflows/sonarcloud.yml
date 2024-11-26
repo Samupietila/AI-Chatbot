@@ -38,6 +38,7 @@ jobs:
       - name: Run tests and generate coverage report
         run: |
           # Run tests with coverage collection
+          source venv/bin/activate
           coverage run -m pytest  # Run pytest and collect coverage
           
           # Generate a report in multiple formats
