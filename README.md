@@ -128,7 +128,7 @@ DB_CONFIG = {
 4. **Set Up the Database**: Run the SQL scripts provided in **Flask-Website/Database/database.sql** to create the necessary tables in your MySQL database.
 
 5. **First terminal to train and run rasa:**
-   From your project root folder:
+   From your project root folder go to "Chatbot"-folder:
 
    ```
    rasa train
