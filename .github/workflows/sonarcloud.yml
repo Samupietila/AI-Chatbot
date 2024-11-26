@@ -28,7 +28,8 @@ jobs:
 
       - name: Install dependencies
         run: |
-          pip install flask flask_login mysql
+          pip install flask flask_login flask-babel
+          pip install mysql-connector-python
           pip install coverage pytest  # Install pytest and coverage
       - name: Run tests and generate coverage report
         run: |
