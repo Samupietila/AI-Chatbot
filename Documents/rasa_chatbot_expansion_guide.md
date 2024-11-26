@@ -36,10 +36,27 @@ To add Spanish support, you'll need to define new intents and update responses i
 ```yml
 responses:
   utter_greet:
-    - text: "Hello!"  # English
-    - text: "Hei!"    # Finnish
-    - text: "مرحبا!"  # Arabic
-    - text: "¡Hola!"  # Spanish
+    - condition:
+        - type: slot
+          name: language
+          value: "en"
+      text: "Hello!"  # English
+    - condition:
+        - type: slot
+          name: language
+          value: "fi"
+      text: "Hei!"  # Finnish
+    - condition:
+        - type: slot
+          name: language
+          value: "ar"
+      text: "مرحباً!"  # Arabic
+    - condition:
+        - type: slot
+          name: language
+          value: "es"
+      text: "¡Hola!"  # Spanish
+
 ```
 
 
