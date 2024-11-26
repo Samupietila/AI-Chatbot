@@ -109,7 +109,21 @@ pip install -r Chatbot/requirements.txt
 pip install -r Flask-Website/requirements.txt
 ```
 
-3. **Configure Database Settings:** Update the Database/config.py file with your MySQL credentials.
+3. **Configure Database Settings:** Create the Flask-Website/Database/config.py file with your MySQL credentials.
+```
+DB_CONFIG = {
+'user': 'yourdatabaseuser',
+'password': 'yourdatabasepassword',
+'host': 'localhost',
+'database': 'ChatAppDatabase',
+'charset': 'utf8mb4',
+'collation': 'utf8mb4_unicode_ci',
+'raise_on_warnings': True
+}
+```
+
+
+
 
 4. **Set Up the Database**: Run the SQL scripts provided in **Flask-Website/Database/database.sql** to create the necessary tables in your MySQL database.
 
