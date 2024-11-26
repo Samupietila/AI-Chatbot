@@ -32,6 +32,7 @@ jobs:
           python -m venv venv
           source venv/bin/activate  # Activate the virtual environment
           pip install -r Flask-Website/requirements.txt
+          pip install flask_babel
 
           # Also install coverage and pytest to run tests and measure coverage
           pip install coverage pytest      
