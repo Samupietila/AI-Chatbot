@@ -21,6 +21,11 @@ jobs:
 
       - name: Checkout repository
         uses: actions/checkout@v3
+
+      - name: Debug directory structure
+        run: |
+          echo "Listing root directory:"
+          ls -R /github/workspace
         
       - name: Analyze with SonarCloud
 
@@ -36,5 +41,5 @@ jobs:
             # mandatory
             -Dsonar.projectKey=dogface3_AI-Chatbot
             -Dsonar.organization=dogface3
-            -Dsonar.sources=AI-Chatbot/Flask-Website
+            -Dsonar.sources=Flask-Website
             -Dsonar.projectBaseDir=AI-Chatbot
