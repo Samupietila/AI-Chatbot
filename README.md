@@ -157,6 +157,8 @@ DB_CONFIG = {
    Access the chatbot via the web interface from the link that Flask server gives.
    e.g. "Running on http://127.0.0.1:5000"
 
+**Check TroubleShootingGuide.md from Documents if you run to any problems during installation**
+
 ## How to use Essi-bot
 
 1. **Open the bot-window from chatbot icon at the sites right bottom corner**
