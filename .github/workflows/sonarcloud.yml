@@ -41,24 +41,6 @@ jobs:
           done
           echo "Chatbot is ready."
 
-      - name: Run MySQL container
-        run: |
-          # Create a new MySQL container using secrets for DB configuration
-          docker run -d --name mysql-container -e MYSQL_ROOT_PASSWORD=${{ secrets.MYSQL_ROOT_PASSWORD }} -e MYSQL_DATABASE=chatappdatabase -p 3306:3306 mysql:latest
-          
-          # Wait for MySQL to be ready
-          echo "Waiting for MySQL service..."
-          until docker exec mysql-container mysqladmin -uroot -p${{ secrets.MYSQL_ROOT_PASSWORD }} ping --silent; do
-            echo "MySQL not ready yet, retrying in 5 seconds..."
-            sleep 5
-          done
-          echo "MySQL is ready."
-        
-      - name: Check MySQL Database Existence
-        run: |
-          echo "Checking if chatappdatabase exists in MySQL..."
-          docker exec mysql-container mysql -uroot -p${{ secrets.MYSQL_ROOT_PASSWORD }} -e "SHOW DATABASES;" | grep chatappdatabase
-
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
