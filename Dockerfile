@@ -9,6 +9,7 @@ COPY Flask-Website/requirements.txt .
 
 # Install dependencies
 RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install --no-cache-dir rasa
 
 # Copy the rest of your application code
 COPY . .
