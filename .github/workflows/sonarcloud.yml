@@ -27,10 +27,14 @@ jobs:
         run: |
           docker pull samuel1234567/chatbot-image:latest
 
-      - name: Run chatbot container
+      - name: Run chatbot and MySQL containers
         run: |
-          docker network create my_network  # Create a custom network
+          docker network create my_network  # Create a custom network for containers to communicate
+          
+          # Start MySQL container with environment variables for user and password
           docker run -d --name mysql --network my_network -e MYSQL_ROOT_PASSWORD=password -e MYSQL_DATABASE=test_db mysql:8.0
+
+          # Start chatbot container and connect it to the same network
           docker run -d --name chatbot-container --network my_network -p 5005:5005 samuel1234567/chatbot-image:latest
           
           # Wait for the chatbot service to be ready
