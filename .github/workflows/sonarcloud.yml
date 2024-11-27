@@ -84,7 +84,14 @@ jobs:
       - name: Wait for MySQL to be ready
         run: |
           echo "Waiting for MySQL to be ready..."
-          until docker exec mysql mysqladmin -u root -prootpassword --host 127.0.0.1 --port 3306 ping --silent; do
+          until docker ps | grep mysql; do
+            echo "MySQL container is not running yet, retrying in 5 seconds..."
+            sleep 5
+          done
+          echo "MySQL container is running."
+          
+          # Check if MySQL is accepting connections
+          until docker exec -i $(docker ps -q --filter ancestor=mysql:8.0) mysqladmin -u root -prootpassword --host 127.0.0.1 --port 3306 ping --silent; do
             echo "MySQL not ready yet, retrying in 5 seconds..."
             sleep 5
           done
@@ -93,7 +100,7 @@ jobs:
       - name: Create tables in test_db
         run: |
           echo "Creating necessary tables in test_db..."
-          docker exec -i mysql mysql -u root -prootpassword test_db <<EOF
+          docker exec -i $(docker ps -q --filter ancestor=mysql:8.0) mysql -u root -prootpassword test_db <<EOF
           CREATE TABLE IF NOT EXISTS User (
             UserID INT PRIMARY KEY AUTO_INCREMENT,
             Username VARCHAR(100) NOT NULL,
