@@ -120,7 +120,7 @@ def store_chat_history(data):
     cursor = connection.cursor()
 
     try:
-        query = """INSERT INTO chathistory (userid, messagetimestamp, messagecontent, airesponse) VALUES (%s, %s, %s, %s)"""
+        query = """INSERT INTO Chathistory (userid, messagetimestamp, messagecontent, airesponse) VALUES (%s, %s, %s, %s)"""
         cursor.execute(query, (data['userid'], data['messagetimestamp'], data['messagecontent'], data['airesponse']))
         connection.commit()
         return print("Chat history stored successfully")
