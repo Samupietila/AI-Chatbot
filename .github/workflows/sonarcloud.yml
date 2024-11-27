@@ -15,39 +15,24 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-
+      # Step 1: Checkout repository
       - name: Checkout repository
         uses: actions/checkout@v3
 
+      # Step 2: Log in to Docker Hub
       - name: Log in to Docker Hub
         run: |
           echo ${{ secrets.DOCKER_PASSWORD }} | docker login -u ${{ secrets.DOCKER_USERNAME }} --password-stdin
 
+      # Step 3: Pull chatbot Docker image
       - name: Pull chatbot Docker image
         run: |
           docker pull samuel1234567/chatbot-image:latest
 
-      - name: Run chatbot and MySQL containers on the same network
+      # Step 4: Run chatbot container
+      - name: Run chatbot container
         run: |
-          # Create a custom Docker network for communication between containers
-          docker network create my_network
-          
-          # Start MySQL container with environment variables
-          docker run -d --name mysql --network my_network -e MYSQL_ROOT_PASSWORD=password -e MYSQL_DATABASE=test_db mysql:8.0
-
-          # Wait for MySQL to be ready
-          echo "Waiting for MySQL to be ready..."
-          until docker exec mysql mysqladmin -uroot -ppassword --host=mysql --silent --wait=30 ping; do
-            echo "MySQL not ready yet, retrying..."
-            sleep 5
-          done
-          echo "MySQL is ready."
-
-          # Create the required database (if it's not already created by MYSQL_DATABASE environment variable)
-          docker exec mysql mysql -uroot -ppassword -e "CREATE DATABASE IF NOT EXISTS test_db;"
-
-          # Start chatbot container and connect it to the same network
-          docker run -d --name chatbot-container --network my_network -p 5005:5005 samuel1234567/chatbot-image:latest
+          docker run -d --name chatbot-container -p 5005:5005 samuel1234567/chatbot-image:latest
           
           # Wait for the chatbot service to be ready
           echo "Waiting for the chatbot service..."
@@ -57,11 +42,25 @@ jobs:
           done
           echo "Chatbot is ready."
 
+      # Step 5: Run MySQL database check in the Docker container
+      - name: Check MySQL database inside the container
+        run: |
+          # Ensure MySQL is running
+          docker exec -it chatbot-container bash -c "mysql -u root -p${{ secrets.MYSQL_ROOT_PASSWORD }} -e 'SHOW DATABASES;'"
+          
+          # Replace 'test_db' with your actual database name
+          docker exec -it chatbot-container bash -c "mysql -u root -p${{ secrets.MYSQL_ROOT_PASSWORD }} -e 'USE test_db; SHOW TABLES;'"
+
+          # Optionally, view some rows in a specific table
+          docker exec -it chatbot-container bash -c "mysql -u root -p${{ secrets.MYSQL_ROOT_PASSWORD }} -e 'USE test_db; SELECT * FROM users LIMIT 10;'"
+
+      # Step 6: Set up Python
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
           python-version: '3.x'
 
+      # Step 7: Install dependencies
       - name: Install dependencies
         run: |
           # Create and activate a virtual environment
@@ -73,6 +72,7 @@ jobs:
           # Also install coverage and pytest to run tests and measure coverage
           pip install coverage pytest
 
+      # Step 8: Create config.py from GitHub Secrets
       - name: Create config.py from GitHub Secrets
         run: |
           echo "Creating config.py file from secrets..."
@@ -82,11 +82,13 @@ jobs:
         env:
           DB_CONFIG: ${{ secrets.DB_CONFIG }}
 
+      # Step 9: Debug config.py
       - name: Debug config.py
         run: |
           echo "Contents of config.py:"
           cat Flask-Website/Database/config.py | sed 's/password.*/password: ***}/g'
 
+      # Step 10: Run tests and generate coverage report
       - name: Run tests and generate coverage report
         run: |
           # Run tests with coverage collection
@@ -102,8 +104,10 @@ jobs:
           mkdir -p coverage-reports  # Create a folder to store coverage report
           coverage lcov > coverage-reports/coverage.lcov  # Save coverage in LCOV format
           
+          # Optionally check the generated coverage report
+          ls -la coverage-reports
 
-
+      # Step 11: Analyze with SonarCloud
       - name: Analyze with SonarCloud
         uses: SonarSource/sonarcloud-github-action@4006f663ecaf1f8093e8e4abb9227f6041f52216
         env:
