@@ -1,15 +1,3 @@
-name: SonarCloud analysis
-
-on:
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
-  workflow_dispatch:
-
-permissions:
-  pull-requests: read # allows SonarCloud to decorate PRs with analysis results
-
 jobs:
   Analysis:
     runs-on: ubuntu-latest
@@ -82,12 +70,52 @@ jobs:
           echo "DB_USER=test_user" >> $GITHUB_ENV
           echo "DB_PASSWORD=test_password" >> $GITHUB_ENV
 
+      - name: Wait for MySQL to be ready
+        run: |
+          echo "Waiting for MySQL to be ready..."
+          until docker exec mysql mysqladmin -u root -p${{ secrets.MYSQL_ROOT_PASSWORD }} --host 127.0.0.1 --port 3306 ping --silent; do
+            echo "MySQL not ready yet, retrying in 5 seconds..."
+            sleep 5
+          done
+          echo "MySQL is ready."
+
+      - name: Create tables in test_db
+        run: |
+          echo "Creating necessary tables in test_db..."
+          docker exec -i mysql mysql -u root -p${{ secrets.MYSQL_ROOT_PASSWORD }} test_db <<EOF
+          CREATE TABLE IF NOT EXISTS User (
+            UserID INT PRIMARY KEY AUTO_INCREMENT,
+            Username VARCHAR(100) NOT NULL,
+            Email VARCHAR(100) NOT NULL,
+            Password VARCHAR(100) NOT NULL,
+            RegistrationDate DATE NOT NULL,
+            LastLogin DATE
+          );
+          
+          CREATE TABLE IF NOT EXISTS UserIssue (
+            IssueID INT PRIMARY KEY AUTO_INCREMENT,
+            IssueDescription TEXT NOT NULL,
+            IssueCategory VARCHAR(50) NOT NULL,
+            UserID INT,
+            FOREIGN KEY (UserID) REFERENCES User(UserID)
+          );
+          
+          CREATE TABLE IF NOT EXISTS ChatHistory (
+            ChatID INT PRIMARY KEY AUTO_INCREMENT,
+            UserID INT,
+            MessageTimeStamp TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+            MessageContent TEXT NOT NULL,
+            AIResponse TEXT,
+            FOREIGN KEY (UserID) REFERENCES User(UserID)
+          );
+          EOF
+          
       - name: Create config.py dynamically
         run: |
           echo "Creating config.py file dynamically..."
           echo "DB_CONFIG = {" > Flask-Website/Database/config.py
           echo "    'host': '${{ env.DB_HOST }}'," >> Flask-Website/Database/config.py
-          echo "    'port': '${{ env.DB_PORT }}'," >> Flask-Website/Database/config.py  # Ensure port is an integer
+          echo "    'port': ${{ env.DB_PORT }}," >> Flask-Website/Database/config.py  # Ensure port is an integer
           echo "    'database': '${{ env.DB_NAME }}'," >> Flask-Website/Database/config.py
           echo "    'user': '${{ env.DB_USER }}'," >> Flask-Website/Database/config.py
           echo "    'password': '${{ env.DB_PASSWORD }}'" >> Flask-Website/Database/config.py
