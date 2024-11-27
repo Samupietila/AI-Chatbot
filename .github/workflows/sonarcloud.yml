@@ -19,6 +19,26 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
+      - name: Log in to Docker Hub
+        run: |
+          echo ${{ secrets.DOCKER_PASSWORD }} | docker login -u ${{ secrets.DOCKER_USERNAME }} --password-stdin
+
+      - name: Pull chatbot Docker image
+        run: |
+          docker pull samuel1234567/chatbot-image:latest
+
+      - name: Run chatbot container
+        run: |
+          docker run -d --name chatbot-container -p 5005:5005 samuel1234567/chatbot-image:latest
+          
+          # Wait for the chatbot service to be ready
+          echo "Waiting for the chatbot service..."
+          until curl -s http://localhost:5005/webhooks/rest/webhook; do
+            echo "Chatbot not ready yet, retrying in 5 seconds..."
+            sleep 5
+          done
+          echo "Chatbot is ready."
+
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
@@ -28,29 +48,12 @@ jobs:
         run: |
           # Create and activate a virtual environment
           python -m venv venv
-          source venv/bin/activate  # Activate the virtual environment
+          source venv/bin/activate
           pip install -r Flask-Website/requirements.txt
           pip install flask_babel
-
+          
           # Also install coverage and pytest to run tests and measure coverage
-          pip install coverage pytest      
-
-      - name: Build and run chatbot Docker container
-        run: |
-          echo "Building Docker container for chatbot..."
-          docker build -t chatbot-image .  # Build the Docker image
-          
-          echo "Running Docker container for chatbot..."
-          docker run -d --name chatbot-container -p 5005:5005 chatbot-image  # Run the container
-          
-          # Wait for the chatbot service to become available
-          echo "Waiting for chatbot to be ready..."
-          until curl -s http://localhost:5005/webhooks/rest/webhook; do
-            echo "Chatbot not ready yet, retrying in 5 seconds..."
-            sleep 5
-          done
-          echo "Chatbot is ready."
-
+          pip install coverage pytest
 
       - name: Create config.py from GitHub Secrets
         run: |
@@ -65,13 +68,13 @@ jobs:
         run: |
           echo "Contents of config.py:"
           cat Flask-Website/Database/config.py | sed 's/password.*/password: ***}/g'
-                
+
       - name: Run tests and generate coverage report
         run: |
           # Run tests with coverage collection
           source venv/bin/activate
-          export PYTHONPATH=Flask-Website  # Set PYTHONPATH for proper imports
-          coverage run -m pytest  # Run pytest and collect coverage
+          export PYTHONPATH=Flask-Website
+          coverage run -m pytest
           
           # Generate a report in multiple formats
           coverage report  # Text-based report
@@ -91,19 +94,9 @@ jobs:
         with:
           # Additional arguments for the SonarScanner CLI
           args:
-            # Unique keys of your project and organization. You can find them in SonarCloud > Information (bottom-left menu)
-            # mandatory
             -Dsonar.projectKey=dogface3_AI-Chatbot
             -Dsonar.organization=dogface3
             -Dsonar.sources=Flask-Website
             -Dsonar.projectBaseDir=.
             -Dsonar.exclusions=Flask-Website/mynev/**
             -Dsonar.python.coverage.reportPaths=coverage-reports/coverage.lcov  # Provide path to LCOV report for coverage analysis
-
-      - name: Stop and remove chatbot Docker container
-        if: always()
-        run: |
-          echo "Stopping and removing Docker container..."
-          docker stop chatbot-container
-          docker rm chatbot-container
-
