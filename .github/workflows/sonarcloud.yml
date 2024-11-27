@@ -27,12 +27,24 @@ jobs:
         run: |
           docker pull samuel1234567/chatbot-image:latest
 
-      - name: Run chatbot and MySQL containers
+      - name: Run chatbot and MySQL containers on the same network
         run: |
-          docker network create my_network  # Create a custom network for containers to communicate
+          # Create a custom Docker network for communication between containers
+          docker network create my_network
           
-          # Start MySQL container with environment variables for user and password
+          # Start MySQL container with environment variables
           docker run -d --name mysql --network my_network -e MYSQL_ROOT_PASSWORD=password -e MYSQL_DATABASE=test_db mysql:8.0
+
+          # Wait for MySQL to be ready
+          echo "Waiting for MySQL to be ready..."
+          until docker exec mysql mysqladmin -uroot -ppassword --host=mysql --silent --wait=30 ping; do
+            echo "MySQL not ready yet, retrying..."
+            sleep 5
+          done
+          echo "MySQL is ready."
+
+          # Create the required database (if it's not already created by MYSQL_DATABASE environment variable)
+          docker exec mysql mysql -uroot -ppassword -e "CREATE DATABASE IF NOT EXISTS test_db;"
 
           # Start chatbot container and connect it to the same network
           docker run -d --name chatbot-container --network my_network -p 5005:5005 samuel1234567/chatbot-image:latest
@@ -44,14 +56,6 @@ jobs:
             sleep 5
           done
           echo "Chatbot is ready."
-
-          # Wait for MySQL to be ready
-          echo "Waiting for MySQL to be ready..."
-          until docker exec mysql mysqladmin -uroot -ppassword --host=mysql --silent --wait=30 ping; do
-            echo "MySQL not ready yet, retrying..."
-            sleep 5
-          done
-          echo "MySQL is ready."
 
       - name: Set up Python
         uses: actions/setup-python@v4
