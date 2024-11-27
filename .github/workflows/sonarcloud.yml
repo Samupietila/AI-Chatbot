@@ -101,6 +101,7 @@ jobs:
         run: |
           echo "Creating necessary tables in test_db..."
           docker exec -i $(docker ps -q --filter ancestor=mysql:8.0) mysql -u root -prootpassword test_db <<EOF
+          USE test_db;
           CREATE TABLE IF NOT EXISTS User (
             UserID INT PRIMARY KEY AUTO_INCREMENT,
             Username VARCHAR(100) NOT NULL,
