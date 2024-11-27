@@ -38,7 +38,7 @@ def register(email, username, password):
             userid = 1
         else:
             userid += 1
-        insertion = "insert into user (UserID, username, email, password, registrationdate) values (%s, %s, %s, %s, CURDATE())"
+        insertion = "insert into User (UserID, username, email, password, registrationdate) values (%s, %s, %s, %s, CURDATE())"
         cursor.execute(insertion, (userid, username, email, password))
         connection.commit()
         return print("registered")
@@ -56,7 +56,7 @@ def usernameCheck(username):
     cursor = connection.cursor()
     
     try:
-        cursor.execute("SELECT * FROM user WHERE username = %s", (username,))
+        cursor.execute("SELECT * FROM User WHERE username = %s", (username,))
         already_exists = cursor.fetchone()
         if already_exists:
             return True
@@ -137,7 +137,7 @@ def delete_user(email, username):
     cursor = connection.cursor()
     
     try:
-        cursor.execute("DELETE FROM user WHERE email = %s AND username = %s", (email, username))
+        cursor.execute("DELETE FROM User WHERE email = %s AND username = %s", (email, username))
         connection.commit()
         return cursor.rowcount > 0
         
@@ -159,7 +159,7 @@ def get_localized_welcome_message(language_code):
         query = """
         SELECT COALESCE(t.TranslatedText, 'Welcome!') AS WelcomeMessage
         FROM translations t
-        WHERE t.TableName = 'user'
+        WHERE t.TableName = 'User'
           AND t.ColumnName = 'WelcomeMessage'
           AND t.RowID = 1
           AND t.LanguageCode = %s
