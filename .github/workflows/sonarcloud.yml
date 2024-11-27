@@ -40,7 +40,11 @@ jobs:
         run: |
           echo "Creating config.py file from secrets..."
           echo "DB_CONFIG = '${{ secrets.DB_CONFIG }}'" > Flask-Website/Database/config.py
-          
+      - name: Debug config.py
+        run: |
+          echo "Contents of config.py:"
+          cat Flask-Website/Database/config.py | sed 's/password.*/password: ***}/g'
+                
       - name: Run tests and generate coverage report
         run: |
           # Run tests with coverage collection
