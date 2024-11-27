@@ -79,6 +79,7 @@ This project is designed to create an interactive quiz bot using Rasa, intended 
 1. **Clone the Repository:**
 
 ```
+git config --global http.postBuffer 524288000
 git clone https://github.com/Samupietila/AI-Chatbot.git
 ```
 
@@ -108,14 +109,29 @@ pip install -r Chatbot/requirements.txt
 pip install -r Flask-Website/requirements.txt
 ```
 
-3. **Configure Database Settings:** Update the Database/config.py file with your MySQL credentials.
+3. **Configure Database Settings:** Create the Flask-Website/Database/config.py file with your MySQL credentials.
+```
+DB_CONFIG = {
+'user': 'yourdatabaseuser',
+'password': 'yourdatabasepassword',
+'host': 'localhost',
+'database': 'ChatAppDatabase',
+'charset': 'utf8mb4',
+'collation': 'utf8mb4_unicode_ci',
+'raise_on_warnings': True
+}
+```
+
+
+
 
 4. **Set Up the Database**: Run the SQL scripts provided in **Flask-Website/Database/database.sql** to create the necessary tables in your MySQL database.
 
 5. **First terminal to train and run rasa:**
-   From your project root folder:
+   From your project root folder go to "Chatbot"-folder:
 
    ```
+   cd Chatbot
    rasa train
    ```
 
@@ -140,6 +156,8 @@ pip install -r Flask-Website/requirements.txt
 9. **Interact with the Chatbot:**
    Access the chatbot via the web interface from the link that Flask server gives.
    e.g. "Running on http://127.0.0.1:5000"
+
+**Check TroubleShootingGuide.md from Documents if you run to any problems during installation**
 
 ## How to use Essi-bot
 

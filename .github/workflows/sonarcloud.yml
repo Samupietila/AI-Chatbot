@@ -1,31 +1,3 @@
-# This workflow uses actions that are not certified by GitHub.
-# They are provided by a third-party and are governed by
-# separate terms of service, privacy policy, and support
-# documentation.
-
-# This workflow helps you trigger a SonarCloud analysis of your code and populates
-# GitHub Code Scanning alerts with the vulnerabilities found.
-# Free for open source project.
-
-# 1. Login to SonarCloud.io using your GitHub account
-
-# 2. Import your project on SonarCloud
-#     * Add your GitHub organization first, then add your repository as a new project.
-#     * Please note that many languages are eligible for automatic analysis,
-#       which means that the analysis will start automatically without the need to set up GitHub Actions.
-#     * This behavior can be changed in Administration > Analysis Method.
-#
-# 3. Follow the SonarCloud in-product tutorial
-#     * a. Copy/paste the Project Key and the Organization Key into the args parameter below
-#          (You'll find this information in SonarCloud. Click on "Information" at the bottom left)
-#
-#     * b. Generate a new token and add it to your Github repository's secrets using the name SONAR_TOKEN
-#          (On SonarCloud, click on your avatar on top-right > My account > Security
-#           or go directly to https://sonarcloud.io/account/security/)
-
-# Feel free to take a look at our documentation (https://docs.sonarcloud.io/getting-started/github/)
-# or reach out to our community forum if you need some help (https://community.sonarsource.com/c/help/sc/9)
-
 name: SonarCloud analysis
 
 on:
@@ -37,31 +9,173 @@ on:
 
 permissions:
   pull-requests: read # allows SonarCloud to decorate PRs with analysis results
-
 jobs:
   Analysis:
     runs-on: ubuntu-latest
 
-    steps:
-      - name: Analyze with SonarCloud
+    services:
+      mysql:
+        image: mysql:8.0
+        env:
+          MYSQL_ROOT_PASSWORD: rootpassword
+          MYSQL_DATABASE: test_db
+          MYSQL_USER: test_user
+          MYSQL_PASSWORD: test_password
+        ports:
+          - 3306:3306
+        options: >-
+          --health-cmd="mysqladmin ping --silent"
+          --health-start-period=30s
+          --health-timeout=5s
+          --health-retries=3
 
-        # You can pin the exact commit or the version.
-        # uses: SonarSource/sonarcloud-github-action@v2.2.0
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Docker
+        uses: docker/setup-buildx-action@v2
+
+      - name: Log in to Docker Hub
+        run: |
+          echo ${{ secrets.DOCKER_PASSWORD }} | docker login -u ${{ secrets.DOCKER_USERNAME }} --password-stdin
+
+      - name: Pull chatbot Docker image
+        run: |
+          docker pull samuel1234567/chatbot-image:latest
+
+      - name: Run chatbot container
+        run: |
+          docker run -d --name chatbot-container -p 5005:5005 samuel1234567/chatbot-image:latest
+          
+          # Wait for the chatbot service to be ready
+          echo "Waiting for the chatbot service..."
+          until curl -s http://localhost:5005/webhooks/rest/webhook; do
+            echo "Chatbot not ready yet, retrying in 5 seconds..."
+            sleep 5
+          done
+          echo "Chatbot is ready."
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies
+        run: |
+          # Create and activate a virtual environment
+          python -m venv venv
+          source venv/bin/activate
+          pip install -r Flask-Website/requirements.txt
+          pip install flask_babel
+          
+          # Also install coverage and pytest to run tests and measure coverage
+          pip install coverage pytest
+
+      - name: Set up environment variables for MySQL database (Test DB)
+        run: |
+          echo "Setting up environment variables for test database..."
+          echo "DB_HOST=127.0.0.1" >> $GITHUB_ENV
+          echo "DB_PORT=3306" >> $GITHUB_ENV
+          echo "DB_NAME=test_db" >> $GITHUB_ENV
+          echo "DB_USER=test_user" >> $GITHUB_ENV
+          echo "DB_PASSWORD=test_password" >> $GITHUB_ENV
+
+      - name: Wait for MySQL to be ready
+        run: |
+          echo "Waiting for MySQL to be ready..."
+          until docker ps | grep mysql; do
+            echo "MySQL container is not running yet, retrying in 5 seconds..."
+            sleep 5
+          done
+          echo "MySQL container is running."
+          
+          # Check if MySQL is accepting connections
+          until docker exec -i $(docker ps -q --filter ancestor=mysql:8.0) mysqladmin -u root -prootpassword --host 127.0.0.1 --port 3306 ping --silent; do
+            echo "MySQL not ready yet, retrying in 5 seconds..."
+            sleep 5
+          done
+          echo "MySQL is ready."
+
+      - name: Create tables in test_db
+        run: |
+          echo "Creating necessary tables in test_db..."
+          docker exec -i $(docker ps -q --filter ancestor=mysql:8.0) mysql -u root -prootpassword test_db <<EOF
+          USE test_db;
+          CREATE TABLE IF NOT EXISTS User (
+            UserID INT PRIMARY KEY AUTO_INCREMENT,
+            Username VARCHAR(100) NOT NULL,
+            Email VARCHAR(100) NOT NULL,
+            Password VARCHAR(100) NOT NULL,
+            RegistrationDate DATE NOT NULL,
+            LastLogin DATE
+          );
+          
+          CREATE TABLE IF NOT EXISTS UserIssue (
+            IssueID INT PRIMARY KEY AUTO_INCREMENT,
+            IssueDescription TEXT NOT NULL,
+            IssueCategory VARCHAR(50) NOT NULL,
+            UserID INT,
+            FOREIGN KEY (UserID) REFERENCES User(UserID)
+          );
+          
+          CREATE TABLE IF NOT EXISTS ChatHistory (
+            ChatID INT PRIMARY KEY AUTO_INCREMENT,
+            UserID INT,
+            MessageTimeStamp TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+            MessageContent TEXT NOT NULL,
+            AIResponse TEXT,
+            FOREIGN KEY (UserID) REFERENCES User(UserID)
+          );
+
+          SHOW TABLES;
+          EOF
+          
+      - name: Create config.py dynamically
+        run: |
+          echo "Creating config.py file dynamically..."
+          echo "DB_CONFIG = {" > Flask-Website/Database/config.py
+          echo "    'host': '${{ env.DB_HOST }}'," >> Flask-Website/Database/config.py
+          echo "    'port': ${{ env.DB_PORT }}," >> Flask-Website/Database/config.py  # Ensure port is an integer
+          echo "    'database': '${{ env.DB_NAME }}'," >> Flask-Website/Database/config.py
+          echo "    'user': '${{ env.DB_USER }}'," >> Flask-Website/Database/config.py
+          echo "    'password': '${{ env.DB_PASSWORD }}'" >> Flask-Website/Database/config.py
+          echo "}" >> Flask-Website/Database/config.py
+          # Validate the config.py file syntax
+          python -m py_compile Flask-Website/Database/config.py
+
+      - name: Debug config.py (optional)
+        run: |
+          echo "Contents of config.py:"
+          cat Flask-Website/Database/config.py | sed 's/password.*/password: ***}/g'
+
+      - name: Run tests and generate coverage report
+        run: |
+          # Run tests with coverage collection
+          source venv/bin/activate
+          export PYTHONPATH=Flask-Website
+          coverage run -m pytest
+          
+          # Generate a report in multiple formats
+          coverage report  # Text-based report
+          coverage html  # HTML report for local use
+          
+          # Generate the LCOV report for SonarCloud analysis
+          mkdir -p coverage-reports  # Create a folder to store coverage report
+          coverage lcov > coverage-reports/coverage.lcov  # Save coverage in LCOV format
+          
+          # Optionally check the generated coverage report
+          ls -la coverage-reports
+
+      - name: Analyze with SonarCloud
         uses: SonarSource/sonarcloud-github-action@4006f663ecaf1f8093e8e4abb9227f6041f52216
         env:
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}   # Generate a token on Sonarcloud.io, add it to the secrets of this repo with the name SONAR_TOKEN (Settings > Secrets > Actions > add new repository secret)
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         with:
-          # Additional arguments for the SonarScanner CLI
           args:
-            # Unique keys of your project and organization. You can find them in SonarCloud > Information (bottom-left menu)
-            # mandatory
             -Dsonar.projectKey=dogface3_AI-Chatbot
-            -Dsonar.organization=dogeface3
-            # Comma-separated paths to directories containing main source files.
-            #-Dsonar.sources= # optional, default is project base directory
-            # Comma-separated paths to directories containing test source files.
-            #-Dsonar.tests= # optional. For more info about Code Coverage, please refer to https://docs.sonarcloud.io/enriching/test-coverage/overview/
-            # Adds more detail to both client and server-side analysis logs, activating DEBUG mode for the scanner, and adding client-side environment variables and system properties to the server-side log of analysis report processing.
-            #-Dsonar.verbose= # optional, default is false
-          # When you need the analysis to take place in a directory other than the one from which it was launched, default is .
-          projectBaseDir: .
+            -Dsonar.organization=dogface3
+            -Dsonar.sources=Flask-Website
+            -Dsonar.projectBaseDir=.
+            -Dsonar.exclusions=Flask-Website/mynev/**
+            -Dsonar.python.coverage.reportPaths=coverage-reports/coverage.lcov
