@@ -32,7 +32,7 @@ def register(email, username, password):
     cursor = connection.cursor()
 
     try:
-        cursor.execute("select MAX(UserID) from user")
+        cursor.execute("select MAX(UserID) from User")
         userid = cursor.fetchone()[0]
         if userid == None:
             userid = 1
@@ -78,7 +78,7 @@ def emailCheck(email):
     cursor = connection.cursor()
     
     try:
-        cursor.execute("Select * from user where email = %s ", (email,))
+        cursor.execute("Select * from User where email = %s ", (email,))
         already_exists = cursor.fetchone()
         if already_exists:
             return True
