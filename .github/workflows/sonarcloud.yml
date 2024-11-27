@@ -102,8 +102,7 @@ jobs:
           mkdir -p coverage-reports  # Create a folder to store coverage report
           coverage lcov > coverage-reports/coverage.lcov  # Save coverage in LCOV format
           
-          # Optionally check the generated coverage report
-          ls -la coverage-reports
+
 
       - name: Analyze with SonarCloud
         uses: SonarSource/sonarcloud-github-action@4006f663ecaf1f8093e8e4abb9227f6041f52216
