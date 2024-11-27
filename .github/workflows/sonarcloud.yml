@@ -127,6 +127,8 @@ jobs:
             AIResponse TEXT,
             FOREIGN KEY (UserID) REFERENCES User(UserID)
           );
+
+          SHOW TABLES;
           EOF
           
       - name: Create config.py dynamically
