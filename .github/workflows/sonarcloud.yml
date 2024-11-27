@@ -151,20 +151,25 @@ jobs:
 
       - name: Run tests and generate coverage report
         run: |
-          # Run tests with coverage collection
+          # Activate the virtual environment (if applicable)
           source venv/bin/activate
+          
+          # Set the PYTHONPATH to the correct directory
           export PYTHONPATH=Flask-Website
+          
+          # Run tests with coverage collection and generate a coverage report in multiple formats
           coverage run -m pytest
           
-          # Generate a report in multiple formats
-          coverage report  # Text-based report
-          coverage html  # HTML report for local use
+          # Generate a text-based report (for local debugging)
+          coverage report  # This will display coverage info in the terminal
           
-          # Generate the LCOV report for SonarCloud analysis
-          mkdir -p coverage-reports  # Create a folder to store coverage report
-          coverage lcov > coverage-reports/coverage.lcov  # Save coverage in LCOV format
+          # Generate the HTML report (for local use, optional)
+          coverage html  # This creates an HTML report, accessible in 'htmlcov' directory
           
-          # Optionally check the generated coverage report
+          # Generate the coverage report in the 'coverage.xml' format for SonarCloud
+          coverage xml -o coverage-reports/coverage.xml  # This is the format SonarCloud expects
+          
+          # Optionally check the generated coverage report files
           ls -la coverage-reports
 
       - name: Analyze with SonarCloud
