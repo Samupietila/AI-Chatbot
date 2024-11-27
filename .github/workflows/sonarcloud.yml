@@ -36,11 +36,18 @@ jobs:
 
           # Also install coverage and pytest to run tests and measure coverage
           pip install coverage pytest      
+      - name: Create config.py from GitHub Secrets
+        run: |
+          echo "Creating config.py file from secrets..."
+          echo "DB_CONFIG = '${{ secrets.DB_CONFIG }}'" > Flask-Website/Database/config.py
+          
       - name: Run tests and generate coverage report
         run: |
           # Run tests with coverage collection
           source venv/bin/activate
           coverage run -m pytest  # Run pytest and collect coverage
+          
+          export PYTHONPATH=Flask-Website
           
           # Generate a report in multiple formats
           coverage report  # Text-based report
