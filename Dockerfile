@@ -18,4 +18,4 @@ COPY . .
 EXPOSE 5005
 
 # Define the command to run your application
-CMD ["rasa", "run", "--enable-api", "--cors", "*"]
+CMD ["rasa", "run", "--enable-api", "--cors", "*", "--port", "5005"]
