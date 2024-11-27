@@ -76,21 +76,21 @@ jobs:
       - name: Set up environment variables for MySQL database (Test DB)
         run: |
           echo "Setting up environment variables for test database..."
-          echo "DB_HOST=127.0.0.1" >> $GITHUB_ENV
-          echo "DB_PORT=3306" >> $GITHUB_ENV
-          echo "DB_NAME=test_db" >> $GITHUB_ENV
-          echo "DB_USER=test_user" >> $GITHUB_ENV
-          echo "DB_PASSWORD=test_password" >> $GITHUB_ENV
+          echo "host=127.0.0.1" >> $GITHUB_ENV
+          echo "port=3306" >> $GITHUB_ENV
+          echo "database=test_db" >> $GITHUB_ENV
+          echo "user=test_user" >> $GITHUB_ENV
+          echo "password=test_password" >> $GITHUB_ENV
 
       - name: Create config.py dynamically
         run: |
           echo "Creating config.py file dynamically..."
           echo "DB_CONFIG = {" > Flask-Website/Database/config.py
-          echo "    'DB_HOST': '${{ env.DB_HOST }}'," >> Flask-Website/Database/config.py
-          echo "    'DB_PORT': '${{ env.DB_PORT }}'," >> Flask-Website/Database/config.py
-          echo "    'DB_NAME': '${{ env.DB_NAME }}'," >> Flask-Website/Database/config.py
-          echo "    'DB_USER': '${{ env.DB_USER }}'," >> Flask-Website/Database/config.py
-          echo "    'DB_PASSWORD': '${{ env.DB_PASSWORD }}'" >> Flask-Website/Database/config.py
+          echo "    'host': '${{ env.DB_HOST }}'," >> Flask-Website/Database/config.py
+          echo "    'port': '${{ env.DB_PORT }}'," >> Flask-Website/Database/config.py
+          echo "    'database': '${{ env.DB_NAME }}'," >> Flask-Website/Database/config.py
+          echo "    'user': '${{ env.DB_USER }}'," >> Flask-Website/Database/config.py
+          echo "    'password': '${{ env.DB_PASSWORD }}'" >> Flask-Website/Database/config.py
           echo "}" >> Flask-Website/Database/config.py
           # Validate the config.py file syntax
           python -m py_compile Flask-Website/Database/config.py
