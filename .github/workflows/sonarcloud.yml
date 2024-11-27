@@ -29,10 +29,23 @@ jobs:
         run: |
           docker pull samuel1234567/chatbot-image:latest
 
-      # Step 4: Run chatbot container
+      # Step 4: Run MySQL container for database
+      - name: Run MySQL container
+        run: |
+          docker run --name mysql-container -e MYSQL_ROOT_PASSWORD=${{ secrets.MYSQL_ROOT_PASSWORD }} -d mysql:5.7
+          
+          # Wait for MySQL to be ready
+          echo "Waiting for MySQL to be ready..."
+          until docker exec mysql-container mysql -u root -p${{ secrets.MYSQL_ROOT_PASSWORD }} -e "SELECT 1;" ; do
+            echo "MySQL not ready yet, retrying in 5 seconds..."
+            sleep 5
+          done
+          echo "MySQL is ready."
+
+      # Step 5: Run chatbot container
       - name: Run chatbot container
         run: |
-          docker run -d --name chatbot-container -p 5005:5005 samuel1234567/chatbot-image:latest
+          docker run -d --name chatbot-container -p 5005:5005 --link mysql-container:mysql samuel1234567/chatbot-image:latest
           
           # Wait for the chatbot service to be ready
           echo "Waiting for the chatbot service..."
@@ -41,20 +54,6 @@ jobs:
             sleep 5
           done
           echo "Chatbot is ready."
-
-      # Step 5: Check if MySQL host is accessible
-      - name: Check if MySQL host exists
-        run: |
-          # Check if the MySQL host (in this case, the container) is reachable
-          echo "Checking if MySQL is accessible..."
-          docker exec chatbot-container bash -c "mysql -u root -p${{ secrets.MYSQL_ROOT_PASSWORD }} -e 'SELECT 1;'"
-          
-          if [ $? -eq 0 ]; then
-            echo "MySQL is accessible."
-          else
-            echo "MySQL is not accessible."
-            exit 1
-          fi
 
       # Step 6: Set up Python
       - name: Set up Python
