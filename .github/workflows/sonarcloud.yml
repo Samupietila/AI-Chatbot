@@ -15,37 +15,23 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # Step 1: Checkout repository
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      # Step 2: Log in to Docker Hub
+      - name: Set up Docker
+        uses: docker/setup-buildx-action@v2
+
       - name: Log in to Docker Hub
         run: |
           echo ${{ secrets.DOCKER_PASSWORD }} | docker login -u ${{ secrets.DOCKER_USERNAME }} --password-stdin
 
-      # Step 3: Pull chatbot Docker image
       - name: Pull chatbot Docker image
         run: |
           docker pull samuel1234567/chatbot-image:latest
 
-      # Step 4: Run MySQL container for database
-      - name: Run MySQL container
-        run: |
-          docker run --name mysql-container -e MYSQL_ROOT_PASSWORD=${{ secrets.MYSQL_ROOT_PASSWORD }} -d mysql:5.7
-          
-          # Wait for MySQL to be ready
-          echo "Waiting for MySQL to be ready..."
-          until docker exec mysql-container mysql -u root -p${{ secrets.MYSQL_ROOT_PASSWORD }} -e "SELECT 1;" ; do
-            echo "MySQL not ready yet, retrying in 5 seconds..."
-            sleep 5
-          done
-          echo "MySQL is ready."
-
-      # Step 5: Run chatbot container
       - name: Run chatbot container
         run: |
-          docker run -d --name chatbot-container -p 5005:5005 --link mysql-container:mysql samuel1234567/chatbot-image:latest
+          docker run -d --name chatbot-container -p 5005:5005 samuel1234567/chatbot-image:latest
           
           # Wait for the chatbot service to be ready
           echo "Waiting for the chatbot service..."
@@ -55,13 +41,29 @@ jobs:
           done
           echo "Chatbot is ready."
 
-      # Step 6: Set up Python
+      - name: Run MySQL container
+        run: |
+          # Create a new MySQL container using secrets for DB configuration
+          docker run -d --name mysql-container -e MYSQL_ROOT_PASSWORD=${{ secrets.MYSQL_ROOT_PASSWORD }} -e MYSQL_DATABASE=chatappdatabase -p 3306:3306 mysql:latest
+          
+          # Wait for MySQL to be ready
+          echo "Waiting for MySQL service..."
+          until docker exec mysql-container mysqladmin -uroot -p${{ secrets.MYSQL_ROOT_PASSWORD }} ping --silent; do
+            echo "MySQL not ready yet, retrying in 5 seconds..."
+            sleep 5
+          done
+          echo "MySQL is ready."
+        
+      - name: Check MySQL Database Existence
+        run: |
+          echo "Checking if chatappdatabase exists in MySQL..."
+          docker exec mysql-container mysql -uroot -p${{ secrets.MYSQL_ROOT_PASSWORD }} -e "SHOW DATABASES;" | grep chatappdatabase
+
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
           python-version: '3.x'
 
-      # Step 7: Install dependencies
       - name: Install dependencies
         run: |
           # Create and activate a virtual environment
@@ -73,7 +75,6 @@ jobs:
           # Also install coverage and pytest to run tests and measure coverage
           pip install coverage pytest
 
-      # Step 8: Create config.py from GitHub Secrets
       - name: Create config.py from GitHub Secrets
         run: |
           echo "Creating config.py file from secrets..."
@@ -83,13 +84,11 @@ jobs:
         env:
           DB_CONFIG: ${{ secrets.DB_CONFIG }}
 
-      # Step 9: Debug config.py
       - name: Debug config.py
         run: |
           echo "Contents of config.py:"
           cat Flask-Website/Database/config.py | sed 's/password.*/password: ***}/g'
 
-      # Step 10: Run tests and generate coverage report
       - name: Run tests and generate coverage report
         run: |
           # Run tests with coverage collection
@@ -107,8 +106,7 @@ jobs:
           
           # Optionally check the generated coverage report
           ls -la coverage-reports
-
-      # Step 11: Analyze with SonarCloud
+          
       - name: Analyze with SonarCloud
         uses: SonarSource/sonarcloud-github-action@4006f663ecaf1f8093e8e4abb9227f6041f52216
         env:
