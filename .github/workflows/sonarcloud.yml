@@ -14,15 +14,6 @@ jobs:
   Analysis:
     runs-on: ubuntu-latest
 
-    services:
-      mysql:
-        image: mysql:8.0  # Use the official MySQL image
-        env:
-          MYSQL_ROOT_PASSWORD: password
-          MYSQL_DATABASE: test_db
-        ports:
-          - 3306:3306  # Expose the MySQL port to the container
-
     steps:
 
       - name: Checkout repository
@@ -38,7 +29,9 @@ jobs:
 
       - name: Run chatbot container
         run: |
-          docker run -d --name chatbot-container -p 5005:5005 samuel1234567/chatbot-image:latest
+          docker network create my_network  # Create a custom network
+          docker run -d --name mysql --network my_network -e MYSQL_ROOT_PASSWORD=password -e MYSQL_DATABASE=test_db mysql:8.0
+          docker run -d --name chatbot-container --network my_network -p 5005:5005 samuel1234567/chatbot-image:latest
           
           # Wait for the chatbot service to be ready
           echo "Waiting for the chatbot service..."
@@ -47,6 +40,14 @@ jobs:
             sleep 5
           done
           echo "Chatbot is ready."
+
+          # Wait for MySQL to be ready
+          echo "Waiting for MySQL to be ready..."
+          until docker exec mysql mysqladmin -uroot -ppassword --host=mysql --silent --wait=30 ping; do
+            echo "MySQL not ready yet, retrying..."
+            sleep 5
+          done
+          echo "MySQL is ready."
 
       - name: Set up Python
         uses: actions/setup-python@v4
@@ -95,7 +96,7 @@ jobs:
           
           # Optionally check the generated coverage report
           ls -la coverage-reports
-          
+
       - name: Analyze with SonarCloud
         uses: SonarSource/sonarcloud-github-action@4006f663ecaf1f8093e8e4abb9227f6041f52216
         env:
