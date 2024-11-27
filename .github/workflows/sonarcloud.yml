@@ -87,7 +87,7 @@ jobs:
           echo "Creating config.py file dynamically..."
           echo "DB_CONFIG = {" > Flask-Website/Database/config.py
           echo "    'host': '${{ env.DB_HOST }}'," >> Flask-Website/Database/config.py
-          echo "    'port': ${ env.DB_PORT }," >> Flask-Website/Database/config.py  # Ensure port is an integer
+          echo "    'port': '${{ env.DB_PORT }}'," >> Flask-Website/Database/config.py  # Ensure port is an integer
           echo "    'database': '${{ env.DB_NAME }}'," >> Flask-Website/Database/config.py
           echo "    'user': '${{ env.DB_USER }}'," >> Flask-Website/Database/config.py
           echo "    'password': '${{ env.DB_PASSWORD }}'" >> Flask-Website/Database/config.py
