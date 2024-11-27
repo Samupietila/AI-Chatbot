@@ -39,7 +39,10 @@ jobs:
       - name: Create config.py from GitHub Secrets
         run: |
           echo "Creating config.py file from secrets..."
-          echo "DB_CONFIG = '${{ secrets.DB_CONFIG }}'" > Flask-Website/Database/config.py
+          echo "DB_CONFIG = ${DB_CONFIG}" | python -c "import sys, json; print(json.dumps(eval(sys.stdin.read()), indent=4))" > Flask-Website/Database/config.py
+        env:
+          DB_CONFIG: ${{ secrets.DB_CONFIG }}
+
       - name: Debug config.py
         run: |
           echo "Contents of config.py:"
