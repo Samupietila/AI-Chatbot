@@ -42,17 +42,19 @@ jobs:
           done
           echo "Chatbot is ready."
 
-      # Step 5: Run MySQL database check in the Docker container
-      - name: Check MySQL database inside the container
+      # Step 5: Check if MySQL host is accessible
+      - name: Check if MySQL host exists
         run: |
-          # Ensure MySQL is running
-          docker exec -it chatbot-container bash -c "mysql -u root -p${{ secrets.MYSQL_ROOT_PASSWORD }} -e 'SHOW DATABASES;'"
+          # Check if the MySQL host (in this case, the container) is reachable
+          echo "Checking if MySQL is accessible..."
+          docker exec chatbot-container bash -c "mysql -u root -p${{ secrets.MYSQL_ROOT_PASSWORD }} -e 'SELECT 1;'"
           
-          # Replace 'test_db' with your actual database name
-          docker exec -it chatbot-container bash -c "mysql -u root -p${{ secrets.MYSQL_ROOT_PASSWORD }} -e 'USE test_db; SHOW TABLES;'"
-
-          # Optionally, view some rows in a specific table
-          docker exec -it chatbot-container bash -c "mysql -u root -p${{ secrets.MYSQL_ROOT_PASSWORD }} -e 'USE test_db; SELECT * FROM users LIMIT 10;'"
+          if [ $? -eq 0 ]; then
+            echo "MySQL is accessible."
+          else
+            echo "MySQL is not accessible."
+            exit 1
+          fi
 
       # Step 6: Set up Python
       - name: Set up Python
