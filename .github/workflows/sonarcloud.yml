@@ -1,15 +1,3 @@
-name: SonarCloud analysis
-
-on:
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
-  workflow_dispatch:
-
-permissions:
-  pull-requests: read # allows SonarCloud to decorate PRs with analysis results
-
 jobs:
   Analysis:
     runs-on: ubuntu-latest
@@ -76,25 +64,24 @@ jobs:
       - name: Set up environment variables for MySQL database (Test DB)
         run: |
           echo "Setting up environment variables for test database..."
-          echo "host=127.0.0.1" >> $GITHUB_ENV
-          echo "port=3306" >> $GITHUB_ENV
-          echo "database=test_db" >> $GITHUB_ENV
-          echo "user=test_user" >> $GITHUB_ENV
-          echo "password=test_password" >> $GITHUB_ENV
+          echo "DB_HOST=127.0.0.1" >> $GITHUB_ENV
+          echo "DB_PORT=3306" >> $GITHUB_ENV
+          echo "DB_NAME=test_db" >> $GITHUB_ENV
+          echo "DB_USER=test_user" >> $GITHUB_ENV
+          echo "DB_PASSWORD=test_password" >> $GITHUB_ENV
 
       - name: Create config.py dynamically
         run: |
           echo "Creating config.py file dynamically..."
           echo "DB_CONFIG = {" > Flask-Website/Database/config.py
           echo "    'host': '${{ env.DB_HOST }}'," >> Flask-Website/Database/config.py
-          echo "    'port': '${{ env.DB_PORT }}'," >> Flask-Website/Database/config.py
+          echo "    'port': ${GITHUB_ENV.DB_PORT}," >> Flask-Website/Database/config.py  # Ensure port is an integer
           echo "    'database': '${{ env.DB_NAME }}'," >> Flask-Website/Database/config.py
           echo "    'user': '${{ env.DB_USER }}'," >> Flask-Website/Database/config.py
           echo "    'password': '${{ env.DB_PASSWORD }}'" >> Flask-Website/Database/config.py
           echo "}" >> Flask-Website/Database/config.py
           # Validate the config.py file syntax
           python -m py_compile Flask-Website/Database/config.py
-
 
       - name: Debug config.py (optional)
         run: |
@@ -122,13 +109,12 @@ jobs:
       - name: Analyze with SonarCloud
         uses: SonarSource/sonarcloud-github-action@4006f663ecaf1f8093e8e4abb9227f6041f52216
         env:
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}   # Generate a token on Sonarcloud.io, add it to the secrets of this repo with the name SONAR_TOKEN (Settings > Secrets > Actions > add new repository secret)
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         with:
-          # Additional arguments for the SonarScanner CLI
           args:
             -Dsonar.projectKey=dogface3_AI-Chatbot
             -Dsonar.organization=dogface3
             -Dsonar.sources=Flask-Website
             -Dsonar.projectBaseDir=.
             -Dsonar.exclusions=Flask-Website/mynev/**
-            -Dsonar.python.coverage.reportPaths=coverage-reports/coverage.lcov  # Provide path to LCOV report for coverage analysis
+            -Dsonar.python.coverage.reportPaths=coverage-reports/coverage.lcov
