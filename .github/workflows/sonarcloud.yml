@@ -14,6 +14,22 @@ jobs:
   Analysis:
     runs-on: ubuntu-latest
 
+    services:
+      mysql:
+        image: mysql:8.0
+        env:
+          MYSQL_ROOT_PASSWORD: rootpassword
+          MYSQL_DATABASE: test_db
+          MYSQL_USER: test_user
+          MYSQL_PASSWORD: test_password
+        ports:
+          - 3306:3306
+        options: >-
+          --health-cmd="mysqladmin ping --silent"
+          --health-start-period=30s
+          --health-timeout=5s
+          --health-retries=3
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
@@ -57,19 +73,14 @@ jobs:
           # Also install coverage and pytest to run tests and measure coverage
           pip install coverage pytest
 
-      - name: Create config.py from GitHub Secrets
+      - name: Set up environment variables for MySQL database (Test DB)
         run: |
-          echo "Creating config.py file from secrets..."
-          echo "DB_CONFIG = ${DB_CONFIG}" > Flask-Website/Database/config.py
-          # Validate syntax to ensure proper formatting
-          python -m py_compile Flask-Website/Database/config.py
-        env:
-          DB_CONFIG: ${{ secrets.DB_CONFIG }}
-
-      - name: Debug config.py
-        run: |
-          echo "Contents of config.py:"
-          cat Flask-Website/Database/config.py | sed 's/password.*/password: ***}/g'
+          echo "Setting up environment variables for test database..."
+          echo "DB_HOST=127.0.0.1" >> $GITHUB_ENV
+          echo "DB_PORT=3306" >> $GITHUB_ENV
+          echo "DB_NAME=test_db" >> $GITHUB_ENV
+          echo "DB_USER=test_user" >> $GITHUB_ENV
+          echo "DB_PASSWORD=test_password" >> $GITHUB_ENV
 
       - name: Run tests and generate coverage report
         run: |
@@ -88,7 +99,7 @@ jobs:
           
           # Optionally check the generated coverage report
           ls -la coverage-reports
-          
+
       - name: Analyze with SonarCloud
         uses: SonarSource/sonarcloud-github-action@4006f663ecaf1f8093e8e4abb9227f6041f52216
         env:
