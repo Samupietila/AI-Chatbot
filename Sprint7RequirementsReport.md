@@ -29,6 +29,10 @@ Zehra
 
 Samuel
 
+- daily sprints 2h
+- sonarlint and sonarcloud 12h
+- evaluating documentation 1h
+
 Samu
 - Daily sprints: 2 Hours
 - Document updating: 2 Hours
