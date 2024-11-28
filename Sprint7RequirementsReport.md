@@ -32,3 +32,6 @@ Samuel
 Samu
 
 
+# Conclusion
+- Summary of the Sprint Review:
+ In Sprint 7, the team made progress towards creating the documentation for the project. However due to the difficulties regarding installing and enabling Code quality improvement & evaluation tools, this led to some of the criterias not being met.
