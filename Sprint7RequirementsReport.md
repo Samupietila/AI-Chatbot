@@ -8,6 +8,9 @@ Clear requirements were planned for work in Sprint 7.
 ## Overview of the Sprint
 - Total number of tasks Completed: 9
 - Total number of tasks Pending: 2
+  - Difficulties of installing SonarLint on our Project.
+    **Resolution:** Research and move over into using a different type of Code Quality improvement tool 
+  
 
 ## Sprint Planning and Review
 
