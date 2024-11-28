@@ -15,7 +15,7 @@ def create_app():
     login_manager.init_app(app)
     
     from Database import authentication
-    
+
     # Loads the current user into the session after verified they are logged in
     @login_manager.user_loader
     def load_user(id):

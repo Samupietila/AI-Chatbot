@@ -1,4 +1,7 @@
 venv/
+.rasa/
+models/
+__pycache__
 config.py
 .rasa
 __pycache__/

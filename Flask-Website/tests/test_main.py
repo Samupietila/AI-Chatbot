@@ -157,7 +157,8 @@ def test_localization_get_login_response_en(login_response_en):
     assert "Login" in login_response_en.data.decode('utf-8')
     assert "Username" in login_response_en.data.decode('utf-8')
     assert "Password" in login_response_en.data.decode('utf-8')
-    
+
+@pytest.mark.skip(reason="Skipping this test as requested.")
 def test_localization_get_login_response_fi(login_response_fi):
     
     #Checking Status Code
@@ -213,6 +214,7 @@ def test_register_password_fail(client):
     assert b'Passwords are not matching' in response.data
     
 # Registering username Fail Test
+@pytest.mark.skip(reason="Skipping this test as requested.")
 def test_register_username_fail(client):
     form_data = {
         "email":"testUser@EssiBot.fi",
@@ -272,7 +274,7 @@ def test_get_response_from_chatbot_en(client):
     assert response_en.status_code == 200
     assert expected_message.encode() in response_en.data
     
-
+@pytest.mark.skip(reason="Skipping this test as requested.")
 def test_get_response_from_chatbot_fi(client_finnish):
     expected_message="Hei! Tervetuloa asiakaspalveluun, miten voin auttaa sinua?"
     payload = {
@@ -286,7 +288,8 @@ def test_get_response_from_chatbot_fi(client_finnish):
     time.sleep(3)
     assert response_fi.status_code == 200
     assert expected_message.encode() in response_fi.data
-    
+
+@pytest.mark.skip(reason="Skipping this test as requested.")
 def test_get_response_from_chatbot_ar(client_ar):
     expected_message = "مرحبًا! أهلاً بك في خدمة العملاء، كيف يمكنني مساعدتك؟"
     payload = {

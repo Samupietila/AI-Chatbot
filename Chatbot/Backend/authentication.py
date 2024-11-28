@@ -1,12 +1,12 @@
 import mysql
 
 from DbConnection import db_connection
-from getpass import getpass
+
 
 # Authentication
 def authenticate_user():
     username = input("Enter your username: ")
-    password = getpass("Enter your password: ")
+    password = input("Enter your password: ")
 
     connection = db_connection()
     cursor = connection.cursor()
@@ -29,3 +29,4 @@ def authenticate_user():
     finally:
         cursor.close()
         connection.close()
+
