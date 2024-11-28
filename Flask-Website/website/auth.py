@@ -5,6 +5,7 @@ from .models import User
 from flask_babel import gettext as _
 auth = Blueprint('auth', __name__)
 
+# Login function that is triggered when /login post request has been made, starting a check if the user exists or not and the password matches
 @auth.route('/login', methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':
@@ -22,17 +23,20 @@ def login():
             flash(_('Username or password does not match'), category='error')
     return render_template("login.html")
 
+# Logout function that is triggered when /logout request has been made
 @auth.route('/logout')
 @login_required
 def logout():
     logout_user()
     return redirect(url_for('auth.login'))
 
+# Function that returns the "thankyou.html" after registration has been successful
 @auth.route('/thankyou')
 def thankyou():
     message = request.args.get('message', '')
     return render_template("thankyou.html", message = message)
 
+# Register function that is triggered when /register POST request has been made, verifying that the given information meets the criterias
 @auth.route('/register', methods=['GET', 'POST'])
 def register():
     if request.method == 'POST':

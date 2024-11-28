@@ -11,37 +11,41 @@ views = Blueprint('views', __name__)
 CORS(views)
 RASA_API_URL = 'http://localhost:5005/webhooks/rest/webhook'
 
+
+# Returns home page
 @views.route('/')
 def home():
     return render_template("home.html",)
 
+# Returns games page
 @views.route('/games')
 @login_required
 def games():
     return render_template("games.html", user=current_user)
 
+# Returns community page
 @views.route('/community')
 def community():
     return render_template("community.html")
 
+# Returns help page
 @views.route('/help')
 def help():
     return render_template("help.html")
 
+# Return withdraw/deposit page, requires user to be logged in
 @views.route('/withdraw-deposit')
 @login_required
 def withdrawDeposit():
     return render_template("withdraw-deposit.html")
 
+# Return profile page, requires user to be logged in
 @views.route('/profile')
 @login_required
 def profile():
     return render_template("profile.html")
 
-@views.route('/chatbot', methods=['GET', 'POST'])
-def chatbot():
-    return render_template('chatbot.html')
-
+# API Request to the RASA Chatbot framework, enabling user to converse with Essi-Bot
 @views.route('/webhook', methods=['POST'])
 def webhook():
     user_message = request.json.get('message')
@@ -95,6 +99,7 @@ def webhook():
 
 
     return jsonify({'message': bot_response, 'buttons': buttons, user_message: user_message})
+
 
 @views.route('/set_language/<language>')
 def set_language(language):
