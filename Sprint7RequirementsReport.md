@@ -26,6 +26,10 @@ Mika
 - Evaluating README.md file: 3 Hours
 
 Zehra
+- daily sprint 2h
+- documentation 5h
+- evaluating documentation 1h
+
 
 Samuel
 
