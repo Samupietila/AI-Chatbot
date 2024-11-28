@@ -30,7 +30,9 @@ Zehra
 Samuel
 
 Samu
-
+- Daily sprints: 2 Hours
+- Document updating: 2 Hours
+- Readme testing: 4 Hours
 
 # Conclusion
 - Summary of the Sprint Review:
