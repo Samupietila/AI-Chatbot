@@ -5,9 +5,15 @@
 We updated the Product Backlog to align with the goals Sprint7 and created new tasks targeting the Documentation of the Project.
 Clear requirements were planned for work in Sprint 7.
 
+## Overview of the Sprint
+- Total number of tasks Completed: 9
+- Total number of tasks Pending: 2
+
 ## Sprint Planning and Review
 
 Jukka
+
+
 
 Mika
 
@@ -21,3 +27,5 @@ Zehra
 Samuel
 
 Samu
+
+
