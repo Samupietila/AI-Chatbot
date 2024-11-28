@@ -16,6 +16,9 @@ Clear requirements were planned for work in Sprint 7.
 
 Jukka
 
+- Daily sprints 1.45 Hours
+- Test bot readme and documentation  4
+- Evaluating README.md file: 3 hours
 
 
 Mika
