@@ -21,24 +21,11 @@ Web Framework: Flask/FastAPI for API endpoints and serving the chatbot.
 Database: SQLite/PostgreSQL for storing user data, training logs, and configurations.
 Deployment Tools: Docker for containerized deployment.
 4. High-Level Architecture
-plaintext
-Kopioi koodi
-+----------------------+   User Query   +----------------------+
-|      Frontend        |  <--------->  |       API Server      |
-| (Web/Mobile Client)  |               |  (Flask/FastAPI)      |
-+----------------------+               +----------------------+
-                                         |
-                                         v
-                           +-----------------------+
-                           |  NLP Model & Logic    |
-                           |  (Transformer-based)  |
-                           +-----------------------+
-                                         |
-                                         v
-                           +-----------------------+
-                           |     Data Storage      |
-                           | (SQLite/PostgreSQL)   |
-                           +-----------------------+
+graph TD
+    A[Frontend (Web/Mobile Client)] --> B[API Server (Flask/FastAPI)]
+    B --> C[NLP Model & Logic (Transformer-based)]
+    C --> D[Data Storage (SQLite/PostgreSQL)]
+
 5. Components and Modules
 5.1 Frontend Layer
 Description: Interface for users to interact with the chatbot.
